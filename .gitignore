@@ -36,3 +36,4 @@ replay_pid*
 /target/classes/META-INF/maven/com.science.earth.biogeochemistry.freshwaters/PANDORA/pom.properties
 /target/classes/META-INF/maven/com.science.earth.biogeochemistry.freshwaters/PANDORA/pom.xml
 /target/classes/application.properties
+/target/classes/banner.txt
