@@ -1,5 +1,9 @@
 # PANDORA
 
+PANDORA is a Java Web application that calculates the transport of chemical components through rivers. 
+
+PANDORA stands for **P**hosphorus, **A**lkalinity, **N**itrogen and **Di**ssolved **O**xygen in **R**iverine and **A**quatic systems.
+
 **_Main branch build status:_**
 
 
