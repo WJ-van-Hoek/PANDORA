@@ -22,3 +22,17 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+/.mvn/wrapper/maven-wrapper.properties
+/HELP.md
+/.settings/org.eclipse.m2e.core.prefs
+/.project
+/target/classes/META-INF/MANIFEST.MF
+/.classpath
+/.factorypath
+/.settings/org.eclipse.core.resources.prefs
+/.settings/org.eclipse.jdt.apt.core.prefs
+/.settings/org.eclipse.jdt.core.prefs
+/.settings/org.springframework.ide.eclipse.prefs
+/target/classes/META-INF/maven/com.science.earth.biogeochemistry.freshwaters/PANDORA/pom.properties
+/target/classes/META-INF/maven/com.science.earth.biogeochemistry.freshwaters/PANDORA/pom.xml
+/target/classes/application.properties

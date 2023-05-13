@@ -1,0 +1,26 @@
+# Use the latest 2.1 version of CircleCI pipeline process engine.
+# See: https://circleci.com/docs/2.0/configuration-reference
+version: 2.1
+
+# Define a job to be invoked later in a workflow.
+# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
+jobs:
+  # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
+  build:
+    docker:
+      - image: cimg/openjdk:17.0
+    
+    working_directory: ~/pandora
+
+    steps:
+      - checkout
+      - run: mvn -B clean install -Dmaven.javadoc.skip=true -B -V -Dspring.profiles.active=default
+      - run: bash <(curl -s https://codecov.io/bash) -t 6b147d9a-b341-4008-9e48-a38d50d1cb69
+
+      - store_test_results:
+          path: target/surefire-reports
+
+workflows:
+  build-and-test:
+    jobs:
+      - build
