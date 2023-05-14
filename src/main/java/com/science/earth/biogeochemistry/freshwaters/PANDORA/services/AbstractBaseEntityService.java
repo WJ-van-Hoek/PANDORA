@@ -5,5 +5,5 @@ import com.science.earth.biogeochemistry.freshwaters.PANDORA.model.AbstractBaseE
 
 public interface AbstractBaseEntityService<T extends AbstractBaseEntity> extends CrudService<T, Long> {
 	public void nullCheck(T baseEntity);
-
+	public boolean isNew(T baseEntity);
 }

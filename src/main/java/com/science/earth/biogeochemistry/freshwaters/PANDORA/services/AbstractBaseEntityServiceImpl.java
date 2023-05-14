@@ -16,5 +16,10 @@ public abstract class AbstractBaseEntityServiceImpl<T extends AbstractBaseEntity
 	    throw new RuntimeException("Entity can not be null");
 	}
     }
+    
+    @Override
+    public boolean isNew(T baseEntity) {
+    	return baseEntity.getId() == null;
+    }
 
 }
