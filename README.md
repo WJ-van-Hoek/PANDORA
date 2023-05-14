@@ -12,3 +12,8 @@ PANDORA stands for **P**hosphorus, **A**lkalinity, **N**itrogen and **Di**ssolve
 **_Main branch code coverage status:_**
 
 [![codecov](https://codecov.io/gh/WJ-van-Hoek/PANDORA/branch/master/graph/badge.svg?token=tX9DFPWsPd)](https://codecov.io/gh/WJ-van-Hoek/PANDORA)
+
+
+**_Lines of code:_**
+
+![lines](https://img.shields.io/tokei/lines/github/wj-van-hoek/pandora?style=plastic)
