@@ -84,6 +84,7 @@
 			        <excludes>
 			          <exclude>com/science/earth/biogeochemistry/freshwaters/PANDORA/model/**</exclude>
 			          <exclude>com/science/earth/biogeochemistry/freshwaters/PANDORA/PandoraApplication.class</exclude>
+			          <exclude>com/science/earth/biogeochemistry/freshwaters/PANDORA/AppConfig.class</exclude>
 			        </excludes>
 			    </configuration>
 			    <executions>

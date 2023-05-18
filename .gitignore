@@ -81,3 +81,4 @@ replay_pid*
 /target/surefire-reports/com.science.earth.biogeochemistry.freshwaters.PANDORA.PandoraApplicationTests.txt
 /target/surefire-reports/com.science.earth.biogeochemistry.freshwaters.PANDORA.services.AbstractBaseEntityServiceImplTest.txt
 /target/surefire-reports/com.science.earth.biogeochemistry.freshwaters.PANDORA.services.AbstractCrudServiceImplTest.txt
+/target/classes/messages.properties
