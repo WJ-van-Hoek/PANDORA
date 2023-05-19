@@ -2,7 +2,8 @@ package com.science.earth.biogeochemistry.freshwaters.PANDORA.services;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.times;
@@ -15,10 +16,13 @@ import java.util.Set;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import com.science.earth.biogeochemistry.freshwaters.PANDORA.errors.CrudError;
+import com.science.earth.biogeochemistry.freshwaters.PANDORA.errors.ErrorMessageGenerator;
 import com.science.earth.biogeochemistry.freshwaters.PANDORA.model.AbstractBaseEntity;
 import com.science.earth.biogeochemistry.freshwaters.PANDORA.repositories.AbstractBaseEntityRepository;
 
@@ -26,6 +30,9 @@ class AbstractCrudServiceImplTest {
 
     @Mock
     AbstractBaseEntityRepository<ConcreteBaseEntity> repository;
+
+    @Mock
+    ErrorMessageGenerator errorMessageGenerator;
 
     @InjectMocks
     ConcreteCrudServiceImpl concreteCrudServiceImpl;
@@ -52,7 +59,7 @@ class AbstractCrudServiceImplTest {
 
 	// when
 	Set<ConcreteBaseEntity> foundConcreteBaseEntities = concreteCrudServiceImpl.findAll();
-	
+
 	// then
 	assertEquals(2, foundConcreteBaseEntities.size());
 	verify(repository, times(1)).findAll();
@@ -65,7 +72,7 @@ class AbstractCrudServiceImplTest {
 
 	// when
 	AbstractBaseEntity foundBaseEntity = concreteCrudServiceImpl.findById(1L);
-	
+
 	// then
 	assertEquals(concreteBaseEntity1, foundBaseEntity);
 	verify(repository, times(1)).findById(anyLong());
@@ -74,14 +81,27 @@ class AbstractCrudServiceImplTest {
     @Test
     void testFindByIdNotFound() {
 	// and given
+	String mockedErrorMessage = "this is a mocked message";
 	when(repository.findById(3L)).thenReturn(Optional.empty());
+	when(errorMessageGenerator.generate(any(String.class), any(Long.class), any(String.class)))
+		.thenReturn(mockedErrorMessage);
 
 	// when
-	ConcreteBaseEntity notFoundConcreteBaseEntity = concreteCrudServiceImpl.findById(3L);
-	
+	CrudError e = assertThrows(CrudError.class, () -> concreteCrudServiceImpl.findById(3L));
+
 	// then
-	assertNull(notFoundConcreteBaseEntity);
+	ArgumentCaptor<String> stringCaptor = ArgumentCaptor.forClass(String.class);
+	ArgumentCaptor<Long> longCaptor = ArgumentCaptor.forClass(Long.class);
+	ArgumentCaptor<String> classStringCaptor = ArgumentCaptor.forClass(String.class);
+
 	verify(repository, times(1)).findById(anyLong());
+	verify(errorMessageGenerator, times(1)).generate(stringCaptor.capture(), longCaptor.capture(),
+		classStringCaptor.capture());
+	assertEquals(mockedErrorMessage, e.getMessage());
+	assertEquals("abstract.crud.service.id.notexist", stringCaptor.getValue());
+	assertEquals(Long.valueOf(3l), longCaptor.getValue());
+	assertEquals("com.science.earth.biogeochemistry.freshwaters.PANDORA.services.ConcreteBaseEntity",
+		classStringCaptor.getValue());
     }
 
     @Test
@@ -89,36 +109,56 @@ class AbstractCrudServiceImplTest {
 	// and given
 	when(repository.save(concreteBaseEntity1)).thenReturn(concreteBaseEntity1);
 
-	//when
+	// when
 	ConcreteBaseEntity savedConcreteBaseEntity = concreteCrudServiceImpl.save(concreteBaseEntity1);
-	
-	//then
+
+	// then
 	assertNotNull(savedConcreteBaseEntity);
 	assertEquals(concreteBaseEntity1, savedConcreteBaseEntity);
 	verify(repository, times(1)).save(concreteBaseEntity1);
     }
-    
+
+    @Test
+    void testSaveNull() {
+	// given
+	String mockedErrorMessage = "this is a mocked message";
+	when(errorMessageGenerator.generate(any(String.class), any(String.class))).thenReturn(mockedErrorMessage);
+
+	// when
+	CrudError e = assertThrows(CrudError.class, () -> concreteCrudServiceImpl.save(null));
+
+	// then
+	ArgumentCaptor<String> stringCaptor = ArgumentCaptor.forClass(String.class);
+	ArgumentCaptor<String> classStringCaptor = ArgumentCaptor.forClass(String.class);
+
+	verify(errorMessageGenerator, times(1)).generate(stringCaptor.capture(), classStringCaptor.capture());
+	assertEquals(mockedErrorMessage, e.getMessage());
+	assertEquals("abstract.crud.service.object.null", stringCaptor.getValue());
+	assertEquals("com.science.earth.biogeochemistry.freshwaters.PANDORA.services.ConcreteBaseEntity",
+		classStringCaptor.getValue());
+    }
+
     @Test
     void testDelete() {
 	// and given
 	doNothing().when(repository).delete(concreteBaseEntity1);
-	
+
 	// when
 	concreteCrudServiceImpl.delete(concreteBaseEntity1);
-	
-	// when 
+
+	// when
 	verify(repository, times(1)).delete(concreteBaseEntity1);
     }
-    
+
     @Test
-    void testDeleteByIdExisting() {
+    void testDeleteById() {
 	// and given
 	doNothing().when(repository).deleteById(1l);
-	
+
 	// when
 	concreteCrudServiceImpl.deleteById(1l);
-	
-	// when 
+
+	// when
 	verify(repository, times(1)).deleteById(1l);
     }
 }
