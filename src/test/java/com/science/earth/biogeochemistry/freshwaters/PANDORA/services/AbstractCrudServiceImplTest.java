@@ -25,11 +25,15 @@ import com.science.earth.biogeochemistry.freshwaters.PANDORA.errors.CrudError;
 import com.science.earth.biogeochemistry.freshwaters.PANDORA.errors.ErrorMessageGenerator;
 import com.science.earth.biogeochemistry.freshwaters.PANDORA.model.AbstractBaseEntity;
 import com.science.earth.biogeochemistry.freshwaters.PANDORA.repositories.AbstractBaseEntityRepository;
+import com.science.earth.biogeochemistry.freshwaters.PANDORA.services.entityservices.interfaces.AbstractBaseEntityService;
 
 class AbstractCrudServiceImplTest {
 
     @Mock
     AbstractBaseEntityRepository<ConcreteBaseEntity> repository;
+
+    @Mock
+    AbstractBaseEntityService abstractBaseEntityService;
 
     @Mock
     ErrorMessageGenerator errorMessageGenerator;
@@ -83,7 +87,7 @@ class AbstractCrudServiceImplTest {
 	// and given
 	String mockedErrorMessage = "this is a mocked message";
 	when(repository.findById(3L)).thenReturn(Optional.empty());
-	when(errorMessageGenerator.generate(any(String.class), any(Long.class), any(String.class)))
+	when(errorMessageGenerator.generate(any(String.class), any(Long.class)))
 		.thenReturn(mockedErrorMessage);
 
 	// when
@@ -95,13 +99,10 @@ class AbstractCrudServiceImplTest {
 	ArgumentCaptor<String> classStringCaptor = ArgumentCaptor.forClass(String.class);
 
 	verify(repository, times(1)).findById(anyLong());
-	verify(errorMessageGenerator, times(1)).generate(stringCaptor.capture(), longCaptor.capture(),
-		classStringCaptor.capture());
+	verify(errorMessageGenerator, times(1)).generate(stringCaptor.capture(), longCaptor.capture());
 	assertEquals(mockedErrorMessage, e.getMessage());
 	assertEquals("abstract.crud.service.id.notexist", stringCaptor.getValue());
 	assertEquals(Long.valueOf(3l), longCaptor.getValue());
-	assertEquals("com.science.earth.biogeochemistry.freshwaters.PANDORA.services.ConcreteBaseEntity",
-		classStringCaptor.getValue());
     }
 
     @Test
@@ -134,8 +135,6 @@ class AbstractCrudServiceImplTest {
 	verify(errorMessageGenerator, times(1)).generate(stringCaptor.capture(), classStringCaptor.capture());
 	assertEquals(mockedErrorMessage, e.getMessage());
 	assertEquals("abstract.crud.service.object.null", stringCaptor.getValue());
-	assertEquals("com.science.earth.biogeochemistry.freshwaters.PANDORA.services.ConcreteBaseEntity",
-		classStringCaptor.getValue());
     }
 
     @Test

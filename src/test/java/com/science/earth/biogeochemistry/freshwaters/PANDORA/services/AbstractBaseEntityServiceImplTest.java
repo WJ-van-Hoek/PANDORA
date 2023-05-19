@@ -5,6 +5,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,13 +16,14 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import com.science.earth.biogeochemistry.freshwaters.PANDORA.errors.ErrorMessageGenerator;
+import com.science.earth.biogeochemistry.freshwaters.PANDORA.errors.ServiceImplError;
 import com.science.earth.biogeochemistry.freshwaters.PANDORA.model.AbstractBaseEntity;
-import com.science.earth.biogeochemistry.freshwaters.PANDORA.repositories.AbstractBaseEntityRepository;
 
 class AbstractBaseEntityServiceImplTest {
 
     @Mock
-    AbstractBaseEntityRepository<AbstractBaseEntity> abstractBaseEntityRepository;
+    ErrorMessageGenerator errorMessageGenerator;
 
     @InjectMocks
     ConcreteBaseEntityServiceImpl concreteBaseEntityServiceImpl;
@@ -32,9 +37,18 @@ class AbstractBaseEntityServiceImplTest {
 
     @Test
     void nullCheckTest() {
-	RuntimeException e = assertThrows(RuntimeException.class,
+	// given
+	when(errorMessageGenerator.generate(any(String.class), any(Object[].class)))
+		.thenReturn("this is a mocked message");
+
+	// when
+	ServiceImplError e = assertThrows(ServiceImplError.class,
 		() -> concreteBaseEntityServiceImpl.nullCheck(abstractBaseEntity));
-	assertEquals("Entity can not be null", e.getMessage());
+
+	// then
+	verify(errorMessageGenerator, times(1)).generate(any(String.class), any(Object[].class));
+	assertEquals("this is a mocked message", e.getMessage());
+	
 
 	abstractBaseEntity = ConcreteBaseEntity.builder().build();
 	assertDoesNotThrow(() -> concreteBaseEntityServiceImpl.nullCheck(abstractBaseEntity));

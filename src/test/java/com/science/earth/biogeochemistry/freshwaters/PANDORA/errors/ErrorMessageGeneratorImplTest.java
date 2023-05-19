@@ -50,5 +50,4 @@ class ErrorMessageGeneratorImplTest {
 	assertEquals(message, stringCaptor.getValue());
 	assertArrayEquals(args, objectArrayCaptor.getValue());
     }
-
 }

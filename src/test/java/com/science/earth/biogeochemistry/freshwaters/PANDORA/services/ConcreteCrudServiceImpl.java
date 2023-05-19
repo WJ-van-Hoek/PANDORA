@@ -6,7 +6,8 @@ import com.science.earth.biogeochemistry.freshwaters.PANDORA.services.crudservic
 
 public class ConcreteCrudServiceImpl
 	extends AbstractCrudServiceImpl<ConcreteBaseEntity, Long, AbstractBaseEntityRepository<ConcreteBaseEntity>> {
-    protected ConcreteCrudServiceImpl(AbstractBaseEntityRepository<ConcreteBaseEntity> repository, ErrorMessageGenerator errorMessageGenerator) {
+    protected ConcreteCrudServiceImpl(AbstractBaseEntityRepository<ConcreteBaseEntity> repository,
+	    ErrorMessageGenerator errorMessageGenerator) {
 	super(repository, errorMessageGenerator);
     }
 }

@@ -1,13 +1,12 @@
 package com.science.earth.biogeochemistry.freshwaters.PANDORA.services.crudservices.implementations;
 
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.science.earth.biogeochemistry.freshwaters.PANDORA.errors.CrudError;
@@ -17,10 +16,11 @@ import com.science.earth.biogeochemistry.freshwaters.PANDORA.services.crudservic
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
+@Service
 public abstract class AbstractCrudServiceImpl<T, ID, R extends CrudRepository<T, ID>> implements CrudService<T, ID> {
 
     @Autowired
-    R repository;
+    protected R repository;
 
     @Autowired
     ErrorMessageGenerator errorMessageGenerator;
@@ -41,8 +41,7 @@ public abstract class AbstractCrudServiceImpl<T, ID, R extends CrudRepository<T,
 	if (object.isPresent()) {
 	    return object.get();
 	} else {
-	    throw new CrudError(
-		    errorMessageGenerator.generate("abstract.crud.service.id.notexist", id, getGenericType()));
+	    throw new CrudError(errorMessageGenerator.generate("abstract.crud.service.id.notexist", id));
 	}
     }
 
@@ -51,7 +50,7 @@ public abstract class AbstractCrudServiceImpl<T, ID, R extends CrudRepository<T,
 	if (object != null) {
 	    return repository.save(object);
 	} else {
-	    throw new CrudError(errorMessageGenerator.generate("abstract.crud.service.object.null", getGenericType()));
+	    throw new CrudError(errorMessageGenerator.generate("abstract.crud.service.object.null"));
 	}
     }
 
@@ -63,11 +62,6 @@ public abstract class AbstractCrudServiceImpl<T, ID, R extends CrudRepository<T,
     @Transactional
     public void deleteById(ID id) {
 	repository.deleteById(id);
-    }
-
-    private String getGenericType() {
-	Type classType = getClass().getGenericSuperclass();
-	return ((ParameterizedType) classType).getActualTypeArguments()[0].getTypeName();
     }
 
 }
