@@ -45,9 +45,6 @@ public class SchemeServiceImpl extends AbstractBaseEntityServiceImpl<Scheme> imp
     @Autowired
     SpecieService specieService;
 
-    @Autowired
-    ErrorMessageGenerator errorMessageGenerator;
-
     protected SchemeServiceImpl(SchemeCrudService schemeCrudService, ReactionCrudService reactionCrudService,
 	    ReactionService reactionService, SourceCrudService sourceCrudService, SourceService sourceService,
 	    SpecieCrudService specieCrudService, SpecieService specieService,
@@ -62,9 +59,9 @@ public class SchemeServiceImpl extends AbstractBaseEntityServiceImpl<Scheme> imp
 	this.specieService = specieService;
     }
 
-    public void safeSave(Scheme scheme) {
+    public Scheme safeSave(Scheme scheme) {
 	try {
-	    schemeCrudService.save(scheme);
+	    return schemeCrudService.save(scheme);
 	} catch (CrudError e) {
 	    throw new ServiceImplError(
 		    errorMessageGenerator.generate("concrete.crud.service.object.null", getGenericType()));
