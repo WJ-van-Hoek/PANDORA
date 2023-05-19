@@ -62,5 +62,16 @@ class AbstractBaseEntityServiceImplTest {
 	abstractBaseEntity.setId(1l);
 	assertFalse(concreteBaseEntityServiceImpl.isNew(abstractBaseEntity));
     }
+    
+    @Test
+    void getGenericTypeTest() {
+	String genericType = concreteBaseEntityServiceImpl.getGenericType();
+	assertEquals("AbstractBaseEntity", genericType);	
+    }
 
+    @Test
+    void getFullGenericTypeTest() {
+	String fullGenericType = concreteBaseEntityServiceImpl.getFullGenericType();
+	assertEquals("com.science.earth.biogeochemistry.freshwaters.PANDORA.model.AbstractBaseEntity", fullGenericType);
+    }
 }

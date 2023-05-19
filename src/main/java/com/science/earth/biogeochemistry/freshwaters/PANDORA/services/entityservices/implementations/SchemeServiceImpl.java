@@ -61,12 +61,13 @@ public class SchemeServiceImpl extends AbstractBaseEntityServiceImpl<Scheme> imp
 	this.specieCrudService = specieCrudService;
 	this.specieService = specieService;
     }
-    
+
     public void safeSave(Scheme scheme) {
 	try {
 	    schemeCrudService.save(scheme);
 	} catch (CrudError e) {
-	    throw new ServiceImplError(errorMessageGenerator.generate("concrete.crud.service.object.null", getGenericType()));
+	    throw new ServiceImplError(
+		    errorMessageGenerator.generate("concrete.crud.service.object.null", getGenericType()));
 	}
     }
 
