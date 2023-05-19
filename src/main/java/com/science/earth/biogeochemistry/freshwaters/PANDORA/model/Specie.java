@@ -27,5 +27,11 @@ public abstract class Specie extends AbstractBaseEntity {
     private String unit;
     
     private int molarMass;
+    
+    protected Specie(Long id, String name, String unit, int molarMass) {
+	super(id, name);
+	this.unit = unit;
+	this.molarMass = molarMass;
+    }
 
 }

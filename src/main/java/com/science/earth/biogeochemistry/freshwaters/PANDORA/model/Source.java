@@ -24,4 +24,9 @@ public abstract class Source extends AbstractBaseEntity {
     // by deleting their associated source fractions too
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "source")
     private Set<SourceFraction> fractionals = new HashSet<>();
+    
+    protected Source(Long id, String name, Set<SourceFraction> fractionals) {
+	super(id, name);
+	this.fractionals = fractionals;
+    }
 }

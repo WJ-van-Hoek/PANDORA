@@ -9,10 +9,10 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.experimental.SuperBuilder;
 
 /**
  * @author Hoek0024 on 15 mei 2023
@@ -22,7 +22,6 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @NoArgsConstructor
 @Entity
-@SuperBuilder
 @Table(name = "schemes")
 public class Scheme extends AbstractBaseEntity {
 
@@ -39,5 +38,13 @@ public class Scheme extends AbstractBaseEntity {
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "scheme_species", joinColumns = @JoinColumn(name = "scheme_id"), inverseJoinColumns = @JoinColumn(name = "specie_id"))
     private Set<Specie> species = new HashSet<>();
-    
+
+    @Builder
+    public Scheme(Long id, String name, Set<Reaction> reactions, Set<Source> sources, Set<Specie> species) {
+	super(id, name);
+	this.reactions = ((reactions == null) || (reactions.isEmpty())) ? new HashSet<>() : reactions;
+	this.sources = ((sources == null) || (sources.isEmpty())) ? new HashSet<>() : sources;
+	this.species = ((species == null) || (species.isEmpty())) ? new HashSet<>() : species;
+    }
+
 }
