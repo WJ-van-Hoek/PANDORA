@@ -2,7 +2,7 @@
 
 PANDORA is a Java Web application that calculates the transport of chemical components through rivers. 
 
-PANDORA stands for **P**hosphorus, **A**lkalinity, **N**itrogen and **Di**ssolved **O**xygen in **R**iverine and **A**quatic systems.
+PANDORA stands for **P**hosphorus, **A**lkalinity, **N**itrogen and **D**issolved **O**xygen in **R**iverine and **A**quatic systems.
 
 **_Main branch build status:_**
 
@@ -11,7 +11,19 @@ PANDORA stands for **P**hosphorus, **A**lkalinity, **N**itrogen and **Di**ssolve
 
 **_Main branch code coverage status:_**
 
+
 [![codecov](https://codecov.io/gh/WJ-van-Hoek/PANDORA/branch/master/graph/badge.svg?token=tX9DFPWsPd)](https://codecov.io/gh/WJ-van-Hoek/PANDORA)
 
 
 
+**_Pandora Data JavaDoc:_**
+
+
+[![Documentation](https://img.shields.io/badge/Documentation-HTML-blue.svg?logo=Java&logoColor=white&link=https://github.com/WJ-van-Hoek/PANDORA/pandora-data/apidocs/index.html)](https://github.com/WJ-van-Hoek/PANDORA/pandora-data/apidocs/index.html)
+
+
+
+**_Pandora Web JavaDoc:_**
+
+
+[![Documentation](https://img.shields.io/badge/Documentation-HTML-blue.svg?logo=Java&logoColor=white&link=https://github.com/WJ-van-Hoek/PANDORA/pandora-web/apidocs/index.html)](https://github.com/WJ-van-Hoek/PANDORA/pandora-web/apidocs/index.html)
