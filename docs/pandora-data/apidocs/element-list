@@ -1,0 +1,7 @@
+com.science.earth.biogeochemistry.freshwaters.pandora.errors
+com.science.earth.biogeochemistry.freshwaters.pandora.model
+com.science.earth.biogeochemistry.freshwaters.pandora.repositories
+com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.implementations
+com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces
+com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.implementations
+com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces
