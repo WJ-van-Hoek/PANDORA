@@ -13,3 +13,17 @@ PANDORA stands for **P**hosphorus, **A**lkalinity, **N**itrogen and **D**issolve
 
 
 [![codecov](https://codecov.io/gh/WJ-van-Hoek/PANDORA/branch/master/graph/badge.svg?token=tX9DFPWsPd)](https://codecov.io/gh/WJ-van-Hoek/PANDORA)
+
+
+
+**_Pandora Data JavaDoc:_**
+
+
+[![Documentation](https://img.shields.io/badge/Documentation-HTML-blue.svg?logo=Java&logoColor=white&link=https://wj-van-hoek.github.io/PANDORA/pandora-data/apidocs/index.html)](https://wj-van-hoek.github.io/PANDORA/pandora-data/apidocs/index.html)
+
+
+
+**_Pandora Web JavaDoc:_**
+
+
+[![Documentation](https://img.shields.io/badge/Documentation-HTML-blue.svg?logo=Java&logoColor=white&link=https://wj-van-hoek.github.io/PANDORA/pandora-web/apidocs/index.html)](https://wj-van-hoek.github.io/PANDORA/pandora-web/apidocs/apidocs/index.html)
