@@ -341,3 +341,12 @@ replay_pid*
 /pandora-web/target/surefire-reports/2023-05-22T20-26-44_913-jvmRun1.dump
 mvnw
 mvnw.cmd
+/pandora-data/target/checkstyle-cachefile
+/pandora-data/target/checkstyle-checker.xml
+/pandora-data/target/checkstyle-result.xml
+/pandora-web/target/checkstyle-cachefile
+/pandora-web/target/checkstyle-checker.xml
+/pandora-web/target/checkstyle-result.xml
+/target/checkstyle-cachefile
+/target/checkstyle-checker.xml
+/target/checkstyle-result.xml

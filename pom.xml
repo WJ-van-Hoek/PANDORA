@@ -42,7 +42,24 @@
 					</excludes>
 				</configuration>
 			</plugin>
-
+		    <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>3.1.1</version>
+				<executions>
+					<execution>
+						<id>checkstyle-validation</id>
+						<phase>validate</phase>
+						<goals>
+						  <goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+ 				<configuration>
+				<!-- Checkstyle configuration options -->
+					<failOnViolation>false</failOnViolation>
+				</configuration>
+		    </plugin>
 		</plugins>
 	</build>
 
