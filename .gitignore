@@ -338,3 +338,4 @@ replay_pid*
 /pandora-data/target/maven-javadoc-plugin-stale-data.txt
 /pandora-web/target/surefire-reports/2023-05-21T16-38-57_211-jvmRun1.dump
 /target/javadoc-bundle-options/javadoc-options-javadoc-resources.xml
+/pandora-web/target/surefire-reports/2023-05-22T20-26-44_913-jvmRun1.dump

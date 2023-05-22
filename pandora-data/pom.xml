@@ -83,6 +83,13 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+	            <artifactId>maven-javadoc-plugin</artifactId>
+				<configuration>
+					<reportOutputDirectory>${project.basedir}/../docs/pandora-data</reportOutputDirectory>
+				</configuration>
+	        </plugin>
 		</plugins>
 	</build>
 </project>
