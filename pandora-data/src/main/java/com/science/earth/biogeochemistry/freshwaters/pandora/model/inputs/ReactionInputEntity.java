@@ -3,8 +3,6 @@
  */
 package com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.model.AbstractBaseEntity;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -24,7 +22,7 @@ import lombok.experimental.SuperBuilder;
 @Entity
 @SuperBuilder
 @Table(name = "reactions")
-public abstract class ReactionInputEntity extends AbstractBaseEntity {
+public abstract class ReactionInputEntity extends AbstractInputEntity {
 
     private static final long serialVersionUID = -2032204521712978301L;
     

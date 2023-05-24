@@ -7,7 +7,7 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.Specie
 import com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.SpecieInputService;
 
 @Service
-public class SpecieInputServiceImpl extends AbstractBaseEntityServiceImpl<SpecieInputEntity> implements SpecieInputService {
+public class SpecieInputServiceImpl extends AbstractInputEntityServiceImpl<SpecieInputEntity> implements SpecieInputService {
 
     public SpecieInputServiceImpl(ErrorMessageGenerator errorMessageGenerator) {
 	super(errorMessageGenerator);

@@ -7,7 +7,7 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.Reacti
 import com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.ReactionInputService;
 
 @Service
-public class ReactionInputServiceImpl extends AbstractBaseEntityServiceImpl<ReactionInputEntity> implements ReactionInputService {
+public class ReactionInputServiceImpl extends AbstractInputEntityServiceImpl<ReactionInputEntity> implements ReactionInputService {
 
     public ReactionInputServiceImpl(ErrorMessageGenerator errorMessageGenerator) {
 	super(errorMessageGenerator);

@@ -22,7 +22,7 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.services.entityserv
 import com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.SpecieInputService;
 
 @Service
-public class SchemeInputServiceImpl extends AbstractBaseEntityServiceImpl<SchemeInputEntity> implements SchemeInputService {
+public class SchemeInputServiceImpl extends AbstractInputEntityServiceImpl<SchemeInputEntity> implements SchemeInputService {
 
     @Autowired
     SchemeCrudService schemeCrudService;
