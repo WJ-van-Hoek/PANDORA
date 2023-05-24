@@ -30,6 +30,7 @@ class SpecieInputCrudServiceImplTest {
 
     @Test
     void testSpecieCrudServiceImpl() {
+	assertEquals(errorMessageGenerator, specieCrudServiceImpl.errorMessageGenerator);
 	assertEquals(specieRepository, specieCrudServiceImpl.repository);
     }
 

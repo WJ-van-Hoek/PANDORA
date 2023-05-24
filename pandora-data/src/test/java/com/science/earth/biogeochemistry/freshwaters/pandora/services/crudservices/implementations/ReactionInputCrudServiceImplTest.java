@@ -30,6 +30,7 @@ class ReactionInputCrudServiceImplTest {
 
     @Test
     void testReactionCrudServiceImpl() {
+	assertEquals(errorMessageGenerator, reactionCrudServiceImpl.errorMessageGenerator);
 	assertEquals(reactionRepository, reactionCrudServiceImpl.repository);
     }
 

@@ -30,6 +30,7 @@ class SourceInputCrudServiceImplTest {
 
     @Test
     void testSourceCrudServiceImpl() {
+	assertEquals(errorMessageGenerator, sourceCrudServiceImpl.errorMessageGenerator);
 	assertEquals(sourceRepository, sourceCrudServiceImpl.repository);
     }
 

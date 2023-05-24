@@ -30,6 +30,7 @@ class SchemeInputCrudServiceImplTest {
 
     @Test
     void testSchemeCrudServiceImpl() {
+	assertEquals(errorMessageGenerator, schemeCrudServiceImpl.errorMessageGenerator);
 	assertEquals(schemeRepository, schemeCrudServiceImpl.repository);
     }
 
