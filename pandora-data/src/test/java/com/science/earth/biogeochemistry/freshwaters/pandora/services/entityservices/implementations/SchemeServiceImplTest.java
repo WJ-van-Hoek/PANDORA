@@ -21,10 +21,10 @@ import org.mockito.MockitoAnnotations;
 import com.science.earth.biogeochemistry.freshwaters.pandora.errors.CrudError;
 import com.science.earth.biogeochemistry.freshwaters.pandora.errors.ErrorMessageGenerator;
 import com.science.earth.biogeochemistry.freshwaters.pandora.errors.ServiceImplError;
-import com.science.earth.biogeochemistry.freshwaters.pandora.model.Reaction;
-import com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme;
-import com.science.earth.biogeochemistry.freshwaters.pandora.model.Source;
-import com.science.earth.biogeochemistry.freshwaters.pandora.model.Specie;
+import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.ReactionInputEntity;
+import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.SchemeInputEntity;
+import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.SourceInputEntity;
+import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.SpecieInputEntity;
 import com.science.earth.biogeochemistry.freshwaters.pandora.services.ConcreteReaction;
 import com.science.earth.biogeochemistry.freshwaters.pandora.services.ConcreteSource;
 import com.science.earth.biogeochemistry.freshwaters.pandora.services.ConcreteSpecie;
@@ -65,13 +65,13 @@ class SchemeServiceImplTest {
     @InjectMocks
     SchemeServiceImpl schemeServiceImpl;
       
-    Scheme scheme;
+    SchemeInputEntity scheme;
 
     @BeforeEach
     void setUp() throws Exception {
 	MockitoAnnotations.openMocks(this);
 	
-	scheme = Scheme.builder().id(1L).name("testName").build();
+	scheme = SchemeInputEntity.builder().id(1L).name("testName").build();
     }
 
     @Test
@@ -80,7 +80,7 @@ class SchemeServiceImplTest {
 	when(schemeCrudService.save(scheme)).thenReturn(scheme);	
 	
 	// when
-	Scheme savedScheme = schemeServiceImpl.safeSave(scheme);
+	SchemeInputEntity savedScheme = schemeServiceImpl.safeSave(scheme);
 	
 	// then
 	verify(schemeCrudService, times(1)).save(scheme);
@@ -103,7 +103,7 @@ class SchemeServiceImplTest {
 	verify(schemeCrudService, times(1)).save(null);
 	verify(errorMessageGenerator, times(1)).generate(messageCaptor.capture(), classNameCaptor.capture());
 	assertEquals("concrete.crud.service.object.null", messageCaptor.getValue());
-	assertEquals("Scheme", classNameCaptor.getValue());
+	assertEquals("SchemeInputEntity", classNameCaptor.getValue());
 	assertEquals("this is a mocked error message", e.getMessage());
     }
 
@@ -112,7 +112,7 @@ class SchemeServiceImplTest {
 	// given
 	assertEquals(0, scheme.getReactions().size());
 	when(schemeCrudService.save(scheme)).thenReturn(scheme);
-	Reaction reaction = ConcreteReaction.builder().build();
+	ReactionInputEntity reaction = ConcreteReaction.builder().build();
 		
 	// when
 	schemeServiceImpl.addReactionToScheme(scheme, reaction);
@@ -128,7 +128,7 @@ class SchemeServiceImplTest {
 	// given
 	assertEquals(0, scheme.getReactions().size());
 	when(schemeCrudService.save(scheme)).thenReturn(scheme);
-	Reaction reaction = ConcreteReaction.builder().id(2l).build();
+	ReactionInputEntity reaction = ConcreteReaction.builder().id(2l).build();
 	when(reactionCrudService.findById(any(Long.class))).thenReturn(reaction);
 	
 	// when
@@ -149,7 +149,7 @@ class SchemeServiceImplTest {
 	// given
 	assertEquals(0, scheme.getReactions().size());
 	when(schemeCrudService.save(scheme)).thenReturn(scheme);
-	Reaction reaction = ConcreteReaction.builder().id(2l).build();
+	ReactionInputEntity reaction = ConcreteReaction.builder().id(2l).build();
 	when(schemeCrudService.findById(any(Long.class))).thenReturn(scheme);
 	when(reactionCrudService.findById(any(Long.class))).thenReturn(reaction);
 	
@@ -174,7 +174,7 @@ class SchemeServiceImplTest {
 	// given
 	assertEquals(0, scheme.getSources().size());
 	when(schemeCrudService.save(scheme)).thenReturn(scheme);
-	Source source = ConcreteSource.builder().build();
+	SourceInputEntity source = ConcreteSource.builder().build();
 		
 	// when
 	schemeServiceImpl.addSourceToScheme(scheme, source);
@@ -190,7 +190,7 @@ class SchemeServiceImplTest {
 	// given
 	assertEquals(0, scheme.getSources().size());
 	when(schemeCrudService.save(scheme)).thenReturn(scheme);
-	Source source = ConcreteSource.builder().id(2l).build();
+	SourceInputEntity source = ConcreteSource.builder().id(2l).build();
 	
 	when(sourceCrudService.findById(any(Long.class))).thenReturn(source);
 	
@@ -212,7 +212,7 @@ class SchemeServiceImplTest {
 	// given
 	assertEquals(0, scheme.getSources().size());
 	when(schemeCrudService.save(scheme)).thenReturn(scheme);
-	Source source = ConcreteSource.builder().id(2l).build();
+	SourceInputEntity source = ConcreteSource.builder().id(2l).build();
 	when(schemeCrudService.findById(any(Long.class))).thenReturn(scheme);
 	when(sourceCrudService.findById(any(Long.class))).thenReturn(source);
 	
@@ -237,7 +237,7 @@ class SchemeServiceImplTest {
 	// given
 	assertEquals(0, scheme.getSpecies().size());
 	when(schemeCrudService.save(scheme)).thenReturn(scheme);
-	Specie specie = ConcreteSpecie.builder().build();
+	SpecieInputEntity specie = ConcreteSpecie.builder().build();
 		
 	// when
 	schemeServiceImpl.addSpecieToScheme(scheme, specie);
@@ -253,7 +253,7 @@ class SchemeServiceImplTest {
 	// given
 	assertEquals(0, scheme.getSpecies().size());
 	when(schemeCrudService.save(scheme)).thenReturn(scheme);
-	Specie specie = ConcreteSpecie.builder().id(2l).build();
+	SpecieInputEntity specie = ConcreteSpecie.builder().id(2l).build();
 	
 	when(specieCrudService.findById(any(Long.class))).thenReturn(specie);
 	
@@ -275,7 +275,7 @@ class SchemeServiceImplTest {
 	// given
 	assertEquals(0, scheme.getSpecies().size());
 	when(schemeCrudService.save(scheme)).thenReturn(scheme);
-	Specie specie = ConcreteSpecie.builder().id(2l).build();
+	SpecieInputEntity specie = ConcreteSpecie.builder().id(2l).build();
 	when(schemeCrudService.findById(any(Long.class))).thenReturn(scheme);
 	when(specieCrudService.findById(any(Long.class))).thenReturn(specie);
 	
@@ -298,10 +298,10 @@ class SchemeServiceImplTest {
     @Test
     void testDeleteReactionFromScheme() {
 	// given
-	Reaction reaction = ConcreteReaction.builder().build();
-	Set<Reaction> reactionSet = new HashSet<>();
+	ReactionInputEntity reaction = ConcreteReaction.builder().build();
+	Set<ReactionInputEntity> reactionSet = new HashSet<>();
 	reactionSet.add(reaction);
-	Scheme scheme = Scheme.builder().reactions(reactionSet).build();
+	SchemeInputEntity scheme = SchemeInputEntity.builder().reactions(reactionSet).build();
 	assertEquals(1, scheme.getReactions().size());
 		
 	// when
@@ -315,10 +315,10 @@ class SchemeServiceImplTest {
     @Test
     void testDeleteReactionByIdFromScheme() {
 	// given
-	Reaction reaction = ConcreteReaction.builder().id(2L).build();
-	Set<Reaction> reactionSet = new HashSet<>();
+	ReactionInputEntity reaction = ConcreteReaction.builder().id(2L).build();
+	Set<ReactionInputEntity> reactionSet = new HashSet<>();
 	reactionSet.add(reaction);
-	Scheme scheme = Scheme.builder().reactions(reactionSet).build();
+	SchemeInputEntity scheme = SchemeInputEntity.builder().reactions(reactionSet).build();
 	assertEquals(1, scheme.getReactions().size());
 	when(reactionCrudService.findById(2L)).thenReturn(reaction);
 		
@@ -333,10 +333,10 @@ class SchemeServiceImplTest {
     @Test
     void testDeleteReactionByIdFromSchemeById() {
 	// given
-	Reaction reaction = ConcreteReaction.builder().id(2L).build();
-	Set<Reaction> reactionSet = new HashSet<>();
+	ReactionInputEntity reaction = ConcreteReaction.builder().id(2L).build();
+	Set<ReactionInputEntity> reactionSet = new HashSet<>();
 	reactionSet.add(reaction);
-	Scheme scheme = Scheme.builder().reactions(reactionSet).build();
+	SchemeInputEntity scheme = SchemeInputEntity.builder().reactions(reactionSet).build();
 	assertEquals(1, scheme.getReactions().size());
 	when(reactionCrudService.findById(2L)).thenReturn(reaction);
 	when(schemeCrudService.findById(1L)).thenReturn(scheme);
@@ -352,10 +352,10 @@ class SchemeServiceImplTest {
     @Test
     void testDeleteSourceFromScheme() {
 	// given
-	Source source = ConcreteSource.builder().build();
-	Set<Source> sourceSet = new HashSet<>();
+	SourceInputEntity source = ConcreteSource.builder().build();
+	Set<SourceInputEntity> sourceSet = new HashSet<>();
 	sourceSet.add(source);
-	Scheme scheme = Scheme.builder().sources(sourceSet).build();
+	SchemeInputEntity scheme = SchemeInputEntity.builder().sources(sourceSet).build();
 	assertEquals(1, scheme.getSources().size());
 		
 	// when
@@ -369,10 +369,10 @@ class SchemeServiceImplTest {
     @Test
     void testDeleteSourceByIdFromScheme() {
 	// given
-	Source source = ConcreteSource.builder().id(2L).build();
-	Set<Source> sourceSet = new HashSet<>();
+	SourceInputEntity source = ConcreteSource.builder().id(2L).build();
+	Set<SourceInputEntity> sourceSet = new HashSet<>();
 	sourceSet.add(source);
-	Scheme scheme = Scheme.builder().sources(sourceSet).build();
+	SchemeInputEntity scheme = SchemeInputEntity.builder().sources(sourceSet).build();
 	assertEquals(1, scheme.getSources().size());
 	when(sourceCrudService.findById(2L)).thenReturn(source);
 		
@@ -387,10 +387,10 @@ class SchemeServiceImplTest {
     @Test
     void testDeleteSourceByIdFromSchemeById() {
 	// given
-	Source source = ConcreteSource.builder().id(2L).build();
-	Set<Source> sourceSet = new HashSet<>();
+	SourceInputEntity source = ConcreteSource.builder().id(2L).build();
+	Set<SourceInputEntity> sourceSet = new HashSet<>();
 	sourceSet.add(source);
-	Scheme scheme = Scheme.builder().sources(sourceSet).build();
+	SchemeInputEntity scheme = SchemeInputEntity.builder().sources(sourceSet).build();
 	assertEquals(1, scheme.getSources().size());
 	when(sourceCrudService.findById(2L)).thenReturn(source);
 	when(schemeCrudService.findById(1L)).thenReturn(scheme);
@@ -406,10 +406,10 @@ class SchemeServiceImplTest {
     @Test
     void testDeleteSpecieFromScheme() {
 	// given
-	Specie specie = ConcreteSpecie.builder().build();
-	Set<Specie> specieSet = new HashSet<>();
+	SpecieInputEntity specie = ConcreteSpecie.builder().build();
+	Set<SpecieInputEntity> specieSet = new HashSet<>();
 	specieSet.add(specie);
-	Scheme scheme = Scheme.builder().species(specieSet).build();
+	SchemeInputEntity scheme = SchemeInputEntity.builder().species(specieSet).build();
 	assertEquals(1, scheme.getSpecies().size());
 		
 	// when
@@ -423,10 +423,10 @@ class SchemeServiceImplTest {
     @Test
     void testDeleteSpecieByIdFromScheme() {
 	// given
-	Specie specie = ConcreteSpecie.builder().id(2L).build();
-	Set<Specie> specieSet = new HashSet<>();
+	SpecieInputEntity specie = ConcreteSpecie.builder().id(2L).build();
+	Set<SpecieInputEntity> specieSet = new HashSet<>();
 	specieSet.add(specie);
-	Scheme scheme = Scheme.builder().species(specieSet).build();
+	SchemeInputEntity scheme = SchemeInputEntity.builder().species(specieSet).build();
 	assertEquals(1, scheme.getSpecies().size());
 	when(specieCrudService.findById(2L)).thenReturn(specie);
 		
@@ -441,10 +441,10 @@ class SchemeServiceImplTest {
     @Test
     void testDeleteSpecieByIdFromSchemeById() {
 	// given
-	Specie specie = ConcreteSpecie.builder().id(2L).build();
-	Set<Specie> specieSet = new HashSet<>();
+	SpecieInputEntity specie = ConcreteSpecie.builder().id(2L).build();
+	Set<SpecieInputEntity> specieSet = new HashSet<>();
 	specieSet.add(specie);
-	Scheme scheme = Scheme.builder().species(specieSet).build();
+	SchemeInputEntity scheme = SchemeInputEntity.builder().species(specieSet).build();
 	assertEquals(1, scheme.getSpecies().size());
 	when(specieCrudService.findById(2L)).thenReturn(specie);
 	when(schemeCrudService.findById(1L)).thenReturn(scheme);
@@ -462,10 +462,10 @@ class SchemeServiceImplTest {
 	// given
 	assertEquals(0, scheme.getReactions().size());
 	when(schemeCrudService.save(scheme)).thenReturn(scheme);
-	Set<Reaction> reactionSet = new HashSet<>();
-	Reaction reaction1 = ConcreteReaction.builder().build();
+	Set<ReactionInputEntity> reactionSet = new HashSet<>();
+	ReactionInputEntity reaction1 = ConcreteReaction.builder().build();
 	reactionSet.add(reaction1);
-	Reaction reaction2 = ConcreteReaction.builder().build();
+	ReactionInputEntity reaction2 = ConcreteReaction.builder().build();
 	reactionSet.add(reaction2);
 		
 	// when
@@ -483,10 +483,10 @@ class SchemeServiceImplTest {
 	// given
 	assertEquals(0, scheme.getSources().size());
 	when(schemeCrudService.save(scheme)).thenReturn(scheme);
-	Set<Source> sourceSet = new HashSet<>();
-	Source source1 = ConcreteSource.builder().build();
+	Set<SourceInputEntity> sourceSet = new HashSet<>();
+	SourceInputEntity source1 = ConcreteSource.builder().build();
 	sourceSet.add(source1);
-	Source source2 = ConcreteSource.builder().build();
+	SourceInputEntity source2 = ConcreteSource.builder().build();
 	sourceSet.add(source2);
 		
 	// when
@@ -504,10 +504,10 @@ class SchemeServiceImplTest {
 	// given
 	assertEquals(0, scheme.getSpecies().size());
 	when(schemeCrudService.save(scheme)).thenReturn(scheme);
-	Set<Specie> specieSet = new HashSet<>();
-	Specie specie1 = ConcreteSpecie.builder().build();
+	Set<SpecieInputEntity> specieSet = new HashSet<>();
+	SpecieInputEntity specie1 = ConcreteSpecie.builder().build();
 	specieSet.add(specie1);
-	Specie specie2 = ConcreteSpecie.builder().build();
+	SpecieInputEntity specie2 = ConcreteSpecie.builder().build();
 	specieSet.add(specie2);
 		
 	// when

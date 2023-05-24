@@ -1,10 +1,10 @@
 package com.science.earth.biogeochemistry.freshwaters.pandora.services;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.model.Reaction;
+import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.ReactionInputEntity;
 
 import lombok.Builder;
 
-public class ConcreteReaction extends Reaction {
+public class ConcreteReaction extends ReactionInputEntity {
 
     private static final long serialVersionUID = -8227752233932352679L;
     

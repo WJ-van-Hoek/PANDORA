@@ -9,13 +9,13 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import com.science.earth.biogeochemistry.freshwaters.pandora.errors.ErrorMessageGenerator;
-import com.science.earth.biogeochemistry.freshwaters.pandora.model.Source;
+import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.SourceInputEntity;
 import com.science.earth.biogeochemistry.freshwaters.pandora.repositories.SourceRepository;
 
 class SourceCrudServiceImplTest {
 
     @Mock
-    SourceRepository<Source> sourceRepository;
+    SourceRepository<SourceInputEntity> sourceRepository;
 
     @Mock
     ErrorMessageGenerator errorMessageGenerator;

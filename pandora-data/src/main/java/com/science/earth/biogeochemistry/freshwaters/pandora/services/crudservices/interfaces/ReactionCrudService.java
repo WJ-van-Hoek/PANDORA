@@ -1,7 +1,7 @@
 package com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.model.Reaction;
+import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.ReactionInputEntity;
 
-public interface ReactionCrudService extends AbstractBaseEntityCrudService<Reaction> {
+public interface ReactionCrudService extends AbstractBaseEntityCrudService<ReactionInputEntity> {
 
 }

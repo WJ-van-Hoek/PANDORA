@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.science.earth.biogeochemistry.freshwaters.pandora.model;
+package com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -20,7 +20,7 @@ import lombok.experimental.SuperBuilder;
 @Entity
 @SuperBuilder
 @Table(name = "species")
-public abstract class Specie extends AbstractBaseEntity {
+public abstract class SpecieInputEntity extends AbstractInputEntity {
 
     private static final long serialVersionUID = -4713024593142103209L;
     
@@ -28,7 +28,7 @@ public abstract class Specie extends AbstractBaseEntity {
     
     private int molarMass;
     
-    protected Specie(Long id, String name, String unit, int molarMass) {
+    protected SpecieInputEntity(Long id, String name, String unit, int molarMass) {
 	super(id, name);
 	this.unit = unit;
 	this.molarMass = molarMass;

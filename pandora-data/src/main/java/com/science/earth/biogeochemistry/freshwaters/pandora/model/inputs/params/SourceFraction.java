@@ -1,4 +1,8 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.model;
+package com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.params;
+
+import com.science.earth.biogeochemistry.freshwaters.pandora.model.AbstractBaseEntity;
+import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.SourceInputEntity;
+import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.SpecieInputEntity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -21,11 +25,11 @@ public class SourceFraction extends AbstractBaseEntity {
     
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "specie_id")
-    private Specie specie;
+    private SpecieInputEntity specie;
     
     private float fractional;
     
     @ManyToOne
     @JoinColumn(name = "source_id")
-    private Source source;
+    private SourceInputEntity source;
 }

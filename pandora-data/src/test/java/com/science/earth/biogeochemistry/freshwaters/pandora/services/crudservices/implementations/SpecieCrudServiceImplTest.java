@@ -9,13 +9,13 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import com.science.earth.biogeochemistry.freshwaters.pandora.errors.ErrorMessageGenerator;
-import com.science.earth.biogeochemistry.freshwaters.pandora.model.Specie;
+import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.SpecieInputEntity;
 import com.science.earth.biogeochemistry.freshwaters.pandora.repositories.SpecieRepository;
 
 class SpecieCrudServiceImplTest {
 
     @Mock
-    SpecieRepository<Specie> specieRepository;
+    SpecieRepository<SpecieInputEntity> specieRepository;
 
     @Mock
     ErrorMessageGenerator errorMessageGenerator;
