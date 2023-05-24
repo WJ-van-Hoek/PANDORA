@@ -2,6 +2,6 @@ package com.science.earth.biogeochemistry.freshwaters.pandora.services.entityser
 
 import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.ReactionInputEntity;
 
-public interface ReactionService extends AbstractBaseEntityService<ReactionInputEntity> {
+public interface ReactionInputService extends AbstractBaseEntityService<ReactionInputEntity> {
 
 }
