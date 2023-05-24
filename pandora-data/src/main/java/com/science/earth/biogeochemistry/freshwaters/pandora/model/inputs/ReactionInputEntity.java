@@ -1,7 +1,9 @@
 /**
  * 
  */
-package com.science.earth.biogeochemistry.freshwaters.pandora.model;
+package com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs;
+
+import com.science.earth.biogeochemistry.freshwaters.pandora.model.AbstractBaseEntity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -22,13 +24,13 @@ import lombok.experimental.SuperBuilder;
 @Entity
 @SuperBuilder
 @Table(name = "reactions")
-public abstract class Reaction extends AbstractBaseEntity {
+public abstract class ReactionInputEntity extends AbstractBaseEntity {
 
     private static final long serialVersionUID = -2032204521712978301L;
     
     private float rate;
     
-    protected Reaction(Long id, String name, float rate) {
+    protected ReactionInputEntity(Long id, String name, float rate) {
 	super(id, name);
 	this.rate = rate;
     }

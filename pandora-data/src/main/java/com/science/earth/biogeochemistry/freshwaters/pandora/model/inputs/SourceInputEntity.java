@@ -1,7 +1,9 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.model;
+package com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs;
 
 import java.util.HashSet;
 import java.util.Set;
+
+import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.params.SourceFraction;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -16,7 +18,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name = "sources")
-public abstract class Source extends AbstractBaseEntity {
+public abstract class SourceInputEntity extends AbstractInputEntity {
 
     private static final long serialVersionUID = 6079241974433175927L;
     
@@ -25,7 +27,7 @@ public abstract class Source extends AbstractBaseEntity {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "source")
     private Set<SourceFraction> fractionals = new HashSet<>();
     
-    protected Source(Long id, String name, Set<SourceFraction> fractionals) {
+    protected SourceInputEntity(Long id, String name, Set<SourceFraction> fractionals) {
 	super(id, name);
 	this.fractionals = fractionals;
     }

@@ -2,51 +2,51 @@ package com.science.earth.biogeochemistry.freshwaters.pandora.services.entityser
 
 import java.util.Set;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.model.Reaction;
-import com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme;
-import com.science.earth.biogeochemistry.freshwaters.pandora.model.Source;
-import com.science.earth.biogeochemistry.freshwaters.pandora.model.Specie;
+import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.ReactionInputEntity;
+import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.SchemeInputEntity;
+import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.SourceInputEntity;
+import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.SpecieInputEntity;
 
-public interface SchemeService extends AbstractBaseEntityService<Scheme> {
-    public void addReactionToScheme(Scheme scheme, Reaction reaction);
+public interface SchemeService extends AbstractBaseEntityService<SchemeInputEntity> {
+    public void addReactionToScheme(SchemeInputEntity scheme, ReactionInputEntity reaction);
     
-    public void addReactionByIdToScheme(Scheme scheme, Long reactionId);
+    public void addReactionByIdToScheme(SchemeInputEntity scheme, Long reactionId);
     
     public void addReactionByIdToSchemeById(Long schemeId, Long reactionId);
 
-    public void addSourceToScheme(Scheme scheme, Source source);
+    public void addSourceToScheme(SchemeInputEntity scheme, SourceInputEntity source);
     
-    public void addSourceByIdToScheme(Scheme scheme, Long sourceId);
+    public void addSourceByIdToScheme(SchemeInputEntity scheme, Long sourceId);
     
     public void addSourceByIdToSchemeById(Long schemeId, Long sourceId);
 
-    public void addSpecieToScheme(Scheme scheme, Specie specie);
+    public void addSpecieToScheme(SchemeInputEntity scheme, SpecieInputEntity specie);
     
-    public void addSpecieByIdToScheme(Scheme scheme, Long specieId);
+    public void addSpecieByIdToScheme(SchemeInputEntity scheme, Long specieId);
     
     public void addSpecieByIdToSchemeById(Long schemeId, Long specieId);
 
-    public void deleteReactionFromScheme(Scheme scheme, Reaction reaction);
+    public void deleteReactionFromScheme(SchemeInputEntity scheme, ReactionInputEntity reaction);
     
-    public void deleteReactionByIdFromScheme(Scheme scheme, Long reactionId);
+    public void deleteReactionByIdFromScheme(SchemeInputEntity scheme, Long reactionId);
     
     public void deleteReactionByIdFromSchemeById(Long schemeId, Long reactionId);
 
-    public void deleteSourceFromScheme(Scheme scheme, Source source);
+    public void deleteSourceFromScheme(SchemeInputEntity scheme, SourceInputEntity source);
     
-    public void deleteSourceByIdFromScheme(Scheme scheme, Long sourceId);
+    public void deleteSourceByIdFromScheme(SchemeInputEntity scheme, Long sourceId);
     
     public void deleteSourceByIdFromSchemeById(Long schemeId, Long sourceId);
 
-    public void deleteSpecieFromScheme(Scheme scheme, Specie specie);
+    public void deleteSpecieFromScheme(SchemeInputEntity scheme, SpecieInputEntity specie);
 
-    public void deleteSpecieByIdFromScheme(Scheme scheme, Long specieId);
+    public void deleteSpecieByIdFromScheme(SchemeInputEntity scheme, Long specieId);
     
     public void deleteSpecieByIdFromSchemeById(Long schemeId, Long specieId);
     
-    public void addReactionSetToScheme(Scheme scheme, Set<Reaction> reactions);
+    public void addReactionSetToScheme(SchemeInputEntity scheme, Set<ReactionInputEntity> reactions);
 
-    public void addSourceSetToScheme(Scheme scheme, Set<Source> sources);
+    public void addSourceSetToScheme(SchemeInputEntity scheme, Set<SourceInputEntity> sources);
 
-    public void addSpecieSetToScheme(Scheme scheme, Set<Specie> species);
+    public void addSpecieSetToScheme(SchemeInputEntity scheme, Set<SpecieInputEntity> species);
 }

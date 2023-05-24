@@ -1,7 +1,7 @@
 package com.science.earth.biogeochemistry.freshwaters.pandora.repositories;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme;
+import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.SchemeInputEntity;
 
-public interface SchemeRepository<T extends Scheme> extends AbstractBaseEntityRepository<T> {
+public interface SchemeRepository<T extends SchemeInputEntity> extends AbstractBaseEntityRepository<T> {
 
 }
