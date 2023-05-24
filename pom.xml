@@ -10,7 +10,8 @@
 	<modules>
         <module>pandora-data</module>
         <module>pandora-web</module>
-    </modules>
+        <module>pandora-calculation</module>
+	</modules>
 
     <packaging>pom</packaging>
 
