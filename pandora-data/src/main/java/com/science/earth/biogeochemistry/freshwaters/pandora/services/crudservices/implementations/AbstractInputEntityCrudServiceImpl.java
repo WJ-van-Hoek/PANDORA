@@ -8,13 +8,13 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.repositories.Abstra
 import com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces.AbstractInputEntityCrudService;
 
 @Service
-public class AbstractInputEntityCrudServiceImpl<T extends AbstractInputEntity>
+public abstract class AbstractInputEntityCrudServiceImpl<T extends AbstractInputEntity>
 	extends AbstractBaseEntityCrudServiceImpl<T, AbstractInputEntityRepository<T>>
 	implements AbstractInputEntityCrudService<T> {
 
     protected AbstractInputEntityCrudServiceImpl(AbstractInputEntityRepository<T> repository,
 	    ErrorMessageGenerator errorMessageGenerator) {
 	super(repository, errorMessageGenerator);
-    }
+    }	
 
 }

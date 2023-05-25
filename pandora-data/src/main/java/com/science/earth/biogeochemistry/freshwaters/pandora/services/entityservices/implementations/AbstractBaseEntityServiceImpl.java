@@ -4,18 +4,21 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.science.earth.biogeochemistry.freshwaters.pandora.errors.ErrorMessageGenerator;
 import com.science.earth.biogeochemistry.freshwaters.pandora.errors.ServiceImplError;
 import com.science.earth.biogeochemistry.freshwaters.pandora.model.AbstractBaseEntity;
 import com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.AbstractBaseEntityService;
 
-public class AbstractBaseEntityServiceImpl<T extends AbstractBaseEntity> implements AbstractBaseEntityService<T> {
+@Service
+public abstract class AbstractBaseEntityServiceImpl<T extends AbstractBaseEntity>
+	implements AbstractBaseEntityService<T> {
 
     @Autowired
-    ErrorMessageGenerator errorMessageGenerator;
+    protected ErrorMessageGenerator errorMessageGenerator;
 
-    public AbstractBaseEntityServiceImpl(ErrorMessageGenerator errorMessageGenerator) {
+    protected AbstractBaseEntityServiceImpl(ErrorMessageGenerator errorMessageGenerator) {
 	this.errorMessageGenerator = errorMessageGenerator;
     }
 
@@ -25,7 +28,7 @@ public class AbstractBaseEntityServiceImpl<T extends AbstractBaseEntity> impleme
 	    throw new ServiceImplError(errorMessageGenerator.generate("abstract.crud.service.object.null"));
 	}
     }
-    
+
     @Override
     public boolean isNew(T baseEntity) {
 	return baseEntity.getId() == null;
