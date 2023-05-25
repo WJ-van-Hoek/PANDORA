@@ -7,7 +7,7 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.Scheme
 import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.SourceInputEntity;
 import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.SpecieInputEntity;
 
-public interface SchemeService extends AbstractBaseEntityService<SchemeInputEntity> {
+public interface SchemeInputService extends AbstractInputEntityService<SchemeInputEntity> {
     public void addReactionToScheme(SchemeInputEntity scheme, ReactionInputEntity reaction);
     
     public void addReactionByIdToScheme(SchemeInputEntity scheme, Long reactionId);

@@ -16,13 +16,13 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservic
 import com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces.SchemeCrudService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces.SourceCrudService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces.SpecieCrudService;
-import com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.ReactionService;
-import com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.SchemeService;
-import com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.SourceService;
-import com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.SpecieService;
+import com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.ReactionInputService;
+import com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.SchemeInputService;
+import com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.SourceInputService;
+import com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.SpecieInputService;
 
 @Service
-public class SchemeServiceImpl extends AbstractBaseEntityServiceImpl<SchemeInputEntity> implements SchemeService {
+public class SchemeInputServiceImpl extends AbstractInputEntityServiceImpl<SchemeInputEntity> implements SchemeInputService {
 
     @Autowired
     SchemeCrudService schemeCrudService;
@@ -31,23 +31,23 @@ public class SchemeServiceImpl extends AbstractBaseEntityServiceImpl<SchemeInput
     ReactionCrudService reactionCrudService;
 
     @Autowired
-    ReactionService reactionService;
+    ReactionInputService reactionService;
 
     @Autowired
     SourceCrudService sourceCrudService;
 
     @Autowired
-    SourceService sourceService;
+    SourceInputService sourceService;
 
     @Autowired
     SpecieCrudService specieCrudService;
 
     @Autowired
-    SpecieService specieService;
+    SpecieInputService specieService;
 
-    protected SchemeServiceImpl(SchemeCrudService schemeCrudService, ReactionCrudService reactionCrudService,
-	    ReactionService reactionService, SourceCrudService sourceCrudService, SourceService sourceService,
-	    SpecieCrudService specieCrudService, SpecieService specieService,
+    protected SchemeInputServiceImpl(SchemeCrudService schemeCrudService, ReactionCrudService reactionCrudService,
+	    ReactionInputService reactionService, SourceCrudService sourceCrudService, SourceInputService sourceService,
+	    SpecieCrudService specieCrudService, SpecieInputService specieService,
 	    ErrorMessageGenerator errorMessageGenerator) {
 	super(errorMessageGenerator);
 	this.schemeCrudService = schemeCrudService;

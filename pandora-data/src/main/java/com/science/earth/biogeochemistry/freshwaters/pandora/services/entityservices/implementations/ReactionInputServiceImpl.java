@@ -4,12 +4,12 @@ import org.springframework.stereotype.Service;
 
 import com.science.earth.biogeochemistry.freshwaters.pandora.errors.ErrorMessageGenerator;
 import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.ReactionInputEntity;
-import com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.ReactionService;
+import com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.ReactionInputService;
 
 @Service
-public class ReactionServiceImpl extends AbstractBaseEntityServiceImpl<ReactionInputEntity> implements ReactionService {
+public class ReactionInputServiceImpl extends AbstractInputEntityServiceImpl<ReactionInputEntity> implements ReactionInputService {
 
-    public ReactionServiceImpl(ErrorMessageGenerator errorMessageGenerator) {
+    public ReactionInputServiceImpl(ErrorMessageGenerator errorMessageGenerator) {
 	super(errorMessageGenerator);
     }
 

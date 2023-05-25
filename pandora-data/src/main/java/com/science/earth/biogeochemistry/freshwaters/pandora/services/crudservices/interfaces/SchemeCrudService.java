@@ -2,6 +2,6 @@ package com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservi
 
 import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.SchemeInputEntity;
 
-public interface SchemeCrudService extends AbstractBaseEntityCrudService<SchemeInputEntity> {
+public interface SchemeCrudService extends AbstractInputEntityCrudService<SchemeInputEntity> {
 
 }

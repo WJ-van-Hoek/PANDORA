@@ -23,7 +23,7 @@ public abstract class AbstractCrudServiceImpl<T, ID, R extends CrudRepository<T,
     protected R repository;
 
     @Autowired
-    ErrorMessageGenerator errorMessageGenerator;
+    protected ErrorMessageGenerator errorMessageGenerator;
 
     protected AbstractCrudServiceImpl(R repository, ErrorMessageGenerator errorMessageGenerator) {
 	this.repository = repository;

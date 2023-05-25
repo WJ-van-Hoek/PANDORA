@@ -10,13 +10,13 @@ import org.mockito.MockitoAnnotations;
 
 import com.science.earth.biogeochemistry.freshwaters.pandora.errors.ErrorMessageGenerator;
 
-class SpecieServiceImplTest {
+class ReactionInputServiceImplTest {
     
     @Mock
     ErrorMessageGenerator errorMessageGenerator;
 
     @InjectMocks
-    SpecieServiceImpl specieServiceImpl;
+    ReactionInputServiceImpl reactionServiceImpl;
 
     @BeforeEach
     void setUp() throws Exception {
@@ -24,8 +24,8 @@ class SpecieServiceImplTest {
     }
 
     @Test
-    void testSpecieServiceImpl() {
-	assertEquals(errorMessageGenerator, specieServiceImpl.errorMessageGenerator);
+    void testReactionServiceImpl() {
+	assertEquals(errorMessageGenerator, reactionServiceImpl.errorMessageGenerator);
     }
 
 }

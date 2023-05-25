@@ -9,19 +9,19 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import com.science.earth.biogeochemistry.freshwaters.pandora.errors.ErrorMessageGenerator;
-import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.SourceInputEntity;
-import com.science.earth.biogeochemistry.freshwaters.pandora.repositories.SourceRepository;
+import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.SchemeInputEntity;
+import com.science.earth.biogeochemistry.freshwaters.pandora.repositories.SchemeInputRepository;
 
-class SourceCrudServiceImplTest {
+class SchemeInputCrudServiceImplTest {
 
     @Mock
-    SourceRepository<SourceInputEntity> sourceRepository;
+    SchemeInputRepository<SchemeInputEntity> schemeRepository;
 
     @Mock
     ErrorMessageGenerator errorMessageGenerator;
 
     @InjectMocks
-    SourceCrudServiceImpl sourceCrudServiceImpl;
+    SchemeInputCrudServiceImpl schemeCrudServiceImpl;
 
     @BeforeEach
     void setUp() throws Exception {
@@ -29,8 +29,9 @@ class SourceCrudServiceImplTest {
     }
 
     @Test
-    void testSourceCrudServiceImpl() {
-	assertEquals(sourceRepository, sourceCrudServiceImpl.repository);
+    void testSchemeCrudServiceImpl() {
+	assertEquals(errorMessageGenerator, schemeCrudServiceImpl.errorMessageGenerator);
+	assertEquals(schemeRepository, schemeCrudServiceImpl.repository);
     }
 
 }

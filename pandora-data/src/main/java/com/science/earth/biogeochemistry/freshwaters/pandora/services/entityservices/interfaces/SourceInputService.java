@@ -2,6 +2,6 @@ package com.science.earth.biogeochemistry.freshwaters.pandora.services.entityser
 
 import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.SourceInputEntity;
 
-public interface SourceService extends AbstractBaseEntityService<SourceInputEntity> {
+public interface SourceInputService extends AbstractInputEntityService<SourceInputEntity> {
 
 }

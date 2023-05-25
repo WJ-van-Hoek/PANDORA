@@ -9,14 +9,16 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import com.science.earth.biogeochemistry.freshwaters.pandora.errors.ErrorMessageGenerator;
+import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.AbstractInputEntity;
+import com.science.earth.biogeochemistry.freshwaters.pandora.services.ConcreteInputEntityServiceImpl;
 
-class ReactionServiceImplTest {
+class AbstractInputEntityServiceImplTest {
     
     @Mock
     ErrorMessageGenerator errorMessageGenerator;
 
     @InjectMocks
-    ReactionServiceImpl reactionServiceImpl;
+    ConcreteInputEntityServiceImpl<AbstractInputEntity> concreteInputEntityServiceImpl;
 
     @BeforeEach
     void setUp() throws Exception {
@@ -24,8 +26,8 @@ class ReactionServiceImplTest {
     }
 
     @Test
-    void testReactionServiceImpl() {
-	assertEquals(errorMessageGenerator, reactionServiceImpl.errorMessageGenerator);
+    void testAbstractInputEntityServiceImpl() {
+	assertEquals(errorMessageGenerator, concreteInputEntityServiceImpl.errorMessageGenerator);
     }
 
 }

@@ -32,11 +32,11 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservic
 import com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces.SchemeCrudService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces.SourceCrudService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces.SpecieCrudService;
-import com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.ReactionService;
-import com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.SourceService;
-import com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.SpecieService;
+import com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.ReactionInputService;
+import com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.SourceInputService;
+import com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.SpecieInputService;
 
-class SchemeServiceImplTest {
+class SchemeInputServiceImplTest {
     
     @Mock
     SchemeCrudService schemeCrudService;
@@ -45,25 +45,25 @@ class SchemeServiceImplTest {
     ReactionCrudService reactionCrudService;
 
     @Mock
-    ReactionService reactionService;
+    ReactionInputService reactionService;
 
     @Mock
     SourceCrudService sourceCrudService;
 
     @Mock
-    SourceService sourceService;
+    SourceInputService sourceService;
 
     @Mock
     SpecieCrudService specieCrudService;
 
     @Mock
-    SpecieService specieService;
+    SpecieInputService specieService;
 
     @Mock
     ErrorMessageGenerator errorMessageGenerator;
     
     @InjectMocks
-    SchemeServiceImpl schemeServiceImpl;
+    SchemeInputServiceImpl schemeServiceImpl;
       
     SchemeInputEntity scheme;
 
