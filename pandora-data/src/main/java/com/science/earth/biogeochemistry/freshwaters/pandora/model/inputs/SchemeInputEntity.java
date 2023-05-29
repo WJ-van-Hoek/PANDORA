@@ -3,6 +3,8 @@ package com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.params.FloatInputParam;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
@@ -40,8 +42,9 @@ public class SchemeInputEntity extends AbstractInputEntity {
     private Set<SpecieInputEntity> species = new HashSet<>();
 
     @Builder
-    public SchemeInputEntity(Long id, String name, Set<ReactionInputEntity> reactions, Set<SourceInputEntity> sources, Set<SpecieInputEntity> species) {
-	super(id, name);
+    public SchemeInputEntity(Long id, String name, Set<ReactionInputEntity> reactions, Set<SourceInputEntity> sources,
+	    Set<SpecieInputEntity> species, Set<FloatInputParam> floatInputParams) {
+	super(id, name, floatInputParams);
 	this.reactions = ((reactions == null) || (reactions.isEmpty())) ? new HashSet<>() : reactions;
 	this.sources = ((sources == null) || (sources.isEmpty())) ? new HashSet<>() : sources;
 	this.species = ((species == null) || (species.isEmpty())) ? new HashSet<>() : species;
