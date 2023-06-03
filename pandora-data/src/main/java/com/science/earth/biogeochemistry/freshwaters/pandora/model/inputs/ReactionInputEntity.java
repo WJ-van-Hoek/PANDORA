@@ -9,10 +9,10 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.params
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.experimental.SuperBuilder;
 
 /**
  * @author Hoek0024 on 13 mei 2023
@@ -22,13 +22,13 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @NoArgsConstructor
 @Entity
-@SuperBuilder
 @Table(name = "reactions")
-public abstract class ReactionInputEntity extends AbstractInputEntity {
+public class ReactionInputEntity extends AbstractInputEntity {
 
     private static final long serialVersionUID = -2032204521712978301L;
 
-    protected ReactionInputEntity(Long id, String name, Set<FloatInputParam> floatInputParams) {
+    @Builder
+    public ReactionInputEntity(Long id, String name, Set<FloatInputParam> floatInputParams) {
 	super(id, name, floatInputParams);
     }
 
