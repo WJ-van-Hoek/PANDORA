@@ -29,11 +29,16 @@ public class SpecieInputCommandToSpecieInputEntity implements Converter<SpecieIn
 	result.setName(source.getName());
 	result.setUnit(source.getUnit());
 	result.setMolarMass(source.getMolarMass());
+	convertFloatInputParamCommands(source, result);
+	return result;
+    }
+
+    private void convertFloatInputParamCommands(SpecieInputCommand source, final SpecieInputEntity result) {
 	Set<FloatInputParam> floatInputParams = new HashSet<>();
 	for (FloatInputParamCommand value : source.getFloatInputParamCommands().values()) {
 	    floatInputParams.add(floatInputParamCommandToFloatInputParamConverter.convert(value));
 	}
-	return result;
+	result.setFloatInputParams(floatInputParams);
     }
 
 }
