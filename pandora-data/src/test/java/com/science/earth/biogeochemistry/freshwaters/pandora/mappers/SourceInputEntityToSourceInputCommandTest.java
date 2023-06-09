@@ -17,7 +17,6 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.params
 class SourceInputEntityToSourceInputCommandTest {
     private static final String TEST_NAME = "testName";
     private static final FloatInputParam floatInputParam = new FloatInputParam();
-    private static final Set<FloatInputParam> floatInputParams = new HashSet<>();
 
     @Spy
     FloatInputParamToFloatInputParamCommand floatInputParamToFloatInputParamCommandConverter;
@@ -49,6 +48,7 @@ class SourceInputEntityToSourceInputCommandTest {
     @Test
     void testConvert() {
 	// given
+	Set<FloatInputParam> floatInputParams = new HashSet<>();
 	SourceInputEntity sourceInputEntity = new SourceInputEntity();
 	sourceInputEntity.setName(TEST_NAME);
 	floatInputParams.add(floatInputParam);
@@ -65,6 +65,7 @@ class SourceInputEntityToSourceInputCommandTest {
     @Test
     void testConvertNullFloatInputParams() {
 	// given
+	Set<FloatInputParam> floatInputParams = new HashSet<>();
 	SourceInputEntity sourceInputEntity = new SourceInputEntity();
 	sourceInputEntity.setName(TEST_NAME);
 	floatInputParams.add(null);
