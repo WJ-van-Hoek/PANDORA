@@ -61,5 +61,21 @@ class SourceInputEntityToSourceInputCommandTest {
 	Assertions.assertEquals(TEST_NAME, sourceInputCommand.getName());
 	Assertions.assertEquals(1, sourceInputCommand.getFloatInputParamCommands().size());
     }
+    
+    @Test
+    void testConvertNullFloatInputParams() {
+	// given
+	SourceInputEntity sourceInputEntity = new SourceInputEntity();
+	sourceInputEntity.setName(TEST_NAME);
+	floatInputParams.add(null);
+	sourceInputEntity.setFloatInputParams(floatInputParams);
+
+	// when
+	SourceInputCommand sourceInputCommand = converter.convert(sourceInputEntity);
+
+	// then
+	Assertions.assertEquals(TEST_NAME, sourceInputCommand.getName());
+	Assertions.assertEquals(0, sourceInputCommand.getFloatInputParamCommands().size());
+    }
 
 }
