@@ -30,7 +30,6 @@ class SpecieInputEntityToSpecieInputCommandTest {
     @BeforeEach
     void setUp() throws Exception {
 	MockitoAnnotations.openMocks(this);
-	
     }
 
     @Test
