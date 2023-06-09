@@ -25,9 +25,9 @@ public class SchemeInputCommand extends AbstractBaseCommand {
 	    Map<String, SourceInputCommand> sourceInputCommands, Map<String, SpecieInputCommand> specieInputCommands,
 	    Map<String, FloatInputParamCommand> floatInputParamCommands) {
 	super(id, name);
-	this.floatInputParamCommands = floatInputParamCommands;
-	this.reactionInputCommands = reactionInputCommands;
-	this.sourceInputCommands = sourceInputCommands;
-	this.specieInputCommands = specieInputCommands;
+	this.floatInputParamCommands = floatInputParamCommands != null ? floatInputParamCommands : new HashMap<>();
+	this.reactionInputCommands = reactionInputCommands != null ? reactionInputCommands : new HashMap<>();
+	this.sourceInputCommands = sourceInputCommands != null ? sourceInputCommands : new HashMap<>();
+	this.specieInputCommands = specieInputCommands != null ? specieInputCommands : new HashMap<>();
     }
 }
