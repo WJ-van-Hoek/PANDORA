@@ -14,11 +14,11 @@ import lombok.Setter;
 @Setter
 @Getter
 @NoArgsConstructor
-public class SourceInputCommand extends AbstractBaseCommand {
+public class ReactionInputCommand extends AbstractBaseCommand {
     private Map<String, FloatInputParamCommand> floatInputParamCommands = new HashMap<>();
     
     @Builder
-    public SourceInputCommand(Long id, String name,
+    public ReactionInputCommand(Long id, String name,
 	    Map<String, FloatInputParamCommand> floatInputParamCommands) {
 	super(id, name);
 	this.floatInputParamCommands = floatInputParamCommands != null ? floatInputParamCommands : new HashMap<>();
