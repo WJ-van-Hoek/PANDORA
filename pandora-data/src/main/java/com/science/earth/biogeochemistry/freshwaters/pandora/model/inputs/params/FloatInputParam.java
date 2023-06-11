@@ -1,5 +1,7 @@
 package com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.params;
 
+import com.science.earth.biogeochemistry.freshwaters.pandora.model.inputs.AbstractInputEntity;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.Builder;
@@ -12,13 +14,16 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name = "float_input_param")
-public class FloatInputParam extends AbstractInputParam<Float> {
+public class FloatInputParam extends AbstractInputParam {
 
     private static final long serialVersionUID = 4725624920793601027L;
 
+    private Float value;
+    
     @Builder
-    public FloatInputParam(Long id, String name, Float value) {
-	super(id, name, value);
+    public FloatInputParam(Long id, String name, AbstractInputEntity inputEntity, Float value) {
+	super(id, name, inputEntity);
+	this.value = value;
     }
 
 }
