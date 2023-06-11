@@ -16,18 +16,16 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @SuperBuilder
 @Entity
-public abstract class AbstractInputParam<T extends Number> extends AbstractBaseEntity {
+public abstract class AbstractInputParam extends AbstractBaseEntity {
 
     private static final long serialVersionUID = -2778748076466663940L;
     
     @ManyToOne
     @JoinColumn(name = "input_entity_id")
     private AbstractInputEntity inputEntity;
-    
-    private T value;
 
-    protected AbstractInputParam(Long id, String name, T value) {
+    protected AbstractInputParam(Long id, String name, AbstractInputEntity inputEntity) {
 	super(id, name);
-	this.value = value;
+	this.inputEntity = inputEntity;
     }
 }
