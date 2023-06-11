@@ -84,10 +84,13 @@ class SchemeInputEntityToSchemeInputCommandTest {
 	SchemeInputEntity schemeInputEntity = new SchemeInputEntity();
 	schemeInputEntity.setName(TEST_NAME);
 	reactions.add(reaction);
+	reactions.add(null);
 	schemeInputEntity.setReactions(reactions);
 	sources.add(source);
+	sources.add(null);
 	schemeInputEntity.setSources(sources);
 	species.add(specie);
+	sources.add(null);
 	schemeInputEntity.setSpecies(species);
 	floatInputParams.add(floatInputParam);
 	schemeInputEntity.setFloatInputParams(floatInputParams);
@@ -96,6 +99,10 @@ class SchemeInputEntityToSchemeInputCommandTest {
 	when(sourceInputEntityToSourceInputCommandConverter.convert(source)).thenReturn(new SourceInputCommand());
 	when(specieInputEntityToSpecieInputCommandConverter.convert(specie)).thenReturn(new SpecieInputCommand());
 	when(floatInputParamToFloatInputParamCommandConverter.convert(floatInputParam)).thenReturn(new FloatInputParamCommand());
+	when(reactionInputEntityToReactionInputCommandConverter.convert(null)).thenReturn(null);
+	when(sourceInputEntityToSourceInputCommandConverter.convert(null)).thenReturn(null);
+	when(specieInputEntityToSpecieInputCommandConverter.convert(null)).thenReturn(null);
+	when(floatInputParamToFloatInputParamCommandConverter.convert(null)).thenReturn(null);
 
 	// when
 	SchemeInputCommand schemeInputCommand = converter.convert(schemeInputEntity);
