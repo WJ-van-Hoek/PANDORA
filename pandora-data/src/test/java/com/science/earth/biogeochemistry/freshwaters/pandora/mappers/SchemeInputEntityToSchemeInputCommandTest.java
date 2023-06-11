@@ -90,9 +90,10 @@ class SchemeInputEntityToSchemeInputCommandTest {
 	sources.add(null);
 	schemeInputEntity.setSources(sources);
 	species.add(specie);
-	sources.add(null);
+	species.add(null);
 	schemeInputEntity.setSpecies(species);
 	floatInputParams.add(floatInputParam);
+	floatInputParams.add(null);
 	schemeInputEntity.setFloatInputParams(floatInputParams);
 	
 	when(reactionInputEntityToReactionInputCommandConverter.convert(reaction)).thenReturn(new ReactionInputCommand());
