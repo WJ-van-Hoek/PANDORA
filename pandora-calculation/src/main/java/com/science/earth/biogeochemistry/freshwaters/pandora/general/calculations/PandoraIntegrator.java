@@ -15,14 +15,14 @@ public class PandoraIntegrator {
 	this.pandoraScheme = pandoraScheme;
     }
 
-    public void integrate() {
+    public double integrate() {
 	// FirstOrderDifferentialEquation System from the PandoraScheme
 	FirstOrderDifferentialEquations ode = new PandoraDifferentialEquations(this.pandoraScheme);
 
-	double t0 = this.pandoraScheme.getT0();
-	double[] y0 = this.pandoraScheme.getY0();
-	double tEnd = this.pandoraScheme.getTEnd();
-	double[] y = new double[this.pandoraScheme.getY0().length];
-	firstOrderIntegrator.integrate(ode, t0, y0, tEnd, y);
+	double t0 = pandoraScheme.getT0();
+	double[] y0 = pandoraScheme.getY0();
+	double tEnd = pandoraScheme.getTEnd();
+	double[] y = new double[pandoraScheme.getY0().length];
+	return firstOrderIntegrator.integrate(ode, t0, y0, tEnd, y);
     }
 }

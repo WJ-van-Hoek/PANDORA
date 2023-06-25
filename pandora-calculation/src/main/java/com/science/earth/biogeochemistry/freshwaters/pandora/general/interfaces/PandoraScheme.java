@@ -4,7 +4,8 @@ public interface PandoraScheme {
     public double[] getY0();
     public double getT0();
     public double getTEnd();
-    public float calculateReactions(int index);
-    public float getSources(int index);
     public int getDimension();
+    public float getTerrestrialSources(int index);
+    public float getTransformations(int index);
+    public float getTransport(int index);
 }

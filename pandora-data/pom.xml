@@ -85,20 +85,7 @@
 				<configuration>
 					<reportOutputDirectory>${project.basedir}/../docs/pandora-data</reportOutputDirectory>
 				</configuration>
-	        </plugin>
-	        <plugin>
-	            <groupId>dev.alexengrig</groupId>
-	            <artifactId>codecov-maven-plugin</artifactId>
-	            <version>1.0</version>
-	            <executions>
-	                <execution>
-	                    <id>upload</id>
-	                    <goals>
-	                        <goal>upload</goal>
-	                    </goals>
-	                </execution>
-	            </executions>
-	        </plugin>        
+	        </plugin>     
 		</plugins>
 	</build>
 </project>

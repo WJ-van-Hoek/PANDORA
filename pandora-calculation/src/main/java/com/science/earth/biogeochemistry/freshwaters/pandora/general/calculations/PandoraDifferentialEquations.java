@@ -5,8 +5,10 @@ import org.apache.commons.math3.ode.FirstOrderDifferentialEquations;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.interfaces.PandoraScheme;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 
 @AllArgsConstructor
+@Builder
 public class PandoraDifferentialEquations implements FirstOrderDifferentialEquations {
     
     private PandoraScheme pandoraScheme;
@@ -16,14 +18,9 @@ public class PandoraDifferentialEquations implements FirstOrderDifferentialEquat
         return pandoraScheme.getDimension();
     }
 
-    public void computeDerivatives(double t, double[] y, double[] yDot) {
-        // Compute the derivatives of the variables at time t
-        // The 'y' array contains the values of the variables
-        // The 'yDot' array should be filled with the computed derivatives
-        // based on the values of 'y' at time 't'
-        // Implement your equations here
+    public void computeDerivatives(double t, double[] y, double[] dy) {
 	for (int i = 0; i < pandoraScheme.getDimension(); i++) {
-	    yDot[i] = pandoraScheme.getSources(i) + pandoraScheme.calculateReactions(i);
+	    dy[i] = pandoraScheme.getTerrestrialSources(i) + pandoraScheme.getTransformations(i) + pandoraScheme.getTransport(i);
 	}    
-    }    
+    }
 }
