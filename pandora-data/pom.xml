@@ -10,7 +10,7 @@
 	
 	<artifactId>pandora-data</artifactId>
 	<name>pandora-data</name>
-
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -25,11 +25,6 @@
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
 			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -90,8 +85,7 @@
 				<configuration>
 					<reportOutputDirectory>${project.basedir}/../docs/pandora-data</reportOutputDirectory>
 				</configuration>
-	        </plugin>
+	        </plugin>     
 		</plugins>
 	</build>
 </project>
-
