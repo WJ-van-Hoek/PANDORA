@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.general.calculations;
+package com.science.earth.biogeochemistry.freshwaters.pandora.general.services.implementations;
 
 import org.apache.commons.math3.ode.FirstOrderDifferentialEquations;
 import org.apache.commons.math3.ode.FirstOrderIntegrator;
@@ -8,9 +8,10 @@ import org.springframework.stereotype.Service;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.PandoraTimestep;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.interfaces.FirstOrderDifferentialEquationsService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.interfaces.FirstOrderIntegratorService;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.interfaces.PandoraIntegratorService;
 
 @Service
-public class PandoraIntegratorServiceImpl {
+public class PandoraIntegratorServiceImpl implements PandoraIntegratorService {
   
     @Autowired
     private FirstOrderDifferentialEquationsService firstOrderDifferentialEquationsService;
