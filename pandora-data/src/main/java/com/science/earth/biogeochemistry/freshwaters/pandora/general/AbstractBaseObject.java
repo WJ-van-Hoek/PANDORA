@@ -10,11 +10,9 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @SuperBuilder
 public abstract class AbstractBaseObject {
-    private Long id;
-    private String name;
 
     protected AbstractBaseObject(Long id, String name) {
-	this.id = id;
-	this.name = name;
+		this.id = id;
+		this.name = name;
     }
 }
