@@ -15,4 +15,8 @@ public class CellTimestepBaseObject extends AbstractBaseObject {
     List<Float> upstreamSources;
     List<Float> transformations;
     Float netPrecipitation;
+    
+    public void setYEnd(List<Double> yEnd) {
+	this.yEnd = yEnd;
+    }
 }
