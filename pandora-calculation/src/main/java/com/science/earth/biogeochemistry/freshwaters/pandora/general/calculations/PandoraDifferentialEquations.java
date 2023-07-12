@@ -11,16 +11,16 @@ import lombok.Builder;
 @Builder
 public class PandoraDifferentialEquations implements FirstOrderDifferentialEquations {
     
-    private PandoraTimestep pandoraScheme;
+    private PandoraTimestep pandoraTimestep;
     
     public int getDimension() {
         // Return the number of variables in your ODE system
-        return pandoraScheme.getDimension();
+        return pandoraTimestep.getDimension();
     }
 
     public void computeDerivatives(double t, double[] y, double[] dy) {
-	for (int i = 0; i < pandoraScheme.getDimension(); i++) {
-	    dy[i] = pandoraScheme.getTerrestrialSources(i) + pandoraScheme.getTransformations(i) + pandoraScheme.getTransport(i);
+	for (int i = 0; i < pandoraTimestep.getDimension(); i++) {
+	    dy[i] = pandoraTimestep.getTerrestrialSources(i) + pandoraTimestep.getUpstreamSources(i);
 	}    
     }
 }

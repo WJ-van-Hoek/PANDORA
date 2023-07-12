@@ -13,7 +13,7 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.general.PandoraTime
 class PandoraDifferentialEquationsTest {
 
     @Mock
-    PandoraTimestep pandoraScheme;
+    PandoraTimestep pandoraTimestep;
     
     PandoraDifferentialEquations pandoraDifferentialEquations;
 
@@ -21,13 +21,13 @@ class PandoraDifferentialEquationsTest {
     void setUp() throws Exception {
 	MockitoAnnotations.openMocks(this);
 	pandoraDifferentialEquations = PandoraDifferentialEquations.builder()
-		.pandoraScheme(pandoraScheme).build();
+		.pandoraTimestep(pandoraTimestep).build();
     }
 
     @Test
     void testGetDimension() {
 	//given
-	when(pandoraScheme.getDimension()).thenReturn(2);
+	when(pandoraTimestep.getDimension()).thenReturn(2);
 	
 	//when
 	int dimension = pandoraDifferentialEquations.getDimension();
@@ -39,17 +39,14 @@ class PandoraDifferentialEquationsTest {
     @Test
     void testComputeDerivativesHappy() {
 	//given
-	when(pandoraScheme.getDimension()).thenReturn(2);	
+	when(pandoraTimestep.getDimension()).thenReturn(2);	
 	
-	when(pandoraScheme.getTerrestrialSources(0)).thenReturn(1f);
-	when(pandoraScheme.getTerrestrialSources(1)).thenReturn(5f);
+	when(pandoraTimestep.getTerrestrialSources(0)).thenReturn(1f);
+	when(pandoraTimestep.getTerrestrialSources(1)).thenReturn(5f);
 	
-	when(pandoraScheme.getTransformations(0)).thenReturn(2f);
-	when(pandoraScheme.getTransformations(1)).thenReturn(7f);
-	
-	when(pandoraScheme.getTransport(0)).thenReturn(3f);
-	when(pandoraScheme.getTransport(1)).thenReturn(2f);
-	
+	when(pandoraTimestep.getUpstreamSources(0)).thenReturn(2f);
+	when(pandoraTimestep.getUpstreamSources(1)).thenReturn(6f);
+		
 	double t = 1f;
 	double[] y = {0, 0};
 	double[] dy = {0, 0};
@@ -58,8 +55,8 @@ class PandoraDifferentialEquationsTest {
 	pandoraDifferentialEquations.computeDerivatives(t, y, dy);
 	
 	//then
-	assertEquals(6f, dy[0]);
-	assertEquals(14f, dy[1]);
+	assertEquals(3f, dy[0]);
+	assertEquals(11f, dy[1]);
     }
 
 }

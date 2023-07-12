@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import org.springframework.stereotype.Service;
 
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.PandoraTimestep;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.PandoraTimestepImpl;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.CellTimestepBaseObject;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.interfaces.CellTimestepService;
 
@@ -14,9 +15,9 @@ public class CellTimestepServiceImpl implements CellTimestepService {
     @Override
     public CellTimestepBaseObject calculateNextTimestep(CellTimestepBaseObject cellTimestep, LocalDateTime t0, LocalDateTime tEnd) {
 	
-	PandoraTimestep scheme = 
+	PandoraTimestep timestep = PandoraTimestepImpl.builder().build();
 
-	cellTimestep.getTerrestrialSources();
+	
 	return null;
     }
 
