@@ -3,8 +3,8 @@ package com.science.earth.biogeochemistry.freshwaters.pandora.commands.inputs;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.commands.AbstractBaseCommand;
 import com.science.earth.biogeochemistry.freshwaters.pandora.commands.inputs.params.FloatInputParamCommand;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.AbstractBaseObject;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -14,7 +14,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @NoArgsConstructor
-public class SourceInputCommand extends AbstractBaseCommand {
+public class SourceInputCommand extends AbstractBaseObject {
     private Map<String, FloatInputParamCommand> floatInputParamCommands = new HashMap<>();
     
     @Builder

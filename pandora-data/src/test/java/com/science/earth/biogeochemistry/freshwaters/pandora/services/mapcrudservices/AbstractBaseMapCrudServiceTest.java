@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.services.commandcrudservices;
+package com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -11,12 +11,12 @@ import java.util.Set;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.mappedentities.AbstractBaseMappedEntity;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.AbstractBaseObject;
 import com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.implementations.AbstractBaseMapCrudService;
 
 import lombok.experimental.SuperBuilder;
 
-class AbstractBaseCommandCrudServiceTest {
+class AbstractBaseMapCrudServiceTest {
 
     ConcreteBaseCommandCrudService concreteBaseCommandCrudService;
 
@@ -29,21 +29,21 @@ class AbstractBaseCommandCrudServiceTest {
     void setUp() throws Exception {
 	concreteBaseCommandCrudService = new ConcreteBaseCommandCrudService();
 
-	ConcreteBaseCommand concreteBaseEntity = ConcreteBaseCommand.builder().id(id).build();
+	ConcreteBaseObject concreteBaseEntity = ConcreteBaseObject.builder().id(id).build();
 
 	concreteBaseCommandCrudService.save(id, concreteBaseEntity);
     }
 
     @Test
     void testFindAll() {
-	Set<ConcreteBaseCommand> concreteBaseEntity = concreteBaseCommandCrudService.findAll();
+	Set<ConcreteBaseObject> concreteBaseEntity = concreteBaseCommandCrudService.findAll();
 
 	assertEquals(1, concreteBaseEntity.size());
     }
 
     @Test
     void testFindById() {
-	ConcreteBaseCommand baseEntity = concreteBaseCommandCrudService.findById(id);
+	ConcreteBaseObject baseEntity = concreteBaseCommandCrudService.findById(id);
 
 	assertEquals(id, baseEntity.getId());
     }
@@ -51,17 +51,17 @@ class AbstractBaseCommandCrudServiceTest {
     @Test
     void testSaveExistingId() {
 	Long id = 2L;
-	ConcreteBaseCommand baseEntity = ConcreteBaseCommand.builder().id(id).build();
+	ConcreteBaseObject baseEntity = ConcreteBaseObject.builder().id(id).build();
 
-	ConcreteBaseCommand savedBaseEntity = concreteBaseCommandCrudService.save(baseEntity);
+	ConcreteBaseObject savedBaseEntity = concreteBaseCommandCrudService.save(baseEntity);
 	assertEquals(id, savedBaseEntity.getId());
     }
 
     @Test
     void testSaveNoId() {
-	ConcreteBaseCommand baseEntity = ConcreteBaseCommand.builder().build();
+	ConcreteBaseObject baseEntity = ConcreteBaseObject.builder().build();
 
-	ConcreteBaseCommand savedBaseEntity = concreteBaseCommandCrudService.save(baseEntity);
+	ConcreteBaseObject savedBaseEntity = concreteBaseCommandCrudService.save(baseEntity);
 	assertNotNull(savedBaseEntity);
 	assertNotNull(savedBaseEntity.getId());
     }
@@ -94,7 +94,7 @@ class AbstractBaseCommandCrudServiceTest {
 
     @Test
     void testNullCheckNoThrow() {
-	ConcreteBaseCommand concreteBaseEntity = ConcreteBaseCommand.builder().build();
+	ConcreteBaseObject concreteBaseEntity = ConcreteBaseObject.builder().build();
 	assertDoesNotThrow(() -> concreteBaseCommandCrudService.nullCheck(concreteBaseEntity));
     }
     
@@ -102,7 +102,7 @@ class AbstractBaseCommandCrudServiceTest {
     void testFirstIdOne() {
 	concreteBaseCommandCrudService = new ConcreteBaseCommandCrudService();
 
-	ConcreteBaseCommand concreteBaseCommandWithoutId = ConcreteBaseCommand.builder().build();
+	ConcreteBaseObject concreteBaseCommandWithoutId = ConcreteBaseObject.builder().build();
 
 	concreteBaseCommandCrudService.save(concreteBaseCommandWithoutId);
 	assertEquals(1l, concreteBaseCommandCrudService.findById(1l).getId());
@@ -110,10 +110,10 @@ class AbstractBaseCommandCrudServiceTest {
 
 }
 
-class ConcreteBaseCommandCrudService extends AbstractBaseMapCrudService<ConcreteBaseCommand> {
+class ConcreteBaseCommandCrudService extends AbstractBaseMapCrudService<ConcreteBaseObject> {
 
 }
 
 @SuperBuilder
-class ConcreteBaseCommand extends AbstractBaseMappedEntity {
+class ConcreteBaseObject extends AbstractBaseObject {
 }

@@ -2,17 +2,17 @@ package com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudse
 
 import java.util.Collections;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.mappedentities.AbstractBaseMappedEntity;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.AbstractBaseObject;
 
-public abstract class AbstractBaseMapCrudService<T extends AbstractBaseMappedEntity> extends AbstractMapCrudService<T, Long> {
+public abstract class AbstractBaseMapCrudService<T extends AbstractBaseObject> extends AbstractMapCrudService<T, Long> {
 
-    public T save(T mappedEntity) {
-	nullCheck(mappedEntity);
+    public T save(T baseCommand) {
+	nullCheck(baseCommand);
 
-	if (mappedEntity.getId() == null) {
-	    mappedEntity.setId(getNextId());
+	if (baseCommand.getId() == null) {
+	    baseCommand.setId(getNextId());
 	}
-	return super.save(mappedEntity.getId(), mappedEntity);
+	return super.save(baseCommand.getId(), baseCommand);
     }
 
     private Long getNextId() {

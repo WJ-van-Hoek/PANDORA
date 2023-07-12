@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.mappedentities;
+package com.science.earth.biogeochemistry.freshwaters.pandora.general;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,14 +9,12 @@ import lombok.experimental.SuperBuilder;
 @Setter
 @NoArgsConstructor
 @SuperBuilder
-public abstract class AbstractBaseMappedEntity {
-
+public abstract class AbstractBaseObject {
     private Long id;
     private String name;
 
-    protected AbstractBaseMappedEntity(Long id, String name) {
+    protected AbstractBaseObject(Long id, String name) {
 	this.id = id;
 	this.name = name;
     }
-
 }
