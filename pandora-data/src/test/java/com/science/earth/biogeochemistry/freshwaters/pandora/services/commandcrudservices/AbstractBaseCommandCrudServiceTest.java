@@ -11,8 +11,8 @@ import java.util.Set;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.commands.AbstractBaseCommand;
-import com.science.earth.biogeochemistry.freshwaters.pandora.services.commandcrudservices.implementations.AbstractBaseCommandCrudService;
+import com.science.earth.biogeochemistry.freshwaters.pandora.mappedentities.AbstractBaseMappedEntity;
+import com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.implementations.AbstractBaseMapCrudService;
 
 import lombok.experimental.SuperBuilder;
 
@@ -110,10 +110,10 @@ class AbstractBaseCommandCrudServiceTest {
 
 }
 
-class ConcreteBaseCommandCrudService extends AbstractBaseCommandCrudService<ConcreteBaseCommand> {
+class ConcreteBaseCommandCrudService extends AbstractBaseMapCrudService<ConcreteBaseCommand> {
 
 }
 
 @SuperBuilder
-class ConcreteBaseCommand extends AbstractBaseCommand {
+class ConcreteBaseCommand extends AbstractBaseMappedEntity {
 }

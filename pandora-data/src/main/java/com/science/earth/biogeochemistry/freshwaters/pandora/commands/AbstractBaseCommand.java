@@ -11,12 +11,12 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 public abstract class AbstractBaseCommand {
 
-    private Long id;
-    private String name;
+        private Long id;
+        private String name;
 
-    protected AbstractBaseCommand(Long id, String name) {
-	this.id = id;
-	this.name = name;
-    }
+        protected AbstractBaseCommand(Long id, String name) {
+    	this.id = id;
+    	this.name = name;
+        }
 
 }
