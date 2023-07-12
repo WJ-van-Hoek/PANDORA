@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.science.earth.biogeochemistry.freshwaters.pandora.commands.inputs.params.FloatInputParamCommand;
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.AbstractBaseObject;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.AbstractBaseObject;
 
 import lombok.Builder;
 import lombok.Getter;

@@ -1,6 +1,6 @@
 package com.science.earth.biogeochemistry.freshwaters.pandora.commands.inputs.params;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.AbstractBaseObject;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.AbstractBaseObject;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

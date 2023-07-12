@@ -2,7 +2,7 @@ package com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudse
 
 import org.springframework.stereotype.Service;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.CellBaseObject;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.CellBaseObject;
 
 @Service
 public class CellMapCrudService extends AbstractBaseMapCrudService<CellBaseObject> {

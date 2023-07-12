@@ -11,7 +11,7 @@ import java.util.Set;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.AbstractBaseObject;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.AbstractBaseObject;
 import com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.implementations.AbstractBaseMapCrudService;
 
 import lombok.experimental.SuperBuilder;

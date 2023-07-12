@@ -62,6 +62,7 @@
 					<excludes>
 						<exclude>com/science/earth/biogeochemistry/freshwaters/pandora/model/**</exclude>
 						<exclude>com/science/earth/biogeochemistry/freshwaters/pandora/commands/**</exclude>
+						<exclude>com/science/earth/biogeochemistry/freshwaters/pandora/general/objects/**</exclude>
 					</excludes>
 				</configuration>
 				<executions>
