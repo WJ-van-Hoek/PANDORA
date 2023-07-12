@@ -18,7 +18,7 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.general.PandoraTime
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.interfaces.FirstOrderDifferentialEquationsService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.interfaces.FirstOrderIntegratorService;
 
-class PandoraIntegratorServiceTest {
+class PandoraIntegratorServiceImplTest {
     @Mock
     private FirstOrderDifferentialEquationsService firstOrderDifferentialEquationsService;
     
@@ -29,7 +29,7 @@ class PandoraIntegratorServiceTest {
     private PandoraTimestep pandoraTimestep;
 
     @InjectMocks
-    PandoraIntegratorService integratorService;
+    PandoraIntegratorServiceImpl pandoraIntegratorService;
 
     @BeforeEach
     void setUp() throws Exception {
@@ -54,7 +54,7 @@ class PandoraIntegratorServiceTest {
 	when(pandoraTimestep.getTEnd()).thenReturn(tEnd);
 
 	// when
-	double[] actualResult = integratorService.integrate(pandoraTimestep);
+	double[] actualResult = pandoraIntegratorService.integrate(pandoraTimestep);
 
 	// then
 	verify(firstOrderDifferentialEquationsService, times(1)).getPandoraDifferentialEquations();

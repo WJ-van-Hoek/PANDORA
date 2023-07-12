@@ -10,7 +10,7 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.in
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.interfaces.FirstOrderIntegratorService;
 
 @Service
-public class PandoraIntegratorService {
+public class PandoraIntegratorServiceImpl {
   
     @Autowired
     private FirstOrderDifferentialEquationsService firstOrderDifferentialEquationsService;
