@@ -12,6 +12,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.science.earth.biogeochemistry.freshwaters.pandora.commands.AbstractBaseCommand;
+import com.science.earth.biogeochemistry.freshwaters.pandora.services.commandcrudservices.implementations.AbstractBaseCommandCrudService;
 
 import lombok.experimental.SuperBuilder;
 
@@ -95,6 +96,16 @@ class AbstractBaseCommandCrudServiceTest {
     void testNullCheckNoThrow() {
 	ConcreteBaseCommand concreteBaseEntity = ConcreteBaseCommand.builder().build();
 	assertDoesNotThrow(() -> concreteBaseCommandCrudService.nullCheck(concreteBaseEntity));
+    }
+    
+    @Test
+    void testFirstIdOne() {
+	concreteBaseCommandCrudService = new ConcreteBaseCommandCrudService();
+
+	ConcreteBaseCommand concreteBaseCommandWithoutId = ConcreteBaseCommand.builder().build();
+
+	concreteBaseCommandCrudService.save(concreteBaseCommandWithoutId);
+	assertEquals(1l, concreteBaseCommandCrudService.findById(1l).getId());
     }
 
 }
