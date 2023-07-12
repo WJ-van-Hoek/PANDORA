@@ -17,14 +17,14 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.interfaces.PandoraScheme;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.PandoraTimestep;
 
 class PandoraIntegratorTest {
     @Mock
     private FirstOrderIntegrator firstOrderIntegrator;
 
     @Mock
-    private PandoraScheme pandoraScheme;
+    private PandoraTimestep pandoraScheme;
 
     @InjectMocks
     PandoraIntegrator integrator;

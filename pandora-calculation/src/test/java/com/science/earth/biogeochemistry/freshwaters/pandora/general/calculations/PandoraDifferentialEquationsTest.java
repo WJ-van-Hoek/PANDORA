@@ -8,12 +8,12 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.interfaces.PandoraScheme;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.PandoraTimestep;
 
 class PandoraDifferentialEquationsTest {
 
     @Mock
-    PandoraScheme pandoraScheme;
+    PandoraTimestep pandoraScheme;
     
     PandoraDifferentialEquations pandoraDifferentialEquations;
 

@@ -3,14 +3,14 @@ package com.science.earth.biogeochemistry.freshwaters.pandora.general.calculatio
 import org.apache.commons.math3.ode.FirstOrderDifferentialEquations;
 import org.apache.commons.math3.ode.FirstOrderIntegrator;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.interfaces.PandoraScheme;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.PandoraTimestep;
 
 public class PandoraIntegrator {
 
     private FirstOrderIntegrator firstOrderIntegrator;
-    private PandoraScheme pandoraScheme;
+    private PandoraTimestep pandoraScheme;
 
-    public PandoraIntegrator(FirstOrderIntegrator firstOrderIntegrator, PandoraScheme pandoraScheme) {
+    public PandoraIntegrator(FirstOrderIntegrator firstOrderIntegrator, PandoraTimestep pandoraScheme) {
 	this.firstOrderIntegrator = firstOrderIntegrator;
 	this.pandoraScheme = pandoraScheme;
     }

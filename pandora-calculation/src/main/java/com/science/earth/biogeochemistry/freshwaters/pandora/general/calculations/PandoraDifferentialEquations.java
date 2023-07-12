@@ -2,7 +2,7 @@ package com.science.earth.biogeochemistry.freshwaters.pandora.general.calculatio
 
 import org.apache.commons.math3.ode.FirstOrderDifferentialEquations;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.interfaces.PandoraScheme;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.PandoraTimestep;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,7 +11,7 @@ import lombok.Builder;
 @Builder
 public class PandoraDifferentialEquations implements FirstOrderDifferentialEquations {
     
-    private PandoraScheme pandoraScheme;
+    private PandoraTimestep pandoraScheme;
     
     public int getDimension() {
         // Return the number of variables in your ODE system
