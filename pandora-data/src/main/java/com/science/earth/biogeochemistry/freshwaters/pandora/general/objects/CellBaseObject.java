@@ -10,6 +10,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Builder
 public class CellBaseObject extends AbstractBaseObject {
-    Float latitude;
-    Float longitude;
+    Float centerlatitude;
+    Float centerlongitude;
+    Float surfaceArea;
 }
