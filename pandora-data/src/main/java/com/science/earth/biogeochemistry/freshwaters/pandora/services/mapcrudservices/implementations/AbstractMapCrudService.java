@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.science.earth.biogeochemistry.freshwaters.pandora.services.commandcrudservices.implementations;
+package com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.implementations;
 
 import java.util.HashMap;
 import java.util.HashSet;

@@ -1,10 +1,10 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.services.commandcrudservices.implementations;
+package com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.implementations;
 
 import java.util.Collections;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.commands.AbstractBaseCommand;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.AbstractBaseObject;
 
-public abstract class AbstractBaseCommandCrudService<T extends AbstractBaseCommand> extends AbstractMapCrudService<T, Long> {
+public abstract class AbstractBaseMapCrudService<T extends AbstractBaseObject> extends AbstractMapCrudService<T, Long> {
 
     public T save(T baseCommand) {
 	nullCheck(baseCommand);
