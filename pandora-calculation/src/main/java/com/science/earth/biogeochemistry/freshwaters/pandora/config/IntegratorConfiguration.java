@@ -5,8 +5,10 @@ import org.apache.commons.math3.ode.nonstiff.DormandPrince853Integrator;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 @Configuration
+@PropertySource("classpath:integrator.properties")
 public class IntegratorConfiguration {
     @Value("${integrator.method}")
     private String integratorMethod;

@@ -558,3 +558,10 @@ mvnw.cmd
 /pandora-data/target/site/jacoco/com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.implementations/YMapServiceImpl.html
 /pandora-data/target/site/jacoco/com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.implementations/YMapServiceImpl.java.html
 /pandora-data/target/surefire-reports/2023-07-14T10-26-17_696-jvmRun1.dump
+/pandora-calculation/target/site/jacoco/com.science.earth.biogeochemistry.freshwaters.pandora.config/IntegratorConfiguration.html
+/pandora-calculation/target/site/jacoco/com.science.earth.biogeochemistry.freshwaters.pandora.config/IntegratorConfiguration.java.html
+/pandora-calculation/target/site/jacoco/com.science.earth.biogeochemistry.freshwaters.pandora.config/index.html
+/pandora-calculation/target/site/jacoco/com.science.earth.biogeochemistry.freshwaters.pandora.config/index.source.html
+/pandora-calculation/target/site/jacoco/com.science.earth.biogeochemistry.freshwaters.pandora.general/ParticulateSpecieBean.html
+/pandora-calculation/target/site/jacoco/com.science.earth.biogeochemistry.freshwaters.pandora.general/ParticulateSpecieBean.java.html
+/pandora-data/target/surefire-reports/2023-07-14T14-20-22_595-jvmRun1.dump
