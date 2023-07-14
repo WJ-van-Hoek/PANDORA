@@ -2,8 +2,11 @@ package com.science.earth.biogeochemistry.freshwaters.pandora.general.services.i
 
 import java.time.LocalDateTime;
 
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.PandoraTimestep;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.CellBaseObject;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.CellTimestepBaseObject;
 
 public interface CellTimestepService {
-    CellTimestepBaseObject calculateNextTimestep(CellTimestepBaseObject cell, LocalDateTime t0, LocalDateTime tEnd);
+    PandoraTimestep buildPandoraTimestep(CellBaseObject cell, LocalDateTime t0);
+    CellTimestepBaseObject calculateNextTimestep(CellTimestepBaseObject cell, LocalDateTime t0);
 }

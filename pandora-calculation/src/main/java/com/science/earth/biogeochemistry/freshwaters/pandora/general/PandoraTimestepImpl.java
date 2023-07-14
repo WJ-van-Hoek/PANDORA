@@ -8,12 +8,12 @@ public class PandoraTimestepImpl implements PandoraTimestep {
     private double t0;
     private double tEnd;
     private int dimension;
-    private float terrestrialSources;
-    private float upstreamSources;
+    private double[] terrestrialSources;
+    private double[] upstreamSources;
 
     @Builder
-    public PandoraTimestepImpl(double[] y0, double t0, double tEnd, int dimension, float terrestrialSources,
-	    float upstreamSources) {
+    public PandoraTimestepImpl(double[] y0, double t0, double tEnd, int dimension, double[] terrestrialSources,
+	    double[] upstreamSources) {
 	this.y0 = y0;
 	this.t0 = t0;
 	this.tEnd= tEnd;
@@ -43,13 +43,13 @@ public class PandoraTimestepImpl implements PandoraTimestep {
     }
 
     @Override
-    public float getTerrestrialSources(int index) {
-	return this.terrestrialSources;
+    public double getTerrestrialSources(int index) {
+	return this.terrestrialSources[index];
     }
 
     @Override
-    public float getUpstreamSources(int index) {
-	return this.upstreamSources;
+    public double getUpstreamSources(int index) {
+	return this.upstreamSources[index];
     }
 
 }

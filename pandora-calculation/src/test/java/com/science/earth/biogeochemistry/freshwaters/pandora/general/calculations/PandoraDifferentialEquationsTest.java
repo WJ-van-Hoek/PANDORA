@@ -41,11 +41,11 @@ class PandoraDifferentialEquationsTest {
 	//given
 	when(pandoraTimestep.getDimension()).thenReturn(2);	
 	
-	when(pandoraTimestep.getTerrestrialSources(0)).thenReturn(1f);
-	when(pandoraTimestep.getTerrestrialSources(1)).thenReturn(5f);
+	when(pandoraTimestep.getTerrestrialSources(0)).thenReturn(1d);
+	when(pandoraTimestep.getTerrestrialSources(1)).thenReturn(5d);
 	
-	when(pandoraTimestep.getUpstreamSources(0)).thenReturn(2f);
-	when(pandoraTimestep.getUpstreamSources(1)).thenReturn(6f);
+	when(pandoraTimestep.getUpstreamSources(0)).thenReturn(2d);
+	when(pandoraTimestep.getUpstreamSources(1)).thenReturn(6d);
 		
 	double t = 1f;
 	double[] y = {0, 0};
@@ -55,8 +55,8 @@ class PandoraDifferentialEquationsTest {
 	pandoraDifferentialEquations.computeDerivatives(t, y, dy);
 	
 	//then
-	assertEquals(3f, dy[0]);
-	assertEquals(11f, dy[1]);
+	assertEquals(3d, dy[0]);
+	assertEquals(11d, dy[1]);
     }
 
 }

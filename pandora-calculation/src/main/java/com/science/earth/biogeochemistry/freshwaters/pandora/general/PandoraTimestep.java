@@ -5,6 +5,6 @@ public interface PandoraTimestep {
     public double getT0();
     public double getTEnd();
     public int getDimension();
-    public float getTerrestrialSources(int index);
-    public float getUpstreamSources(int index);
+    public double getTerrestrialSources(int index);
+    public double getUpstreamSources(int index);
 }
