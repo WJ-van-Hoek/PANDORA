@@ -1,6 +1,6 @@
 package com.science.earth.biogeochemistry.freshwaters.pandora.commands.inputs.params;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.commands.AbstractBaseCommand;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.AbstractBaseObject;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +11,7 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @NoArgsConstructor
 @SuperBuilder
-public abstract class AbstractInputParamCommand<T extends Number> extends AbstractBaseCommand {
+public abstract class AbstractInputParamCommand<T extends Number> extends AbstractBaseObject {
     
     private T value;
     
