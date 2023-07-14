@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.PandoraTimestep;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.interfaces.FirstOrderDifferentialEquationsService;
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.interfaces.FirstOrderIntegratorService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.interfaces.PandoraIntegratorService;
 
 @Service
@@ -17,11 +16,10 @@ public class PandoraIntegratorServiceImpl implements PandoraIntegratorService {
     private FirstOrderDifferentialEquationsService firstOrderDifferentialEquationsService;
     
     @Autowired
-    private FirstOrderIntegratorService firstOrderIntegratorService;
+    private FirstOrderIntegrator firstOrderIntegrator;
 
     public double[] integrate(PandoraTimestep pandoraTimestep) {
 	FirstOrderDifferentialEquations ode = firstOrderDifferentialEquationsService.getPandoraDifferentialEquations();
-	FirstOrderIntegrator firstOrderIntegrator = firstOrderIntegratorService.getFirstOrderIntegrator();
 	
 	double t0 = pandoraTimestep.getT0();
 	double[] y0 = pandoraTimestep.getY0();
