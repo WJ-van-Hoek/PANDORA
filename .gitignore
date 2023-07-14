@@ -550,3 +550,11 @@ mvnw.cmd
 /pandora-data/target/surefire-reports/TEST-com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.AbstractBaseMapCrudServiceTest.xml
 /pandora-data/target/surefire-reports/com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.AbstractBaseMapCrudServiceTest.txt
 /pandora-web/target/surefire-reports/2023-07-12T16-10-15_915-jvmRun1.dump
+/pandora-calculation/target/classes/application.properties
+/pandora-data/target/site/jacoco/com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.implementations/TerrestrialSourcesMapServiceImpl.html
+/pandora-data/target/site/jacoco/com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.implementations/TerrestrialSourcesMapServiceImpl.java.html
+/pandora-data/target/site/jacoco/com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.implementations/UpstreamSourcesMapServiceImpl.html
+/pandora-data/target/site/jacoco/com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.implementations/UpstreamSourcesMapServiceImpl.java.html
+/pandora-data/target/site/jacoco/com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.implementations/YMapServiceImpl.html
+/pandora-data/target/site/jacoco/com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.implementations/YMapServiceImpl.java.html
+/pandora-data/target/surefire-reports/2023-07-14T10-26-17_696-jvmRun1.dump
