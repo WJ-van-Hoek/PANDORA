@@ -17,14 +17,13 @@ import org.mockito.MockitoAnnotations;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.PandoraTimestep;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.implementations.PandoraIntegratorServiceImpl;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.interfaces.FirstOrderDifferentialEquationsService;
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.interfaces.FirstOrderIntegratorService;
 
 class PandoraIntegratorServiceImplTest {
     @Mock
     private FirstOrderDifferentialEquationsService firstOrderDifferentialEquationsService;
     
     @Mock
-    private FirstOrderIntegratorService firstOrderIntegratorService;
+    private FirstOrderIntegrator firstOrderIntegratorMock;
 
     @Mock
     private PandoraTimestep pandoraTimestep;
@@ -41,10 +40,8 @@ class PandoraIntegratorServiceImplTest {
     void testIntegrate() {
 	// given
 	FirstOrderDifferentialEquations firstOrderDifferentialEquationsMock = Mockito.mock(FirstOrderDifferentialEquations.class);
-	FirstOrderIntegrator firstOrderIntegratorMock = Mockito.mock(FirstOrderIntegrator.class);
 	
 	when(firstOrderDifferentialEquationsService.getPandoraDifferentialEquations()).thenReturn(firstOrderDifferentialEquationsMock);
-	when(firstOrderIntegratorService.getFirstOrderIntegrator()).thenReturn(firstOrderIntegratorMock);
 	
 	double t0 = 0d;
 	double[] y0 = { 0d, 0d };
@@ -59,7 +56,6 @@ class PandoraIntegratorServiceImplTest {
 
 	// then
 	verify(firstOrderDifferentialEquationsService, times(1)).getPandoraDifferentialEquations();
-	verify(firstOrderIntegratorService, times(1)).getFirstOrderIntegrator();
 	verify(pandoraTimestep, times(1)).getT0();
 	verify(pandoraTimestep, times(2)).getY0();
 	verify(pandoraTimestep, times(1)).getTEnd();
