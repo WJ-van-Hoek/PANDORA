@@ -42,7 +42,7 @@ public class CellTimestepServiceImpl implements CellTimestepService {
     }
 
     @Override
-    public PandoraTimestep buildPandoraTimestep(CellBaseObject cell, LocalDateTime t0) {
+    private PandoraTimestep buildPandoraTimestep(CellBaseObject cell, LocalDateTime t0) {
 	double[] y0 = yMapService.findYAtTimestep(cell, t0);
 	double[] terrestrialSources = terrestrialSourcesMapService.findAtTimestep(cell, t0);
 	double[] upstreamSources = upstreamSourcesMapService.findAtTimestep(cell, t0);
