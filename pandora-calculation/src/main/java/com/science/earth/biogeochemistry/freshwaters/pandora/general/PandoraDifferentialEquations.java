@@ -1,8 +1,6 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.general.calculations;
+package com.science.earth.biogeochemistry.freshwaters.pandora.general;
 
 import org.apache.commons.math3.ode.FirstOrderDifferentialEquations;
-
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.PandoraTimestep;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
