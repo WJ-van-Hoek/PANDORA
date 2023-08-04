@@ -10,10 +10,17 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.Cel
 public class YMapServiceImpl implements YMapService {
 
     @Override
-    public double[] findYAtTimestep(CellBaseObject cell, LocalDateTime t) {
+    public double[] findAtCellAndTimestep(CellBaseObject cell, LocalDateTime t){
 
 	// TODO Auto-generated method stub
 	return null;
+    }
+
+    @Override
+    public void saveAtCellAndTimestep(CellBaseObject cell, LocalDateTime tEnd, double[] yEnd) {
+	
+	// TODO Auto-generated method stub
+	
     }
 
 }

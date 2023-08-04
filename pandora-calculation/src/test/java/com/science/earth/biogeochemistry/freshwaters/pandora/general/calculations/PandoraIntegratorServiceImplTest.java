@@ -41,7 +41,7 @@ class PandoraIntegratorServiceImplTest {
 	// given
 	FirstOrderDifferentialEquations firstOrderDifferentialEquationsMock = Mockito.mock(FirstOrderDifferentialEquations.class);
 	
-	when(firstOrderDifferentialEquationsService.getPandoraDifferentialEquations()).thenReturn(firstOrderDifferentialEquationsMock);
+	when(firstOrderDifferentialEquationsService.getPandoraDifferentialEquations(pandoraTimestep)).thenReturn(firstOrderDifferentialEquationsMock);
 	
 	double t0 = 0d;
 	double[] y0 = { 0d, 0d };
@@ -55,7 +55,7 @@ class PandoraIntegratorServiceImplTest {
 	double[] actualResult = pandoraIntegratorService.integrate(pandoraTimestep);
 
 	// then
-	verify(firstOrderDifferentialEquationsService, times(1)).getPandoraDifferentialEquations();
+	verify(firstOrderDifferentialEquationsService, times(1)).getPandoraDifferentialEquations(pandoraTimestep);
 	verify(pandoraTimestep, times(1)).getT0();
 	verify(pandoraTimestep, times(2)).getY0();
 	verify(pandoraTimestep, times(1)).getTEnd();

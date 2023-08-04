@@ -1,5 +1,7 @@
 package com.science.earth.biogeochemistry.freshwaters.pandora.general;
 
+import java.util.Objects;
+
 import lombok.Builder;
 
 public class PandoraTimestepImpl implements PandoraTimestep {
@@ -16,7 +18,7 @@ public class PandoraTimestepImpl implements PandoraTimestep {
 	    double[] upstreamSources) {
 	this.y0 = y0;
 	this.t0 = t0;
-	this.tEnd= tEnd;
+	this.tEnd = tEnd;
 	this.dimension = dimension;
 	this.terrestrialSources = terrestrialSources;
 	this.upstreamSources = upstreamSources;
@@ -52,4 +54,33 @@ public class PandoraTimestepImpl implements PandoraTimestep {
 	return this.upstreamSources[index];
     }
 
+    public double[] getTerrestrialSources() {
+	return this.terrestrialSources;
+    }
+
+    public double[] getUpstreamSources() {
+	return this.upstreamSources;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+	if (this == obj) {
+	    return true;
+	}
+	if (obj == null || getClass() != obj.getClass()) {
+	    return false;
+	}
+
+	PandoraTimestepImpl other = (PandoraTimestepImpl) obj;
+	return Objects.equals(this.getY0(), other.getY0()) && Objects.equals(this.getT0(), other.getT0())
+		&& Objects.equals(this.getTEnd(), other.getTEnd())
+		&& Objects.equals(this.getDimension(), other.getDimension())
+		&& Objects.equals(this.getTerrestrialSources(), other.getTerrestrialSources())
+		&& Objects.equals(this.getUpstreamSources(), other.getUpstreamSources());
+    }
+
+    @Override
+    public int hashCode() {
+	return Objects.hash(y0, t0, tEnd, dimension, terrestrialSources, upstreamSources);
+    }
 }
