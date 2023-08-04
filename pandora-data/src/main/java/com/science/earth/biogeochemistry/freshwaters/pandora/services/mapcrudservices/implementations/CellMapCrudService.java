@@ -6,5 +6,4 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.Cel
 
 @Service
 public class CellMapCrudService extends AbstractBaseMapCrudService<CellBaseObject> {
-
 }
