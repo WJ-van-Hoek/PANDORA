@@ -19,7 +19,7 @@ public class PandoraIntegratorServiceImpl implements PandoraIntegratorService {
     private FirstOrderIntegrator firstOrderIntegrator;
 
     public double[] integrate(PandoraTimestep pandoraTimestep) {
-	FirstOrderDifferentialEquations ode = firstOrderDifferentialEquationsService.getPandoraDifferentialEquations();
+	FirstOrderDifferentialEquations ode = firstOrderDifferentialEquationsService.getPandoraDifferentialEquations(pandoraTimestep);
 	
 	double t0 = pandoraTimestep.getT0();
 	double[] y0 = pandoraTimestep.getY0();
