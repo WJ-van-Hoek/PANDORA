@@ -67,7 +67,7 @@ class CellTimestepServiceImplTest {
     void testCalculateNextTimestep() {
 	//given
 	when(yMapService.findAtCellAndTimestep(cell, T_0)).thenReturn(Y_0);
-	when(terrestrialSourcesMapService.findAtTimestep(cell, T_0)).thenReturn(TERRESTRIAL_SOURCES);
+	when(terrestrialSourcesMapService.findAtCellAndTimestep(cell, T_0)).thenReturn(TERRESTRIAL_SOURCES);
 	when(upstreamSourcesMapService.findAtTimestep(cell, T_0)).thenReturn(UPSTREAM_SOURCES);
 	when(pandoraIntegratorService.integrate(any(PandoraTimestep.class))).thenReturn(Y_END);
 	when(localDateTimeService.calculateTEndAsLocalDateTime(any(LocalDateTime.class), anyDouble())).thenReturn(T_END);
