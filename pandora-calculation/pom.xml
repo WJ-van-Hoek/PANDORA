@@ -10,17 +10,21 @@
 
 	<artifactId>pandora-calculation</artifactId>
 	<name>pandora-calculation</name>
-	
+
 	<dependencies>
 		<dependency>
-		    <groupId>com.science.earth.biogeochemistry.freshwaters</groupId>
-		    <artifactId>pandora-data</artifactId>
-		    <version>0.0.1-SNAPSHOT</version>
+			<groupId>com.science.earth.biogeochemistry.freshwaters</groupId>
+			<artifactId>pandora-data</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-		    <groupId>org.apache.commons</groupId>
-		    <artifactId>commons-math3</artifactId>
-		    <version>3.6.1</version>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-math3</artifactId>
+			<version>3.6.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -32,7 +36,7 @@
 			<artifactId>spring-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>	
+	</dependencies>
 
 	<build>
 		<plugins>
@@ -68,14 +72,14 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>		
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-	            <artifactId>maven-javadoc-plugin</artifactId>
+				<artifactId>maven-javadoc-plugin</artifactId>
 				<configuration>
 					<reportOutputDirectory>${project.basedir}/../docs/pandora-calculation</reportOutputDirectory>
 				</configuration>
-	        </plugin>
+			</plugin>
 		</plugins>
 	</build>
 </project>
