@@ -14,12 +14,17 @@ public class YMapServiceImpl extends AbstractHashMapService implements YMapServi
     protected Map<Integer, double[]> map = new HashMap<>();
     
     @Override
+    public void cleanMap() {
+	map = new HashMap<>();
+    }
+    
+    @Override
     public double[] findAtCellAndTimestep(CellBaseObject cell, LocalDateTime t) {
 	return map.get(hashCellAndTime(cell, t));
     }
 
     @Override
-    public void saveAtCellAndTimestep(CellBaseObject cell, LocalDateTime tEnd, double[] yEnd) {
-	map.put(hashCellAndTime(cell, tEnd), yEnd);
+    public void saveAtCellAndTimestep(CellBaseObject cell, LocalDateTime t, double[] y) {
+	map.put(hashCellAndTime(cell, t), y);
     }
 }
