@@ -14,6 +14,11 @@ public class UpstreamSourcesMapServiceImpl extends AbstractHashMapService implem
     protected Map<Integer, double[]> map = new HashMap<>();
     
     @Override
+    public void cleanMap() {
+	map = new HashMap<>();
+    }
+    
+    @Override
     public double[] findAtCellAndTimestep(CellBaseObject cell, LocalDateTime t) {
 	return map.get(hashCellAndTime(cell, t));
     }
