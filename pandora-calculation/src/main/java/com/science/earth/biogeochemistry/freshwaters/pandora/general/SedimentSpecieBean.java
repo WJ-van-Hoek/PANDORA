@@ -5,8 +5,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.calculations.ErosionLogic;
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.calculations.ShearStressLogic;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.logic.ErosionLogic;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.logic.ShearStressLogic;
 
 @Component
 @PropertySource("classpath:physics-constraints.properties")

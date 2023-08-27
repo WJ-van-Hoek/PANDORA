@@ -15,11 +15,11 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.PandoraTimestep;
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.PandoraTimestepImpl;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.CellBaseObject;
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.interfaces.LocalDateTimeService;
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.interfaces.PandoraIntegratorService;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.PandoraTimestep;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.implementations.CellTimestepServiceImpl;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.interfaces.LocalDateTimeService;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.interfaces.PandoraIntegratorService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.implementations.TerrestrialSourcesMapService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.implementations.UpstreamSourcesMapService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.implementations.YMapService;
@@ -97,7 +97,7 @@ class CellTimestepServiceImplTest {
     }
     
     private PandoraTimestep pandoraTimestepBuilder() {
-	return PandoraTimestepImpl.builder().y0(Y_0).t0(0d).tEnd(1d).dimension(Y_0.length)
+	return PandoraTimestep.builder().y0(Y_0).t0(0d).tEnd(1d).dimension(Y_0.length)
 	.terrestrialSources(TERRESTRIAL_SOURCES).upstreamSources(UPSTREAM_SOURCES).build();
     }
 

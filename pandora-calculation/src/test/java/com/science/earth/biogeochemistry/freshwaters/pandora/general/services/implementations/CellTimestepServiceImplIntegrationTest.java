@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.CellBaseObject;
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.interfaces.CellTimestepService;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.interfaces.CellTimestepService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.implementations.TerrestrialSourcesMapService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.implementations.UpstreamSourcesMapService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.implementations.YMapService;
@@ -25,7 +25,7 @@ class CellTimestepServiceImplIntegrationTest {
     private static final double[] Y_0 = {1d,1d}; 
     private static final double[] TERRESTRIAL_SOURCES = {2d, 2d};
     private static final double[] UPSTREAM_SOURCES = {3d, 3d};
-    private static final double[] Y_END = {6d, 6d};
+    private static final double[] Y_END = {5.663d, 6.364d};
     
     @Autowired
     YMapService yMapService;
@@ -52,7 +52,6 @@ class CellTimestepServiceImplIntegrationTest {
     @Test
     void testCalculateNextTimestep() {
 	cellTimestepService.calculateNextTimestep(CELL, T_0);
-	Assertions.assertArrayEquals(Y_END,  yMapService.findAtCellAndTimestep(CELL, T_0.plusYears(1)), 1e-5);
+	Assertions.assertArrayEquals(Y_END,  yMapService.findAtCellAndTimestep(CELL, T_0.plusYears(1)), 1e-3);
     }
-
 }

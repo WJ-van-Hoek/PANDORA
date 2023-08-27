@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.general.calculations;
+package com.science.earth.biogeochemistry.freshwaters.pandora.general.logic;
 
 public interface ShearStressLogic {
     double calculateShearStress(double mu, double kappa);

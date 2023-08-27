@@ -1,11 +1,11 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.general.services.implementations;
+package com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.implementations;
 
 import java.time.LocalDateTime;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.interfaces.LocalDateTimeService;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.interfaces.LocalDateTimeService;
 
 @Service
 public class LocalDateTimeServiceImpl implements LocalDateTimeService {
