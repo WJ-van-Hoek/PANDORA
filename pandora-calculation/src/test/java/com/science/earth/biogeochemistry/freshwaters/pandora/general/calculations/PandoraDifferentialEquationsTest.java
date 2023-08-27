@@ -1,6 +1,7 @@
 package com.science.earth.biogeochemistry.freshwaters.pandora.general.calculations;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -8,13 +9,17 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.PandoraDifferentialEquations;
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.PandoraTimestep;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.PandoraDifferentialEquations;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.PandoraTimestep;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.interfaces.ReactionCalculationService;
 
 class PandoraDifferentialEquationsTest {
 
     @Mock
     PandoraTimestep pandoraTimestep;
+    
+    @Mock
+    ReactionCalculationService reactionCalculationService;
     
     PandoraDifferentialEquations pandoraDifferentialEquations;
 
@@ -22,7 +27,7 @@ class PandoraDifferentialEquationsTest {
     void setUp() throws Exception {
 	MockitoAnnotations.openMocks(this);
 	pandoraDifferentialEquations = PandoraDifferentialEquations.builder()
-		.pandoraTimestep(pandoraTimestep).build();
+		.pandoraTimestep(pandoraTimestep).reactionCalculationService(reactionCalculationService).build();
     }
 
     @Test
@@ -47,6 +52,9 @@ class PandoraDifferentialEquationsTest {
 	
 	when(pandoraTimestep.getUpstreamSources(0)).thenReturn(2d);
 	when(pandoraTimestep.getUpstreamSources(1)).thenReturn(6d);
+	
+	double[] mockReactionReturn = {-0.2, 0.2};
+	when(reactionCalculationService.calculateReactions(any(double[].class))).thenReturn(mockReactionReturn);
 		
 	double t = 1f;
 	double[] y = {0, 0};
@@ -56,8 +64,8 @@ class PandoraDifferentialEquationsTest {
 	pandoraDifferentialEquations.computeDerivatives(t, y, dy);
 	
 	//then
-	assertEquals(3d, dy[0]);
-	assertEquals(11d, dy[1]);
+	assertEquals(2.8d, dy[0]);
+	assertEquals(11.2d, dy[1]);
     }
 
 }

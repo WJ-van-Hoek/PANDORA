@@ -14,9 +14,9 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.PandoraTimestep;
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.implementations.PandoraIntegratorServiceImpl;
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.interfaces.FirstOrderDifferentialEquationsService;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.PandoraTimestep;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.implementations.PandoraIntegratorServiceImpl;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.interfaces.FirstOrderDifferentialEquationsService;
 
 class PandoraIntegratorServiceImplTest {
     @Mock

@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.general.calculations;
+package com.science.earth.biogeochemistry.freshwaters.pandora.general.logic;
 
 import org.springframework.stereotype.Component;
 
