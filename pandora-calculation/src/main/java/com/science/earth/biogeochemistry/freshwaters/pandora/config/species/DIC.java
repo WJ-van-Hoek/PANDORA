@@ -8,13 +8,17 @@ import org.springframework.core.annotation.Order;
 import com.science.earth.biogeochemistry.freshwaters.pandora.chemistry.interfaces.Carbon;
 import com.science.earth.biogeochemistry.freshwaters.pandora.chemistry.interfaces.Dissolved;
 import com.science.earth.biogeochemistry.freshwaters.pandora.chemistry.interfaces.Inorganic;
+import com.science.earth.biogeochemistry.freshwaters.pandora.config.species.abstractions.AqueousSpecie;
 
 @Configuration
 @PropertySource("classpath:species.properties")
 @Order(1)
-public class DIC implements Dissolved, Inorganic, Carbon {
+public class DIC extends AqueousSpecie implements Dissolved, Inorganic, Carbon {
     @Value("${dic.name}")
     private String name;
+    
+    @Value("${dic.unit}")
+    private String unit;
 
     @Value("${dic.molarmass}")
     private double molarMass;
@@ -25,6 +29,11 @@ public class DIC implements Dissolved, Inorganic, Carbon {
     }
 
     @Override
+    public String getUnit() {
+	return this.unit;
+    }
+    
+    @Override
     public double getMolarMass() {
 	return this.molarMass;
     }
@@ -33,4 +42,5 @@ public class DIC implements Dissolved, Inorganic, Carbon {
     public String toString() {
 	return getName();
     }
+
 }

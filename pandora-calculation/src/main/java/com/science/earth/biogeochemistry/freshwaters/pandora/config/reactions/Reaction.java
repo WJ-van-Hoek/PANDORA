@@ -10,8 +10,8 @@ import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.core.env.EnumerablePropertySource;
 import org.springframework.core.env.PropertySource;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.config.services.SpecieConfigurationBeanService;
-import com.science.earth.biogeochemistry.freshwaters.pandora.config.species.SpecieConfiguration;
+import com.science.earth.biogeochemistry.freshwaters.pandora.config.services.SpecieBeanService;
+import com.science.earth.biogeochemistry.freshwaters.pandora.config.species.abstractions.Specie;
 
 import jakarta.annotation.PostConstruct;
 
@@ -21,18 +21,18 @@ public abstract class Reaction implements ReactionConfiguration {
     protected ConfigurableEnvironment environment;
 
     @Autowired
-    private SpecieConfigurationBeanService specieConfigurationBeanService;
+    private SpecieBeanService specieBeanService;
 
-    private Map<SpecieConfiguration, Integer> producedSpecies = new HashMap<>();
-    private Map<SpecieConfiguration, Integer> removedSpecies = new HashMap<>();
+    private Map<Specie, Integer> producedSpecies = new HashMap<>();
+    private Map<Specie, Integer> removedSpecies = new HashMap<>();
 
     @Override
-    public Map<SpecieConfiguration, Integer> getProducedSpecies() {
+    public Map<Specie, Integer> getProducedSpecies() {
 	return producedSpecies;
     }
 
     @Override
-    public Map<SpecieConfiguration, Integer> getRemovedSpecies() {
+    public Map<Specie, Integer> getRemovedSpecies() {
 	return removedSpecies;
     }
 
@@ -67,13 +67,13 @@ public abstract class Reaction implements ReactionConfiguration {
 	return propertyNames;
     }
 
-    protected Map<SpecieConfiguration, Integer> loadSpecieChangeMap(String propertyName, String prefix) {
+    protected Map<Specie, Integer> loadSpecieChangeMap(String propertyName, String prefix) {
 	Integer changeValue = Integer.valueOf(environment.getProperty(propertyName));
 	String specieName = propertyName.substring(prefix.length());
-	SpecieConfiguration specieConfiguration = specieConfigurationBeanService
-		.getSpecieConfiguration(specieName.toLowerCase());
-	Map<SpecieConfiguration, Integer> specieProduction = new HashMap<>();
-	specieProduction.put(specieConfiguration, changeValue);
+	Specie specie = specieBeanService
+		.getSpecie(specieName.toLowerCase());
+	Map<Specie, Integer> specieProduction = new HashMap<>();
+	specieProduction.put(specie, changeValue);
 	return specieProduction;
     }
 
@@ -86,8 +86,8 @@ public abstract class Reaction implements ReactionConfiguration {
 	return dy;
     }
 
-    private void calculate(double[] y, double[] dy, SpecieConfiguration specie, Integer changeValue) {
-	int specieIndex = specieConfigurationBeanService.getSpecieConfigurationIndex(specie);
+    private void calculate(double[] y, double[] dy, Specie specie, Integer changeValue) {
+	int specieIndex = specieBeanService.getSpecieIndex(specie);
 	dy[specieIndex] += y[specieIndex] * getRate(y) * changeValue;
     }
 

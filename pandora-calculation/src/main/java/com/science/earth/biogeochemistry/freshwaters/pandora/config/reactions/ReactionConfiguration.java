@@ -2,14 +2,14 @@ package com.science.earth.biogeochemistry.freshwaters.pandora.config.reactions;
 
 import java.util.Map;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.config.species.SpecieConfiguration;
+import com.science.earth.biogeochemistry.freshwaters.pandora.config.species.abstractions.Specie;
 
 public interface ReactionConfiguration {
     void initialize();
 
-    Map<SpecieConfiguration, Integer> getProducedSpecies();
+    Map<Specie, Integer> getProducedSpecies();
 
-    Map<SpecieConfiguration, Integer> getRemovedSpecies();
+    Map<Specie, Integer> getRemovedSpecies();
 
     double[] calculate(double[] y);
 }
