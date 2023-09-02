@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.PandoraDifferentialEquations;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.PandoraTimestep;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.interfaces.TransportCalculationService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.interfaces.FirstOrderDifferentialEquationsService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.interfaces.ReactionCalculationService;
 
@@ -13,11 +14,14 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.ca
 public class FirstOrderDifferentialEquationsServiceImpl implements FirstOrderDifferentialEquationsService {
     
     @Autowired
+    TransportCalculationService dischargeCalculationService;
+    
+    @Autowired
     ReactionCalculationService reactionCalculationService;
 
     @Override
     public FirstOrderDifferentialEquations getPandoraDifferentialEquations(PandoraTimestep pandoraTimestep) {
-	return new PandoraDifferentialEquations(pandoraTimestep, reactionCalculationService);
+	return new PandoraDifferentialEquations(pandoraTimestep, dischargeCalculationService, reactionCalculationService);
     }
 
 }
