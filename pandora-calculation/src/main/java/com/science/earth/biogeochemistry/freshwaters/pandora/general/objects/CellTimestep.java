@@ -8,13 +8,13 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class CellTimestepBaseObject extends AbstractBaseObject {
-    CellBaseObject cell;
+public class CellTimestep extends AbstractBaseObject {
+    Cell cell;
     List<Double> y0;
     List<Double> yEnd;
     
     @Builder
-    public CellTimestepBaseObject(CellBaseObject cell,
+    public CellTimestep(Cell cell,
 	    List<Double> y0, 
 	    List<Float> terrestrialSources, List<Float> upstreamSources) {
 	this.cell = cell;

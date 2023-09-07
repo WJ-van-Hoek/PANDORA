@@ -2,6 +2,7 @@ package com.science.earth.biogeochemistry.freshwaters.pandora.general.services.i
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyDouble;
+import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -15,14 +16,15 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.CellBaseObject;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.Cell;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.PandoraTimestep;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.TerrestrialSourcesMapService;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.UpstreamSourcesMapService;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.YMapService;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.implementations.CellMapCrudService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.implementations.CellTimestepServiceImpl;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.interfaces.LocalDateTimeService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.interfaces.PandoraIntegratorService;
-import com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.implementations.TerrestrialSourcesMapService;
-import com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.implementations.UpstreamSourcesMapService;
-import com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.implementations.YMapService;
 
 class CellTimestepServiceImplTest {
     @Mock
@@ -38,12 +40,17 @@ class CellTimestepServiceImplTest {
     PandoraIntegratorService pandoraIntegratorService;
     
     @Mock
+    CellMapCrudService cellMapCrudService;
+    
+    @Mock
     LocalDateTimeService localDateTimeService;
     
     @InjectMocks
     private CellTimestepServiceImpl cellTimestepService;
     
-    private CellBaseObject cell;
+    private Cell cell;
+    
+    private Cell nextCell;
         
     private static final LocalDateTime T_0 = LocalDateTime.of(2023, 7, 21, 0, 0);
     
@@ -60,7 +67,8 @@ class CellTimestepServiceImplTest {
     @BeforeEach
     void setUp() throws Exception {
 	MockitoAnnotations.openMocks(this);
-	cell = CellBaseObject.builder().build();
+	cell = Cell.builder().id(0L).build();
+	nextCell = Cell.builder().id(1L).build();
     }
 
     @Test
@@ -71,6 +79,7 @@ class CellTimestepServiceImplTest {
 	when(upstreamSourcesMapService.findAtCellAndTimestep(cell, T_0)).thenReturn(UPSTREAM_SOURCES);
 	when(pandoraIntegratorService.integrate(any(PandoraTimestep.class))).thenReturn(Y_END);
 	when(localDateTimeService.calculateTEndAsLocalDateTime(any(LocalDateTime.class), anyDouble())).thenReturn(T_END);
+	when(cellMapCrudService.findById(anyLong())).thenReturn(nextCell);
 	
 	//when
 	cellTimestepService.calculateNextTimestep(cell, T_0);
@@ -86,7 +95,7 @@ class CellTimestepServiceImplTest {
 	Assertions.assertEquals(T_0, t0Captor.getValue());
 	Assertions.assertEquals(1d, tEndCaptor.getValue());
 	
-	ArgumentCaptor<CellBaseObject> cellCaptor = ArgumentCaptor.forClass(CellBaseObject.class);
+	ArgumentCaptor<Cell> cellCaptor = ArgumentCaptor.forClass(Cell.class);
 	ArgumentCaptor<LocalDateTime> dateTimeTEndCaptor = ArgumentCaptor.forClass(LocalDateTime.class);
 	ArgumentCaptor<double[]> yEndCaptor = ArgumentCaptor.forClass(double[].class);
 	verify(yMapService).saveAtCellAndTimestep(cellCaptor.capture(), dateTimeTEndCaptor.capture(), yEndCaptor.capture());

@@ -1,5 +1,6 @@
 package com.science.earth.biogeochemistry.freshwaters.pandora.general.objects;
 
+import java.util.List;
 import java.util.Set;
 
 import lombok.AllArgsConstructor;
@@ -11,6 +12,6 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @Builder
-public class RiverBaseObject extends AbstractBaseObject {
-    Set<CellBaseObject> cells;
+public class River extends AbstractBaseObject {
+    List<Set<Cell>> independentCellSets;
 }
