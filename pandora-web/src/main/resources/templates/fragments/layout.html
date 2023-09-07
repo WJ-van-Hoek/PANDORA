@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<link rel="stylesheet" href="resources/css/pandora-styles.css">
+<link rel="stylesheet" href="resources/css/pandora-navbar-styles.css">
+<link rel="stylesheet" href="resources/css/pandora-dropdown-styles.css">
+<link rel="stylesheet" href="resources/css/pandora-sidebar-styles.css">
+<body>
+	<header layout:fragment="header"></header>
+    <nav th:replace="fragments/nav-fragment.html"></nav>
+    <div class="row-container">
+	    <div class="row">
+	    	<div layout:fragment="content"></div>
+	    </div>
+	    <div class="row">
+		    <div class="cta">
+		        <h2>Be part of PANDORA!</h2>
+		        <a href="#" class="button">Learn More</a>
+		    </div>
+		    <footer>
+		        &copy; 2023 Wim Joost van Hoek. All rights reserved.
+		    </footer>
+	    </div>
+    </div>    
+</body>
+</html>

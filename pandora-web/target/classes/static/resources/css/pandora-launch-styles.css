@@ -1,0 +1,45 @@
+/* Button styles */
+.launch-button {
+    background-color: #3498db; /* Background color */
+    color: #fff; /* Text color */
+    padding: 10px 20px; /* Padding for the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 18px; /* Font size */
+    cursor: pointer; /* Cursor style on hover */
+    transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+/* Button hover effect */
+.launch-button:hover {
+    background-color: #2980b9; /* Darker background color on hover */
+}
+
+.launch-button[disabled] {
+    background-color: #ccc; /* Change the background color */
+    color: #666; /* Change the text color */
+    cursor: not-allowed; /* Change the cursor style */
+    opacity: 0.6; /* Change the opacity to make it look faded */
+    /* Add any other styling you want for the disabled state */
+}
+
+/* Style the file input label to look like a button */
+.file-input-label {
+    background-color: #3498db; /* Background color */
+    color: #fff; /* Text color */
+    padding: 10px 20px; /* Padding for the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 18px; /* Font size */
+    cursor: pointer; /* Cursor style on hover */
+    transition: background-color 0.3s ease; /* Smooth color transition *//
+}
+
+form {
+	padding: 10px 0px; /* Padding for the button */
+}
+
+/* Style the file input field */
+input[type="file"] {
+	display: none; /* Hide the default file input */
+}

@@ -1,0 +1,16 @@
+<nav class="navbar">
+    <ul class="nav-links">
+        <li><a th:href="@{index.html}">Home</a></li>
+        <li class="dropdown">
+        	<a href="#">Services</a>
+        	<ul class="dropdown-content">
+        		<li><a th:href="@{commandline-index.html}">CLI</a></li>
+           		<li><a th:href="@{calculations-index.html}">Calculations</a></li>
+            	<li><a th:href="@{databases-index.html}">Databases</a></li>
+            	<li><a th:href="@{reports-index.html}">Reports</a></li>
+        	</ul>
+    	</li>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>

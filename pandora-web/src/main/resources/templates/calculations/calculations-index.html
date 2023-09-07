@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorate="fragments/layout">
+<body>
+    <header layout:fragment="header">
+        <h1>PANDORA Calculation Services</h1>
+        <p>Phosphorus, Alkalinity, Nitrogen and Dissolved Oxygen in Riverine and Aquatic systems</p>
+    </header>
+    <div layout:fragment="content">
+    	<div class="sidebar">
+		    <aside>
+		        <ul>
+		        	<li><a href="#">Overview</a></li>
+		        	<li><a href="#">Procedure</a></li>
+		            <li><a href="#">Configuration</a></li>
+		            <li><a th:href="@{launch-calculation-service.html}">Launch</a></li>
+		            <li><a href="#">Instances</a></li>
+		            <li><a href="#">Statuses</a></li>
+		        </ul>
+		    </aside>
+	    </div>
+	    <div layout:fragment="service-content" class="main-content">
+        </div>
+    </div>
+</body>
+</html>
