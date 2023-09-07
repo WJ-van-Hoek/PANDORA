@@ -10,22 +10,24 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.CellBaseObject;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.Cell;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.PandoraTimestep;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.TerrestrialSourcesMapService;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.UpstreamSourcesMapService;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.YMapService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.interfaces.CellTimestepService;
-import com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.implementations.TerrestrialSourcesMapService;
-import com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.implementations.UpstreamSourcesMapService;
-import com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.implementations.YMapService;
 
 @SpringBootTest
 class CellTimestepServiceImplIntegrationTest {
-    private static final CellBaseObject CELL = CellBaseObject.builder().centerlatitude(52.08f).centerlongitude(5.67f).surfaceArea(1754.27f).build();
+    private static final Cell CELL = Cell.builder().id(1l).centerLatitude(52.08f).centerLongitude(5.67f).surfaceArea(1754.27f).nextCellId(1l).build();
     private static final LocalDate LOCAL_DATE = LocalDate.of(2023, 8, 9);
     private static final LocalTime LOCAL_TIME = LocalTime.of(0, 0);
     private static final LocalDateTime T_0 = LocalDateTime.of(LOCAL_DATE, LOCAL_TIME);
+    private static final PandoraTimestep PANDORA_TIMESTEP = PandoraTimestep.builder().discharge(10d).volume(1d).build();
     private static final double[] Y_0 = {1d,1d}; 
     private static final double[] TERRESTRIAL_SOURCES = {2d, 2d};
     private static final double[] UPSTREAM_SOURCES = {3d, 3d};
-    private static final double[] Y_END = {5.663d, 6.364d};
+    private static final double[] Y_END = {31.3568d, 34.7598d};
     
     @Autowired
     YMapService yMapService;
@@ -46,7 +48,7 @@ class CellTimestepServiceImplIntegrationTest {
 	terrestrialSourcesMapService.cleanMap();
 	terrestrialSourcesMapService.saveAtCellAndTimestep(CELL, T_0, TERRESTRIAL_SOURCES);
 	upstreamSourcesMapService.cleanMap();
-	upstreamSourcesMapService.saveAtCellAndTimestep(CELL, T_0, UPSTREAM_SOURCES);
+	upstreamSourcesMapService.saveAtCellAndTimestep(CELL, PANDORA_TIMESTEP, T_0, UPSTREAM_SOURCES);
     }
 
     @Test
