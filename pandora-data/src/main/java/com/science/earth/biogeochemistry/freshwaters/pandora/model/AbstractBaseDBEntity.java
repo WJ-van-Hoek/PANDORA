@@ -3,8 +3,6 @@
  */
 package com.science.earth.biogeochemistry.freshwaters.pandora.model;
 
-import java.io.Serializable;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -28,14 +26,13 @@ import lombok.experimental.SuperBuilder;
 @Entity
 @SuperBuilder
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class AbstractBaseEntity implements Serializable {
+public abstract class AbstractBaseDBEntity {
 
-    private static final long serialVersionUID = 2915300100209501944L;
-    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
-    
+    public boolean isNew() {
+	return this.id == null;
+    }
 }

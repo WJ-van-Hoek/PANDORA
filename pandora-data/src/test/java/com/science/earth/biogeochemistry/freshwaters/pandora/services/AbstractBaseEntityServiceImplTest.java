@@ -18,7 +18,7 @@ import org.mockito.MockitoAnnotations;
 
 import com.science.earth.biogeochemistry.freshwaters.pandora.errors.ErrorMessageGenerator;
 import com.science.earth.biogeochemistry.freshwaters.pandora.errors.ServiceImplError;
-import com.science.earth.biogeochemistry.freshwaters.pandora.model.AbstractBaseEntity;
+import com.science.earth.biogeochemistry.freshwaters.pandora.model.AbstractBaseDBEntity;
 
 class AbstractBaseEntityServiceImplTest {
 
@@ -28,7 +28,7 @@ class AbstractBaseEntityServiceImplTest {
     @InjectMocks
     ConcreteBaseEntityServiceImpl concreteBaseEntityServiceImpl;
 
-    AbstractBaseEntity abstractBaseEntity;
+    AbstractBaseDBEntity abstractBaseEntity;
 
     @BeforeEach
     void setUp() throws Exception {
@@ -66,12 +66,12 @@ class AbstractBaseEntityServiceImplTest {
     @Test
     void getGenericTypeTest() {
 	String genericType = concreteBaseEntityServiceImpl.getGenericType();
-	assertEquals("AbstractBaseEntity", genericType);	
+	assertEquals("AbstractBaseDBEntity", genericType);	
     }
 
     @Test
     void getFullGenericTypeTest() {
 	String fullGenericType = concreteBaseEntityServiceImpl.getFullGenericType();
-	assertEquals("com.science.earth.biogeochemistry.freshwaters.pandora.model.AbstractBaseEntity", fullGenericType);
+	assertEquals("com.science.earth.biogeochemistry.freshwaters.pandora.model.AbstractBaseDBEntity", fullGenericType);
     }
 }
