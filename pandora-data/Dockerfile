@@ -8,7 +8,7 @@ WORKDIR /app
 COPY target/pandora-data-0.0.1-SNAPSHOT.jar /app/pandora-data-0.0.1-SNAPSHOT.jar
 
 # Expose the port that your Spring Boot application listens on (default is 8080)
-EXPOSE 8081
+EXPOSE 9000
 
 # Define the command to run your Spring Boot application
 CMD ["java", "-jar", "pandora-data-0.0.1-SNAPSHOT.jar"]
