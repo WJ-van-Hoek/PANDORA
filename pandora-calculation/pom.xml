@@ -38,6 +38,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+        			<mainClass>com.science.earth.biogeochemistry.freshwaters.pandora.PandoraCalculation</mainClass>
+    			</configuration>
 				<executions>
 					<execution>
 						<goals>
@@ -45,9 +48,6 @@
 						</goals>
 					</execution>
 				</executions>
-				<configuration>
-					<skip>true</skip>
-				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.jacoco</groupId>

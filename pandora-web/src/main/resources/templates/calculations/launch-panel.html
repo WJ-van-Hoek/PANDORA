@@ -1,0 +1,22 @@
+<script
+	type="module" 
+    th:src="@{/js/calculations/launchPanelManager.js}">
+</script>
+<div
+	class="panel"
+	id="statusLaunchPanel">
+    <div class="row">
+        <h2 th:text=${headerConfig}></h2>
+        <div class="column-container">
+            <div class="column">
+                <button 
+                	class="button"
+                	id="launchButton"
+                	data-image="pandora-calculation"
+                	disabled>
+                		Launch
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

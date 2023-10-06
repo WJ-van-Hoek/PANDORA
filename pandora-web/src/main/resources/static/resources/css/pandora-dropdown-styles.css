@@ -1,0 +1,42 @@
+/* Style the dropdown menu container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    border-radius: 5px; /* Add border-radius for softer edges */
+}
+
+/* Style the dropdown menu when hovered */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Style the dropdown menu content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 5px; /* Add border-radius for softer edges */
+    z-index: 1;
+    list-style: none;
+}
+
+/* Style the dropdown menu items */
+.dropdown-content li {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc; /* Add a border between menu items */
+}
+
+/* Style the dropdown menu item links */
+.dropdown-content a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change link color on hover */
+.dropdown-content a:hover {
+    background-color: #007bff;
+    color: #fff;
+}

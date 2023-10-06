@@ -1,0 +1,48 @@
+/* Reset some default browser styles */
+body, h1, h2, h3, p, ul, li {
+}
+
+/* Set a minimum height for the body to center the navbar */
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5; /* Light gray background color for the body */
+}
+
+/* Style the navigation bar */
+.navbar {
+    background-color: #fff; /* White background color for the navbar */
+    color: #333; /* Text color for links */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    border: 1px solid #ddd; /* Add a border for separation */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+/* Style the logo */
+.logo a {
+    text-decoration: none;
+    color: #333; /* Text color for the logo */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Style the navigation links */
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333; /* Text color for links */
+    font-weight: bold;
+    transition: color 0.3s ease; /* Smooth color transition on
