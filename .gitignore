@@ -732,3 +732,9 @@ mvnw.cmd
 /pandora-web/target/classes/static/js/calculations/launchPanelManager.js
 /pandora-web/target/classes/static/js/fragments/selectFilePanelManager.js
 /pandora-web/target/classes/templates/calculations/launch-panel.html
+/pandora-data/target/site/jacoco/com.science.earth.biogeochemistry.freshwaters.pandora.controllers/CellCrudController.html
+/pandora-data/target/site/jacoco/com.science.earth.biogeochemistry.freshwaters.pandora.controllers/CellCrudController.java.html
+/pandora-data/target/site/jacoco/com.science.earth.biogeochemistry.freshwaters.pandora.controllers/index.html
+/pandora-data/target/site/jacoco/com.science.earth.biogeochemistry.freshwaters.pandora.controllers/index.source.html
+/pandora-data/target/site/jacoco/com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.implementations/CellDBEntityCrudServiceImpl.html
+/pandora-data/target/site/jacoco/com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.implementations/CellDBEntityCrudServiceImpl.java.html
