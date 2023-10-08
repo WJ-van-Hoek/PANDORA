@@ -1,15 +1,17 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
- 
-  <parent>
-    <groupId>com.science.earth.biogeochemistry.freshwaters</groupId>
-    <artifactId>PANDORA</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
-  
-  <artifactId>pandora-web</artifactId>
-  <name>pandora-web</name>
-  
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.science.earth.biogeochemistry.freshwaters</groupId>
+		<artifactId>PANDORA</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>pandora-web</artifactId>
+	<name>pandora-web</name>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -35,56 +37,45 @@
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
 		<dependency>
-		    <groupId>nz.net.ultraq.thymeleaf</groupId>
-		    <artifactId>thymeleaf-layout-dialect</artifactId>
+			<groupId>nz.net.ultraq.thymeleaf</groupId>
+			<artifactId>thymeleaf-layout-dialect</artifactId>
 		</dependency>
-		<dependency>
-		    <groupId>com.github.docker-java</groupId>
-		    <artifactId>docker-java</artifactId>
-		    <version>3.3.3</version>
-		</dependency>
-		<dependency>
-		    <groupId>com.github.docker-java</groupId>
-		    <artifactId>docker-java-transport-httpclient5</artifactId>
-		    <version>3.3.3</version>
-		</dependency>
-			
 	</dependencies>
-  	<build>
+	<build>
 		<plugins>
 			<plugin>
-			    <groupId>org.jacoco</groupId>
-			    <artifactId>jacoco-maven-plugin</artifactId>
-			    <version>0.8.10</version>
-			    <configuration>
-			        <excludes>
-			          <exclude>com/science/earth/biogeochemistry/freshwaters/pandora/PandoraApplication.class</exclude>
-			          <exclude>com/science/earth/biogeochemistry/freshwaters/pandora/AppConfig.class</exclude>
-			        </excludes>
-			    </configuration>
-			    <executions>
-			        <execution>
-			            <goals>
-			                <goal>prepare-agent</goal>
-			            </goals>
-			        </execution>
-			        <execution>
-			            <id>report</id>
-			            <phase>prepare-package</phase>
-			            <goals>
-			                <goal>report</goal>
-			            </goals>
-			        </execution>
-			    </executions>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.10</version>
+				<configuration>
+					<excludes>
+						<exclude>com/science/earth/biogeochemistry/freshwaters/pandora/PandoraApplication.class</exclude>
+						<exclude>com/science/earth/biogeochemistry/freshwaters/pandora/AppConfig.class</exclude>
+					</excludes>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>report</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-	            <artifactId>maven-javadoc-plugin</artifactId>
+				<artifactId>maven-javadoc-plugin</artifactId>
 				<configuration>
 					<reportOutputDirectory>${project.basedir}/../docs/pandora-web</reportOutputDirectory>
 				</configuration>
-	        </plugin>
+			</plugin>
 		</plugins>
 	</build>
-  
+
 </project>
