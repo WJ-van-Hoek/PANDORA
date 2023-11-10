@@ -23,17 +23,17 @@ import org.mockito.MockitoAnnotations;
 
 import com.science.earth.biogeochemistry.freshwaters.pandora.errors.CrudError;
 import com.science.earth.biogeochemistry.freshwaters.pandora.errors.ErrorMessageGenerator;
-import com.science.earth.biogeochemistry.freshwaters.pandora.model.AbstractBaseEntity;
-import com.science.earth.biogeochemistry.freshwaters.pandora.repositories.AbstractBaseEntityRepository;
+import com.science.earth.biogeochemistry.freshwaters.pandora.model.AbstractBaseDBEntity;
+import com.science.earth.biogeochemistry.freshwaters.pandora.repositories.AbstractBaseDBEntityRepository;
 import com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.AbstractBaseEntityService;
 
 class AbstractCrudServiceImplTest {
 
     @Mock
-    AbstractBaseEntityRepository<ConcreteBaseEntity> repository;
+    AbstractBaseDBEntityRepository<ConcreteBaseEntity> repository;
 
     @Mock
-    AbstractBaseEntityService abstractBaseEntityService;
+    AbstractBaseEntityService<ConcreteBaseEntity> abstractBaseEntityService;
 
     @Mock
     ErrorMessageGenerator errorMessageGenerator;
@@ -50,9 +50,9 @@ class AbstractCrudServiceImplTest {
 	MockitoAnnotations.openMocks(this);
 	// given
 	concreteBaseEntities = new HashSet<>();
-	concreteBaseEntity1 = ConcreteBaseEntity.builder().id(1L).name("baseEntity1").build();
+	concreteBaseEntity1 = ConcreteBaseEntity.builder().id(1L).build();
 	concreteBaseEntities.add(concreteBaseEntity1);
-	ConcreteBaseEntity concreteBaseEntity2 = ConcreteBaseEntity.builder().id(2L).name("baseEntity2").build();
+	ConcreteBaseEntity concreteBaseEntity2 = ConcreteBaseEntity.builder().id(2L).build();
 	concreteBaseEntities.add(concreteBaseEntity2);
     }
 
@@ -75,7 +75,7 @@ class AbstractCrudServiceImplTest {
 	when(repository.findById(1L)).thenReturn(Optional.of(concreteBaseEntity1));
 
 	// when
-	AbstractBaseEntity foundBaseEntity = concreteCrudServiceImpl.findById(1L);
+	AbstractBaseDBEntity foundBaseEntity = concreteCrudServiceImpl.findById(1L);
 
 	// then
 	assertEquals(concreteBaseEntity1, foundBaseEntity);
@@ -96,7 +96,6 @@ class AbstractCrudServiceImplTest {
 	// then
 	ArgumentCaptor<String> stringCaptor = ArgumentCaptor.forClass(String.class);
 	ArgumentCaptor<Long> longCaptor = ArgumentCaptor.forClass(Long.class);
-	ArgumentCaptor<String> classStringCaptor = ArgumentCaptor.forClass(String.class);
 
 	verify(repository, times(1)).findById(anyLong());
 	verify(errorMessageGenerator, times(1)).generate(stringCaptor.capture(), longCaptor.capture());

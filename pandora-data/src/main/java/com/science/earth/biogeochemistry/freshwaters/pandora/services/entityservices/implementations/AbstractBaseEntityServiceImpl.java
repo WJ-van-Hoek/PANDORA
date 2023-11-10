@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 
 import com.science.earth.biogeochemistry.freshwaters.pandora.errors.ErrorMessageGenerator;
 import com.science.earth.biogeochemistry.freshwaters.pandora.errors.ServiceImplError;
-import com.science.earth.biogeochemistry.freshwaters.pandora.model.AbstractBaseEntity;
+import com.science.earth.biogeochemistry.freshwaters.pandora.model.AbstractBaseDBEntity;
 import com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.AbstractBaseEntityService;
 
 @Service
-public abstract class AbstractBaseEntityServiceImpl<T extends AbstractBaseEntity>
+public abstract class AbstractBaseEntityServiceImpl<T extends AbstractBaseDBEntity>
 	implements AbstractBaseEntityService<T> {
 
     @Autowired
