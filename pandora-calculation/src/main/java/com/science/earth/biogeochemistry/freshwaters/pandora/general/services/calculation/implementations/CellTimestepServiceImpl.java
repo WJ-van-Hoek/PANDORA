@@ -1,6 +1,9 @@
 package com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.implementations;
 
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,12 +42,20 @@ public class CellTimestepServiceImpl implements CellTimestepService {
     
     @Autowired
     CellMapCrudService cellMapCrudService;
+    
+    @Override
+    public List<double[]> calculateTimeSeries(Cell cell, LocalDateTime t0, int numberOfTimesteps) {
+        return IntStream.range(0, numberOfTimesteps)
+                .mapToObj(i -> calculateNextTimestep(cell, t0))
+                .collect(Collectors.toList());
+    }
 
     @Override
-    public void calculateNextTimestep(Cell cell, LocalDateTime t0) {
+    public double[] calculateNextTimestep(Cell cell, LocalDateTime t0) {
 	PandoraTimestep timestep = buildPandoraTimestep(cell, t0);
 	double[] yEnd = pandoraIntegratorService.integrate(timestep);
 	postProcessing(cell, t0, timestep, yEnd);
+	return yEnd;
     }
 
     private void postProcessing(Cell cell, LocalDateTime t0, PandoraTimestep timestep, double[] yEnd) {
