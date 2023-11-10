@@ -3,6 +3,8 @@
  */
 package com.science.earth.biogeochemistry.freshwaters.pandora.model;
 
+import java.io.Serializable;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -26,7 +28,7 @@ import lombok.experimental.SuperBuilder;
 @Entity
 @SuperBuilder
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class AbstractBaseDBEntity {
+public abstract class AbstractBaseDBEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
