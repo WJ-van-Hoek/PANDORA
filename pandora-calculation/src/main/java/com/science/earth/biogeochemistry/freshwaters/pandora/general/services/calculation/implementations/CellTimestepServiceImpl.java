@@ -1,9 +1,8 @@
 package com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.implementations;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,8 +45,15 @@ public class CellTimestepServiceImpl implements CellTimestepService {
 
     @Override
     public List<CellTimestep> calculateTimeSeries(Cell cell, LocalDateTime t0, int numberOfTimesteps) {
-	return IntStream.range(0, numberOfTimesteps).mapToObj(i -> calculateNextTimestep(cell, t0))
-		.collect(Collectors.toList());
+	List<CellTimestep> results = new ArrayList<>();
+	List<LocalDateTime> dateTimeList = localDateTimeService.getDateTimeList(t0, numberOfTimesteps);
+	
+	for (int i = 0; i < numberOfTimesteps; i++) {
+	    CellTimestep nextTimestepResult = calculateNextTimestep(cell, dateTimeList.get(i));
+	    results.add(nextTimestepResult);
+	}
+
+	return results;
     }
 
     @Override
@@ -65,7 +71,7 @@ public class CellTimestepServiceImpl implements CellTimestepService {
 	double[] upstreamSources = upstreamSourcesMapService.findAtCellAndTimestep(cell, t0);
 
 	return PandoraTimestep.builder().y0(y0).t0(0d).tEnd(1d).dimension(y0.length)
-		.terrestrialSources(terrestrialSources).upstreamSources(upstreamSources).build();
+		.terrestrialSources(terrestrialSources).upstreamSources(upstreamSources).discharge(0d).volume(0d).build();
     }
 
     private CellTimestep postProcessing(Cell cell, LocalDateTime t0, PandoraTimestep timestep, double[] yEnd) {

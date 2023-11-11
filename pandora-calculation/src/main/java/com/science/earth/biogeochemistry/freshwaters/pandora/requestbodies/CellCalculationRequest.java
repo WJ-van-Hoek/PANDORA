@@ -12,8 +12,11 @@ import lombok.Setter;
 @Setter
 public class CellCalculationRequest {
     private Cell cell;
+    double[] y0;
     List<double[]> upstreamSources;
     List<double[]> terrestrialSources;
+    List<Double> discharges;
+    List<Double> volumes;
     private LocalDateTime t0;
     private int numberOfTimesteps;
 }

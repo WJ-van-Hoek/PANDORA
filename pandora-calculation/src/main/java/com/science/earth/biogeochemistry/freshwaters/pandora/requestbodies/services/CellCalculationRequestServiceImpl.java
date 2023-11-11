@@ -7,33 +7,45 @@ import java.util.stream.IntStream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.config.parameters.services.DateTimeService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.Cell;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.CellTimestep;
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.CellMapService;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.DischargesMapService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.TerrestrialSourcesMapService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.UpstreamSourcesMapService;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.VolumesMapService;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.YMapService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.interfaces.CellTimestepService;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.interfaces.LocalDateTimeService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.requestbodies.CellCalculationRequest;
 
 @Service
 public class CellCalculationRequestServiceImpl implements CellCalculationRequestService {
 
+    private final YMapService yMapService;
+
+    private final DischargesMapService dischargesMapService;
+
+    private final VolumesMapService volumesMapService;
+
     private final UpstreamSourcesMapService upstreamSourcesMapService;
 
     private final TerrestrialSourcesMapService terrestrialSourcesMapService;
 
-    private final DateTimeService dateTimeService;
+    private final LocalDateTimeService localDateTimeService;
 
     private final CellTimestepService cellTimestepService;
 
     @Autowired
-    public CellCalculationRequestServiceImpl(UpstreamSourcesMapService upstreamSourcesMapService,
-	    TerrestrialSourcesMapService terrestrialSourcesMapService, DateTimeService dateTimeService,
+    public CellCalculationRequestServiceImpl(YMapService yMapService, DischargesMapService dischargesMapService,
+	    VolumesMapService volumesMapService, UpstreamSourcesMapService upstreamSourcesMapService,
+	    TerrestrialSourcesMapService terrestrialSourcesMapService, LocalDateTimeService localDateTimeService,
 	    CellTimestepService cellTimestepService) {
+	this.yMapService = yMapService;
+	this.dischargesMapService = dischargesMapService;
+	this.volumesMapService = volumesMapService;
 	this.upstreamSourcesMapService = upstreamSourcesMapService;
 	this.terrestrialSourcesMapService = terrestrialSourcesMapService;
-	this.dateTimeService = dateTimeService;
+	this.localDateTimeService = localDateTimeService;
 	this.cellTimestepService = cellTimestepService;
     }
 
@@ -42,8 +54,15 @@ public class CellCalculationRequestServiceImpl implements CellCalculationRequest
 	List<LocalDateTime> dates = fetchDateTimeList(request);
 
 	Cell cell = request.getCell();
-	saveSources(request.getUpstreamSources(), cell, dates, upstreamSourcesMapService);
-	saveSources(request.getTerrestrialSources(), cell, dates, terrestrialSourcesMapService);
+	yMapService.saveAtCellAndTimestep(cell, request.getT0(), request.getY0());
+	IntStream.range(0, request.getDischarges().size()).forEach(
+		i -> dischargesMapService.saveAtCellAndTimestep(cell, dates.get(i), request.getDischarges().get(i)));
+	IntStream.range(0, request.getVolumes().size())
+		.forEach(i -> volumesMapService.saveAtCellAndTimestep(cell, dates.get(i), request.getVolumes().get(i)));
+	IntStream.range(0, request.getUpstreamSources().size()).forEach(i -> upstreamSourcesMapService
+		.saveAtCellAndTimestep(cell, dates.get(i), request.getUpstreamSources().get(i)));
+	IntStream.range(0, request.getTerrestrialSources().size()).forEach(i -> terrestrialSourcesMapService
+		.saveAtCellAndTimestep(cell, dates.get(i), request.getTerrestrialSources().get(i)));
     }
 
     @Override
@@ -57,13 +76,7 @@ public class CellCalculationRequestServiceImpl implements CellCalculationRequest
     private List<LocalDateTime> fetchDateTimeList(CellCalculationRequest request) {
 	LocalDateTime t0 = request.getT0();
 	int numberOfTimesteps = request.getNumberOfTimesteps();
-	return dateTimeService.getDateTimeList(t0, numberOfTimesteps);
-    }
-
-    private void saveSources(List<double[]> sources, Cell cell, List<LocalDateTime> dates,
-	    CellMapService cellMapService) {
-	IntStream.range(0, sources.size())
-		.forEach(i -> cellMapService.saveAtCellAndTimestep(cell, dates.get(i), sources.get(i)));
+	return localDateTimeService.getDateTimeList(t0, numberOfTimesteps);
     }
 
 }

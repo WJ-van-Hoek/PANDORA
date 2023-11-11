@@ -12,7 +12,6 @@ public class PandoraTimestep {
     private int dimension;
     private double discharge;
     private double volume;
-    private double dischargeRate;
     private double[] terrestrialSources;
     private double[] upstreamSources;
 
@@ -25,7 +24,6 @@ public class PandoraTimestep {
 	this.dimension = dimension;
 	this.discharge = discharge;
 	this.volume = volume;
-	this.dischargeRate = volume == 0 ? 0 : discharge/volume;
 	this.terrestrialSources = terrestrialSources;
 	this.upstreamSources = upstreamSources;
     }
@@ -55,7 +53,7 @@ public class PandoraTimestep {
     }
     
     public double getDischargeRate() {
-	return this.dischargeRate;
+	return this.volume == 0 ? 0 : this.discharge/this.volume;
     }
     
     public double getTerrestrialSources(int index) {
