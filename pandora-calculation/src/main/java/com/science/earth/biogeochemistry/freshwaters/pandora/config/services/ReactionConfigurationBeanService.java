@@ -2,7 +2,7 @@ package com.science.earth.biogeochemistry.freshwaters.pandora.config.services;
 
 import java.util.Map;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.config.reactions.ReactionConfiguration;
+import com.science.earth.biogeochemistry.freshwaters.pandora.config.reactions.abstractions.ReactionConfiguration;
 
 public interface ReactionConfigurationBeanService {
     public Map<String, ReactionConfiguration> getAllReactions();

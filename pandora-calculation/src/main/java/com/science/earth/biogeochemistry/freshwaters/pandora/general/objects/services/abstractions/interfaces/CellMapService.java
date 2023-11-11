@@ -4,6 +4,6 @@ import java.time.LocalDateTime;
 
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.Cell;
 
-public interface TerrestrialSourcesMapService extends CellMapService {
-    double[] findAtCellAndTimestep(Cell cell, LocalDateTime t);
+public interface CellMapService extends MapService {
+    void saveAtCellAndTimestep(Cell cell, LocalDateTime t, double[] data);
 }

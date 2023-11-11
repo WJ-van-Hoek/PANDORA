@@ -1,6 +1,5 @@
 package com.science.earth.biogeochemistry.freshwaters.pandora.controllers;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.Cell;
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.interfaces.CellTimestepService;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.CellTimestep;
 import com.science.earth.biogeochemistry.freshwaters.pandora.requestbodies.CellCalculationRequest;
+import com.science.earth.biogeochemistry.freshwaters.pandora.requestbodies.services.CellCalculationRequestService;
 
 import jakarta.xml.bind.ValidationException;
 
@@ -21,35 +20,34 @@ import jakarta.xml.bind.ValidationException;
 @RequestMapping("/api/cell")
 public class CellController {
 
-    private final CellTimestepService cellTimestepService;
+    private final CellCalculationRequestService cellCalculationRequestService;
 
     @Autowired
-    public CellController(CellTimestepService cellTimestepService) {
-        this.cellTimestepService = cellTimestepService;
+    public CellController(CellCalculationRequestService cellCalculationRequestService) {
+	this.cellCalculationRequestService = cellCalculationRequestService;
     }
 
     @PostMapping("/calculate")
-    public ResponseEntity<List<double[]>> calculateSeries(@RequestBody CellCalculationRequest request) {
-        try {
-            validateRequest(request);
+    public ResponseEntity<List<CellTimestep>> calculateSeries(@RequestBody CellCalculationRequest request) {
+	try {
+	    validate(request);
+	    cellCalculationRequestService.preprocess(request);
 
-            Cell cell = request.getCell();
-            LocalDateTime t0 = request.getT0();
-            int numberOfTimesteps = request.getNumberOfTimesteps();
+	    List<CellTimestep> results = cellCalculationRequestService.process(request);
 
-            List<double[]> results = cellTimestepService.calculateTimeSeries(cell, t0, numberOfTimesteps);
-            return ResponseEntity.ok(results);
-        } catch (ValidationException e) {
-            // Handle validation exception and return a response with an appropriate status code
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
-        } catch (Exception e) {
-            // Handle other exceptions and return a response with an appropriate status code
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
-        }
+	    return ResponseEntity.ok(results);
+	} catch (ValidationException e) {
+	    // Handle validation exception and return a response with an appropriate status
+	    // code
+	    return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+	} catch (Exception e) {
+	    // Handle other exceptions and return a response with an appropriate status code
+	    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+	}
     }
 
-    private void validateRequest(CellCalculationRequest request) throws ValidationException {
-        // Your validation logic here
-        // Throw ValidationException if validation fails
+    private void validate(CellCalculationRequest request) throws ValidationException {
+	// Your validation logic here
+	// Throw ValidationException if validation fails
     }
 }

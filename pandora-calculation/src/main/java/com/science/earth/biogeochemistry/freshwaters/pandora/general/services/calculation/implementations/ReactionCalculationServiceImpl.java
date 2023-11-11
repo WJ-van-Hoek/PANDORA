@@ -5,7 +5,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.config.reactions.ReactionConfiguration;
+import com.science.earth.biogeochemistry.freshwaters.pandora.config.reactions.abstractions.ReactionConfiguration;
 import com.science.earth.biogeochemistry.freshwaters.pandora.config.services.ReactionConfigurationBeanService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.interfaces.ReactionCalculationService;
 
