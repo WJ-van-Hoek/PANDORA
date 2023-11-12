@@ -2,9 +2,7 @@ package com.science.earth.biogeochemistry.freshwaters.pandora.general.objects;
 
 import lombok.Builder;
 import lombok.Getter;
-import lombok.Setter;
 
-@Setter
 @Getter
 public class Cell extends AbstractBaseObject {
     Float centerLatitude;

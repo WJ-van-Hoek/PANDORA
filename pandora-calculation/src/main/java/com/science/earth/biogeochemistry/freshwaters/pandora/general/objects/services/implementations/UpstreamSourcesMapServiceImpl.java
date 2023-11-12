@@ -30,6 +30,11 @@ public class UpstreamSourcesMapServiceImpl extends AbstractHashMapService implem
     public double[] findAtCellAndTimestep(Cell cell, LocalDateTime t) {
 	return map.get(hashCellAndTime(cell, t));
     }
+    
+    @Override
+    public void saveAtCellAndTimestep(Cell cell, LocalDateTime t, double[] upstreamSources) {
+	map.put(hashCellAndTime(cell, t), upstreamSources);
+    }
 
     @Override
     public void saveAtCellAndTimestep(Cell cell, PandoraTimestep pandoraTimestep, LocalDateTime tEnd, double[] yEnd) {

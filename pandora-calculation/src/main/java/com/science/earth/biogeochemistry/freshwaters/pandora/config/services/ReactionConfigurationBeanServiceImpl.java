@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.config.reactions.ReactionConfiguration;
+import com.science.earth.biogeochemistry.freshwaters.pandora.config.reactions.abstractions.ReactionConfiguration;
 
 import jakarta.annotation.PostConstruct;
 

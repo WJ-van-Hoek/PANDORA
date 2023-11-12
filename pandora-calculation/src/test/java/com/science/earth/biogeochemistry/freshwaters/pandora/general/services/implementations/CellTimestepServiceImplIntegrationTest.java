@@ -12,8 +12,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.Cell;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.PandoraTimestep;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.DischargesMapService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.TerrestrialSourcesMapService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.UpstreamSourcesMapService;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.VolumesMapService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.YMapService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.interfaces.CellTimestepService;
 
@@ -27,7 +29,9 @@ class CellTimestepServiceImplIntegrationTest {
     private static final double[] Y_0 = {1d,1d}; 
     private static final double[] TERRESTRIAL_SOURCES = {2d, 2d};
     private static final double[] UPSTREAM_SOURCES = {3d, 3d};
-    private static final double[] Y_END = {31.3568d, 34.7598d};
+    private static final Double DISCHARGE = 1d;
+    private static final double VOLUME = 1d;
+    private static final double[] Y_END = {19.7403d, 21.5063d};
     
     @Autowired
     YMapService yMapService;
@@ -37,6 +41,12 @@ class CellTimestepServiceImplIntegrationTest {
     
     @Autowired
     UpstreamSourcesMapService upstreamSourcesMapService;
+    
+    @Autowired
+    DischargesMapService dischargesMapService;
+    
+    @Autowired
+    VolumesMapService volumesMapService;
     
     @Autowired
     CellTimestepService cellTimestepService;
@@ -49,6 +59,11 @@ class CellTimestepServiceImplIntegrationTest {
 	terrestrialSourcesMapService.saveAtCellAndTimestep(CELL, T_0, TERRESTRIAL_SOURCES);
 	upstreamSourcesMapService.cleanMap();
 	upstreamSourcesMapService.saveAtCellAndTimestep(CELL, PANDORA_TIMESTEP, T_0, UPSTREAM_SOURCES);
+	dischargesMapService.cleanMap();
+	dischargesMapService.saveAtCellAndTimestep(CELL, T_0, DISCHARGE);
+	volumesMapService.cleanMap();
+	volumesMapService.saveAtCellAndTimestep(CELL, T_0, VOLUME);
+	
     }
 
     @Test

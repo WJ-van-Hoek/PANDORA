@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.config.reactions;
+package com.science.earth.biogeochemistry.freshwaters.pandora.config.reactions.abstractions;
 
 import org.springframework.beans.factory.annotation.Autowired;
 

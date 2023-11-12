@@ -3,6 +3,7 @@ package com.science.earth.biogeochemistry.freshwaters.pandora.config.reactions;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 
+import com.science.earth.biogeochemistry.freshwaters.pandora.config.reactions.abstractions.Oxidation;
 import com.science.earth.biogeochemistry.freshwaters.pandora.config.species.DOC;
 
 @Configuration
