@@ -15,7 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 @ConditionalOnProperty(name = "doc.enabled", havingValue = "true")
 @Slf4j
 @Configuration
-@Order(2)
+@Order(1)
 public class DOC extends AqueousSpecie implements Dissolved, Organic, Carbon {
     @Value("${doc.name}")
     private String name;

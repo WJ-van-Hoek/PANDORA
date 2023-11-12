@@ -9,7 +9,7 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.config.species.DOC;
 
 @ConditionalOnProperty(name = "doc.enabled", havingValue = "true")
 @Configuration
-@Order(3)
+@Order(2)
 public class OxidationDoc extends Oxidation<DOC> {
     private String reactionProductionPrefix = "reaction.oxidation.doc.production.";
 

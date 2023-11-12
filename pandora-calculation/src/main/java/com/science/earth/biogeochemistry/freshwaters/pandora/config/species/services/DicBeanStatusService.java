@@ -5,32 +5,32 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.config.species.DOC;
+import com.science.earth.biogeochemistry.freshwaters.pandora.config.species.DIC;
 import com.science.earth.biogeochemistry.freshwaters.pandora.config.species.abstractions.AqueousSpecie;
 
-@ConditionalOnProperty(name = "doc.enabled", havingValue = "true")
+@ConditionalOnProperty(name = "dic.enabled", havingValue = "true")
 @Service
-public class DocBeanStatusService extends AbstractBeanStatusService {
+public class DicBeanStatusService extends AbstractBeanStatusService {
 
-    @Value("${doc.enabled:false}")
-    private boolean docEnabled;
+    @Value("${dic.enabled:false}")
+    private boolean dicEnabled;
 
-    public DocBeanStatusService(ApplicationContext applicationContext) {
-	super(applicationContext, "DOC");
+    public DicBeanStatusService(ApplicationContext applicationContext) {
+	super(applicationContext, "DIC");
     }
 
     protected boolean setBeanEnabledImpl(boolean enabled) {
-	this.docEnabled = enabled;
-	return this.docEnabled;
+	this.dicEnabled = enabled;
+	return this.dicEnabled;
     }
     
     protected boolean getBeanEnabledImpl() {
-	return this.docEnabled;
+	return this.dicEnabled;
     }
 
     @Override
     protected AqueousSpecie createBeanInstance() {
-	return new DOC();
+	return new DIC();
     }
 
 }
