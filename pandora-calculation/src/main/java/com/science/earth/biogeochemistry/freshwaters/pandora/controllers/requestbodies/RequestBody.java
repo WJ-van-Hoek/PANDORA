@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.requestbodies;
+package com.science.earth.biogeochemistry.freshwaters.pandora.controllers.requestbodies;
 
 import jakarta.xml.bind.ValidationException;
 

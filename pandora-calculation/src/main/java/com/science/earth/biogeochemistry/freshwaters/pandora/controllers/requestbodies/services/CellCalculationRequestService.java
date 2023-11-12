@@ -1,9 +1,9 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.requestbodies.services;
+package com.science.earth.biogeochemistry.freshwaters.pandora.controllers.requestbodies.services;
 
 import java.util.List;
 
+import com.science.earth.biogeochemistry.freshwaters.pandora.controllers.requestbodies.CellCalculationRequest;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.CellTimestep;
-import com.science.earth.biogeochemistry.freshwaters.pandora.requestbodies.CellCalculationRequest;
 
 public interface CellCalculationRequestService {
 

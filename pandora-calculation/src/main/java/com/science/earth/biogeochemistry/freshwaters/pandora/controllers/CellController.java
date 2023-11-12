@@ -10,9 +10,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.science.earth.biogeochemistry.freshwaters.pandora.controllers.requestbodies.CellCalculationRequest;
+import com.science.earth.biogeochemistry.freshwaters.pandora.controllers.requestbodies.services.CellCalculationRequestService;
+import com.science.earth.biogeochemistry.freshwaters.pandora.controllers.responsebodies.CellCalculationResponse;
+import com.science.earth.biogeochemistry.freshwaters.pandora.controllers.responsebodies.services.CellCalculationResponseService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.CellTimestep;
-import com.science.earth.biogeochemistry.freshwaters.pandora.requestbodies.CellCalculationRequest;
-import com.science.earth.biogeochemistry.freshwaters.pandora.requestbodies.services.CellCalculationRequestService;
 
 import jakarta.xml.bind.ValidationException;
 
@@ -22,26 +24,26 @@ public class CellController {
 
     private final CellCalculationRequestService cellCalculationRequestService;
 
+    private final CellCalculationResponseService cellCalculationResponseService;
+
     @Autowired
-    public CellController(CellCalculationRequestService cellCalculationRequestService) {
+    public CellController(CellCalculationRequestService cellCalculationRequestService,
+	    CellCalculationResponseService cellCalculationResponseService) {
 	this.cellCalculationRequestService = cellCalculationRequestService;
+	this.cellCalculationResponseService = cellCalculationResponseService;
     }
 
     @PostMapping("/calculate")
-    public ResponseEntity<List<CellTimestep>> calculateSeries(@RequestBody CellCalculationRequest request) {
+    public ResponseEntity<CellCalculationResponse> calculateSeries(@RequestBody CellCalculationRequest request) {
 	try {
 	    validate(request);
 	    cellCalculationRequestService.preprocess(request);
-
 	    List<CellTimestep> results = cellCalculationRequestService.process(request);
-
-	    return ResponseEntity.ok(results);
+	    CellCalculationResponse response = cellCalculationResponseService.postprocess(results);
+	    return ResponseEntity.ok(response);
 	} catch (ValidationException e) {
-	    // Handle validation exception and return a response with an appropriate status
-	    // code
 	    return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
 	} catch (Exception e) {
-	    // Handle other exceptions and return a response with an appropriate status code
 	    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
 	}
     }

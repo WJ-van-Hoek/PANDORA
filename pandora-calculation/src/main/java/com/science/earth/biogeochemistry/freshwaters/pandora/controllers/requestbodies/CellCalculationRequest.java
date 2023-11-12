@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.requestbodies;
+package com.science.earth.biogeochemistry.freshwaters.pandora.controllers.requestbodies;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -8,10 +8,8 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.Cel
 
 import jakarta.xml.bind.ValidationException;
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
-@Setter
 public class CellCalculationRequest implements RequestBody {
     private Cell cell;
     double[] y0;

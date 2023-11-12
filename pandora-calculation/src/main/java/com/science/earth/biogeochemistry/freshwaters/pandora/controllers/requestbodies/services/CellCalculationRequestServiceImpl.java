@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.requestbodies.services;
+package com.science.earth.biogeochemistry.freshwaters.pandora.controllers.requestbodies.services;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -7,6 +7,7 @@ import java.util.stream.IntStream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.science.earth.biogeochemistry.freshwaters.pandora.controllers.requestbodies.CellCalculationRequest;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.Cell;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.CellTimestep;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.DischargesMapService;
@@ -16,7 +17,6 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.ser
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.YMapService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.interfaces.CellTimestepService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.interfaces.LocalDateTimeService;
-import com.science.earth.biogeochemistry.freshwaters.pandora.requestbodies.CellCalculationRequest;
 
 @Service
 public class CellCalculationRequestServiceImpl implements CellCalculationRequestService {
@@ -52,17 +52,36 @@ public class CellCalculationRequestServiceImpl implements CellCalculationRequest
     @Override
     public void preprocess(CellCalculationRequest request) {
 	List<LocalDateTime> dates = fetchDateTimeList(request);
+	saveToMemory(request, dates);
+    }
 
+    private void saveToMemory(CellCalculationRequest request, List<LocalDateTime> dates) {
 	Cell cell = request.getCell();
 	yMapService.saveAtCellAndTimestep(cell, request.getT0(), request.getY0());
-	IntStream.range(0, request.getDischarges().size()).forEach(
-		i -> dischargesMapService.saveAtCellAndTimestep(cell, dates.get(i), request.getDischarges().get(i)));
-	IntStream.range(0, request.getVolumes().size())
-		.forEach(i -> volumesMapService.saveAtCellAndTimestep(cell, dates.get(i), request.getVolumes().get(i)));
-	IntStream.range(0, request.getUpstreamSources().size()).forEach(i -> upstreamSourcesMapService
-		.saveAtCellAndTimestep(cell, dates.get(i), request.getUpstreamSources().get(i)));
+	saveDischarge(request, dates, cell);
+	saveVolume(request, dates, cell);
+	saveUpstreamSources(request, dates, cell);
+	saveTerrestrialSources(request, dates, cell);
+    }
+
+    private void saveTerrestrialSources(CellCalculationRequest request, List<LocalDateTime> dates, Cell cell) {
 	IntStream.range(0, request.getTerrestrialSources().size()).forEach(i -> terrestrialSourcesMapService
 		.saveAtCellAndTimestep(cell, dates.get(i), request.getTerrestrialSources().get(i)));
+    }
+
+    private void saveUpstreamSources(CellCalculationRequest request, List<LocalDateTime> dates, Cell cell) {
+	IntStream.range(0, request.getUpstreamSources().size()).forEach(i -> upstreamSourcesMapService
+		.saveAtCellAndTimestep(cell, dates.get(i), request.getUpstreamSources().get(i)));
+    }
+
+    private void saveVolume(CellCalculationRequest request, List<LocalDateTime> dates, Cell cell) {
+	IntStream.range(0, request.getVolumes().size())
+		.forEach(i -> volumesMapService.saveAtCellAndTimestep(cell, dates.get(i), request.getVolumes().get(i)));
+    }
+
+    private void saveDischarge(CellCalculationRequest request, List<LocalDateTime> dates, Cell cell) {
+	IntStream.range(0, request.getDischarges().size()).forEach(
+		i -> dischargesMapService.saveAtCellAndTimestep(cell, dates.get(i), request.getDischarges().get(i)));
     }
 
     @Override
