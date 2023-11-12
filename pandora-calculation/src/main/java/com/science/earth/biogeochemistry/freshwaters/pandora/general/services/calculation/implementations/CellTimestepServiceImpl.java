@@ -10,8 +10,10 @@ import org.springframework.stereotype.Service;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.Cell;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.CellTimestep;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.PandoraTimestep;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.DischargesMapService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.TerrestrialSourcesMapService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.UpstreamSourcesMapService;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.VolumesMapService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.YMapService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.implementations.CellMapCrudService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.interfaces.CellTimestepService;
@@ -31,6 +33,12 @@ public class CellTimestepServiceImpl implements CellTimestepService {
     @Autowired
     UpstreamSourcesMapService upstreamSourcesMapService;
 
+    @Autowired
+    DischargesMapService dischargesMapService;
+    
+    @Autowired
+    VolumesMapService volumesMapService;
+        
     @Autowired
     PandoraIntegratorService pandoraIntegratorService;
 
@@ -69,9 +77,10 @@ public class CellTimestepServiceImpl implements CellTimestepService {
 	double[] y0 = yMapService.findAtCellAndTimestep(cell, t0);
 	double[] terrestrialSources = terrestrialSourcesMapService.findAtCellAndTimestep(cell, t0);
 	double[] upstreamSources = upstreamSourcesMapService.findAtCellAndTimestep(cell, t0);
-
+	double q = dischargesMapService.findAtCellAndTimestep(cell, t0);
+	double v = volumesMapService.findAtCellAndTimestep(cell, t0);
 	return PandoraTimestep.builder().y0(y0).t0(0d).tEnd(1d).dimension(y0.length)
-		.terrestrialSources(terrestrialSources).upstreamSources(upstreamSources).discharge(0d).volume(0d).build();
+		.terrestrialSources(terrestrialSources).upstreamSources(upstreamSources).discharge(q).volume(v).build();
     }
 
     private CellTimestep postProcessing(Cell cell, LocalDateTime t0, PandoraTimestep timestep, double[] yEnd) {
