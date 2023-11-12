@@ -47,7 +47,6 @@ public class CellController {
     }
 
     private void validate(CellCalculationRequest request) throws ValidationException {
-	// Your validation logic here
-	// Throw ValidationException if validation fails
+	request.validate();
     }
 }

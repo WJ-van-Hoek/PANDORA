@@ -18,8 +18,10 @@ import org.mockito.MockitoAnnotations;
 
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.Cell;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.PandoraTimestep;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.DischargesMapService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.TerrestrialSourcesMapService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.UpstreamSourcesMapService;
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.VolumesMapService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.YMapService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.implementations.CellMapCrudService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.implementations.CellTimestepServiceImpl;
@@ -35,6 +37,12 @@ class CellTimestepServiceImplTest {
     
     @Mock
     UpstreamSourcesMapService upstreamSourcesMapService;
+    
+    @Mock
+    DischargesMapService dischargesMapService;
+    
+    @Mock
+    VolumesMapService volumesMapService;
     
     @Mock
     PandoraIntegratorService pandoraIntegratorService;
@@ -63,7 +71,11 @@ class CellTimestepServiceImplTest {
     private static final double[] TERRESTRIAL_SOURCES = {1d,1d};
     
     private static final double[] UPSTREAM_SOURCES = {1d,1d};
+    
+    private static final Double DISCHARGE = 1d;
 
+    private static final Double VOLUME = 1d;
+    
     @BeforeEach
     void setUp() throws Exception {
 	MockitoAnnotations.openMocks(this);
@@ -77,6 +89,8 @@ class CellTimestepServiceImplTest {
 	when(yMapService.findAtCellAndTimestep(cell, T_0)).thenReturn(Y_0);
 	when(terrestrialSourcesMapService.findAtCellAndTimestep(cell, T_0)).thenReturn(TERRESTRIAL_SOURCES);
 	when(upstreamSourcesMapService.findAtCellAndTimestep(cell, T_0)).thenReturn(UPSTREAM_SOURCES);
+	when(dischargesMapService.findAtCellAndTimestep(cell, T_0)).thenReturn(DISCHARGE);
+	when(volumesMapService.findAtCellAndTimestep(cell, T_0)).thenReturn(VOLUME);
 	when(pandoraIntegratorService.integrate(any(PandoraTimestep.class))).thenReturn(Y_END);
 	when(localDateTimeService.calculateTEndAsLocalDateTime(any(LocalDateTime.class), anyDouble())).thenReturn(T_END);
 	when(cellMapCrudService.findById(anyLong())).thenReturn(nextCell);
@@ -106,7 +120,7 @@ class CellTimestepServiceImplTest {
     }
     
     private PandoraTimestep pandoraTimestepBuilder() {
-	return PandoraTimestep.builder().y0(Y_0).t0(0d).tEnd(1d).dimension(Y_0.length)
+	return PandoraTimestep.builder().y0(Y_0).t0(0d).tEnd(1d).discharge(DISCHARGE).volume(VOLUME).dimension(Y_0.length)
 	.terrestrialSources(TERRESTRIAL_SOURCES).upstreamSources(UPSTREAM_SOURCES).build();
     }
 
