@@ -64,8 +64,8 @@
 
 		<dependency>
 			<groupId>com.general.utils</groupId>
-			<artifactId>docker-services</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<artifactId>docker-utils</artifactId>
+			<version>0.0.2</version>
 		</dependency>
 	
 	</dependencies>
