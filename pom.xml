@@ -65,7 +65,6 @@
 		<dependency>
 			<groupId>com.general.utils</groupId>
 			<artifactId>docker-utils</artifactId>
-			<version>0.0.2</version>
 		</dependency>
 	
 	</dependencies>
