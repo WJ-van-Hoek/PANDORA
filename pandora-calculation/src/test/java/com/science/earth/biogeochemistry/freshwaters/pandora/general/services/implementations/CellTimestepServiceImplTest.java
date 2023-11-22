@@ -120,14 +120,10 @@ class CellTimestepServiceImplTest {
 	double[] capturedArray =  yEndCaptor.getValue();
 	Assertions.assertEquals(Y_END, capturedArray);
     }
-
-
-
-    
+   
     private PandoraTimestep pandoraTimestepBuilder() {
 	return PandoraTimestep.builder().y0(Y_0).t0(0d).tEnd(1d).discharge(DISCHARGE).volume(VOLUME).dimension(Y_0.length)
 	.terrestrialSources(TERRESTRIAL_SOURCES).upstreamSources(UPSTREAM_SOURCES).build();
     }
-
 
 }
