@@ -29,6 +29,7 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.ser
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.VolumesMapService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.YMapService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.interfaces.CellTimestepService;
+import org.springframework.core.env.Environment;
 import org.springframework.test.util.ReflectionTestUtils;
 
 import static org.mockito.ArgumentMatchers.any;
@@ -71,7 +72,8 @@ class CellTimestepServiceImplIntegrationTest {
     @Autowired
     LocalDateTimeService localDateTimeService;
 
-
+    @Autowired
+    private Environment environment;
 
     @Autowired
     LocalDateTimeServiceImpl localDateTimeServiceImpl;
@@ -100,16 +102,16 @@ class CellTimestepServiceImplIntegrationTest {
 
     @Test
     void testCalculateTimeSeries() {
+
         cellTimestepService.calculateTimeSeries(CELL, T_0, 1);
         Assertions.assertArrayEquals(Y_END,  yMapService.findAtCellAndTimestep(CELL, T_0.plusYears(1)), 1e-3);
     }
 
     @Test
     void testCalculateTimeSeriesMonths() {
-        ReflectionTestUtils.setField(localDateTimeServiceImpl, "timestepUnit", "month");
-        ReflectionTestUtils.setField(localDateTimeServiceImpl,"timestepLength", 12L);
-        localDateTimeService.getDateTimeList(T_0,12);
-        cellTimestepService.calculateTimeSeries(CELL, T_0, 12);
+        System.setProperty("pandora.timestep.unit", "month");
+        System.setProperty("pandora.timestep.length", "1L");
+        cellTimestepService.calculateTimeSeries(CELL, T_0, 1);
         Assertions.assertArrayEquals(Y_END,  yMapService.findAtCellAndTimestep(CELL, T_0.plusYears(1)), 1e-3);
     }
 }
