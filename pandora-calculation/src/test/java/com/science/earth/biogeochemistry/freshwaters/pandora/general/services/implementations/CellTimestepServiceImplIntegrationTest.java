@@ -106,7 +106,7 @@ class CellTimestepServiceImplIntegrationTest {
         Mockito.when(localDateTimeService.getDateTimeList(T_0,12)).thenReturn(IntStream.range(0, 12)
                 .mapToObj(i -> T_0.plus(i, ChronoUnit.MONTHS))
                 .collect(Collectors.toList()));
-        cellTimestepService.calculateTimeSeries(CELL, T_0, 1);
+        cellTimestepService.calculateTimeSeries(CELL, T_0, 12);
         Assertions.assertArrayEquals(Y_END,  yMapService.findAtCellAndTimestep(CELL, T_0.plusYears(1)), 1e-3);
     }
 }
