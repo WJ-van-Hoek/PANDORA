@@ -101,8 +101,8 @@ class CellTimestepServiceImplIntegrationTest {
 
     @Test
     void testCalculateTimeSeriesMonths() {
-        ReflectionTestUtils.setField(localDateTimeService, "timestepUnit", "month");
-        ReflectionTestUtils.setField(localDateTimeService,"timestepLength", 12);
+        ReflectionTestUtils.setField(LocalDateTimeServiceImpl.class, "timestepUnit", "month");
+        ReflectionTestUtils.setField(LocalDateTimeServiceImpl.class,"timestepLength", 12);
         Mockito.when(localDateTimeService.getDateTimeList(T_0,12)).thenReturn(IntStream.range(0, 12)
                 .mapToObj(i -> T_0.plus(i, ChronoUnit.MONTHS))
                 .collect(Collectors.toList()));
