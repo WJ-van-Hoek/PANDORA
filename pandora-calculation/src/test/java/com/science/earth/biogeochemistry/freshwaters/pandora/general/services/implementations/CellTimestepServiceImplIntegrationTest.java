@@ -68,10 +68,12 @@ class CellTimestepServiceImplIntegrationTest {
     @Autowired
     CellTimestepService cellTimestepService;
 
-    @Mock
+    @Autowired
     LocalDateTimeService localDateTimeService;
 
-    @InjectMocks
+
+
+    @Autowired
     LocalDateTimeServiceImpl localDateTimeServiceImpl;
 
     @BeforeEach
@@ -106,9 +108,7 @@ class CellTimestepServiceImplIntegrationTest {
     void testCalculateTimeSeriesMonths() {
         ReflectionTestUtils.setField(localDateTimeServiceImpl, "timestepUnit", "month");
         ReflectionTestUtils.setField(localDateTimeServiceImpl,"timestepLength", 12L);
-        Mockito.when(localDateTimeService.getDateTimeList(T_0,12)).thenReturn(IntStream.range(0, 12)
-                .mapToObj(i -> T_0.plus(i, ChronoUnit.MONTHS))
-                .collect(Collectors.toList()));
+        localDateTimeService.getDateTimeList(T_0,12);
         cellTimestepService.calculateTimeSeries(CELL, T_0, 12);
         Assertions.assertArrayEquals(Y_END,  yMapService.findAtCellAndTimestep(CELL, T_0.plusYears(1)), 1e-3);
     }
