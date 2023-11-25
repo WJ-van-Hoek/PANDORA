@@ -14,6 +14,7 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.ca
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
@@ -70,6 +71,8 @@ class CellTimestepServiceImplIntegrationTest {
     @Mock
     LocalDateTimeService localDateTimeService;
 
+    @InjectMocks
+    LocalDateTimeServiceImpl localDateTimeServiceImpl;
 
     @BeforeEach
     void setUp() throws Exception {
@@ -101,8 +104,8 @@ class CellTimestepServiceImplIntegrationTest {
 
     @Test
     void testCalculateTimeSeriesMonths() {
-        ReflectionTestUtils.setField(LocalDateTimeServiceImpl.class, "timestepUnit", "month");
-        ReflectionTestUtils.setField(LocalDateTimeServiceImpl.class,"timestepLength", 12);
+        ReflectionTestUtils.setField(localDateTimeServiceImpl, "timestepUnit", "month");
+        ReflectionTestUtils.setField(localDateTimeServiceImpl,"timestepLength", 12);
         Mockito.when(localDateTimeService.getDateTimeList(T_0,12)).thenReturn(IntStream.range(0, 12)
                 .mapToObj(i -> T_0.plus(i, ChronoUnit.MONTHS))
                 .collect(Collectors.toList()));
