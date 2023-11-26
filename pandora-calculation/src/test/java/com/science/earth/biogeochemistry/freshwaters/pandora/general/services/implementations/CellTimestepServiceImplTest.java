@@ -88,8 +88,8 @@ class CellTimestepServiceImplTest {
     @Test
     void testCalculateNextTimestep() {
 	//given
-        System.setProperty("pandora.timestep.unit", "month");
-        System.setProperty("pandora.timestep.length", "1L");
+//        System.setProperty("pandora.timestep.unit", "month");
+//        System.setProperty("pandora.timestep.length", "1L");
 	when(yMapService.findAtCellAndTimestep(cell, T_0)).thenReturn(Y_0);
 	when(terrestrialSourcesMapService.findAtCellAndTimestep(cell, T_0)).thenReturn(TERRESTRIAL_SOURCES);
 	when(upstreamSourcesMapService.findAtCellAndTimestep(cell, T_0)).thenReturn(UPSTREAM_SOURCES);

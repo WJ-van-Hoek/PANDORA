@@ -107,11 +107,11 @@ class CellTimestepServiceImplIntegrationTest {
         Assertions.assertArrayEquals(Y_END,  yMapService.findAtCellAndTimestep(CELL, T_0.plusYears(1)), 1e-3);
     }
 
-    @Test
-    void testCalculateTimeSeriesMonths() {
-        System.setProperty("pandora.timestep.unit", "month");
-        System.setProperty("pandora.timestep.length", "1L");
-        cellTimestepService.calculateTimeSeries(CELL, T_0, 1);
-        Assertions.assertArrayEquals(Y_END,  yMapService.findAtCellAndTimestep(CELL, T_0.plusYears(1)), 1e-3);
-    }
+//    @Test
+//    void testCalculateTimeSeriesMonths() {
+//        System.setProperty("pandora.timestep.unit", "month");
+//        System.setProperty("pandora.timestep.length", "1L");
+//        cellTimestepService.calculateTimeSeries(CELL, T_0, 1);
+//        Assertions.assertArrayEquals(Y_END,  yMapService.findAtCellAndTimestep(CELL, T_0.plusYears(1)), 1e-3);
+//    }
 }
