@@ -30,6 +30,7 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.ser
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.YMapService;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.interfaces.CellTimestepService;
 import org.springframework.core.env.Environment;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.util.ReflectionTestUtils;
 
 import static org.mockito.ArgumentMatchers.any;
@@ -37,6 +38,7 @@ import static org.mockito.ArgumentMatchers.anyDouble;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
+@TestPropertySource(locations = "classpath:../test/resources/test.properties")
 class CellTimestepServiceImplIntegrationTest {
     private static final Cell CELL = Cell.builder().id(1l).centerLatitude(52.08f).centerLongitude(5.67f).surfaceArea(1754.27f).nextCellId(1l).build();
     private static final LocalDate LOCAL_DATE = LocalDate.of(2023, 8, 9);
