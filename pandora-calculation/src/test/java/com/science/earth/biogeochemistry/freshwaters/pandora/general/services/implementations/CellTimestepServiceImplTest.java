@@ -63,6 +63,8 @@ class CellTimestepServiceImplTest {
     private static final LocalDateTime T_0 = LocalDateTime.of(2023, 7, 21, 0, 0);
     
     private static final LocalDateTime T_END = T_0.plusYears(1);
+
+    private static final LocalDateTime T_END_MONTH = T_0.plusMonths(1);
     
     private static final double[] Y_0 = {0d,0d};
     
@@ -94,21 +96,21 @@ class CellTimestepServiceImplTest {
 	when(pandoraIntegratorService.integrate(any(PandoraTimestep.class))).thenReturn(Y_END);
 	when(localDateTimeService.calculateTEndAsLocalDateTime(any(LocalDateTime.class), anyDouble())).thenReturn(T_END);
 	when(cellMapCrudService.findById(anyLong())).thenReturn(nextCell);
-	
+
 	//when
 	cellTimestepService.calculateNextTimestep(cell, T_0);
-	
+
 	// then
 	ArgumentCaptor<PandoraTimestep> pandoraTimestepCaptor = ArgumentCaptor.forClass(PandoraTimestep.class);
 	verify(pandoraIntegratorService).integrate(pandoraTimestepCaptor.capture());
 	Assertions.assertEquals(pandoraTimestepBuilder(), pandoraTimestepCaptor.getValue());
-	
+
 	ArgumentCaptor<LocalDateTime> t0Captor = ArgumentCaptor.forClass(LocalDateTime.class);
 	ArgumentCaptor<Double> tEndCaptor = ArgumentCaptor.forClass(Double.class);
 	verify(localDateTimeService).calculateTEndAsLocalDateTime(t0Captor.capture(), tEndCaptor.capture());
 	Assertions.assertEquals(T_0, t0Captor.getValue());
 	Assertions.assertEquals(1d, tEndCaptor.getValue());
-	
+
 	ArgumentCaptor<Cell> cellCaptor = ArgumentCaptor.forClass(Cell.class);
 	ArgumentCaptor<LocalDateTime> dateTimeTEndCaptor = ArgumentCaptor.forClass(LocalDateTime.class);
 	ArgumentCaptor<double[]> yEndCaptor = ArgumentCaptor.forClass(double[].class);
@@ -118,7 +120,7 @@ class CellTimestepServiceImplTest {
 	double[] capturedArray =  yEndCaptor.getValue();
 	Assertions.assertEquals(Y_END, capturedArray);
     }
-    
+   
     private PandoraTimestep pandoraTimestepBuilder() {
 	return PandoraTimestep.builder().y0(Y_0).t0(0d).tEnd(1d).discharge(DISCHARGE).volume(VOLUME).dimension(Y_0.length)
 	.terrestrialSources(TERRESTRIAL_SOURCES).upstreamSources(UPSTREAM_SOURCES).build();
