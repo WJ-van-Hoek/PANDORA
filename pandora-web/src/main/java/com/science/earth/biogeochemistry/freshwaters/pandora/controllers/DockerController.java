@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.general.utils.docker.container.ContainerResponse;
+import com.general.utils.docker.container.Container;
 import com.general.utils.docker.services.DockerService;
 
 import lombok.AllArgsConstructor;
@@ -20,7 +20,7 @@ public class DockerController {
     DockerService dockerService;
 
     @PostMapping("/api/docker/launch")
-    public ContainerResponse launchDockerContainer(@RequestBody Map<String, String> requestBody) {
+    public Container launchDockerContainer(@RequestBody Map<String, String> requestBody) {
 	String imageName = requestBody.get("imageName");
 	String containerName = requestBody.get("containerName"); 
 	String version = requestBody.get("version");
