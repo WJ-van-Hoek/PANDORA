@@ -16,20 +16,20 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.controllers.respons
 @RequestMapping("/api")
 public class SpeciesController {
 
-    SpecieBeanService specieBeanService;
+	SpecieBeanService specieBeanService;
 
-    SpeciesResponseService speciesResponseService;
+	SpeciesResponseService speciesResponseService;
 
-    public SpeciesController(SpecieBeanService specieBeanService, SpeciesResponseService speciesResponseService) {
-	this.specieBeanService = specieBeanService;
-	this.speciesResponseService = speciesResponseService;
-    }
+	public SpeciesController(SpecieBeanService specieBeanService, SpeciesResponseService speciesResponseService) {
+		this.specieBeanService = specieBeanService;
+		this.speciesResponseService = speciesResponseService;
+	}
 
-    @GetMapping("/getSpecies")
-    public ResponseEntity<SpeciesResponse> getAllSpecies() {
-	Map<String, Specie> results = specieBeanService.getAllSpecies();
-	SpeciesResponse response = speciesResponseService.postprocess(results);
-	return ResponseEntity.ok(response);
-    }
+	@GetMapping("/getSpecies")
+	public ResponseEntity<SpeciesResponse> getAllSpecies() {
+		Map<String, Specie> results = specieBeanService.getAllSpecies();
+		SpeciesResponse response = speciesResponseService.postprocess(results);
+		return ResponseEntity.ok(response);
+	}
 
 }
