@@ -8,7 +8,7 @@ Welcome to the PANDORA open-source repository! We appreciate your interest and c
 
 1. [Getting Started](#getting-started)
    - [Prerequisites](#prerequisites)
-   - [Installation](#installation)
+   - [Development setup](#development-setup)
 2. [Contributing](#contributing)
    - [Code of Conduct](#code-of-conduct)
    - [How to Contribute](#how-to-contribute)
@@ -46,9 +46,12 @@ Git is used for version control. Install Git from [git-scm.com](https://git-scm.
 `git --version`
 
 
-### Installation
+### Development setup
+1. Navigate to your workspace in your terminal
+2. Clone the PANDORA repository
+`git clone https://github.com/WJ-van-Hoek/PANDORA.git`
+3. Import the PANDORA maven project in your IDE
 
-[Provide step-by-step instructions on how to install and set up the project locally.]
 
 ## Contributing
 
