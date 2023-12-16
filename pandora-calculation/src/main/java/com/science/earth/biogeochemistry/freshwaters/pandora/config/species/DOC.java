@@ -10,10 +10,7 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.chemistry.interface
 import com.science.earth.biogeochemistry.freshwaters.pandora.chemistry.interfaces.Organic;
 import com.science.earth.biogeochemistry.freshwaters.pandora.config.species.abstractions.AqueousSpecie;
 
-import lombok.extern.slf4j.Slf4j;
-
 @ConditionalOnProperty(name = "doc.enabled", havingValue = "true")
-@Slf4j
 @Configuration
 @Order(1)
 public class DOC extends AqueousSpecie implements Dissolved, Organic, Carbon {
@@ -30,7 +27,7 @@ public class DOC extends AqueousSpecie implements Dissolved, Organic, Carbon {
     private double oxidationRate;
 
     public DOC() {
-	log.info("DOC bean is being loaded.");
+    	getLog().info("DOC bean is being loaded.");
     }
 
     @Override

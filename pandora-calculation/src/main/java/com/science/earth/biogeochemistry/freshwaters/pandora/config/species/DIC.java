@@ -10,44 +10,40 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.chemistry.interface
 import com.science.earth.biogeochemistry.freshwaters.pandora.chemistry.interfaces.Inorganic;
 import com.science.earth.biogeochemistry.freshwaters.pandora.config.species.abstractions.AqueousSpecie;
 
-import lombok.extern.slf4j.Slf4j;
-
 @ConditionalOnProperty(name = "dic.enabled", havingValue = "true")
-@Slf4j
 @Configuration
 @Order(1)
 public class DIC extends AqueousSpecie implements Dissolved, Inorganic, Carbon {
-    @Value("${dic.name}")
-    private String name;
-    
-    @Value("${dic.unit}")
-    private String unit;
+	@Value("${dic.name}")
+	private String name;
 
-    @Value("${dic.molarmass}")
-    private double molarMass;
-    
-    public DIC() {
-	log.info("DIC bean is being loaded.");
-    }    
+	@Value("${dic.unit}")
+	private String unit;
 
-    @Override
-    public String getName() {
-	return this.name.toLowerCase();
-    }
+	@Value("${dic.molarmass}")
+	private double molarMass;
 
-    @Override
-    public String getUnit() {
-	return this.unit;
-    }
-    
-    @Override
-    public double getMolarMass() {
-	return this.molarMass;
-    }
-    
-    @Override
-    public String toString() {
-	return getName();
-    }
+	public DIC() {
+		getLog().info("DIC bean is being loaded.");
+	}
 
+	@Override
+	public String getName() {
+		return this.name.toLowerCase();
+	}
+
+	@Override
+	public String getUnit() {
+		return this.unit;
+	}
+
+	@Override
+	public double getMolarMass() {
+		return this.molarMass;
+	}
+
+	@Override
+	public String toString() {
+		return getName();
+	}
 }
