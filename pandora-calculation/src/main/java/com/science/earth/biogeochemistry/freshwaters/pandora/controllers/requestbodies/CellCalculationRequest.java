@@ -38,6 +38,5 @@ public class CellCalculationRequest implements RequestBody {
 	}
 
 	// Additional validation or consistency checks can be added here
-        //comment
     }
 }
