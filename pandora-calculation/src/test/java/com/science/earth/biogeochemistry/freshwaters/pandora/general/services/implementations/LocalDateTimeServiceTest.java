@@ -38,6 +38,7 @@ public class LocalDateTimeServiceTest {
 
         ReflectionTestUtils.setField(localDateTimeService,"timestepUnit","day");
         Assertions.assertNotNull(localDateTimeService.calculateTEndAsLocalDateTime(T_0,TEND));
+        Assertions.assertNotNull(localDateTimeService.getDateTimeList(T_0,1));
 
 
     }
@@ -46,6 +47,7 @@ public class LocalDateTimeServiceTest {
 
         ReflectionTestUtils.setField(localDateTimeService,"timestepUnit","month");
         Assertions.assertNotNull(localDateTimeService.calculateTEndAsLocalDateTime(T_0,TEND));
+        Assertions.assertNotNull(localDateTimeService.getDateTimeList(T_0,1));
 
 
     }
@@ -54,7 +56,7 @@ public class LocalDateTimeServiceTest {
 
         ReflectionTestUtils.setField(localDateTimeService,"timestepUnit","week");
         Assertions.assertNotNull(localDateTimeService.calculateTEndAsLocalDateTime(T_0,TEND));
-
+        Assertions.assertThrows (IllegalArgumentException.class, ()-> localDateTimeService.getDateTimeList(T_0,1));
 
     }
     @Test
@@ -62,7 +64,7 @@ public class LocalDateTimeServiceTest {
 
         ReflectionTestUtils.setField(localDateTimeService,"timestepUnit","hour");
         Assertions.assertNotNull(localDateTimeService.calculateTEndAsLocalDateTime(T_0,TEND));
-
+        Assertions.assertThrows (IllegalArgumentException.class, ()-> localDateTimeService.getDateTimeList(T_0,1));
 
     }
     @Test
@@ -70,7 +72,7 @@ public class LocalDateTimeServiceTest {
 
         ReflectionTestUtils.setField(localDateTimeService,"timestepUnit","minute");
         Assertions.assertNotNull(localDateTimeService.calculateTEndAsLocalDateTime(T_0,TEND));
-
+        Assertions.assertThrows (IllegalArgumentException.class, ()-> localDateTimeService.getDateTimeList(T_0,1));
 
     }
     @Test
@@ -78,7 +80,7 @@ public class LocalDateTimeServiceTest {
 
         ReflectionTestUtils.setField(localDateTimeService,"timestepUnit","Second");
         Assertions.assertNotNull(localDateTimeService.calculateTEndAsLocalDateTime(T_0,TEND));
-
+        Assertions.assertThrows (IllegalArgumentException.class, ()-> localDateTimeService.getDateTimeList(T_0,1));
 
     }
     @Test
@@ -86,7 +88,7 @@ public class LocalDateTimeServiceTest {
 
         ReflectionTestUtils.setField(localDateTimeService,"timestepUnit","nanoSecond");
         Assertions.assertNotNull(localDateTimeService.calculateTEndAsLocalDateTime(T_0,TEND));
-
+        Assertions.assertThrows (IllegalArgumentException.class, ()-> localDateTimeService.getDateTimeList(T_0,1));
 
     }
 }
