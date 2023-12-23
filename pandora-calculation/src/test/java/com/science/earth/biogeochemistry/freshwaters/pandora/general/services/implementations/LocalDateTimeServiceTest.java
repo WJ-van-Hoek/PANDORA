@@ -8,6 +8,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.core.env.Environment;
 import org.springframework.test.context.TestPropertySource;
 
 import java.time.LocalDate;
@@ -15,11 +16,15 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @SpringBootTest
-@TestPropertySource(locations = "classpath:test1.properties", properties = {"pandora.timestep.unit=day","timestep.unit=day"})
+@TestPropertySource(locations = {"classpath:application.properties","classpath:integrator.properties",
+"classpath:parameters.properties","classpath:physics-constraints.properties",
+"species.properties"})
 public class LocalDateTimeServiceTest {
 
     @Autowired
     LocalDateTimeService localDateTimeService;
+    @Autowired
+    Environment environment;
 
     private static final LocalDate LOCAL_DATE = LocalDate.of(2023, 8, 9);
     private static final LocalTime LOCAL_TIME = LocalTime.of(0, 0);
@@ -27,12 +32,12 @@ public class LocalDateTimeServiceTest {
     private static final double TEND = 1d;
     @BeforeEach
     void setup() throws Exception {
-
     }
 
     @Test
     void testCalculateTEndAsLocalDateTime() {
-
+        System.setProperty("pandora.timestep.unit","day");
+        System.setProperty("timestep.unit","day");
         Assertions.assertNotNull(localDateTimeService.calculateTEndAsLocalDateTime(T_0,TEND));
 
 
