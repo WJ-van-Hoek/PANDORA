@@ -18,7 +18,7 @@ import java.time.LocalTime;
 @SpringBootTest
 @TestPropertySource(locations = {"classpath:application.properties","classpath:integrator.properties",
 "classpath:parameters.properties","classpath:physics-constraints.properties",
-"species.properties"})
+"classpath:species.properties"})
 public class LocalDateTimeServiceTest {
 
     @Autowired
