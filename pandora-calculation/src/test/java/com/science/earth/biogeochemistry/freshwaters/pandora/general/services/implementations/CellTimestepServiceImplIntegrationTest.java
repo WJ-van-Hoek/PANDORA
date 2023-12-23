@@ -38,7 +38,6 @@ import static org.mockito.ArgumentMatchers.anyDouble;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
-@TestPropertySource(locations = "classpath:test.properties")
 class CellTimestepServiceImplIntegrationTest {
     private static final Cell CELL = Cell.builder().id(1l).centerLatitude(52.08f).centerLongitude(5.67f).surfaceArea(1754.27f).nextCellId(1l).build();
     private static final LocalDate LOCAL_DATE = LocalDate.of(2023, 8, 9);
