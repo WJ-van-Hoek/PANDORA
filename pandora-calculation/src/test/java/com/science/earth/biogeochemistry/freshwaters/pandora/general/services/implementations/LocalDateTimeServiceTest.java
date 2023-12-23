@@ -1,5 +1,6 @@
 package com.science.earth.biogeochemistry.freshwaters.pandora.general.services.implementations;
 
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.implementations.LocalDateTimeServiceImpl;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.interfaces.LocalDateTimeService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.env.Environment;
 import org.springframework.test.context.TestPropertySource;
+import org.springframework.test.util.ReflectionTestUtils;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -22,9 +24,9 @@ import java.time.LocalTime;
 public class LocalDateTimeServiceTest {
 
     @Autowired
-    LocalDateTimeService localDateTimeService;
+    LocalDateTimeServiceImpl localDateTimeService;
     @Autowired
-    Environment environment;
+    private Environment environment ;
 
     private static final LocalDate LOCAL_DATE = LocalDate.of(2023, 8, 9);
     private static final LocalTime LOCAL_TIME = LocalTime.of(0, 0);
@@ -36,8 +38,8 @@ public class LocalDateTimeServiceTest {
 
     @Test
     void testCalculateTEndAsLocalDateTime() {
-        System.setProperty("pandora.timestep.unit","day");
-        System.setProperty("timestep.unit","day");
+
+        ReflectionTestUtils.setField(localDateTimeService,"timestepUnit","day");
         Assertions.assertNotNull(localDateTimeService.calculateTEndAsLocalDateTime(T_0,TEND));
 
 
