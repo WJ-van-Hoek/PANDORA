@@ -34,9 +34,57 @@ public class LocalDateTimeServiceTest {
     }
 
     @Test
-    void testCalculateTEndAsLocalDateTime() {
+    void testCalculateTEndAsLocalDateTimeDay() {
 
         ReflectionTestUtils.setField(localDateTimeService,"timestepUnit","day");
+        Assertions.assertNotNull(localDateTimeService.calculateTEndAsLocalDateTime(T_0,TEND));
+
+
+    }
+    @Test
+    void testCalculateTEndAsLocalDateTimeMonth() {
+
+        ReflectionTestUtils.setField(localDateTimeService,"timestepUnit","month");
+        Assertions.assertNotNull(localDateTimeService.calculateTEndAsLocalDateTime(T_0,TEND));
+
+
+    }
+    @Test
+    void testCalculateTEndAsLocalDateTimeWeek() {
+
+        ReflectionTestUtils.setField(localDateTimeService,"timestepUnit","week");
+        Assertions.assertNotNull(localDateTimeService.calculateTEndAsLocalDateTime(T_0,TEND));
+
+
+    }
+    @Test
+    void testCalculateTEndAsLocalDateTimeHour() {
+
+        ReflectionTestUtils.setField(localDateTimeService,"timestepUnit","hour");
+        Assertions.assertNotNull(localDateTimeService.calculateTEndAsLocalDateTime(T_0,TEND));
+
+
+    }
+    @Test
+    void testCalculateTEndAsLocalDateTimeMinute() {
+
+        ReflectionTestUtils.setField(localDateTimeService,"timestepUnit","minute");
+        Assertions.assertNotNull(localDateTimeService.calculateTEndAsLocalDateTime(T_0,TEND));
+
+
+    }
+    @Test
+    void testCalculateTEndAsLocalDateTimeSecond() {
+
+        ReflectionTestUtils.setField(localDateTimeService,"timestepUnit","Second");
+        Assertions.assertNotNull(localDateTimeService.calculateTEndAsLocalDateTime(T_0,TEND));
+
+
+    }
+    @Test
+    void testCalculateTEndAsLocalDateTimeDefault() {
+
+        ReflectionTestUtils.setField(localDateTimeService,"timestepUnit","nanoSecond");
         Assertions.assertNotNull(localDateTimeService.calculateTEndAsLocalDateTime(T_0,TEND));
 
 
