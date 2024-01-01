@@ -51,77 +51,6 @@ Git is used for version control. Install Git from [git-scm.com](https://git-scm.
 2. Clone the PANDORA repository
 `git clone https://github.com/WJ-van-Hoek/PANDORA.git`
 3. Import the PANDORA maven project in your IDE
-4. Set CheckStyle in your IDE to pandora-style/sun_checks.xml
-5. Set CleanUp in your IDE to pandora-style/pandora-cs-cleanup.xml
-6. Set Formatter in your IDE to pandora-style/pandora-cs-formatter.xml
-
-## Contributing
-
-### Code of Conduct
-
-Please review our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing.
-
-### How to Contribute
-
-1. Fork the repository.
-2. Create a new branch from master for your feature or bug fix: `git checkout -b PANDORA-XXX`.
-3. Make your changes and commit them with descriptive messages.
-4. Push your branch to your fork: `git push origin PANDORA-XXX`.
-5. Submit a pull request to the `master` branch of the original repository.
-
-# PANDORA GUIDELINES
-
-## Welcome
-
-Welcome to the PANDORA open-source repository! We appreciate your interest and contributions.
-
-## Table of Contents
-
-1. [Getting Started](#getting-started)
-   - [Prerequisites](#prerequisites)
-   - [Development setup](#development-setup)
-2. [Contributing](#contributing)
-   - [Code of Conduct](#code-of-conduct)
-   - [How to Contribute](#how-to-contribute)
-   - [Reporting Bugs](#reporting-bugs)
-   - [Suggesting Enhancements](#suggesting-enhancements)
-3. [Development Guidelines](#development-guidelines)
-   - [Branching Strategy](#branching-strategy)
-   - [Coding Standards](#coding-standards)
-   - [Documentation](#documentation)
-   - [Testing](#testing)
-4. [Community](#community)
-   - [Communication Channels](#communication-channels)
-   - [Getting Help](#getting-help)
-5. [License](#license)
-
-## Getting Started
-
-### Prerequisites
-**Java Development Kit (JDK):**
-PANDORA requires JDK 17 or later. You can download the JDK from [Oracle](https://www.oracle.com/java/technologies/downloads/).
-- To check your version of java run the following in your terminal:
-`java --version`
-
-**Apache Maven:**
-Install Maven by downloading it from the [official Apache Maven website](https://maven.apache.org/download.cgi). 
-- To check your version of maven run the following in your terminal:
-`mvn -v`
-
-**Integrated Development Environment (IDE):**
-Choose a Java IDE that supports Maven, such as [Eclipse](https://www.eclipse.org/), [IntelliJ IDEA](https://www.jetbrains.com/idea/), or [Spring Tool Suite](https://spring.io/tools).
-
-**Git:**
-Git is used for version control. Install Git from [git-scm.com](https://git-scm.com/).
-- To check your version of git run the following in your terminal:
-`git --version`
-
-
-### Development setup
-1. Navigate to your workspace in your terminal
-2. Clone the PANDORA repository
-`git clone https://github.com/WJ-van-Hoek/PANDORA.git`
-3. Import the PANDORA maven project in your IDE
 
 
 ## Contributing
@@ -173,48 +102,37 @@ Thank you for contributing to the improvement of PANDORA! We will review your bu
 
 ### Suggesting Enhancements
 
-[Explain how contributors can suggest new features or improvements.]
+We welcome contributions and suggestions for enhancing PANDORA. If you have ideas for new features or improvements, please follow these guidelines to ensure a smooth and constructive enhancement proposal:
 
-## Development Guidelines
+1. **Search for Existing Enhancements:**
+   - Before suggesting a new enhancement, check if a similar proposal already exists in the project's issues. If it does, you can contribute by adding your thoughts and feedback to the existing discussion.
 
-### Branching Strategy
+2. **Clearly Define the Enhancement:**
+   - Provide a clear and detailed description of the enhancement you are suggesting. Clearly articulate the problem or limitation you are addressing and how your proposed enhancement would improve the project.
 
-[Describe your project's branching strategy, such as feature branches, bugfix branches, and how they should be merged.]
+3. **Use Descriptive Titles:**
+   - Choose a title that succinctly summarizes the proposed enhancement. A descriptive title makes it easier for others to understand the nature of the suggestion.
 
-### Coding Standards
+4. **Provide Use Cases:**
+   - Include real-world use cases or scenarios that demonstrate why the suggested enhancement would be beneficial. This helps in understanding the practical implications and potential impact on users.
 
-[Specify any coding standards or conventions contributors should follow.]
+5. **Consider Compatibility:**
+   - If applicable, discuss how the enhancement may affect existing features or compatibility with other components. Consider backward compatibility and provide recommendations for migration if necessary.
 
-### Documentation
+6. **Optional: Include Design or Implementation Details:**
+   - If you have specific design or implementation ideas for the enhancement, feel free to include them. While detailed technical proposals are not mandatory, they can provide valuable insights for developers.
 
-[Emphasize the importance of documentation and provide guidelines for documenting code and new features.]
+7. **Labeling:**
+   - Help categorize your enhancement proposal by applying relevant labels (e.g., enhancement, feature request) when creating the issue.
 
-### Testing
+8. **Discussion and Feedback:**
+   - Be open to discussions and feedback from the community. Engage with contributors who show interest in your enhancement proposal and consider their perspectives to refine and improve the suggestion.
 
-[Explain the testing process and provide information on how contributors can run tests locally.]
+9. **Be Patient:**
+   - Understand that the enhancement proposal may take time to be reviewed and accepted. Be patient and open to iterative discussions as the proposal evolves.
 
-## Community
+Thank you for taking the time to contribute to the improvement of PANDORA. Your suggestions and enhancements are valuable in making the project better for everyone.
 
-### Communication Channels
-
-[List all communication channels for the community, such as mailing lists, forums, or chat platforms.]
-
-### Getting Help
-
-[Provide information on how contributors can seek help, whether through documentation, community channels, or other means.]
-
-## License
-
-Developments of PANDORA are licensed under GNU GPL-3. Find the full license text [here](LICENSE.md)
-
-## Conclusion
-
-Thank you for your interest in contributing to PANDORA! We appreciate your efforts in making this project better for everyone. Happy coding!
-
-
-### Suggesting Enhancements
-
-[Explain how contributors can suggest new features or improvements.]
 
 ## Development Guidelines
 
