@@ -201,7 +201,33 @@ By following these guidelines, contributors can ensure that their code adheres t
 
 ### Documentation
 
-[Emphasize the importance of documentation and provide guidelines for documenting code and new features.]
+Documentation is a fundamental aspect of PANDORA, playing a pivotal role in understanding, collaboration, and future development. To maintain a high standard of documentation, please adhere to the following guidelines:
+
+1. **Code Comments:**
+   - Utilize in-line comments to explain complex code segments, non-trivial algorithms, or any aspect of the code that may be unclear.
+
+   - Include header comments at the beginning of each source file, offering a brief overview of the file's purpose, key classes or functions, and any relevant usage information.
+
+2. **Function and Method Documentation:**
+   - Document each class, method, and function with clear, concise descriptions, including parameters, return values, and applicable exceptions.
+
+   - Embed examples or use cases in the documentation to illustrate how to use specific functions or methods.
+
+3. **New Feature Documentation:**
+   - When introducing new features, provide a high-level overview detailing the feature's purpose, benefits, and any associated concepts.
+
+   - Include usage examples to guide users on leveraging the new feature. This may involve code snippets, configuration samples, or step-by-step instructions.
+
+   - Document any new configuration settings or options associated with the feature.
+
+4. **Changelog Updates:**
+   - For every new feature, enhancement, or significant change, update the PANDORA changelog. Clearly state what has been added, modified, or fixed.
+
+   - Ensure that the documentation accurately reflects version information, providing users and contributors with insights into when a particular feature or change was introduced.
+
+5. **Readme File:**
+   - Keep the PANDORA readme file up-to-date with information on setting up PANDORA, dependencies, build instructions.
+
 
 ### Testing
 
