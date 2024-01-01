@@ -175,7 +175,29 @@ By following this branching strategy, we aim to maintain a clean and organized p
 
 ### Coding Standards
 
-[Specify any coding standards or conventions contributors should follow.]
+### Coding Standards: Setting up Checkstyle, Cleanup, and Formatter
+
+To maintain code consistency and readability across our project, contributors are encouraged to follow these guidelines for setting up Checkstyle, code cleanup, and code formatting in their integrated development environment (IDE).
+
+1. **Checkstyle Configuration:**
+   - Ensure that you have the Checkstyle plugin installed in your IDE.
+
+   - Configure your IDE to use Checkstyle configuration file `pandora-style/sun-checks.xml`. This file contains the rules and configurations for code style checking.
+
+   - Configure your IDE to run Checkstyle checks automatically on code changes or builds. This helps in identifying and fixing style violations early in the development process.
+
+2. **Code Cleanup Profile:**
+   - Configure your IDE to use the code cleanup configuration file `pandora-style/pandora-cs-cleanup.xml`. This file contains settings for organizing and optimizing code.
+
+   - Run code cleanup periodically on your codebase to apply the defined rules and keep the codebase organized.
+
+3. **Code Formatter:**
+   - Configure your IDE to use the code formatter configuration file `pandora-style/pandora-cs-formatter.xml`. This file contains the formatting rules for the code.
+
+   - Ensure that your IDE is configured to format code automatically upon save. This ensures that code changes are consistently formatted.
+
+By following these guidelines, contributors can ensure that their code adheres to the project's coding standards, making it easier for the team to collaborate and maintain a consistent codebase.
+
 
 ### Documentation
 
