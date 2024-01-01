@@ -1,3 +1,4 @@
+
 # PANDORA GUIDELINES
 
 ## Welcome
@@ -231,7 +232,62 @@ Documentation is a fundamental aspect of PANDORA, playing a pivotal role in unde
 
 ### Testing
 
-[Explain the testing process and provide information on how contributors can run tests locally.]
+Testing is a critical component of ensuring the reliability and stability of PANDORA. Contributors are encouraged to follow these guidelines to understand the testing process and run tests locally.
+
+1. **Testing Process Overview:**
+
+	Our testing process encompasses various levels, including unit tests and integration tests.
+
+ - **Unit Tests:**
+     Verify the correctness of individual components or functions in isolation using the JUnit framework.
+
+ - **Integration Tests:**
+     Validate the interactions between Spring components and ensure they work seamlessly together.
+
+2. **Running Unit Tests:**
+
+ - To run unit tests, use the following command:
+
+     ```bash
+     ./mvnw test
+     ```
+
+ - Ensure that all unit tests pass before submitting changes.
+
+3. **Running Integration Tests:**
+
+ - Integration tests may require additional setup or configuration. Refer to the project documentation for specific instructions.
+
+ - Run integration tests using the following command:
+
+     ```bash
+     ./mvnw integration-test
+     ```
+
+4. **Coverage Reports:**
+
+- Monitor test coverage by reviewing reports locally generated during the testing process with JaCoCo.
+- Generate coverage reports by running:
+
+     ```bash
+     ./mvnw clean verify
+     ```
+- Find coverage reports in `target/site/jacoco/index.html of the maven module of interest
+
+8. **Continuous Integration (CI):**
+
+	Our CI pipeline automatically runs tests on every pull request. Ensure that your changes pass all tests in the CI environment before submitting a pull request.
+
+9. **Reporting Issues with Tests:**
+
+	If you encounter test failures or issues, report them in the PANDORA's issue tracker. Include detailed information about the failure and steps to reproduce it.
+
+10. **Collaboration on Testing:**
+
+	Collaborate with other contributors to improve and expand the test suite. Discuss testing strategies and best practices within the development community.
+
+By following these testing guidelines, contributors can ensure the robustness of PANDORA and identify potential issues early in the development process. Your efforts in testing contribute to the overall reliability of PANDORA.
+
 
 ## Community
 
