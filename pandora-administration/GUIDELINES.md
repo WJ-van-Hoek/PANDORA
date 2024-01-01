@@ -62,7 +62,7 @@ Please review our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing.
 ### How to Contribute
 
 1. Fork the repository.
-2. Create a new branch from master for your feature or bug fix: `git checkout -b PANDORA-XXX`.
+2. Create a new branch from master following the guidelines at [Branching Strategy](#branching-strategy)
 3. Make your changes and commit them with descriptive messages.
 4. Push your branch to your fork: `git push origin PANDORA-XXX`.
 5. Submit a pull request to the `master` branch of the original repository.
@@ -138,7 +138,40 @@ Thank you for taking the time to contribute to the improvement of PANDORA. Your 
 
 ### Branching Strategy
 
-[Describe your project's branching strategy, such as feature branches, bugfix branches, and how they should be merged.]
+PANDORA follows a branching strategy to organize and manage code changes effectively. This strategy is designed to streamline development, testing, and collaboration among contributors.
+
+1. **Master Branch:**
+   - The `master` branch represents the latest stable version of the project. It should always reflect a buidable and runnable state.
+
+2. **Feature Branches:**
+   - For the development of new features or major changes, contributors should create feature branches from the `master` branch. Naming of the branch should follow the following convention `feature/PANDORA-XXX`, where `XXX` represents the ticket number.
+
+   - Work on the feature branch should be isolated and focused on specific changes. Frequent commits and updates are encouraged to track progress.
+
+   - Once the feature is complete, a pull request should be submitted for review and merging into the `master` branch.
+
+3. **Bugfix Branches:**
+   - Bug fixes should be addressed in separate bugfix branches created from the `master` branch. Naming of the branch should follow the following convention `bug-fix/PANDORA-XXX`, where `XXX` represents the ticket number.
+
+   - Similar to feature branches, bugfix branches should be kept focused on resolving the specific issue. Frequent commits are encouraged for better traceability.
+
+   - After fixing the bug, a pull request should be submitted for review and merging into the `master` branch.
+
+4. **Pull Requests:**
+   - All changes, whether from feature branches or bugfix branches, should be proposed through pull requests (PRs). PRs facilitate code review and discussion among contributors.
+
+   - PRs must pass automated tests and adhere to coding standards before being considered for merging.
+
+5. **Code Review:**
+   - Code review is an integral part of our development process. Contributors are encouraged to review each other's code, provide feedback, and ensure that changes meet project standards.
+
+6. **Merging:**
+   - Only after a feature or bugfix has been reviewed and approved, it can be merged into the `master` branch.
+
+   - Fast-forward merges are preferred to maintain a linear history. However, in some cases, merge commits may be necessary (e.g., in the case of complex features or conflicting changes).
+
+By following this branching strategy, we aim to maintain a clean and organized project history while allowing for parallel development of features and bug fixes. Contributors are encouraged to communicate and coordinate to ensure smooth collaboration.
+
 
 ### Coding Standards
 
