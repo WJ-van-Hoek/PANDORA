@@ -51,7 +51,9 @@ Git is used for version control. Install Git from [git-scm.com](https://git-scm.
 2. Clone the PANDORA repository
 `git clone https://github.com/WJ-van-Hoek/PANDORA.git`
 3. Import the PANDORA maven project in your IDE
-
+4. Set CheckStyle in your IDE to pandora-style/sun_checks.xml
+5. Set CleanUp in your IDE to pandora-style/pandora-cs-cleanup.xml
+6. Set Formatter in your IDE to pandora-style/pandora-cs-formatter.xml
 
 ## Contributing
 
