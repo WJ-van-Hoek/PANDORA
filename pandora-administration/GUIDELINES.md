@@ -18,7 +18,7 @@ Welcome to the PANDORA open-source repository! We appreciate your interest and c
    - [Suggesting Enhancements](#suggesting-enhancements)
 3. [Development Guidelines](#development-guidelines)
    - [Branching Strategy](#branching-strategy)
-   - [Coding Standards](#coding-standards)
+   - [Coding Standards](#coding-standards-setting-up-checkstyle-cleanup-and-formatter)
    - [Documentation](#documentation)
    - [Testing](#testing)
 4. [Community](#community)
@@ -173,6 +173,8 @@ Code review is an integral part of our development process. Contributors are enc
 
 By following this branching strategy, we aim to maintain a clean and organized project history while allowing for parallel development of features and bug fixes. Contributors are encouraged to communicate and coordinate to ensure smooth collaboration.
 
+
+
 ### Coding Standards: Setting up Checkstyle, Cleanup, and Formatter
 
 To maintain code consistency and readability across our project, contributors are encouraged to follow these guidelines for setting up Checkstyle, code cleanup, and code formatting in their integrated development environment (IDE).
@@ -291,19 +293,19 @@ By following these testing guidelines, contributors can ensure the robustness of
 
 Effective communication is crucial for a successful PANDORA. Here are the communication channels available for the PANDORA community:
 
-1. **GitHub Issues:**
+1. **GitHub Issues:**  
    Use GitHub Issues for reporting bugs, suggesting enhancements, and discussing technical aspects of the project. Engage in existing discussions and create new issues when needed.
 
-2. **GitHub Discussions:**
+2. **GitHub Discussions:**  
    GitHub Discussions provide a space for broader, more open-ended conversations. Feel free to start discussions on PANDORA-related topics, share ideas, or seek advice from the community.
 
-3. **GitHub Pull Requests:**
+3. **GitHub Pull Requests:**  
    Use GitHub Pull Requests for proposing changes, submitting contributions, and collaborating on code improvements. Follow our [contribution guidelines](#how-to-contribute) for a smooth review process.
 
-4. **Contacting the Owner:**
+4. **Contacting the Owner:**  
    For private matters or inquiries that require direct communication with the project owner, feel free to message [@WJ-van-Hoek](https://github.com/WJ-van-Hoek) directly.
 
-5. **Code of Conduct Reporting:**
+5. **Code of Conduct Reporting:**  
    If you encounter any code of conduct violations, please report them to [@WJ-van-Hoek](https://github.com/WJ-van-Hoek) privately or through the appropriate channels outlined in our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 Remember to be respectful and considerate in all communications. We value the diversity of our community and strive to maintain an inclusive and welcoming environment for everyone.
