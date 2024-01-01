@@ -10,10 +10,12 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.Cel
 @Service
 public class CellCalculationReponseServiceImpl implements CellCalculationResponseService {
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
-    public CellCalculationResponse postprocess(List<CellTimestep> cellTimesteps) {
-	return new CellCalculationResponse(cellTimesteps);
-
+    public CellCalculationResponse postprocess(final List<CellTimestep> cellTimesteps) {
+        return new CellCalculationResponse(cellTimesteps);
     }
 
 }

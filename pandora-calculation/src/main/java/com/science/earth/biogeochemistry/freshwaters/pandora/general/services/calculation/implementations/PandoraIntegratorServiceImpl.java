@@ -11,21 +11,41 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.ca
 
 @Service
 public class PandoraIntegratorServiceImpl implements PandoraIntegratorService {
-  
+    /**
+     * Service responsible for providing first-order differential equations for Pandora models.
+     */
     @Autowired
     private FirstOrderDifferentialEquationsService firstOrderDifferentialEquationsService;
-    
+
+    /**
+     * First-order integrator for solving differential equations.
+     */
     @Autowired
     private FirstOrderIntegrator firstOrderIntegrator;
 
-    public double[] integrate(PandoraTimestep pandoraTimestep) {
-	FirstOrderDifferentialEquations ode = firstOrderDifferentialEquationsService.getPandoraDifferentialEquations(pandoraTimestep);
-	
-	double t0 = pandoraTimestep.getT0();
-	double[] y0 = pandoraTimestep.getY0();
-	double tEnd = pandoraTimestep.getTEnd();
-	double[] y = new double[pandoraTimestep.getY0().length];
-	firstOrderIntegrator.integrate(ode, t0, y0, tEnd, y);
-	return y;
+    /**
+     * Integrates the Pandora model simulation for the given {@code PandoraTimestep}.
+     *
+     * @param pandoraTimestep The Pandora timestep containing simulation parameters.
+     * @return The integrated solution of the Pandora model at the end of the timestep.
+     */
+    public double[] integrate(final PandoraTimestep pandoraTimestep) {
+        // Get the first-order differential equations for the Pandora model.
+        FirstOrderDifferentialEquations ode = firstOrderDifferentialEquationsService
+                .getPandoraDifferentialEquations(pandoraTimestep);
+
+        // Extract necessary simulation parameters.
+        double t0 = pandoraTimestep.getT0();
+        double[] y0 = pandoraTimestep.getY0();
+        double tEnd = pandoraTimestep.getTEnd();
+
+        // Array to store the integrated solution.
+        double[] y = new double[pandoraTimestep.getY0().length];
+
+        // Integrate the Pandora model simulation.
+        firstOrderIntegrator.integrate(ode, t0, y0, tEnd, y);
+
+        // Return the integrated solution.
+        return y;
     }
 }

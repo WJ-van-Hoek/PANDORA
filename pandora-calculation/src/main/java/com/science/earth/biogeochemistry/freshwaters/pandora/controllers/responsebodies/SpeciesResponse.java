@@ -8,5 +8,8 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public class SpeciesResponse {
-    List<String> species;
+    /**
+     * A list of {@code String} objects representing the contents in json of biogeochemical species.
+     */
+    private List<String> species;
 }
