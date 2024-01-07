@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.general.services.implementations;
+package com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.implementations;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
