@@ -5,8 +5,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class CommandLineServiceController {
+    /**
+     * Handles GET requests for the command line service.
+     *
+     * @return The path to the Thymeleaf template for the command line service.
+     */
     @GetMapping("commandline-index.html")
     public String commandlineService() {
-      return "/commandline/commandline-index.html"; // this returns the template name to be rendered from resources/templates. You don't need to provide the extension.
+        return "/commandline/commandline-index.html";
     }
 }
