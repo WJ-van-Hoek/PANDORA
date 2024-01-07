@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import nz.net.ultraq.thymeleaf.layoutdialect.LayoutDialect;
 
 @Configuration
-public final class ThymeleafConfig {
+public class ThymeleafConfig {
     /**
      * Configures the Thymeleaf layout dialect as a Spring bean.
      *
