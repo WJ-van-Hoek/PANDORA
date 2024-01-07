@@ -85,7 +85,7 @@
 				<version>${mvn-checkstyle-plugin.version}</version>
 				<executions>
 					<execution>
-						<id>checkstyle-validate</id>
+						<id>validate</id>
 						<phase>validate</phase>
 						<configuration>
 							<configLocation>../pandora-style/sun_checks.xml</configLocation>
