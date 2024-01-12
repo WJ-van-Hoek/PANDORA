@@ -22,9 +22,9 @@ public class CellCrudController {
      */
     @Autowired
     public CellCrudController(CellDBEntityCrudService cellCrudService) {
-	this.cellCrudService = cellCrudService;
+        this.cellCrudService = cellCrudService;
     }
-    
+
     @GetMapping("/find/{id}")
     public ResponseEntity<CellDBEntity> findById(@PathVariable Long id) {
         try {

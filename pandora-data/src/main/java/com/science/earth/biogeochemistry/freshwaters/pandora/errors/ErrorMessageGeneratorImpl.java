@@ -13,10 +13,10 @@ public class ErrorMessageGeneratorImpl implements ErrorMessageGenerator {
     private MessageSource messageSource;
 
     public ErrorMessageGeneratorImpl(MessageSource messageSource) {
-	this.messageSource = messageSource;
+        this.messageSource = messageSource;
     }
 
     public String generate(String messageProperty, Object... args) {
-	return messageSource.getMessage(messageProperty, args, Locale.getDefault());
+        return messageSource.getMessage(messageProperty, args, Locale.getDefault());
     }
 }

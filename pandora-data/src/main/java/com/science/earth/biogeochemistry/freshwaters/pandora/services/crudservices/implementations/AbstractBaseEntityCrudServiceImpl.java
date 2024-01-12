@@ -9,12 +9,10 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservic
 
 @Service
 public abstract class AbstractBaseEntityCrudServiceImpl<T extends AbstractBaseDBEntity, R extends AbstractBaseDBEntityRepository<T>>
-	extends AbstractCrudServiceImpl<T, Long, R> implements AbstractBaseEntityCrudService<T> {
+        extends AbstractCrudServiceImpl<T, Long, R> implements AbstractBaseEntityCrudService<T> {
 
     protected AbstractBaseEntityCrudServiceImpl(R repository, ErrorMessageGenerator errorMessageGenerator) {
-	super(repository, errorMessageGenerator);
+        super(repository, errorMessageGenerator);
     }
-
-
 
 }

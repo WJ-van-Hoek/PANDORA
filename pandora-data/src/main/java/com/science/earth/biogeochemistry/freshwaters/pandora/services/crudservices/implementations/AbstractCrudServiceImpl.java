@@ -26,42 +26,42 @@ public abstract class AbstractCrudServiceImpl<T, ID, R extends CrudRepository<T,
     protected ErrorMessageGenerator errorMessageGenerator;
 
     protected AbstractCrudServiceImpl(R repository, ErrorMessageGenerator errorMessageGenerator) {
-	this.repository = repository;
-	this.errorMessageGenerator = errorMessageGenerator;
+        this.repository = repository;
+        this.errorMessageGenerator = errorMessageGenerator;
     }
 
     public Set<T> findAll() {
-	Set<T> objects = new HashSet<>();
-	repository.findAll().forEach(objects::add);
-	return objects;
+        Set<T> objects = new HashSet<>();
+        repository.findAll().forEach(objects::add);
+        return objects;
     }
 
     public T findById(ID id) {
-	Optional<T> object = repository.findById(id);
-	if (object.isPresent()) {
-	    return object.get();
-	} else {
-	    throw new CrudError(errorMessageGenerator.generate("abstract.crud.service.id.notexist", id));
-	}
+        Optional<T> object = repository.findById(id);
+        if (object.isPresent()) {
+            return object.get();
+        } else {
+            throw new CrudError(errorMessageGenerator.generate("abstract.crud.service.id.notexist", id));
+        }
     }
 
     @Transactional
     public T save(T object) {
-	if (object != null) {
-	    return repository.save(object);
-	} else {
-	    throw new CrudError(errorMessageGenerator.generate("abstract.crud.service.object.null"));
-	}
+        if (object != null) {
+            return repository.save(object);
+        } else {
+            throw new CrudError(errorMessageGenerator.generate("abstract.crud.service.object.null"));
+        }
     }
 
     @Transactional
     public void delete(T object) {
-	repository.delete(object);
+        repository.delete(object);
     }
 
     @Transactional
     public void deleteById(ID id) {
-	repository.deleteById(id);
+        repository.deleteById(id);
     }
 
 }

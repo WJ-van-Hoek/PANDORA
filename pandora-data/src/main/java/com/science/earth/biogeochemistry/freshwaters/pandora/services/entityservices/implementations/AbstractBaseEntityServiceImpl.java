@@ -13,36 +13,36 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.services.entityserv
 
 @Service
 public abstract class AbstractBaseEntityServiceImpl<T extends AbstractBaseDBEntity>
-	implements AbstractBaseEntityService<T> {
+        implements AbstractBaseEntityService<T> {
 
     @Autowired
     protected ErrorMessageGenerator errorMessageGenerator;
 
     protected AbstractBaseEntityServiceImpl(ErrorMessageGenerator errorMessageGenerator) {
-	this.errorMessageGenerator = errorMessageGenerator;
+        this.errorMessageGenerator = errorMessageGenerator;
     }
 
     @Override
     public void nullCheck(T baseEntity) {
-	if (baseEntity == null) {
-	    throw new ServiceImplError(errorMessageGenerator.generate("abstract.crud.service.object.null"));
-	}
+        if (baseEntity == null) {
+            throw new ServiceImplError(errorMessageGenerator.generate("abstract.crud.service.object.null"));
+        }
     }
 
     @Override
     public boolean isNew(T baseEntity) {
-	return baseEntity.getId() == null;
+        return baseEntity.getId() == null;
     }
 
     @Override
     public String getGenericType() {
-	String[] packageParts = getFullGenericType().split("\\.");
-	return packageParts[packageParts.length - 1];
+        String[] packageParts = getFullGenericType().split("\\.");
+        return packageParts[packageParts.length - 1];
     }
 
     @Override
     public String getFullGenericType() {
-	Type classType = getClass().getGenericSuperclass();
-	return ((ParameterizedType) classType).getActualTypeArguments()[0].getTypeName();
+        Type classType = getClass().getGenericSuperclass();
+        return ((ParameterizedType) classType).getActualTypeArguments()[0].getTypeName();
     }
 }

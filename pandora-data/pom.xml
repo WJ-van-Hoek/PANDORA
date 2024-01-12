@@ -7,10 +7,14 @@
 		<artifactId>PANDORA</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	
+
 	<artifactId>pandora-data</artifactId>
 	<name>pandora-data</name>
-	
+
+	<properties>
+		<mvn-checkstyle-plugin.version>3.1.1</mvn-checkstyle-plugin.version>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -37,16 +41,16 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-    		<groupId>org.springframework.boot</groupId>
-    		<artifactId>spring-boot-devtools</artifactId>
-    		<scope>runtime</scope>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>		
+		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -69,9 +73,12 @@
 				<version>0.8.10</version>
 				<configuration>
 					<excludes>
-						<exclude>com/science/earth/biogeochemistry/freshwaters/pandora/model/**</exclude>
-						<exclude>com/science/earth/biogeochemistry/freshwaters/pandora/commands/**</exclude>
-						<exclude>com/science/earth/biogeochemistry/freshwaters/pandora/general/objects/**</exclude>
+						<exclude>
+							com/science/earth/biogeochemistry/freshwaters/pandora/model/**</exclude>
+						<exclude>
+							com/science/earth/biogeochemistry/freshwaters/pandora/commands/**</exclude>
+						<exclude>
+							com/science/earth/biogeochemistry/freshwaters/pandora/general/objects/**</exclude>
 					</excludes>
 				</configuration>
 				<executions>
@@ -91,11 +98,34 @@
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-	            <artifactId>maven-javadoc-plugin</artifactId>
+				<artifactId>maven-javadoc-plugin</artifactId>
 				<configuration>
-					<reportOutputDirectory>${project.basedir}/../docs/pandora-data</reportOutputDirectory>
+					<reportOutputDirectory>
+						${project.basedir}/../docs/pandora-data</reportOutputDirectory>
 				</configuration>
-	        </plugin>     
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>${mvn-checkstyle-plugin.version}</version>
+				<executions>
+					<execution>
+						<id>validate</id>
+						<phase>validate</phase>
+						<configuration>
+							<configLocation>../pandora-style/sun_checks.xml</configLocation>
+							<suppressionsLocation>
+								../pandora-style/suppressions.xml</suppressionsLocation>
+							<encoding>UTF-8</encoding>
+							<failOnViolation>true</failOnViolation>
+							<includeTestSourceDirectory>true</includeTestSourceDirectory>
+						</configuration>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 </project>

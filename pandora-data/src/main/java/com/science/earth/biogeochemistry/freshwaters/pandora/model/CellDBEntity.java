@@ -20,8 +20,8 @@ public class CellDBEntity extends AbstractBaseDBEntity {
      * @param nextCell
      */
     public CellDBEntity(Long id, CellDBEntity nextCell) {
-	super(id);
-	this.nextCell = nextCell;
+        super(id);
+        this.nextCell = nextCell;
     }
 
 }

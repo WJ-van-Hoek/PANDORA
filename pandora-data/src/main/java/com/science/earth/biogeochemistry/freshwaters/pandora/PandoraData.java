@@ -7,6 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class PandoraData {
 
     public static void main(String[] args) {
-	SpringApplication.run(PandoraData.class, args);
+        SpringApplication.run(PandoraData.class, args);
     }
 }
