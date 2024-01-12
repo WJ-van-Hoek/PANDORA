@@ -58,7 +58,7 @@ class AbstractBaseMapCrudServiceTest {
 
     @Test
     void testSaveExistingId() {
-        Long idParam = 2L;
+        Long idParam = 1L;
         ConcreteBaseObject baseEntity = ConcreteBaseObject.builder().id(idParam).build();
 
         ConcreteBaseObject savedBaseEntity = concreteBaseCommandCrudService.save(baseEntity);
