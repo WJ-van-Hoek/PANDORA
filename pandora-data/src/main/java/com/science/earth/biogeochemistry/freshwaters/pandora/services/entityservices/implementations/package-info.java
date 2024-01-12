@@ -20,6 +20,5 @@
  * AbstractBaseEntityService},
  * which itself extends {@link org.springframework.stereotype.Service}.
  *
- * @since [Date or Version Number]
  */
 package com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.implementations;

@@ -11,8 +11,8 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservic
 public class CellDBEntityCrudServiceImpl extends AbstractBaseEntityCrudServiceImpl<CellDBEntity, CellDBEntityRepository>
         implements CellDBEntityCrudService {
 
-    protected CellDBEntityCrudServiceImpl(CellDBEntityRepository repository,
-            ErrorMessageGenerator errorMessageGenerator) {
+    protected CellDBEntityCrudServiceImpl(final CellDBEntityRepository repository,
+            final ErrorMessageGenerator errorMessageGenerator) {
 
         super(repository, errorMessageGenerator);
     }

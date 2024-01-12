@@ -1,6 +1,5 @@
 package com.science.earth.biogeochemistry.freshwaters.pandora.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,19 +13,35 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservic
 @RestController
 @RequestMapping("/api/cell")
 public class CellCrudController {
-    // services
+    /**
+     * The service responsible for performing CRUD operations on
+     * {@link com.science.earth.biogeochemistry.freshwaters.pandora.model.CellDBEntity} instances. This service is
+     * injected into the {@code CellCrudController} to provide the necessary functionality for handling HTTP requests
+     * related to cell entities.
+     *
+     * @see com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.
+     * implementations.CellDBEntityCrudService
+     */
     private final CellDBEntityCrudService cellCrudService;
 
     /**
-     * @param cellCrudService
+     * Constructs a new {@code CellCrudController} with the specified {@code CellDBEntityCrudService}.
+     *
+     * @param cellCrudServiceParam The service responsible for CRUD operations on cell entities.
      */
-    @Autowired
-    public CellCrudController(CellDBEntityCrudService cellCrudService) {
-        this.cellCrudService = cellCrudService;
+    public CellCrudController(final CellDBEntityCrudService cellCrudServiceParam) {
+        this.cellCrudService = cellCrudServiceParam;
     }
 
+    /**
+     * Handles HTTP GET requests to find a cell by its ID.
+     *
+     * @param id The unique identifier (ID) of the cell to find.
+     * @return A {@link org.springframework.http.ResponseEntity} containing the cell entity if found, {@code NOT_FOUND}
+     * if the cell does not exist, and {@code INTERNAL_SERVER_ERROR} in case of an exception.
+     */
     @GetMapping("/find/{id}")
-    public ResponseEntity<CellDBEntity> findById(@PathVariable Long id) {
+    public final ResponseEntity<CellDBEntity> findById(@PathVariable final Long id) {
         try {
             CellDBEntity cell = cellCrudService.findById(id);
 

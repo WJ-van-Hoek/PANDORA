@@ -6,4 +6,5 @@
 <suppressions>
 	<suppress files="PandoraCalculation.java"  checks="HideUtilityClassConstructor" />
 	<suppress files="PandoraWeb.java"  checks="HideUtilityClassConstructor" />
+	<suppress files="PandoraData.java"  checks="HideUtilityClassConstructor" />
 </suppressions>

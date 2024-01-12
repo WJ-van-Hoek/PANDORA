@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.errors;
+package com.science.earth.biogeochemistry.freshwaters.pandora.errors.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

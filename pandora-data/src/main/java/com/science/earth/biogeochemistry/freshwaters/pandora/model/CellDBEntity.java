@@ -12,16 +12,19 @@ import lombok.Setter;
 @Entity
 @Table(name = "cells")
 public class CellDBEntity extends AbstractBaseDBEntity {
-
+    /**
+     * Reference to the next cell in a sequence.
+     */
     private CellDBEntity nextCell;
 
     /**
-     * @param id
-     * @param nextCell
+     * Constructs a new {@code CellDBEntity} with the specified ID and reference to the next cell.
+     *
+     * @param idParam The unique identifier (ID) for the cell.
+     * @param nextCellParam The reference to the next cell in the sequence.
      */
-    public CellDBEntity(Long id, CellDBEntity nextCell) {
-        super(id);
-        this.nextCell = nextCell;
+    public CellDBEntity(final Long idParam, final CellDBEntity nextCellParam) {
+        super(idParam);
+        this.nextCell = nextCellParam;
     }
-
 }

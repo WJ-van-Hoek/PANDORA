@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.services;
+package com.science.earth.biogeochemistry.freshwaters.pandora.services.test;
 
 import com.science.earth.biogeochemistry.freshwaters.pandora.model.AbstractBaseDBEntity;
 
