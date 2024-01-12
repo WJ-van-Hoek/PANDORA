@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.general.objects;
+package com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.mockito.Mockito.times;
@@ -14,6 +14,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
+import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.PandoraTimestep;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.implementations.PandoraIntegratorServiceImpl;
 import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.interfaces.FirstOrderDifferentialEquationsService;
 

@@ -34,4 +34,4 @@
  * values, and expected results.
  * </p>
  */
-package com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.implementations;
+package com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.implementations.test;

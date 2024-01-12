@@ -11,4 +11,4 @@
  * functionality. The tests cover various aspects, including context loading and specific functionalities.
  * </p>
  */
-package com.science.earth.biogeochemistry.freshwaters.pandora;
+package com.science.earth.biogeochemistry.freshwaters.pandora.test;

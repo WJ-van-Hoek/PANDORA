@@ -28,4 +28,4 @@
  * Unit tests for the Pandora differential equations class.</li>
  * </ul>
  */
-package com.science.earth.biogeochemistry.freshwaters.pandora.general.objects;
+package com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.test;
