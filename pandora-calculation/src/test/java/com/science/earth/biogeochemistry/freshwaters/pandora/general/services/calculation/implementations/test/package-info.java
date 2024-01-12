@@ -7,14 +7,14 @@
  * </p>
  * <ul>
  * <li>{@link com.science.earth.biogeochemistry.freshwaters.pandora.general.services.
- * implementations.CellTimestepServiceImpl}
- * - Implementation of the service responsible for calculating and storing the next timestep values for a given
- * cell.</li>
+ * implementations.CellTimestepServiceImpl} - Implementation of the service responsible for calculating and storing the
+ * next timestep values for a given cell.</li>
  * <li>{@link com.science.earth.biogeochemistry.freshwaters.pandora.general.services.implementations.CellMapCrudService}
  * - Implementation of the service for CRUD operations on cell maps.</li>
  * <li>{@link com.science.earth.biogeochemistry.freshwaters.pandora.general.services.
- * implementations.PandoraIntegratorServiceImpl}
- * - Implementation of the Pandora integrator service.</li>
+ * implementations.PandoraIntegratorServiceImpl} - Implementation of the Pandora integrator service.</li>
+ * <li>{@link com.science.earth.biogeochemistry.freshwaters.pandora.general.services.
+ * implementations.LocalDateTimeServiceImpl} - Implementation of the LocalDateTimeService.</li>
  * </ul>
  *
  * <p>
@@ -22,11 +22,11 @@
  * </p>
  * <ul>
  * <li>{@link com.science.earth.biogeochemistry.freshwaters.pandora.general.services.
- * implementations.CellTimestepServiceImplIntegrationTest}
- * - Integration tests for the CellTimestepServiceImpl.</li>
+ * implementations.CellTimestepServiceImplIntegrationTest} - Integration tests for the CellTimestepServiceImpl.</li>
  * <li>{@link com.science.earth.biogeochemistry.freshwaters.pandora.general.services.
- * implementations.CellTimestepServiceImplTest}
- * - Unit tests for the CellTimestepServiceImpl.</li>
+ * implementations.CellTimestepServiceImplTest} - Unit tests for the CellTimestepServiceImpl.</li>
+ * <li>{@link com.science.earth.biogeochemistry.freshwaters.pandora.general.services.
+ * implementations.LocalDateTimeServiceImplTest} - Unit tests for the LocalDateTimeServiceImpl.</li>
  * </ul>
  *
  * <p>
