@@ -12,6 +12,10 @@
 	<artifactId>pandora-web</artifactId>
 	<name>pandora-web</name>
 
+	<properties>
+		<mvn-checkstyle-plugin.version>3.1.1</mvn-checkstyle-plugin.version>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -74,6 +78,27 @@
 				<configuration>
 					<reportOutputDirectory>${project.basedir}/../docs/pandora-web</reportOutputDirectory>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>${mvn-checkstyle-plugin.version}</version>
+				<executions>
+					<execution>
+						<id>validate</id>
+						<phase>validate</phase>
+						<configuration>
+							<configLocation>../pandora-style/sun_checks.xml</configLocation>
+							<suppressionsLocation>../pandora-style/suppressions.xml</suppressionsLocation>
+							<encoding>UTF-8</encoding>
+							<failOnViolation>true</failOnViolation>
+							<includeTestSourceDirectory>true</includeTestSourceDirectory>
+						</configuration>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

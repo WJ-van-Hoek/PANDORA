@@ -8,9 +8,13 @@ import com.general.utils.docker.services.AbstractDockerService;
 
 @Service
 public class DockerServiceImpl extends AbstractDockerService {
-
+    /**
+     * Constructs a {@code DockerServiceImpl} with the specified Docker host.
+     *
+     * @param dockerHost The Docker host, injected from the application properties using {@code @Value}.
+     */
     @Autowired
-    public DockerServiceImpl(@Value("${docker.host}") String dockerHost) {
+    public DockerServiceImpl(final @Value("${docker.host}") String dockerHost) {
         super(dockerHost);
     }
 }

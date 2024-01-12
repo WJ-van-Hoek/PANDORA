@@ -14,15 +14,14 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.controllers.respons
 @Service
 public class SpeciesResponseServiceImpl implements SpeciesResponseService {
 
-	@Override
-	public SpeciesResponse postprocess(Map<String, Specie> speciesMap) {
-		List<String> speciesList = new ArrayList<>();
-		
-		for (Map.Entry<String, Specie> entry : speciesMap.entrySet()) {
-			Map<String, Object> specieMap = ObjectToMapMapper.convertObjectToMap(entry.getValue(), true);
-			speciesList.add(MapToJsonMapper.convertMapToJson(specieMap));
-		}
-		return new SpeciesResponse(speciesList);
-	}
-}
+    @Override
+    public final SpeciesResponse postprocess(final Map<String, Specie> speciesMap) {
+        List<String> speciesList = new ArrayList<>();
 
+        for (Map.Entry<String, Specie> entry : speciesMap.entrySet()) {
+            Map<String, Object> specieMap = ObjectToMapMapper.convertObjectToMap(entry.getValue(), true);
+            speciesList.add(MapToJsonMapper.convertMapToJson(specieMap));
+        }
+        return new SpeciesResponse(speciesList);
+    }
+}

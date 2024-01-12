@@ -2,21 +2,27 @@ package com.science.earth.biogeochemistry.freshwaters.pandora.objects;
 
 import org.springframework.web.multipart.MultipartFile;
 
-
 public class FileUploadForm {
+    /**
+     * The file to be uploaded.
+     */
     private MultipartFile fileToUpload;
 
     /**
-     * @return the fileToUpload
+     * Gets the file to be uploaded.
+     *
+     * @return The file to be uploaded.
      */
     public MultipartFile getFileToUpload() {
         return this.fileToUpload;
     }
 
     /**
-     * @param fileToUpload the fileToUpload to set
+     * Sets the file to be uploaded.
+     *
+     * @param fileToUploadParam The file to be uploaded.
      */
-    public void setFileToUpload(MultipartFile fileToUpload) {
-        this.fileToUpload = fileToUpload;
+    public void setFileToUpload(final MultipartFile fileToUploadParam) {
+        this.fileToUpload = fileToUploadParam;
     }
 }

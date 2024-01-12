@@ -14,36 +14,62 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.config.species.abst
 @Configuration
 @Order(1)
 public class DIC extends AqueousSpecie implements Dissolved, Inorganic, Carbon {
-	@Value("${dic.name}")
-	private String name;
+    /**
+     * The name of the DIC species, configured from the "dic.name" property.
+     */
+    @Value("${dic.name}")
+    private String name;
 
-	@Value("${dic.unit}")
-	private String unit;
+    /**
+     * The unit of measurement for DIC, configured from the "dic.unit" property.
+     */
+    @Value("${dic.unit}")
+    private String unit;
 
-	@Value("${dic.molarmass}")
-	private double molarMass;
+    /**
+     * The molar mass of DIC, representing the mass of one mole of the species. It is configured from the
+     * "dic.molarmass" property.
+     */
+    @Value("${dic.molarmass}")
+    private double molarMass;
 
-	public DIC() {
-		getLog().info("DIC bean is being loaded.");
-	}
+    /**
+     * Default constructor for creating an instance of the DIC bean. It logs a message indicating that the DIC bean is
+     * being loaded.
+     */
+    public DIC() {
+        getLog().info("DIC bean is being loaded.");
+    }
 
-	@Override
-	public String getName() {
-		return this.name.toLowerCase();
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String getName() {
+        return this.name.toLowerCase();
+    }
 
-	@Override
-	public String getUnit() {
-		return this.unit;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String getUnit() {
+        return this.unit;
+    }
 
-	@Override
-	public double getMolarMass() {
-		return this.molarMass;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public double getMolarMass() {
+        return this.molarMass;
+    }
 
-	@Override
-	public String toString() {
-		return getName();
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String toString() {
+        return getName();
+    }
 }

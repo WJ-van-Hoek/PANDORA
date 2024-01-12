@@ -5,8 +5,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class ReportsServiceController {
+    /**
+     * Handles GET requests to display the reports index page.
+     *
+     * @return The name of the Thymeleaf template to be rendered as the reports index page.
+     */
     @GetMapping("reports-index.html")
     public String reportService() {
-      return "/reports/reports-index"; // this returns the template name to be rendered from resources/templates. You don't need to provide the extension.
+        return "/reports/reports-index";
     }
 }

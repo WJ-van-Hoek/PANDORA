@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.science.earth.biogeochemistry.freshwaters.pandora.model;
 
 import java.io.Serializable;
@@ -17,10 +14,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
-/**
- * @author Hoek0024 on 13 mei 2023
- *
- */
 @Setter
 @Getter
 @NoArgsConstructor
@@ -30,11 +23,19 @@ import lombok.experimental.SuperBuilder;
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class AbstractBaseDBEntity implements Serializable {
 
+    /**
+     * The unique identifier (ID) for the entity.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    public boolean isNew() {
-	return this.id == null;
+    /**
+     * Checks if the entity is newly created (not yet persisted in the database).
+     *
+     * @return {@code true} if the entity is new, {@code false} otherwise.
+     */
+    public final boolean isNew() {
+        return this.id == null;
     }
 }
