@@ -28,23 +28,67 @@ Welcome to the PANDORA open-source repository! We appreciate your interest and c
 ## Getting Started
 
 ### Prerequisites
+
+**Software Development Kit Manager (SDKMAN):**
+SDKMAN is a versatile and convenient tool that simplifies the management of various Software Development Kits (SDKs) on your system. With just a couple of commands, you can easily install, switch between, and manage different versions of SDKs. The installation process is straightforward, requiring a simple one-liner executed in the terminal:
+`curl -s ¨https://get.sdkman.io" | bash`
+`source ¨$HOME/.sdkman/bin/sdkman-init.sh`
+
 **Java Development Kit (JDK):**
-PANDORA requires JDK 17 or later. You can download the JDK from [Oracle](https://www.oracle.com/java/technologies/downloads/).
-- To check your version of java run the following in your terminal:
+PANDORA is currently developed in JDK 17.0.9.
+To make sure you install and use the correct JDK version:
+`sdk install java 17.0.9-tem`
+`sdk use java 17.0.9-tem`
+
+To make sure you configured the correct JDK version:
 `java --version`
 
 **Apache Maven:**
-Install Maven by downloading it from the [official Apache Maven website](https://maven.apache.org/download.cgi). 
-- To check your version of maven run the following in your terminal:
+PANDORA is currently building with Maven 3.9.6.
+To make sure you install and use the correction Maven version:
+`sdk install maven 3.9.6`
+`sdk use maven 3.9.6`
+
+To make sure you configured the correct Maven version:
 `mvn -v`
 
 **Integrated Development Environment (IDE):**
+
 Choose a Java IDE that supports Maven, such as [Eclipse](https://www.eclipse.org/), [IntelliJ IDEA](https://www.jetbrains.com/idea/), or [Spring Tool Suite](https://spring.io/tools).
 
 **Git:**
+
 Git is used for version control. Install Git from [git-scm.com](https://git-scm.com/).
-- To check your version of git run the following in your terminal:
+
+To make sure you configured the correct git version:
+
 `git --version`
+
+**Lombok**
+Lombok is a Java library that simplifies boilerplate code in your Java projects. To use Lombok, you need to configure your IDE to recognize Lombok annotations.
+
+***- IntelliJ IDEA***  
+1. ****Install the Lombok Plugin:****  
+   - Go to "File" > "Settings" > "Plugins."
+   - Click on "Marketplace" and search for "Lombok."
+   - Install the Lombok Plugin.
+
+2. ****Enable Annotation Processing:****  
+   - Go to "File" > "Settings" > "Build, Execution, Deployment" > "Compiler" > "Annotation Processors."
+   - Check the "Enable annotation processing" box.
+
+***Eclipse***
+1. ****Download the Lombok JAR:****
+   - Go to the [Lombok website](https://projectlombok.org/).
+   - Download the Lombok JAR file.
+
+2. ****Run the Lombok JAR:****
+   - Open a terminal and navigate to the directory containing the downloaded JAR file.
+   - Run the following command:
+
+     `java -jar lombok.jar`
+
+   - The Lombok installer will launch. Follow the instructions to install Lombok into Eclipse.
 
 
 ### Development setup
