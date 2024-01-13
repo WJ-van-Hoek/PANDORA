@@ -2,7 +2,6 @@ package com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservi
 
 import com.science.earth.biogeochemistry.freshwaters.pandora.model.AbstractBaseDBEntity;
 
-
 public interface AbstractBaseEntityCrudService<T extends AbstractBaseDBEntity> extends CrudService<T, Long> {
 
 }

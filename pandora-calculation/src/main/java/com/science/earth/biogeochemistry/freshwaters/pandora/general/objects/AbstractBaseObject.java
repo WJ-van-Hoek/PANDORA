@@ -10,11 +10,24 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @SuperBuilder
 public abstract class AbstractBaseObject {
+    /**
+     * The unique identifier for this object.
+     */
     private Long id;
+
+    /**
+     * The name associated with this object.
+     */
     private String name;
 
-    protected AbstractBaseObject(Long id, String name) {
-	this.id = id;
-	this.name = name;
+    /**
+     * Constructs a new {@code AbstractBaseObject} with the specified identifier and name.
+     *
+     * @param idParam   The unique identifier for the object.
+     * @param nameParam The name associated with the object.
+     */
+    protected AbstractBaseObject(final Long idParam, final String nameParam) {
+        this.id = idParam;
+        this.name = nameParam;
     }
 }

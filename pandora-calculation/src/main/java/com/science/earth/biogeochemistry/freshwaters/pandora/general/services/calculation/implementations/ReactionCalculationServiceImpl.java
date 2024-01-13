@@ -11,22 +11,52 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.ca
 
 @Service
 public class ReactionCalculationServiceImpl implements ReactionCalculationService {
-    
+
+    /**
+     * Service providing configuration details for reactions in the Pandora model.
+     */
     @Autowired
-    ReactionConfigurationBeanService reactionConfigurationBeanService;
-    
+    private ReactionConfigurationBeanService reactionConfigurationBeanService;
+
+    /**
+     * Calculates the reactions based on the current state variables.
+     *
+     * @param y The array of state variables representing the current state of the Pandora model.
+     * @return The array of reaction rates corresponding to the given state variables.
+     */
     @Override
-    public double[] calculateReactions(double[] y) {
-	double[] reactionDY = new double[y.length];
-	Collection<ReactionConfiguration> reactions = reactionConfigurationBeanService.getAllReactions().values();
-	reactions.forEach(reaction -> accumulateReactionDy(reaction, y, reactionDY));
-	return reactionDY;
+    public double[] calculateReactions(final double[] y) {
+        // Array to store the rates of change for each state variable due to reactions.
+        double[] reactionDY = new double[y.length];
+
+        // Retrieve all reaction configurations from the configuration service.
+        Collection<ReactionConfiguration> reactions = reactionConfigurationBeanService.getAllReactions().values();
+
+        // Accumulate the rates of change for each state variable due to reactions.
+        reactions.forEach(reaction -> accumulateReactionDy(reaction, y, reactionDY));
+
+        // Return the array of reaction rates.
+        return reactionDY;
     }
 
-    private void accumulateReactionDy(ReactionConfiguration reaction, double[] y, double[] reactionDY) {
-	double[] dy = reaction.calculate(y);
-	for (int i = 0; i < dy.length; i++) {
-	    reactionDY[i] = reactionDY[i]+dy[i];
-	}
+    /**
+     * Accumulates the rates of change for each state variable due to a specific reaction.
+     *
+     * @param reaction The configuration of the reaction.
+     * @param y The array of state variables representing the current state of the Pandora model.
+     * @param reactionDY The array to accumulate the rates of change for each state variable.
+     */
+    private void accumulateReactionDy(final ReactionConfiguration reaction, final double[] y,
+            final double[] reactionDY) {
+        // Calculate the rates of change for the reaction.
+        double[] dy = reaction.calculate(y);
+
+        // Accumulate the rates of change for each state variable.
+        for (
+                int i = 0;
+                    i < dy.length;
+                    i++) {
+            reactionDY[i] = reactionDY[i] + dy[i];
+        }
     }
 }

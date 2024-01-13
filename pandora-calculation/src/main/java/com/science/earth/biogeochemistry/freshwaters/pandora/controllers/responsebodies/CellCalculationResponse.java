@@ -10,6 +10,8 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public class CellCalculationResponse {
-
-    List<CellTimestep> cellTimesteps;
+    /**
+     * A list of {@code CellTimestep} objects representing the computed timesteps for a specific cell.
+     */
+    private List<CellTimestep> cellTimesteps;
 }

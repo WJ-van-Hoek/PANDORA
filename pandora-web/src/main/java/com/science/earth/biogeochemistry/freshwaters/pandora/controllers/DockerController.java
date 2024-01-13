@@ -16,17 +16,24 @@ import lombok.extern.slf4j.Slf4j;
 @AllArgsConstructor
 @Slf4j
 public class DockerController {
-    
-    DockerService dockerService;
+    /**
+     * Service responsible for Docker-related operations.
+     */
+    private final DockerService dockerService;
 
+    /**
+     * Handles POST requests to launch a Docker container.
+     *
+     * @param requestBody A {@link Map} containing parameters for launching the Docker container. It should include
+     * "imageName", "containerName", and "version".
+     * @return The launched {@link Container} object.
+     */
     @PostMapping("/api/docker/launch")
-    public Container launchDockerContainer(@RequestBody Map<String, String> requestBody) {
-	String imageName = requestBody.get("imageName");
-	String containerName = requestBody.get("containerName"); 
-	String version = requestBody.get("version");
-	
-	return dockerService.launchContainer(imageName, containerName, version);
+    public Container launchDockerContainer(final @RequestBody Map<String, String> requestBody) {
+        String imageName = requestBody.get("imageName");
+        String containerName = requestBody.get("containerName");
+        String version = requestBody.get("version");
+
+        return dockerService.launchContainer(imageName, containerName, version);
     }
-
-
 }

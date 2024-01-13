@@ -13,5 +13,6 @@ import lombok.Setter;
 @AllArgsConstructor
 @Builder
 public class River extends AbstractBaseObject {
-    List<Set<Cell>> independentCellSets;
+    /** The list of independent cell sets associated with the river. */
+    private List<Set<Cell>> independentCellSets;
 }

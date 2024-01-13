@@ -2,7 +2,7 @@ package com.science.earth.biogeochemistry.freshwaters.pandora.config.species.abs
 
 public abstract class AqueousSpecie extends Specie {
     @Override
-    public double calculateTransport(double amount, double rate) {
-	return rate * amount;
+    public final double calculateTransport(final double amount, final double rate) {
+        return rate * amount;
     }
 }

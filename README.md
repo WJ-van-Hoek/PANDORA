@@ -9,6 +9,7 @@ PANDORA stands for **P**hosphorus, **A**lkalinity, **N**itrogen and **D**issolve
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/WJ-van-Hoek/PANDORA/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/WJ-van-Hoek/PANDORA/tree/master) 
 [![codecov](https://codecov.io/gh/WJ-van-Hoek/PANDORA/branch/master/graph/badge.svg?token=tX9DFPWsPd)](https://codecov.io/gh/WJ-van-Hoek/PANDORA)
 
+Before contributing, please consult the [repository guidelines](pandora-administration/GUIDELINES.md) first.
 
 **pandora-data:**&nbsp;[![Documentation](https://img.shields.io/badge/Documentation-HTML-blue.svg?logo=Java&logoColor=white&link=https://wj-van-hoek.github.io/PANDORA/pandora-data/apidocs/index.html)](https://wj-van-hoek.github.io/PANDORA/pandora-data/apidocs/index.html)
 

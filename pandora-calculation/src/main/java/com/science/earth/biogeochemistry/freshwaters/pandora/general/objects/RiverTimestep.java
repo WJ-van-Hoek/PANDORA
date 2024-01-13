@@ -4,5 +4,6 @@ import java.util.List;
 import java.util.Set;
 
 public class RiverTimestep extends AbstractBaseObject {
-    List<Set<CellTimestep>> independentCellTimesteps;
+    /** The list of independent cell timesteps associated with the river timestep. */
+    private List<Set<CellTimestep>> independentCellTimesteps;
 }

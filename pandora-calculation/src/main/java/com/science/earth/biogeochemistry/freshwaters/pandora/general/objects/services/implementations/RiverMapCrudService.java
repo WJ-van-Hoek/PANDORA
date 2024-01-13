@@ -7,5 +7,4 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.ser
 
 @Service
 public class RiverMapCrudService extends AbstractBaseMapCrudService<River> {
-    
 }

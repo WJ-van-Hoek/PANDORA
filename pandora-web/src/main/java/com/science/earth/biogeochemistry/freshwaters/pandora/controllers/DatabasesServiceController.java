@@ -5,64 +5,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class DatabasesServiceController {
+    /**
+     * Handles GET requests for the databases index page.
+     *
+     * @return The view name for the databases index page ("/databases/databases-index").
+     */
     @GetMapping("databases-index.html")
     public String databaseService() {
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	return "/databases/databases-index"; // this returns the template name to be rendered from resources/templates. You don't need to provide the extension.
+        return "/databases/databases-index";
     }
 }

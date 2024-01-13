@@ -6,23 +6,49 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public abstract class Variable implements VariableConfiguration {
-	private boolean indexed = false;
-	private int index;
+    /**
+     * Indicates whether the variable is indexed or not.
+     */
+    private boolean indexed = false;
 
-	public int getIndex() {
-		return this.index;
-	}
+    /**
+     * The index of the variable within the overall configuration. It represents the position of the variable in the
+     * model.
+     */
+    private int index;
 
-	// only allow setting index once
-	public void setIndex(int index) throws Exception {
-		if (!indexed) {
-			this.index = index;
-			indexed = true;
-		} else {
-			throw new Exception("This variable is already indexed");
-		}
-	}
+    /**
+     * Retrieves the index associated with the variable configuration. The index represents the position of the variable
+     * within the overall configuration.
+     *
+     * @return The index of the variable configuration.
+     */
+    public int getIndex() {
+        return this.index;
+    }
 
+    /**
+     * Sets the index for the variable. This method can only be called once, preventing multiple index assignments for
+     * the same variable.
+     *
+     * @param indexParam The index to be set for the variable.
+     * @throws Exception If an attempt is made to set the index multiple times for the same variable.
+     */
+    public void setIndex(final int indexParam) throws Exception {
+        if (!indexed) {
+            this.index = indexParam;
+            indexed = true;
+        } else {
+            throw new Exception("This variable is already indexed");
+        }
+    }
+
+    /**
+     * Retrieves the logger associated with the variable. The logger is used for logging messages and events related to
+     * the variable.
+     *
+     * @return The logger for the variable.
+     */
     public Logger getLog() {
         return log;
     }
