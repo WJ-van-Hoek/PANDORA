@@ -114,8 +114,6 @@
 						<phase>validate</phase>
 						<configuration>
 							<configLocation>../pandora-style/sun_checks.xml</configLocation>
-							<suppressionsLocation>
-								../pandora-style/suppressions.xml</suppressionsLocation>
 							<encoding>UTF-8</encoding>
 							<failOnViolation>true</failOnViolation>
 							<includeTestSourceDirectory>true</includeTestSourceDirectory>
