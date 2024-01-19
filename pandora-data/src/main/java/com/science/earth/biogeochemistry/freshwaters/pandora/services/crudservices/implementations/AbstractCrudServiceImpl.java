@@ -13,9 +13,6 @@ import com.science.earth.biogeochemistry.freshwaters.pandora.errors.CrudError;
 import com.science.earth.biogeochemistry.freshwaters.pandora.errors.ErrorMessageGenerator;
 import com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces.CrudService;
 
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
 @Service
 public abstract class AbstractCrudServiceImpl<T, ID, R extends CrudRepository<T, ID>> implements CrudService<T, ID> {
     /**
