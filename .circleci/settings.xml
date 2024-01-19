@@ -7,6 +7,6 @@
   		<id>github-utils</id>
   		<username>WJ-van-Hoek</username>
   		<password>${_READ_PACKAGE}</password>
-	/server>
+	</server>
   </servers>
 </settings>
