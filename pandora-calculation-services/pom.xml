@@ -8,31 +8,19 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>pandora-data</artifactId>
-	<name>pandora-data</name>
+	<artifactId>pandora-calculation-services</artifactId>
+	<name>pandora-calculation-services</name>
 
 	<properties>
 		<mvn-checkstyle-plugin.version>3.1.1</mvn-checkstyle-plugin.version>
+		<spring-boot.repackage.skip>true</spring-boot.repackage.skip>
 	</properties>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.mysql</groupId>
-			<artifactId>mysql-connector-j</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-math3</artifactId>
+			<version>3.6.1</version>
 		</dependency>
 	</dependencies>
 
@@ -48,24 +36,11 @@
 						</goals>
 					</execution>
 				</executions>
-				<configuration>
-					<skip>true</skip>
-				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.8.10</version>
-				<configuration>
-					<excludes>
-						<exclude>
-							com/science/earth/biogeochemistry/freshwaters/pandora/model/**</exclude>
-						<exclude>
-							com/science/earth/biogeochemistry/freshwaters/pandora/commands/**</exclude>
-						<exclude>
-							com/science/earth/biogeochemistry/freshwaters/pandora/general/objects/**</exclude>
-					</excludes>
-				</configuration>
 				<executions>
 					<execution>
 						<goals>
@@ -86,7 +61,7 @@
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<configuration>
 					<reportOutputDirectory>
-						${project.basedir}/../docs/pandora-data</reportOutputDirectory>
+						${project.basedir}/../docs/pandora-calculation</reportOutputDirectory>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -95,7 +70,7 @@
 				<version>${mvn-checkstyle-plugin.version}</version>
 				<executions>
 					<execution>
-						<id>validate</id>
+						<id>checkstyle-validate</id>
 						<phase>validate</phase>
 						<configuration>
 							<configLocation>../pandora-style/sun_checks.xml</configLocation>

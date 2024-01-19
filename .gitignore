@@ -165,7 +165,14 @@ replay_pid*
 /pandora-data/bin/target/site/jacoco/com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.implementations/index.html
 /pandora-data/bin/target/site/jacoco/com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.implementations/index.source.html
 /pandora-data/bin/target/site/jacoco/index.html
-/pandora-data/bin/target/site/jacoco/jacoco-resources/branchfc.gif
+/pandora-data/bin/*
+/pandora-data/target/*
+/pandora-web/bin/*
+/pandora-web/target/*
+/pandora-calculation-services/bin/*
+/pandora-calculation-services/target/*
+/pandora-calculation-rest-api/bin/*
+/pandora-calculation-rest-api/target/*
 /pandora-data/bin/target/site/jacoco/jacoco-resources/branchnc.gif
 /pandora-data/bin/target/site/jacoco/jacoco-resources/branchpc.gif
 /pandora-data/bin/target/site/jacoco/jacoco-resources/bundle.gif

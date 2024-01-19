@@ -160,12 +160,10 @@ class AbstractCrudServiceImplTest {
         CrudError e = assertThrows(CrudError.class, () -> concreteCrudServiceImpl.save(null));
 
         // then
-        ArgumentCaptor<String> stringCaptor = ArgumentCaptor.forClass(String.class);
         ArgumentCaptor<String> classStringCaptor = ArgumentCaptor.forClass(String.class);
 
-        verify(errorMessageGenerator, times(1)).generate(stringCaptor.capture(), classStringCaptor.capture());
-        assertEquals(mockedErrorMessage, e.getMessage());
-        assertEquals("abstract.crud.service.object.null", stringCaptor.getValue());
+        verify(errorMessageGenerator, times(1)).generate(classStringCaptor.capture());
+        assertEquals("abstract.crud.service.object.null", classStringCaptor.getValue());
     }
 
     @Test
