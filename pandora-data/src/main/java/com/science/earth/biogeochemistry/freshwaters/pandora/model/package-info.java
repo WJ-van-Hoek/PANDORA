@@ -4,9 +4,9 @@
  *
  * <p>
  * The main classes in this package are: -
- * {@link com.science.earth.biogeochemistry.freshwaters.pandora.model.AbstractBaseDBEntity}: An abstract base class for
+ * {@link com.pandora.model.AbstractBaseDBEntity}: An abstract base class for
  * database entities providing common properties and behavior. -
- * {@link com.science.earth.biogeochemistry.freshwaters.pandora.model.CellDBEntity}: An entity representing a cell in
+ * {@link com.pandora.model.CellDBEntity}: An entity representing a cell in
  * the Pandora project, extending the {@code AbstractBaseDBEntity}.
  *
  * <p>
@@ -18,4 +18,4 @@
  * These entities are designed for use with JPA repositories to enable database interaction and manipulation.
  *
  */
-package com.science.earth.biogeochemistry.freshwaters.pandora.model;
+package com.pandora.model;

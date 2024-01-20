@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.controllers;
+package com.pandora.controllers;
 
 import java.util.Map;
 

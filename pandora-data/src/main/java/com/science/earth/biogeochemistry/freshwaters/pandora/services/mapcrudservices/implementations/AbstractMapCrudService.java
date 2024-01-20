@@ -1,11 +1,11 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.implementations;
+package com.pandora.services.mapcrudservices.implementations;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces.CrudService;
+import com.pandora.services.crudservices.interfaces.CrudService;
 
 /**
  * An abstract base class implementing the {@link CrudService} interface for map-based CRUD (Create, Read, Update,

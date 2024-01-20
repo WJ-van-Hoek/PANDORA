@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.errors.test;
+package com.pandora.errors.test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -17,7 +17,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.context.MessageSource;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.errors.ErrorMessageGeneratorImpl;
+import com.pandora.errors.ErrorMessageGeneratorImpl;
 
 class ErrorMessageGeneratorImplTest {
     /**

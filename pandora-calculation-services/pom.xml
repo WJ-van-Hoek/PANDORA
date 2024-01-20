@@ -61,7 +61,7 @@
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<configuration>
 					<reportOutputDirectory>
-						${project.basedir}/../docs/pandora-calculation</reportOutputDirectory>
+						${project.basedir}/../docs/pandora-calculation-services</reportOutputDirectory>
 				</configuration>
 			</plugin>
 			<plugin>

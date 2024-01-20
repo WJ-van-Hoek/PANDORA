@@ -1,8 +1,8 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.controllers.responsebodies;
+package com.pandora.controllers.responsebodies;
 
 import java.util.List;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.CellTimestep;
+import com.pandora.general.objects.CellTimestep;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

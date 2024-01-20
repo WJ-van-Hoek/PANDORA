@@ -4,4 +4,4 @@
  *
  * @see org.springframework.web.multipart.MultipartFile
  */
-package com.science.earth.biogeochemistry.freshwaters.pandora.objects;
+package com.pandora.objects;

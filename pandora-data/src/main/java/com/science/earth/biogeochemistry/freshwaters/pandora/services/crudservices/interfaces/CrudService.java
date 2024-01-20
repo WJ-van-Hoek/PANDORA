@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces;
+package com.pandora.services.crudservices.interfaces;
 
 import java.util.Set;
 

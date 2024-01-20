@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora;
+package com.pandora;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

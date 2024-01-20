@@ -1,6 +1,6 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.repositories;
+package com.pandora.repositories;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.model.CellDBEntity;
+import com.pandora.model.CellDBEntity;
 
 public interface CellDBEntityRepository extends AbstractBaseDBEntityRepository<CellDBEntity> {
 

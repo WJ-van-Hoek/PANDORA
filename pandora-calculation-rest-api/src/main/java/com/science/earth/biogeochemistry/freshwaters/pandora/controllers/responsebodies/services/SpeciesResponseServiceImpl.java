@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.controllers.responsebodies.services;
+package com.pandora.controllers.responsebodies.services;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.general.utils.json.mappers.MapToJsonMapper;
 import com.general.utils.object.mappers.ObjectToMapMapper;
-import com.science.earth.biogeochemistry.freshwaters.pandora.config.species.abstractions.Specie;
-import com.science.earth.biogeochemistry.freshwaters.pandora.controllers.responsebodies.SpeciesResponse;
+import com.pandora.config.species.abstractions.Specie;
+import com.pandora.controllers.responsebodies.SpeciesResponse;
 
 @Service
 public class SpeciesResponseServiceImpl implements SpeciesResponseService {

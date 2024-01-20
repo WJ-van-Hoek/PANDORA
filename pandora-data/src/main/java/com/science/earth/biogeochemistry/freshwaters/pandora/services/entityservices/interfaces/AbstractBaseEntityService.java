@@ -1,6 +1,6 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces;
+package com.pandora.services.entityservices.interfaces;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.model.AbstractBaseDBEntity;
+import com.pandora.model.AbstractBaseDBEntity;
 
 public interface AbstractBaseEntityService<T extends AbstractBaseDBEntity> {
     /**

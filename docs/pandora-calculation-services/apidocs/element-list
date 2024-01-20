@@ -1,0 +1,17 @@
+com.pandora.chemistry.interfaces
+com.pandora.config
+com.pandora.config.reactions
+com.pandora.config.reactions.abstractions
+com.pandora.config.services
+com.pandora.config.species
+com.pandora.config.species.abstractions
+com.pandora.config.species.services
+com.pandora.general
+com.pandora.general.logic
+com.pandora.general.objects
+com.pandora.general.objects.builders
+com.pandora.general.objects.services.abstractions.classes
+com.pandora.general.objects.services.abstractions.interfaces
+com.pandora.general.objects.services.implementations
+com.pandora.general.services.calculation.implementations
+com.pandora.general.services.calculation.interfaces

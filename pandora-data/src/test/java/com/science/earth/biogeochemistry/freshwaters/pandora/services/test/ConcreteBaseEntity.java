@@ -1,6 +1,6 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.services.test;
+package com.pandora.services.test;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.model.AbstractBaseDBEntity;
+import com.pandora.model.AbstractBaseDBEntity;
 
 import lombok.experimental.SuperBuilder;
 

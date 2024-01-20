@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.controllers;
+package com.pandora.controllers;
 
 import java.util.List;
 
@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.controllers.requestbodies.CellCalculationRequest;
-import com.science.earth.biogeochemistry.freshwaters.pandora.controllers.requestbodies.services.CellCalculationRequestService;
-import com.science.earth.biogeochemistry.freshwaters.pandora.controllers.responsebodies.CellCalculationResponse;
-import com.science.earth.biogeochemistry.freshwaters.pandora.controllers.responsebodies.services.CellCalculationResponseService;
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.CellTimestep;
+import com.pandora.controllers.requestbodies.CellCalculationRequest;
+import com.pandora.controllers.requestbodies.services.CellCalculationRequestService;
+import com.pandora.controllers.responsebodies.CellCalculationResponse;
+import com.pandora.controllers.responsebodies.services.CellCalculationResponseService;
+import com.pandora.general.objects.CellTimestep;
 
 import jakarta.validation.ValidationException;
 
@@ -60,7 +60,7 @@ public class CellController {
      * calculation results as a {@code ResponseEntity<CellCalculationResponse>}.
      *
      * @param request The
-     * {@link com.science.earth.biogeochemistry.freshwaters.pandora.controllers.requestbodies.CellCalculationRequest}
+     * {@link com.pandora.controllers.requestbodies.CellCalculationRequest}
      * containing information about the cell and the calculation to be performed.
      * @return A {@link org.springframework.http.ResponseEntity} containing the results of the cell calculation.
      */
@@ -81,11 +81,11 @@ public class CellController {
 
     /**
      * Validates the input
-     * {@link com.science.earth.biogeochemistry.freshwaters.pandora.controllers.requestbodies.CellCalculationRequest}
+     * {@link com.pandora.controllers.requestbodies.CellCalculationRequest}
      * for the cell calculation. Throws a {@link jakarta.xml.bind.ValidationException} if validation fails.
      *
      * @param request The
-     * {@link com.science.earth.biogeochemistry.freshwaters.pandora.controllers.requestbodies.CellCalculationRequest} to
+     * {@link com.pandora.controllers.requestbodies.CellCalculationRequest} to
      * be validated.
      * @throws jakarta.xml.bind.ValidationException If the validation of the request fails.
      */

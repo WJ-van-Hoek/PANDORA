@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.objects;
+package com.pandora.objects;
 
 import org.springframework.web.multipart.MultipartFile;
 

@@ -8,15 +8,15 @@
  * The package includes the following controllers:
  * </p>
  * <ul>
- * <li>{@link com.science.earth.biogeochemistry.freshwaters.pandora.controllers.CellController}: Manages the initiation
+ * <li>{@link com.pandora.controllers.CellController}: Manages the initiation
  * and processing of cell calculations, handling HTTP POST requests for cell calculations.</li>
- * <li>{@link com.science.earth.biogeochemistry.freshwaters.pandora.controllers.DicBeanStatusController}: Manages the
+ * <li>{@link com.pandora.controllers.DicBeanStatusController}: Manages the
  * status of the DIC (Dissolved Inorganic Carbon) bean, allowing toggling and retrieval of its status.</li>
- * <li>{@link com.science.earth.biogeochemistry.freshwaters.pandora.controllers.DocBeanStatusController}: Manages the
+ * <li>{@link com.pandora.controllers.DocBeanStatusController}: Manages the
  * status of the DOC (Dissolved Organic Carbon) bean, allowing toggling and retrieval of its status.</li>
- * <li>{@link com.science.earth.biogeochemistry.freshwaters.pandora.controllers.RiverController}: Represents a
+ * <li>{@link com.pandora.controllers.RiverController}: Represents a
  * placeholder for potential future functionalities related to rivers.</li>
- * <li>{@link com.science.earth.biogeochemistry.freshwaters.pandora.controllers.SpeciesController}: Retrieves
+ * <li>{@link com.pandora.controllers.SpeciesController}: Retrieves
  * information about all available species in the Pandora system.</li>
  * </ul>
  *
@@ -25,10 +25,10 @@
  * and returning appropriate responses to the clients.
  * </p>
  *
- * @see com.science.earth.biogeochemistry.freshwaters.pandora.controllers.CellController
- * @see com.science.earth.biogeochemistry.freshwaters.pandora.controllers.DicBeanStatusController
- * @see com.science.earth.biogeochemistry.freshwaters.pandora.controllers.DocBeanStatusController
- * @see com.science.earth.biogeochemistry.freshwaters.pandora.controllers.RiverController
- * @see com.science.earth.biogeochemistry.freshwaters.pandora.controllers.SpeciesController
+ * @see com.pandora.controllers.CellController
+ * @see com.pandora.controllers.DicBeanStatusController
+ * @see com.pandora.controllers.DocBeanStatusController
+ * @see com.pandora.controllers.RiverController
+ * @see com.pandora.controllers.SpeciesController
  */
-package com.science.earth.biogeochemistry.freshwaters.pandora.controllers;
+package com.pandora.controllers;

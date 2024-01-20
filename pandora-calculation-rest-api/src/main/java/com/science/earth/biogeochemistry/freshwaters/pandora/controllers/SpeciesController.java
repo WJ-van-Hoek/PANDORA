@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.controllers;
+package com.pandora.controllers;
 
 import java.util.Map;
 
@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.config.services.SpecieBeanService;
-import com.science.earth.biogeochemistry.freshwaters.pandora.config.species.abstractions.Specie;
-import com.science.earth.biogeochemistry.freshwaters.pandora.controllers.responsebodies.SpeciesResponse;
-import com.science.earth.biogeochemistry.freshwaters.pandora.controllers.responsebodies.services.SpeciesResponseService;
+import com.pandora.config.services.SpecieBeanService;
+import com.pandora.config.species.abstractions.Specie;
+import com.pandora.controllers.responsebodies.SpeciesResponse;
+import com.pandora.controllers.responsebodies.services.SpeciesResponseService;
 
 @RestController
 @RequestMapping("/api")

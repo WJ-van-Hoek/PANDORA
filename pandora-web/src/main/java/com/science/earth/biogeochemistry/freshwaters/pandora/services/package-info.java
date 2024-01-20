@@ -7,4 +7,4 @@
  * @see org.springframework.stereotype.Service
  * @see com.general.utils.docker.services.AbstractDockerService
  */
-package com.science.earth.biogeochemistry.freshwaters.pandora.services;
+package com.pandora.services;
