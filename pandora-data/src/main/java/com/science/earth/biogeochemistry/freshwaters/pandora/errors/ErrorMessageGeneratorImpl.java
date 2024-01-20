@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.errors;
+package com.pandora.errors;
 
 import java.util.Locale;
 
@@ -31,7 +31,7 @@ public class ErrorMessageGeneratorImpl implements ErrorMessageGenerator {
      *
      * @see org.springframework.context.MessageSource
      * @see org.springframework.beans.factory.annotation.Autowired
-     * @see com.science.earth.biogeochemistry.freshwaters.pandora.errors.ErrorMessageGeneratorImpl
+     * @see com.pandora.errors.ErrorMessageGeneratorImpl
      */
     @Autowired
     private MessageSource messageSource;

@@ -1,8 +1,8 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.implementations;
+package com.pandora.services.mapcrudservices.implementations;
 
 import java.util.Collections;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.AbstractBaseObject;
+import com.pandora.general.objects.AbstractBaseObject;
 
 public abstract class AbstractBaseMapCrudService<T extends AbstractBaseObject> extends AbstractMapCrudService<T, Long> {
     /**

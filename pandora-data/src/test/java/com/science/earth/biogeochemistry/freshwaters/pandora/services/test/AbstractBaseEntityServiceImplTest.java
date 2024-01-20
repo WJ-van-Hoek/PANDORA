@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.services.test;
+package com.pandora.services.test;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -16,9 +16,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.errors.ErrorMessageGenerator;
-import com.science.earth.biogeochemistry.freshwaters.pandora.errors.ServiceImplError;
-import com.science.earth.biogeochemistry.freshwaters.pandora.model.AbstractBaseDBEntity;
+import com.pandora.errors.ErrorMessageGenerator;
+import com.pandora.errors.ServiceImplError;
+import com.pandora.model.AbstractBaseDBEntity;
 
 class AbstractBaseEntityServiceImplTest {
     /**
@@ -83,7 +83,7 @@ class AbstractBaseEntityServiceImplTest {
     @Test
     void getFullGenericTypeTest() {
         String fullGenericType = concreteBaseEntityServiceImpl.getFullGenericType();
-        assertEquals("com.science.earth.biogeochemistry.freshwaters.pandora.model.AbstractBaseDBEntity",
+        assertEquals("com.pandora.model.AbstractBaseDBEntity",
                 fullGenericType);
     }
 }

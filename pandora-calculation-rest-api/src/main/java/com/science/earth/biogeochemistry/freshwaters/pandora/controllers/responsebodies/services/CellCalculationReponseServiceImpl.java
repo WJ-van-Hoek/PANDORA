@@ -1,11 +1,11 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.controllers.responsebodies.services;
+package com.pandora.controllers.responsebodies.services;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.controllers.responsebodies.CellCalculationResponse;
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.CellTimestep;
+import com.pandora.controllers.responsebodies.CellCalculationResponse;
+import com.pandora.general.objects.CellTimestep;
 
 @Service
 public class CellCalculationReponseServiceImpl implements CellCalculationResponseService {

@@ -24,4 +24,4 @@
  * These controllers are responsible for processing HTTP requests, interacting with services, and rendering Thymeleaf
  * templates.
  */
-package com.science.earth.biogeochemistry.freshwaters.pandora.controllers;
+package com.pandora.controllers;

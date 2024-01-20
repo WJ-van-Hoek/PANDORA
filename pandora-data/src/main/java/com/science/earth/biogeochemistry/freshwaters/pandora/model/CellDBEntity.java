@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.model;
+package com.pandora.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;

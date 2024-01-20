@@ -1,10 +1,10 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.errors.test;
+package com.pandora.errors.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.errors.CrudError;
+import com.pandora.errors.CrudError;
 
 class CrudErrorTest {
 

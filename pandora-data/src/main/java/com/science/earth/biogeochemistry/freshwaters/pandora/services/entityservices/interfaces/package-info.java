@@ -5,14 +5,14 @@
  *
  * <p>
  * The main interface in this package is
- * {@link com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.
+ * {@link com.pandora.services.entityservices.interfaces.
  * AbstractBaseEntityService},
  * which provides a contract for services managing entities extending
- * {@link com.science.earth.biogeochemistry.freshwaters.pandora.model.AbstractBaseDBEntity}.
+ * {@link com.pandora.model.AbstractBaseDBEntity}.
  *
  * <p>
  * Implementations of these interfaces are expected to provide specific functionality for managing entities of a
  * particular type.
  *
  */
-package com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces;
+package com.pandora.services.entityservices.interfaces;

@@ -9,9 +9,9 @@
  *
  * <p>
  * Specific repositories, such as
- * {@link com.science.earth.biogeochemistry.freshwaters.pandora.repositories.AbstractBaseDBEntityRepository} and
- * {@link com.science.earth.biogeochemistry.freshwaters.pandora.repositories.CellDBEntityRepository}, extend the base
+ * {@link com.pandora.repositories.AbstractBaseDBEntityRepository} and
+ * {@link com.pandora.repositories.CellDBEntityRepository}, extend the base
  * repositories and define methods for working with entities of specific types.
  *
  */
-package com.science.earth.biogeochemistry.freshwaters.pandora.repositories;
+package com.pandora.repositories;

@@ -7,4 +7,4 @@
  * {@code @SpringBootApplication} and imports the configuration from {@link AppConfig}. The {@code main} method in
  * {@link PandoraWeb} starts the Spring Boot application.
  */
-package com.science.earth.biogeochemistry.freshwaters.pandora;
+package com.pandora;

@@ -1,8 +1,8 @@
 /**
- * The {@code com.science.earth.biogeochemistry.freshwaters.pandora} package contains the main class for the Pandora
+ * The {@code com.pandora} package contains the main class for the Pandora
  * Data application.
  * <p>
- * The main class, {@link com.science.earth.biogeochemistry.freshwaters.pandora.PandoraData}, is annotated with
+ * The main class, {@link com.pandora.PandoraData}, is annotated with
  * {@code @SpringBootApplication}, indicating that it is a Spring Boot application. The {@code main} method in this
  * class serves as the entry point for the application, using {@code SpringApplication.run} to bootstrap the application
  * and start the Spring context.
@@ -14,4 +14,4 @@
  * @see org.springframework.boot.autoconfigure.SpringBootApplication
  * @see org.springframework.boot.SpringApplication
  */
-package com.science.earth.biogeochemistry.freshwaters.pandora;
+package com.pandora;

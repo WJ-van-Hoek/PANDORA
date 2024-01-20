@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.general.objects;
+package com.pandora.general.objects;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

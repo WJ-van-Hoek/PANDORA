@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.controllers;
+package com.pandora.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -6,7 +6,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.objects.FileUploadForm;
+import com.pandora.objects.FileUploadForm;
 
 import jakarta.validation.Valid;
 

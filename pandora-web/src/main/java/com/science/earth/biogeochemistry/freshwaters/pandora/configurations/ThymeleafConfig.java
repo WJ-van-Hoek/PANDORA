@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.configurations;
+package com.pandora.configurations;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

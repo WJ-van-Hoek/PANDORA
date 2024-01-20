@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.errors;
+package com.pandora.errors;
 
 public class ServiceImplError extends Error {
     /**

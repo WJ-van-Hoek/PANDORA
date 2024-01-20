@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.controllers;
+package com.pandora.controllers;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -7,19 +7,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.model.CellDBEntity;
-import com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces.CellDBEntityCrudService;
+import com.pandora.model.CellDBEntity;
+import com.pandora.services.crudservices.interfaces.CellDBEntityCrudService;
 
 @RestController
 @RequestMapping("/api/cell")
 public class CellCrudController {
     /**
      * The service responsible for performing CRUD operations on
-     * {@link com.science.earth.biogeochemistry.freshwaters.pandora.model.CellDBEntity} instances. This service is
+     * {@link com.pandora.model.CellDBEntity} instances. This service is
      * injected into the {@code CellCrudController} to provide the necessary functionality for handling HTTP requests
      * related to cell entities.
      *
-     * @see com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.
+     * @see com.pandora.services.crudservices.
      * implementations.CellDBEntityCrudService
      */
     private final CellDBEntityCrudService cellCrudService;

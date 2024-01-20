@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.implementations;
+package com.pandora.services.crudservices.implementations;
 
 import java.util.HashSet;
 import java.util.Optional;
@@ -9,9 +9,9 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.errors.CrudError;
-import com.science.earth.biogeochemistry.freshwaters.pandora.errors.ErrorMessageGenerator;
-import com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces.CrudService;
+import com.pandora.errors.CrudError;
+import com.pandora.errors.ErrorMessageGenerator;
+import com.pandora.services.crudservices.interfaces.CrudService;
 
 @Service
 public abstract class AbstractCrudServiceImpl<T, ID, R extends CrudRepository<T, ID>> implements CrudService<T, ID> {

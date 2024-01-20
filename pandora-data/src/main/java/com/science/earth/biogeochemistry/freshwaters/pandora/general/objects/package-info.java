@@ -4,11 +4,11 @@
  *
  * <p>
  * The main class in this package is: -
- * {@link com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.AbstractBaseObject}: An abstract base
+ * {@link com.pandora.general.objects.AbstractBaseObject}: An abstract base
  * class for objects providing common properties and behavior, including a unique identifier (ID) and a name.
  *
  * <p>
  * Objects in this package may be utilized across different modules and functionalities within the Pandora project.
  *
  */
-package com.science.earth.biogeochemistry.freshwaters.pandora.general.objects;
+package com.pandora.general.objects;

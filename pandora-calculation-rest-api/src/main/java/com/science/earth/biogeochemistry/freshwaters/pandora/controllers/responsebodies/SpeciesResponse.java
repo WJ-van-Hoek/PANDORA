@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.controllers.responsebodies;
+package com.pandora.controllers.responsebodies;
 
 import java.util.List;
 

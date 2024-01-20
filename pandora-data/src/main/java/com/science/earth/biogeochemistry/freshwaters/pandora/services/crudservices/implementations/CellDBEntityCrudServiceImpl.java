@@ -1,11 +1,11 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.implementations;
+package com.pandora.services.crudservices.implementations;
 
 import org.springframework.stereotype.Service;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.errors.ErrorMessageGenerator;
-import com.science.earth.biogeochemistry.freshwaters.pandora.model.CellDBEntity;
-import com.science.earth.biogeochemistry.freshwaters.pandora.repositories.CellDBEntityRepository;
-import com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces.CellDBEntityCrudService;
+import com.pandora.errors.ErrorMessageGenerator;
+import com.pandora.model.CellDBEntity;
+import com.pandora.repositories.CellDBEntityRepository;
+import com.pandora.services.crudservices.interfaces.CellDBEntityCrudService;
 
 @Service
 public class CellDBEntityCrudServiceImpl extends AbstractBaseEntityCrudServiceImpl<CellDBEntity, CellDBEntityRepository>

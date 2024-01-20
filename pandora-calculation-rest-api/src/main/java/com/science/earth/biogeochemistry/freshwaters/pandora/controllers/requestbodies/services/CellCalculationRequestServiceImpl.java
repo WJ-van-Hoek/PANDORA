@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.controllers.requestbodies.services;
+package com.pandora.controllers.requestbodies.services;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -7,16 +7,16 @@ import java.util.stream.IntStream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.controllers.requestbodies.CellCalculationRequest;
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.Cell;
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.CellTimestep;
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.DischargesMapService;
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.TerrestrialSourcesMapService;
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.UpstreamSourcesMapService;
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.VolumesMapService;
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.services.abstractions.interfaces.YMapService;
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.interfaces.CellTimestepService;
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.services.calculation.interfaces.LocalDateTimeService;
+import com.pandora.controllers.requestbodies.CellCalculationRequest;
+import com.pandora.general.objects.Cell;
+import com.pandora.general.objects.CellTimestep;
+import com.pandora.general.objects.services.abstractions.interfaces.DischargesMapService;
+import com.pandora.general.objects.services.abstractions.interfaces.TerrestrialSourcesMapService;
+import com.pandora.general.objects.services.abstractions.interfaces.UpstreamSourcesMapService;
+import com.pandora.general.objects.services.abstractions.interfaces.VolumesMapService;
+import com.pandora.general.objects.services.abstractions.interfaces.YMapService;
+import com.pandora.general.services.calculation.interfaces.CellTimestepService;
+import com.pandora.general.services.calculation.interfaces.LocalDateTimeService;
 
 @Service
 public class CellCalculationRequestServiceImpl implements CellCalculationRequestService {

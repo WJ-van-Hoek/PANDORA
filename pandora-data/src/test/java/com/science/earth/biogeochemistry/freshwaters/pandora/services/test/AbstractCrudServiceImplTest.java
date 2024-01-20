@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.services.test;
+package com.pandora.services.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -21,11 +21,11 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.errors.CrudError;
-import com.science.earth.biogeochemistry.freshwaters.pandora.errors.ErrorMessageGenerator;
-import com.science.earth.biogeochemistry.freshwaters.pandora.model.AbstractBaseDBEntity;
-import com.science.earth.biogeochemistry.freshwaters.pandora.repositories.AbstractBaseDBEntityRepository;
-import com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.AbstractBaseEntityService;
+import com.pandora.errors.CrudError;
+import com.pandora.errors.ErrorMessageGenerator;
+import com.pandora.model.AbstractBaseDBEntity;
+import com.pandora.repositories.AbstractBaseDBEntityRepository;
+import com.pandora.services.entityservices.interfaces.AbstractBaseEntityService;
 
 class AbstractCrudServiceImplTest {
     /**

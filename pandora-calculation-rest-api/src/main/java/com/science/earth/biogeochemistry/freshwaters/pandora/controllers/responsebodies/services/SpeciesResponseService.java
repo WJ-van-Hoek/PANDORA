@@ -1,9 +1,9 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.controllers.responsebodies.services;
+package com.pandora.controllers.responsebodies.services;
 
 import java.util.Map;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.config.species.abstractions.Specie;
-import com.science.earth.biogeochemistry.freshwaters.pandora.controllers.responsebodies.SpeciesResponse;
+import com.pandora.config.species.abstractions.Specie;
+import com.pandora.controllers.responsebodies.SpeciesResponse;
 
 public interface SpeciesResponseService {
     /**

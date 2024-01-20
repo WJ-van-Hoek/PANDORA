@@ -1,5 +1,5 @@
 /**
- * The {@code com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.implementations} package
+ * The {@code com.pandora.services.crudservices.implementations} package
  * contains implementations of CRUD (Create, Read, Update, Delete) services for managing entities in the Pandora
  * project.
  * <p>
@@ -10,19 +10,19 @@
  * <p>
  * The package includes:
  * <ul>
- * <li>{@link com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.
+ * <li>{@link com.pandora.services.crudservices.
  * implementations.AbstractBaseEntityCrudServiceImpl}
  * - An abstract base class for entity-specific CRUD services.</li>
- * <li>{@link com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.
+ * <li>{@link com.pandora.services.crudservices.
  * implementations.AbstractCrudServiceImpl}
  * - A generic CRUD service providing common operations for any entity type.</li>
- * <li>{@link com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.
+ * <li>{@link com.pandora.services.crudservices.
  * implementations.CellDBEntityCrudServiceImpl}
  * - A concrete implementation for managing
- * {@link com.science.earth.biogeochemistry.freshwaters.pandora.model.CellDBEntity} entities.</li>
+ * {@link com.pandora.model.CellDBEntity} entities.</li>
  * </ul>
  * </p>
  *
  * @see org.springframework.stereotype.Service
  */
-package com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.implementations;
+package com.pandora.services.crudservices.implementations;

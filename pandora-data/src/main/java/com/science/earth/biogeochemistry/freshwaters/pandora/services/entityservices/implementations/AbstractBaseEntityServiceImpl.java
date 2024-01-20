@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.implementations;
+package com.pandora.services.entityservices.implementations;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -6,10 +6,10 @@ import java.lang.reflect.Type;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.errors.ErrorMessageGenerator;
-import com.science.earth.biogeochemistry.freshwaters.pandora.errors.ServiceImplError;
-import com.science.earth.biogeochemistry.freshwaters.pandora.model.AbstractBaseDBEntity;
-import com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.AbstractBaseEntityService;
+import com.pandora.errors.ErrorMessageGenerator;
+import com.pandora.errors.ServiceImplError;
+import com.pandora.model.AbstractBaseDBEntity;
+import com.pandora.services.entityservices.interfaces.AbstractBaseEntityService;
 
 @Service
 public abstract class AbstractBaseEntityServiceImpl<T extends AbstractBaseDBEntity>

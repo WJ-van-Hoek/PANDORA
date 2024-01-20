@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.controllers;
+package com.pandora.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

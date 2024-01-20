@@ -1,4 +1,4 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.test;
+package com.pandora.services.mapcrudservices.test;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -11,8 +11,8 @@ import java.util.Set;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.AbstractBaseObject;
-import com.science.earth.biogeochemistry.freshwaters.pandora.services.mapcrudservices.implementations.AbstractBaseMapCrudService;
+import com.pandora.general.objects.AbstractBaseObject;
+import com.pandora.services.mapcrudservices.implementations.AbstractBaseMapCrudService;
 
 import lombok.experimental.SuperBuilder;
 

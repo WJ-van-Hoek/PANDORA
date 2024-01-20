@@ -1,10 +1,10 @@
-package com.science.earth.biogeochemistry.freshwaters.pandora.controllers.requestbodies;
+package com.pandora.controllers.requestbodies;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 
-import com.science.earth.biogeochemistry.freshwaters.pandora.general.objects.Cell;
+import com.pandora.general.objects.Cell;
 
 import jakarta.validation.ValidationException;
 import lombok.Getter;

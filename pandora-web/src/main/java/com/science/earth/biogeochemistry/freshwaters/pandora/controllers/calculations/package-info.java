@@ -9,4 +9,4 @@
  * maps to the "/launch-calculation-service.html" endpoint and returns the Thymeleaf template path for launching the
  * service.
  */
-package com.science.earth.biogeochemistry.freshwaters.pandora.controllers.calculations;
+package com.pandora.controllers.calculations;
