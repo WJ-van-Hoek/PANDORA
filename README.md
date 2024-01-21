@@ -11,6 +11,6 @@ PANDORA stands for **P**hosphorus, **A**lkalinity, **N**itrogen and **D**issolve
 
 Before contributing, please consult the [repository guidelines](pandora-administration/GUIDELINES.md) first.
 
-**pandora-data:**&nbsp;[![Documentation](https://img.shields.io/badge/Documentation-HTML-blue.svg?logo=Java&logoColor=white&link=https://wj-van-hoek.github.io/PANDORA/pandora-data/apidocs/index.html)](https://wj-van-hoek.github.io/PANDORA/pandora-data/apidocs/index.html)
+**pandora-calculation-services:**&nbsp;[![Documentation](https://img.shields.io/badge/Documentation-HTML-blue.svg?logo=Java&logoColor=white&link=https://wj-van-hoek.github.io/PANDORA/pandora-calculation-services/apidocs/index.html)](https://wj-van-hoek.github.io/PANDORA/pandora-calculation-services/apidocs/index.html)
 
-**pandora-web:**&nbsp;[![Documentation](https://img.shields.io/badge/Documentation-HTML-blue.svg?logo=Java&logoColor=white&link=https://wj-van-hoek.github.io/PANDORA/pandora-web/apidocs/index.html)](https://wj-van-hoek.github.io/PANDORA/pandora-web/apidocs/index.html)
+**pandora-calculation-rest-api:**&nbsp;[![Documentation](https://img.shields.io/badge/Documentation-HTML-blue.svg?logo=Java&logoColor=white&link=https://wj-van-hoek.github.io/PANDORA/pandora-calculation-rest-api/apidocs/index.html)](https://wj-van-hoek.github.io/PANDORA/pandora-calculation-rest-api/apidocs/index.html)
