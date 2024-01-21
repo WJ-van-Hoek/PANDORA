@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="dc.created" content="2023-05-22">
-<meta name="description" content="declaration: package: com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.implementations, class: SchemeServiceImpl">
+<meta name="description" content="declaration: package: com.pandora.services.entityservices.implementations, class: SchemeServiceImpl">
 <meta name="generator" content="javadoc/ClassWriterImpl">
 <link rel="stylesheet" type="text/css" href="../../../../../../../../../stylesheet.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../../../../../../script-dir/jquery-ui.min.css" title="Style">
@@ -69,24 +69,24 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.implementations</a></div>
+<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">com.pandora.services.entityservices.implementations</a></div>
 <h1 title="Class SchemeServiceImpl" class="title">Class SchemeServiceImpl</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance"><a href="AbstractBaseEntityServiceImpl.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.implementations">com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.implementations.AbstractBaseEntityServiceImpl</a>&lt;<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&gt;
-<div class="inheritance">com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.implementations.SchemeServiceImpl</div>
+<div class="inheritance"><a href="AbstractBaseEntityServiceImpl.html" title="class in com.pandora.services.entityservices.implementations">com.pandora.services.entityservices.implementations.AbstractBaseEntityServiceImpl</a>&lt;<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&gt;
+<div class="inheritance">com.pandora.services.entityservices.implementations.SchemeServiceImpl</div>
 </div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../interfaces/AbstractBaseEntityService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">AbstractBaseEntityService</a>&lt;<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&gt;</code>, <code><a href="../interfaces/SchemeService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
+<dd><code><a href="../interfaces/AbstractBaseEntityService.html" title="interface in com.pandora.services.entityservices.interfaces">AbstractBaseEntityService</a>&lt;<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&gt;</code>, <code><a href="../interfaces/SchemeService.html" title="interface in com.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="annotations">@Service
 </span><span class="modifiers">public class </span><span class="element-name type-name-label">SchemeServiceImpl</span>
-<span class="extends-implements">extends <a href="AbstractBaseEntityServiceImpl.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.implementations">AbstractBaseEntityServiceImpl</a>&lt;<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&gt;
-implements <a href="../interfaces/SchemeService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">SchemeService</a></span></div>
+<span class="extends-implements">extends <a href="AbstractBaseEntityServiceImpl.html" title="class in com.pandora.services.entityservices.implementations">AbstractBaseEntityServiceImpl</a>&lt;<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&gt;
+implements <a href="../interfaces/SchemeService.html" title="interface in com.pandora.services.entityservices.interfaces">SchemeService</a></span></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -100,14 +100,14 @@ implements <a href="../interfaces/SchemeService.html" title="interface in com.sc
 <div class="table-header col-second">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>protected </code></div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces.SchemeCrudService,com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces.ReactionCrudService,com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.ReactionService,com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces.SourceCrudService,com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.SourceService,com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces.SpecieCrudService,com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.SpecieService,com.science.earth.biogeochemistry.freshwaters.pandora.errors.ErrorMessageGenerator)" class="member-name-link">SchemeServiceImpl</a><wbr>(<a href="../../crudservices/interfaces/SchemeCrudService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces">SchemeCrudService</a>&nbsp;schemeCrudService,
- <a href="../../crudservices/interfaces/ReactionCrudService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces">ReactionCrudService</a>&nbsp;reactionCrudService,
- <a href="../interfaces/ReactionService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">ReactionService</a>&nbsp;reactionService,
- <a href="../../crudservices/interfaces/SourceCrudService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces">SourceCrudService</a>&nbsp;sourceCrudService,
- <a href="../interfaces/SourceService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">SourceService</a>&nbsp;sourceService,
- <a href="../../crudservices/interfaces/SpecieCrudService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces">SpecieCrudService</a>&nbsp;specieCrudService,
- <a href="../interfaces/SpecieService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">SpecieService</a>&nbsp;specieService,
- <a href="../../../errors/ErrorMessageGenerator.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.errors">ErrorMessageGenerator</a>&nbsp;errorMessageGenerator)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(com.pandora.services.crudservices.interfaces.SchemeCrudService,com.pandora.services.crudservices.interfaces.ReactionCrudService,com.pandora.services.entityservices.interfaces.ReactionService,com.pandora.services.crudservices.interfaces.SourceCrudService,com.pandora.services.entityservices.interfaces.SourceService,com.pandora.services.crudservices.interfaces.SpecieCrudService,com.pandora.services.entityservices.interfaces.SpecieService,com.pandora.errors.ErrorMessageGenerator)" class="member-name-link">SchemeServiceImpl</a><wbr>(<a href="../../crudservices/interfaces/SchemeCrudService.html" title="interface in com.pandora.services.crudservices.interfaces">SchemeCrudService</a>&nbsp;schemeCrudService,
+ <a href="../../crudservices/interfaces/ReactionCrudService.html" title="interface in com.pandora.services.crudservices.interfaces">ReactionCrudService</a>&nbsp;reactionCrudService,
+ <a href="../interfaces/ReactionService.html" title="interface in com.pandora.services.entityservices.interfaces">ReactionService</a>&nbsp;reactionService,
+ <a href="../../crudservices/interfaces/SourceCrudService.html" title="interface in com.pandora.services.crudservices.interfaces">SourceCrudService</a>&nbsp;sourceCrudService,
+ <a href="../interfaces/SourceService.html" title="interface in com.pandora.services.entityservices.interfaces">SourceService</a>&nbsp;sourceService,
+ <a href="../../crudservices/interfaces/SpecieCrudService.html" title="interface in com.pandora.services.crudservices.interfaces">SpecieCrudService</a>&nbsp;specieCrudService,
+ <a href="../interfaces/SpecieService.html" title="interface in com.pandora.services.entityservices.interfaces">SpecieService</a>&nbsp;specieService,
+ <a href="../../../errors/ErrorMessageGenerator.html" title="interface in com.pandora.errors">ErrorMessageGenerator</a>&nbsp;errorMessageGenerator)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -124,7 +124,7 @@ implements <a href="../interfaces/SchemeService.html" title="interface in com.sc
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addReactionByIdToScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,java.lang.Long)" class="member-name-link">addReactionByIdToScheme</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addReactionByIdToScheme(com.pandora.model.Scheme,java.lang.Long)" class="member-name-link">addReactionByIdToScheme</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;reactionId)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
@@ -132,15 +132,15 @@ implements <a href="../interfaces/SchemeService.html" title="interface in com.sc
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;reactionId)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addReactionSetToScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,java.util.Set)" class="member-name-link">addReactionSetToScheme</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../model/Reaction.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Reaction</a>&gt;&nbsp;reactions)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addReactionSetToScheme(com.pandora.model.Scheme,java.util.Set)" class="member-name-link">addReactionSetToScheme</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../model/Reaction.html" title="class in com.pandora.model">Reaction</a>&gt;&nbsp;reactions)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addReactionToScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,com.science.earth.biogeochemistry.freshwaters.pandora.model.Reaction)" class="member-name-link">addReactionToScheme</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme,
- <a href="../../../model/Reaction.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Reaction</a>&nbsp;reaction)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addReactionToScheme(com.pandora.model.Scheme,com.pandora.model.Reaction)" class="member-name-link">addReactionToScheme</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme,
+ <a href="../../../model/Reaction.html" title="class in com.pandora.model">Reaction</a>&nbsp;reaction)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addSourceByIdToScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,java.lang.Long)" class="member-name-link">addSourceByIdToScheme</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addSourceByIdToScheme(com.pandora.model.Scheme,java.lang.Long)" class="member-name-link">addSourceByIdToScheme</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;sourceId)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
@@ -148,15 +148,15 @@ implements <a href="../interfaces/SchemeService.html" title="interface in com.sc
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;sourceId)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addSourceSetToScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,java.util.Set)" class="member-name-link">addSourceSetToScheme</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../model/Source.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Source</a>&gt;&nbsp;sources)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addSourceSetToScheme(com.pandora.model.Scheme,java.util.Set)" class="member-name-link">addSourceSetToScheme</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../model/Source.html" title="class in com.pandora.model">Source</a>&gt;&nbsp;sources)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addSourceToScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,com.science.earth.biogeochemistry.freshwaters.pandora.model.Source)" class="member-name-link">addSourceToScheme</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme,
- <a href="../../../model/Source.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Source</a>&nbsp;source)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addSourceToScheme(com.pandora.model.Scheme,com.pandora.model.Source)" class="member-name-link">addSourceToScheme</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme,
+ <a href="../../../model/Source.html" title="class in com.pandora.model">Source</a>&nbsp;source)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addSpecieByIdToScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,java.lang.Long)" class="member-name-link">addSpecieByIdToScheme</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addSpecieByIdToScheme(com.pandora.model.Scheme,java.lang.Long)" class="member-name-link">addSpecieByIdToScheme</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;specieId)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
@@ -164,15 +164,15 @@ implements <a href="../interfaces/SchemeService.html" title="interface in com.sc
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;specieId)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addSpecieSetToScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,java.util.Set)" class="member-name-link">addSpecieSetToScheme</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../model/Specie.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Specie</a>&gt;&nbsp;species)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addSpecieSetToScheme(com.pandora.model.Scheme,java.util.Set)" class="member-name-link">addSpecieSetToScheme</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../model/Specie.html" title="class in com.pandora.model">Specie</a>&gt;&nbsp;species)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addSpecieToScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,com.science.earth.biogeochemistry.freshwaters.pandora.model.Specie)" class="member-name-link">addSpecieToScheme</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme,
- <a href="../../../model/Specie.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Specie</a>&nbsp;specie)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addSpecieToScheme(com.pandora.model.Scheme,com.pandora.model.Specie)" class="member-name-link">addSpecieToScheme</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme,
+ <a href="../../../model/Specie.html" title="class in com.pandora.model">Specie</a>&nbsp;specie)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deleteReactionByIdFromScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,java.lang.Long)" class="member-name-link">deleteReactionByIdFromScheme</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deleteReactionByIdFromScheme(com.pandora.model.Scheme,java.lang.Long)" class="member-name-link">deleteReactionByIdFromScheme</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;reactionId)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
@@ -180,11 +180,11 @@ implements <a href="../interfaces/SchemeService.html" title="interface in com.sc
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;reactionId)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deleteReactionFromScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,com.science.earth.biogeochemistry.freshwaters.pandora.model.Reaction)" class="member-name-link">deleteReactionFromScheme</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme,
- <a href="../../../model/Reaction.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Reaction</a>&nbsp;reaction)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deleteReactionFromScheme(com.pandora.model.Scheme,com.pandora.model.Reaction)" class="member-name-link">deleteReactionFromScheme</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme,
+ <a href="../../../model/Reaction.html" title="class in com.pandora.model">Reaction</a>&nbsp;reaction)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deleteSourceByIdFromScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,java.lang.Long)" class="member-name-link">deleteSourceByIdFromScheme</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deleteSourceByIdFromScheme(com.pandora.model.Scheme,java.lang.Long)" class="member-name-link">deleteSourceByIdFromScheme</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;sourceId)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
@@ -192,11 +192,11 @@ implements <a href="../interfaces/SchemeService.html" title="interface in com.sc
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;sourceId)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deleteSourceFromScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,com.science.earth.biogeochemistry.freshwaters.pandora.model.Source)" class="member-name-link">deleteSourceFromScheme</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme,
- <a href="../../../model/Source.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Source</a>&nbsp;source)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deleteSourceFromScheme(com.pandora.model.Scheme,com.pandora.model.Source)" class="member-name-link">deleteSourceFromScheme</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme,
+ <a href="../../../model/Source.html" title="class in com.pandora.model">Source</a>&nbsp;source)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deleteSpecieByIdFromScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,java.lang.Long)" class="member-name-link">deleteSpecieByIdFromScheme</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deleteSpecieByIdFromScheme(com.pandora.model.Scheme,java.lang.Long)" class="member-name-link">deleteSpecieByIdFromScheme</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;specieId)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
@@ -204,23 +204,23 @@ implements <a href="../interfaces/SchemeService.html" title="interface in com.sc
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;specieId)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deleteSpecieFromScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,com.science.earth.biogeochemistry.freshwaters.pandora.model.Specie)" class="member-name-link">deleteSpecieFromScheme</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme,
- <a href="../../../model/Specie.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Specie</a>&nbsp;specie)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deleteSpecieFromScheme(com.pandora.model.Scheme,com.pandora.model.Specie)" class="member-name-link">deleteSpecieFromScheme</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme,
+ <a href="../../../model/Specie.html" title="class in com.pandora.model">Specie</a>&nbsp;specie)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#safeSave(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme)" class="member-name-link">safeSave</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#safeSave(com.pandora.model.Scheme)" class="member-name-link">safeSave</a><wbr>(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.implementations.AbstractBaseEntityServiceImpl">Methods inherited from class&nbsp;com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.implementations.<a href="AbstractBaseEntityServiceImpl.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.implementations">AbstractBaseEntityServiceImpl</a></h3>
+<h3 id="methods-inherited-from-class-com.pandora.services.entityservices.implementations.AbstractBaseEntityServiceImpl">Methods inherited from class&nbsp;com.pandora.services.entityservices.implementations.<a href="AbstractBaseEntityServiceImpl.html" title="class in com.pandora.services.entityservices.implementations">AbstractBaseEntityServiceImpl</a></h3>
 <code><a href="AbstractBaseEntityServiceImpl.html#getFullGenericType()">getFullGenericType</a>, <a href="AbstractBaseEntityServiceImpl.html#getGenericType()">getGenericType</a>, <a href="AbstractBaseEntityServiceImpl.html#isNew(T)">isNew</a>, <a href="AbstractBaseEntityServiceImpl.html#nullCheck(T)">nullCheck</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.AbstractBaseEntityService">Methods inherited from interface&nbsp;com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.<a href="../interfaces/AbstractBaseEntityService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">AbstractBaseEntityService</a></h3>
+<h3 id="methods-inherited-from-class-com.pandora.services.entityservices.interfaces.AbstractBaseEntityService">Methods inherited from interface&nbsp;com.pandora.services.entityservices.interfaces.<a href="../interfaces/AbstractBaseEntityService.html" title="interface in com.pandora.services.entityservices.interfaces">AbstractBaseEntityService</a></h3>
 <code><a href="../interfaces/AbstractBaseEntityService.html#getFullGenericType()">getFullGenericType</a>, <a href="../interfaces/AbstractBaseEntityService.html#getGenericType()">getGenericType</a>, <a href="../interfaces/AbstractBaseEntityService.html#isNew(T)">isNew</a>, <a href="../interfaces/AbstractBaseEntityService.html#nullCheck(T)">nullCheck</a></code></div>
 </section>
 </li>
@@ -234,16 +234,16 @@ implements <a href="../interfaces/SchemeService.html" title="interface in com.sc
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces.SchemeCrudService,com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces.ReactionCrudService,com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.ReactionService,com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces.SourceCrudService,com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.SourceService,com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces.SpecieCrudService,com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces.SpecieService,com.science.earth.biogeochemistry.freshwaters.pandora.errors.ErrorMessageGenerator)">
+<section class="detail" id="&lt;init&gt;(com.pandora.services.crudservices.interfaces.SchemeCrudService,com.pandora.services.crudservices.interfaces.ReactionCrudService,com.pandora.services.entityservices.interfaces.ReactionService,com.pandora.services.crudservices.interfaces.SourceCrudService,com.pandora.services.entityservices.interfaces.SourceService,com.pandora.services.crudservices.interfaces.SpecieCrudService,com.pandora.services.entityservices.interfaces.SpecieService,com.pandora.errors.ErrorMessageGenerator)">
 <h3>SchemeServiceImpl</h3>
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">SchemeServiceImpl</span><wbr><span class="parameters">(<a href="../../crudservices/interfaces/SchemeCrudService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces">SchemeCrudService</a>&nbsp;schemeCrudService,
- <a href="../../crudservices/interfaces/ReactionCrudService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces">ReactionCrudService</a>&nbsp;reactionCrudService,
- <a href="../interfaces/ReactionService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">ReactionService</a>&nbsp;reactionService,
- <a href="../../crudservices/interfaces/SourceCrudService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces">SourceCrudService</a>&nbsp;sourceCrudService,
- <a href="../interfaces/SourceService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">SourceService</a>&nbsp;sourceService,
- <a href="../../crudservices/interfaces/SpecieCrudService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.crudservices.interfaces">SpecieCrudService</a>&nbsp;specieCrudService,
- <a href="../interfaces/SpecieService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">SpecieService</a>&nbsp;specieService,
- <a href="../../../errors/ErrorMessageGenerator.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.errors">ErrorMessageGenerator</a>&nbsp;errorMessageGenerator)</span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">SchemeServiceImpl</span><wbr><span class="parameters">(<a href="../../crudservices/interfaces/SchemeCrudService.html" title="interface in com.pandora.services.crudservices.interfaces">SchemeCrudService</a>&nbsp;schemeCrudService,
+ <a href="../../crudservices/interfaces/ReactionCrudService.html" title="interface in com.pandora.services.crudservices.interfaces">ReactionCrudService</a>&nbsp;reactionCrudService,
+ <a href="../interfaces/ReactionService.html" title="interface in com.pandora.services.entityservices.interfaces">ReactionService</a>&nbsp;reactionService,
+ <a href="../../crudservices/interfaces/SourceCrudService.html" title="interface in com.pandora.services.crudservices.interfaces">SourceCrudService</a>&nbsp;sourceCrudService,
+ <a href="../interfaces/SourceService.html" title="interface in com.pandora.services.entityservices.interfaces">SourceService</a>&nbsp;sourceService,
+ <a href="../../crudservices/interfaces/SpecieCrudService.html" title="interface in com.pandora.services.crudservices.interfaces">SpecieCrudService</a>&nbsp;specieCrudService,
+ <a href="../interfaces/SpecieService.html" title="interface in com.pandora.services.entityservices.interfaces">SpecieService</a>&nbsp;specieService,
+ <a href="../../../errors/ErrorMessageGenerator.html" title="interface in com.pandora.errors">ErrorMessageGenerator</a>&nbsp;errorMessageGenerator)</span></div>
 </section>
 </li>
 </ul>
@@ -255,30 +255,30 @@ implements <a href="../interfaces/SchemeService.html" title="interface in com.sc
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="safeSave(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme)">
+<section class="detail" id="safeSave(com.pandora.model.Scheme)">
 <h3>safeSave</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a></span>&nbsp;<span class="element-name">safeSave</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a></span>&nbsp;<span class="element-name">safeSave</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme)</span></div>
 </section>
 </li>
 <li>
-<section class="detail" id="addReactionToScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,com.science.earth.biogeochemistry.freshwaters.pandora.model.Reaction)">
+<section class="detail" id="addReactionToScheme(com.pandora.model.Scheme,com.pandora.model.Reaction)">
 <h3>addReactionToScheme</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addReactionToScheme</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme,
- <a href="../../../model/Reaction.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Reaction</a>&nbsp;reaction)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addReactionToScheme</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme,
+ <a href="../../../model/Reaction.html" title="class in com.pandora.model">Reaction</a>&nbsp;reaction)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../interfaces/SchemeService.html#addReactionToScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,com.science.earth.biogeochemistry.freshwaters.pandora.model.Reaction)">addReactionToScheme</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
+<dd><code><a href="../interfaces/SchemeService.html#addReactionToScheme(com.pandora.model.Scheme,com.pandora.model.Reaction)">addReactionToScheme</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="addReactionByIdToScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,java.lang.Long)">
+<section class="detail" id="addReactionByIdToScheme(com.pandora.model.Scheme,java.lang.Long)">
 <h3>addReactionByIdToScheme</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addReactionByIdToScheme</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addReactionByIdToScheme</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;reactionId)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../interfaces/SchemeService.html#addReactionByIdToScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,java.lang.Long)">addReactionByIdToScheme</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
+<dd><code><a href="../interfaces/SchemeService.html#addReactionByIdToScheme(com.pandora.model.Scheme,java.lang.Long)">addReactionByIdToScheme</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
 </dl>
 </section>
 </li>
@@ -289,29 +289,29 @@ implements <a href="../interfaces/SchemeService.html" title="interface in com.sc
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;reactionId)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../interfaces/SchemeService.html#addReactionByIdToSchemeById(java.lang.Long,java.lang.Long)">addReactionByIdToSchemeById</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
+<dd><code><a href="../interfaces/SchemeService.html#addReactionByIdToSchemeById(java.lang.Long,java.lang.Long)">addReactionByIdToSchemeById</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="addSourceToScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,com.science.earth.biogeochemistry.freshwaters.pandora.model.Source)">
+<section class="detail" id="addSourceToScheme(com.pandora.model.Scheme,com.pandora.model.Source)">
 <h3>addSourceToScheme</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addSourceToScheme</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme,
- <a href="../../../model/Source.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Source</a>&nbsp;source)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addSourceToScheme</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme,
+ <a href="../../../model/Source.html" title="class in com.pandora.model">Source</a>&nbsp;source)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../interfaces/SchemeService.html#addSourceToScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,com.science.earth.biogeochemistry.freshwaters.pandora.model.Source)">addSourceToScheme</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
+<dd><code><a href="../interfaces/SchemeService.html#addSourceToScheme(com.pandora.model.Scheme,com.pandora.model.Source)">addSourceToScheme</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="addSourceByIdToScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,java.lang.Long)">
+<section class="detail" id="addSourceByIdToScheme(com.pandora.model.Scheme,java.lang.Long)">
 <h3>addSourceByIdToScheme</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addSourceByIdToScheme</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addSourceByIdToScheme</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;sourceId)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../interfaces/SchemeService.html#addSourceByIdToScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,java.lang.Long)">addSourceByIdToScheme</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
+<dd><code><a href="../interfaces/SchemeService.html#addSourceByIdToScheme(com.pandora.model.Scheme,java.lang.Long)">addSourceByIdToScheme</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
 </dl>
 </section>
 </li>
@@ -322,29 +322,29 @@ implements <a href="../interfaces/SchemeService.html" title="interface in com.sc
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;sourceId)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../interfaces/SchemeService.html#addSourceByIdToSchemeById(java.lang.Long,java.lang.Long)">addSourceByIdToSchemeById</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
+<dd><code><a href="../interfaces/SchemeService.html#addSourceByIdToSchemeById(java.lang.Long,java.lang.Long)">addSourceByIdToSchemeById</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="addSpecieToScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,com.science.earth.biogeochemistry.freshwaters.pandora.model.Specie)">
+<section class="detail" id="addSpecieToScheme(com.pandora.model.Scheme,com.pandora.model.Specie)">
 <h3>addSpecieToScheme</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addSpecieToScheme</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme,
- <a href="../../../model/Specie.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Specie</a>&nbsp;specie)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addSpecieToScheme</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme,
+ <a href="../../../model/Specie.html" title="class in com.pandora.model">Specie</a>&nbsp;specie)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../interfaces/SchemeService.html#addSpecieToScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,com.science.earth.biogeochemistry.freshwaters.pandora.model.Specie)">addSpecieToScheme</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
+<dd><code><a href="../interfaces/SchemeService.html#addSpecieToScheme(com.pandora.model.Scheme,com.pandora.model.Specie)">addSpecieToScheme</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="addSpecieByIdToScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,java.lang.Long)">
+<section class="detail" id="addSpecieByIdToScheme(com.pandora.model.Scheme,java.lang.Long)">
 <h3>addSpecieByIdToScheme</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addSpecieByIdToScheme</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addSpecieByIdToScheme</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;specieId)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../interfaces/SchemeService.html#addSpecieByIdToScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,java.lang.Long)">addSpecieByIdToScheme</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
+<dd><code><a href="../interfaces/SchemeService.html#addSpecieByIdToScheme(com.pandora.model.Scheme,java.lang.Long)">addSpecieByIdToScheme</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
 </dl>
 </section>
 </li>
@@ -355,29 +355,29 @@ implements <a href="../interfaces/SchemeService.html" title="interface in com.sc
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;specieId)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../interfaces/SchemeService.html#addSpecieByIdToSchemeById(java.lang.Long,java.lang.Long)">addSpecieByIdToSchemeById</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
+<dd><code><a href="../interfaces/SchemeService.html#addSpecieByIdToSchemeById(java.lang.Long,java.lang.Long)">addSpecieByIdToSchemeById</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="deleteReactionFromScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,com.science.earth.biogeochemistry.freshwaters.pandora.model.Reaction)">
+<section class="detail" id="deleteReactionFromScheme(com.pandora.model.Scheme,com.pandora.model.Reaction)">
 <h3>deleteReactionFromScheme</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">deleteReactionFromScheme</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme,
- <a href="../../../model/Reaction.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Reaction</a>&nbsp;reaction)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">deleteReactionFromScheme</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme,
+ <a href="../../../model/Reaction.html" title="class in com.pandora.model">Reaction</a>&nbsp;reaction)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../interfaces/SchemeService.html#deleteReactionFromScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,com.science.earth.biogeochemistry.freshwaters.pandora.model.Reaction)">deleteReactionFromScheme</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
+<dd><code><a href="../interfaces/SchemeService.html#deleteReactionFromScheme(com.pandora.model.Scheme,com.pandora.model.Reaction)">deleteReactionFromScheme</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="deleteReactionByIdFromScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,java.lang.Long)">
+<section class="detail" id="deleteReactionByIdFromScheme(com.pandora.model.Scheme,java.lang.Long)">
 <h3>deleteReactionByIdFromScheme</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">deleteReactionByIdFromScheme</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">deleteReactionByIdFromScheme</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;reactionId)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../interfaces/SchemeService.html#deleteReactionByIdFromScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,java.lang.Long)">deleteReactionByIdFromScheme</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
+<dd><code><a href="../interfaces/SchemeService.html#deleteReactionByIdFromScheme(com.pandora.model.Scheme,java.lang.Long)">deleteReactionByIdFromScheme</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
 </dl>
 </section>
 </li>
@@ -388,29 +388,29 @@ implements <a href="../interfaces/SchemeService.html" title="interface in com.sc
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;reactionId)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../interfaces/SchemeService.html#deleteReactionByIdFromSchemeById(java.lang.Long,java.lang.Long)">deleteReactionByIdFromSchemeById</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
+<dd><code><a href="../interfaces/SchemeService.html#deleteReactionByIdFromSchemeById(java.lang.Long,java.lang.Long)">deleteReactionByIdFromSchemeById</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="deleteSourceFromScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,com.science.earth.biogeochemistry.freshwaters.pandora.model.Source)">
+<section class="detail" id="deleteSourceFromScheme(com.pandora.model.Scheme,com.pandora.model.Source)">
 <h3>deleteSourceFromScheme</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">deleteSourceFromScheme</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme,
- <a href="../../../model/Source.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Source</a>&nbsp;source)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">deleteSourceFromScheme</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme,
+ <a href="../../../model/Source.html" title="class in com.pandora.model">Source</a>&nbsp;source)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../interfaces/SchemeService.html#deleteSourceFromScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,com.science.earth.biogeochemistry.freshwaters.pandora.model.Source)">deleteSourceFromScheme</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
+<dd><code><a href="../interfaces/SchemeService.html#deleteSourceFromScheme(com.pandora.model.Scheme,com.pandora.model.Source)">deleteSourceFromScheme</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="deleteSourceByIdFromScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,java.lang.Long)">
+<section class="detail" id="deleteSourceByIdFromScheme(com.pandora.model.Scheme,java.lang.Long)">
 <h3>deleteSourceByIdFromScheme</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">deleteSourceByIdFromScheme</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">deleteSourceByIdFromScheme</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;sourceId)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../interfaces/SchemeService.html#deleteSourceByIdFromScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,java.lang.Long)">deleteSourceByIdFromScheme</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
+<dd><code><a href="../interfaces/SchemeService.html#deleteSourceByIdFromScheme(com.pandora.model.Scheme,java.lang.Long)">deleteSourceByIdFromScheme</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
 </dl>
 </section>
 </li>
@@ -421,29 +421,29 @@ implements <a href="../interfaces/SchemeService.html" title="interface in com.sc
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;sourceId)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../interfaces/SchemeService.html#deleteSourceByIdFromSchemeById(java.lang.Long,java.lang.Long)">deleteSourceByIdFromSchemeById</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
+<dd><code><a href="../interfaces/SchemeService.html#deleteSourceByIdFromSchemeById(java.lang.Long,java.lang.Long)">deleteSourceByIdFromSchemeById</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="deleteSpecieFromScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,com.science.earth.biogeochemistry.freshwaters.pandora.model.Specie)">
+<section class="detail" id="deleteSpecieFromScheme(com.pandora.model.Scheme,com.pandora.model.Specie)">
 <h3>deleteSpecieFromScheme</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">deleteSpecieFromScheme</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme,
- <a href="../../../model/Specie.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Specie</a>&nbsp;specie)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">deleteSpecieFromScheme</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme,
+ <a href="../../../model/Specie.html" title="class in com.pandora.model">Specie</a>&nbsp;specie)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../interfaces/SchemeService.html#deleteSpecieFromScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,com.science.earth.biogeochemistry.freshwaters.pandora.model.Specie)">deleteSpecieFromScheme</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
+<dd><code><a href="../interfaces/SchemeService.html#deleteSpecieFromScheme(com.pandora.model.Scheme,com.pandora.model.Specie)">deleteSpecieFromScheme</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="deleteSpecieByIdFromScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,java.lang.Long)">
+<section class="detail" id="deleteSpecieByIdFromScheme(com.pandora.model.Scheme,java.lang.Long)">
 <h3>deleteSpecieByIdFromScheme</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">deleteSpecieByIdFromScheme</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">deleteSpecieByIdFromScheme</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;specieId)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../interfaces/SchemeService.html#deleteSpecieByIdFromScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,java.lang.Long)">deleteSpecieByIdFromScheme</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
+<dd><code><a href="../interfaces/SchemeService.html#deleteSpecieByIdFromScheme(com.pandora.model.Scheme,java.lang.Long)">deleteSpecieByIdFromScheme</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
 </dl>
 </section>
 </li>
@@ -454,40 +454,40 @@ implements <a href="../interfaces/SchemeService.html" title="interface in com.sc
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;specieId)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../interfaces/SchemeService.html#deleteSpecieByIdFromSchemeById(java.lang.Long,java.lang.Long)">deleteSpecieByIdFromSchemeById</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
+<dd><code><a href="../interfaces/SchemeService.html#deleteSpecieByIdFromSchemeById(java.lang.Long,java.lang.Long)">deleteSpecieByIdFromSchemeById</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="addReactionSetToScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,java.util.Set)">
+<section class="detail" id="addReactionSetToScheme(com.pandora.model.Scheme,java.util.Set)">
 <h3>addReactionSetToScheme</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addReactionSetToScheme</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../model/Reaction.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Reaction</a>&gt;&nbsp;reactions)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addReactionSetToScheme</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../model/Reaction.html" title="class in com.pandora.model">Reaction</a>&gt;&nbsp;reactions)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../interfaces/SchemeService.html#addReactionSetToScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,java.util.Set)">addReactionSetToScheme</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
+<dd><code><a href="../interfaces/SchemeService.html#addReactionSetToScheme(com.pandora.model.Scheme,java.util.Set)">addReactionSetToScheme</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="addSourceSetToScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,java.util.Set)">
+<section class="detail" id="addSourceSetToScheme(com.pandora.model.Scheme,java.util.Set)">
 <h3>addSourceSetToScheme</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addSourceSetToScheme</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../model/Source.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Source</a>&gt;&nbsp;sources)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addSourceSetToScheme</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../model/Source.html" title="class in com.pandora.model">Source</a>&gt;&nbsp;sources)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../interfaces/SchemeService.html#addSourceSetToScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,java.util.Set)">addSourceSetToScheme</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
+<dd><code><a href="../interfaces/SchemeService.html#addSourceSetToScheme(com.pandora.model.Scheme,java.util.Set)">addSourceSetToScheme</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="addSpecieSetToScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,java.util.Set)">
+<section class="detail" id="addSpecieSetToScheme(com.pandora.model.Scheme,java.util.Set)">
 <h3>addSpecieSetToScheme</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addSpecieSetToScheme</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Scheme</a>&nbsp;scheme,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../model/Specie.html" title="class in com.science.earth.biogeochemistry.freshwaters.pandora.model">Specie</a>&gt;&nbsp;species)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addSpecieSetToScheme</span><wbr><span class="parameters">(<a href="../../../model/Scheme.html" title="class in com.pandora.model">Scheme</a>&nbsp;scheme,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../model/Specie.html" title="class in com.pandora.model">Specie</a>&gt;&nbsp;species)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../interfaces/SchemeService.html#addSpecieSetToScheme(com.science.earth.biogeochemistry.freshwaters.pandora.model.Scheme,java.util.Set)">addSpecieSetToScheme</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.science.earth.biogeochemistry.freshwaters.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
+<dd><code><a href="../interfaces/SchemeService.html#addSpecieSetToScheme(com.pandora.model.Scheme,java.util.Set)">addSpecieSetToScheme</a></code>&nbsp;in interface&nbsp;<code><a href="../interfaces/SchemeService.html" title="interface in com.pandora.services.entityservices.interfaces">SchemeService</a></code></dd>
 </dl>
 </section>
 </li>

@@ -61,7 +61,9 @@
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<configuration>
 					<reportOutputDirectory>
-						${project.basedir}/../docs/pandora-calculation</reportOutputDirectory>
+						${project.basedir}/../docs/pandora-calculation-services</reportOutputDirectory>
+
+					<sourcepath>${project.basedir}/src/main/java</sourcepath>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -74,6 +76,8 @@
 						<phase>validate</phase>
 						<configuration>
 							<configLocation>../pandora-style/sun_checks.xml</configLocation>
+							<suppressionsLocation>
+								../pandora-style/suppressions.xml</suppressionsLocation>
 							<encoding>UTF-8</encoding>
 							<failOnViolation>true</failOnViolation>
 							<includeTestSourceDirectory>true</includeTestSourceDirectory>
