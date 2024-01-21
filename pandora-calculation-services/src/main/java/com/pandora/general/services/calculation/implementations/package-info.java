@@ -8,20 +8,13 @@
  * <p>
  * The implementation classes are the following:
  * <ul>
- * <li>{@link com.pandora.general.services.calculation.implementations
- * .CellTimestepServiceImpl}</li>
- * <li>{@link com.pandora.general.services.calculation.implementations
- * .FirstOrderDifferentialEquationsServiceImpl}</li>
- * <li>{@link com.pandora.general.services.calculation.implementations
- * .LocalDateTimeServiceImpl}</li>
- * <li>{@link com.pandora.general.services.calculation.implementations
- * .PandoraIntegratorServiceImpl}</li>
- * <li>{@link com.pandora.general.services.calculation.implementations
- * .ReactionCalculationServiceImpl}</li>
- * <li>{@link com.pandora.general.services.calculation.implementations
- * .RiverTimestepServiceImpl}</li>
- * <li>{@link com.pandora.general.services.calculation.implementations
- * .TransportCalculationServiceImpl}</li>
+ * <li>{@link com.pandora.general.services.calculation.implementations .CellTimestepServiceImpl}</li>
+ * <li>{@link com.pandora.general.services.calculation.implementations .FirstOrderDifferentialEquationsServiceImpl}</li>
+ * <li>{@link com.pandora.general.services.calculation.implementations .LocalDateTimeServiceImpl}</li>
+ * <li>{@link com.pandora.general.services.calculation.implementations .PandoraIntegratorServiceImpl}</li>
+ * <li>{@link com.pandora.general.services.calculation.implementations .ReactionCalculationServiceImpl}</li>
+ * <li>{@link com.pandora.general.services.calculation.implementations .RiverTimestepServiceImpl}</li>
+ * <li>{@link com.pandora.general.services.calculation.implementations .TransportCalculationServiceImpl}</li>
  * </ul>
  * These classes collaborate to simulate and analyze biogeochemical processes within freshwater systems.
  */
