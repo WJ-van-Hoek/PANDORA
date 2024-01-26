@@ -44,6 +44,7 @@ To make sure you configured the correct JDK version:
 `java --version`
 
 **Apache Maven:**  
+Apache Maven is an open-source project management and build automation tool that provides a comprehensive and consistent way to manage and build Java-based projects. Developed by the Apache Software Foundation, Maven simplifies the software development process by automating the project's build infrastructure and managing dependencies.
 PANDORA is currently building with Maven 3.9.6.
 To make sure you install and use the correction Maven version:  
 `sdk install maven 3.9.6`  
@@ -65,7 +66,19 @@ To make sure you configured the correct git version:
 `git --version`
 
 **Lombok:**  
-Lombok is a Java library that simplifies boilerplate code in your Java projects. To use Lombok, you need to configure your IDE to recognize Lombok annotations.
+Lombok is a Java library that simplifies boilerplate code in your Java projects. To use Lombok, you need to configure your IDE to recognize Lombok annotations.  
+
+**Apache Kafka:**  
+Apache Kafka is an open-source distributed streaming platform that provides a highly scalable, fault-tolerant, and publish-subscribe messaging system. Developed by the Apache Software Foundation, Kafka is designed to handle large volumes of real-time data efficiently.  
+
+PANDORA is currently building with Kafka 3.6.1.  
+To make sure you install and use the correct Kafka version, download the *.tar.gz file from the [Apache Kafka website](https://kafka.apache.org/downloads)  
+
+**Apache ZooKeeper:**  
+Apache ZooKeeper is an open-source distributed coordination service that plays a crucial role in managing and synchronizing distributed systems. Developed by the Apache Software Foundation, ZooKeeper provides a reliable and highly available infrastructure for maintaining configuration information, naming, providing distributed synchronization, and group services.  
+
+PANDORA is currently building with ZooKeeper 3.9.1.  
+To make sure you install and use the correct ZooKeeper version, download the *.tar.gz file from the [Apache ZooKeeper website](https://zookeeper.apache.org/releases.html#download).
 
 ***- IntelliJ IDEA***  
 1. ****Install the Lombok Plugin:****  
