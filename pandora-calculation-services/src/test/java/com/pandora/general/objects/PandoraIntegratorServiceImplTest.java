@@ -1,3 +1,4 @@
+// checkstyle.suppressJavadocPackage
 package com.pandora.general.objects;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
@@ -56,8 +57,8 @@ public class PandoraIntegratorServiceImplTest {
     /**
      * Unit test for the integrate method.
      *
-     * Verifies that the integrate method properly integrates the system of first-order differential equations
-     * using the provided integrator and timestep.
+     * Verifies that the integrate method properly integrates the system of first-order differential equations using the
+     * provided integrator and timestep.
      */
     @Test
     void testIntegrate() {
