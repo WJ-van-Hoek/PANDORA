@@ -1,3 +1,4 @@
+// checkstyle.suppressJavadocPackage
 package com.pandora.general.services.calculation.implementations;
 
 import static org.mockito.ArgumentMatchers.any;
