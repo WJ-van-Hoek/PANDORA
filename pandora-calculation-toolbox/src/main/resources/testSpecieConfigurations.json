@@ -1,0 +1,36 @@
+{
+	"species": [
+		{
+			"name": "DIC",
+			"unit": "mol",
+			"molarMass": 58.44,
+			"dy": {
+				"sources": [
+					{
+						"sourceType": "import"
+					},		
+					{
+						"sourceType": "terrestrial",
+						"name": "groundwater"
+					},
+					{
+						"sourceType": "reaction",
+						"name": "oxidation",
+						"from": "DOC"
+					}
+				],
+				"fates": [
+					{
+						"fateType": "reaction",
+						"name": "gassing",
+						"rate": 0.1,
+						"to": "external"
+					},
+					{
+						"fateType": "export"
+					}				
+				]
+			}
+		}
+	]
+}

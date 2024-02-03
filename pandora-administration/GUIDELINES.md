@@ -31,12 +31,14 @@ Welcome to the PANDORA open-source repository! We appreciate your interest and c
 
 **Software Development Kit Manager (SDKMAN):**  
 SDKMAN is a versatile and convenient tool that simplifies the management of various Software Development Kits (SDKs) on your system. With just a couple of commands, you can easily install, switch between, and manage different versions of SDKs. The installation process is straightforward, requiring the following two lines in the terminal:  
+
 `curl -s ¨https://get.sdkman.io" | bash`  
 `source ¨$HOME/.sdkman/bin/sdkman-init.sh`
 
 **Java Development Kit (JDK):**  
 PANDORA is currently developed in JDK 17.0.9.
 To make sure you install and use the correct JDK version:  
+
 `sdk install java 17.0.9-tem`  
 `sdk use java 17.0.9-tem`
 
@@ -44,8 +46,9 @@ To make sure you configured the correct JDK version:
 `java --version`
 
 **Apache Maven:**  
-Apache Maven is an open-source project management and build automation tool that provides a comprehensive and consistent way to manage and build Java-based projects. Developed by the Apache Software Foundation, Maven simplifies the software development process by automating the project's build infrastructure and managing dependencies.
-PANDORA is currently building with Maven 3.9.6.
+Apache Maven is an open-source project management and build automation tool that provides a comprehensive and consistent way to manage and build Java-based projects. Developed by the Apache Software Foundation, Maven simplifies the software development process by automating the project's build infrastructure and managing dependencies.  
+
+PANDORA is currently building with Maven 3.9.6.  
 To make sure you install and use the correction Maven version:  
 `sdk install maven 3.9.6`  
 `sdk use maven 3.9.6`
@@ -78,7 +81,7 @@ Lombok is a Java library that simplifies boilerplate code in your Java projects.
    - Go to "File" > "Settings" > "Build, Execution, Deployment" > "Compiler" > "Annotation Processors."
    - Check the "Enable annotation processing" box.
 
-***- Eclipse***
+***- Eclipse***  
 1. ****Download the Lombok JAR:****
    - Go to the [Lombok website](https://projectlombok.org/).
    - Download the Lombok JAR file.
@@ -90,19 +93,6 @@ Lombok is a Java library that simplifies boilerplate code in your Java projects.
      `java -jar lombok.jar`
 
    - The Lombok installer will launch. Follow the instructions to install Lombok into Eclipse.
-
-**Apache Kafka:**  
-Apache Kafka is an open-source distributed streaming platform that provides a highly scalable, fault-tolerant, and publish-subscribe messaging system. Developed by the Apache Software Foundation, Kafka is designed to handle large volumes of real-time data efficiently.  
-
-PANDORA is currently building with Kafka 3.6.1.  
-To make sure you install and use the correct Kafka version, download the *.tar.gz file from the [Apache Kafka website](https://kafka.apache.org/downloads)  
-
-**Apache ZooKeeper:**  
-Apache ZooKeeper is an open-source distributed coordination service that plays a crucial role in managing and synchronizing distributed systems. Developed by the Apache Software Foundation, ZooKeeper provides a reliable and highly available infrastructure for maintaining configuration information, naming, providing distributed synchronization, and group services.  
-
-PANDORA is currently building with ZooKeeper 3.9.1.  
-To make sure you install and use the correct ZooKeeper version, download the *.tar.gz file from the [Apache ZooKeeper website](https://zookeeper.apache.org/releases.html#download).
-
 
 ### Development setup
 1. Navigate to your workspace in your terminal
