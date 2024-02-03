@@ -11,11 +11,7 @@ import org.apache.commons.cli.CommandLine;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.pandora.calculation.config.FateReactionConfiguration;
-import com.pandora.calculation.config.SourceReactionConfiguration;
 import com.pandora.calculation.config.SpecieConfiguration;
-import com.pandora.calculation.config.builders.FateReactionConfigurationBuilder;
-import com.pandora.calculation.config.builders.SourceReactionConfigurationBuilder;
 import com.pandora.calculation.config.builders.SpecieConfigurationBuilder;
 
 import lombok.extern.slf4j.Slf4j;
@@ -76,11 +72,15 @@ public class SpecieConfigParser {
     private static void parseSpecieNode(final List<SpecieConfiguration> specieConfigurations,
             final JsonNode speciesNode) {
         SpecieConfigurationBuilder builder = SpecieConfiguration.builder();
-        parseBaseConfiguration(speciesNode, builder);
-        parseSources(speciesNode, builder);
-        parseFates(speciesNode, builder);
+        parseSpecieConfiguration(speciesNode, builder);
         SpecieConfiguration specieConfiguration = builder.build();
         specieConfigurations.add(specieConfiguration);
+    }
+
+    private static void parseSpecieConfiguration(final JsonNode speciesNode, final SpecieConfigurationBuilder builder) {
+        parseBaseConfiguration(speciesNode, builder);
+        SourceConfigurationParser.parseSources(speciesNode, builder);
+        FateConfigurationParser.parseFates(speciesNode, builder);
     }
 
     private static void parseBaseConfiguration(final JsonNode speciesNode, final SpecieConfigurationBuilder builder) {
@@ -90,53 +90,8 @@ public class SpecieConfigParser {
         builder.unit(unit);
         double molarMass = speciesNode.get("molarMass").asDouble();
         builder.molarMass(molarMass);
+        boolean transportable = speciesNode.get("transportable").asBoolean();
+        builder.transportable(transportable);
     }
 
-    private static void parseSources(final JsonNode speciesNode, final SpecieConfigurationBuilder builder) {
-        JsonNode dyNode = speciesNode.get("dy");
-        JsonNode sourcesNode = dyNode.get("sources");
-
-        if (sourcesNode != null && sourcesNode.isArray()) {
-            List<SourceReactionConfiguration> sourceReactions = new ArrayList<>();
-            for (JsonNode sourceNode : sourcesNode) {
-                String sourceType = sourceNode.get("sourceType").asText();
-                String name = sourceNode.has("name") ? sourceNode.get("name").asText() : null;
-                if (sourceType.equals("reaction")) {
-                    SourceReactionConfigurationBuilder<?> reactionBuilder = SourceReactionConfiguration.builder();
-                    String from = sourceNode.has("from") ? sourceNode.get("from").asText() : null;
-                    sourceReactions.add(reactionBuilder.name(name).from(from).build());
-                }
-//                if (sourceType.equals("import")) {
-////                TODO think about implementation
-//                }
-//                if (sourceType.equals("external")) {
-////                TODO think about implementation
-//                }
-            }
-            builder.sourceReactionConfigurations(sourceReactions);
-        }
-    }
-
-    private static void parseFates(final JsonNode speciesNode, final SpecieConfigurationBuilder builder) {
-        JsonNode dyNode = speciesNode.get("dy");
-        JsonNode fatesNode = dyNode.get("fates");
-
-        if (fatesNode != null && fatesNode.isArray()) {
-            List<FateReactionConfiguration> fateReactions = new ArrayList<>();
-            for (JsonNode fateNode : fatesNode) {
-                String fateType = fateNode.get("fateType").asText();
-                String name = fateNode.has("name") ? fateNode.get("name").asText() : null;
-                if (fateType.equals("reaction")) {
-                    FateReactionConfigurationBuilder<?> reactionBuilder = FateReactionConfiguration.builder();
-                    double rate = fateNode.has("rate") ? fateNode.get("rate").asDouble() : 0.0;
-                    String to = fateNode.has("to") ? fateNode.get("to").asText() : null;
-                    fateReactions.add(reactionBuilder.name(name).rate(rate).to(to).build());
-                }
-//              if (fateType.equals("export")) {
-////                TODO think about implementation
-//              }
-            }
-            builder.fateReactionConfigurations(fateReactions);
-        }
-    }
 }

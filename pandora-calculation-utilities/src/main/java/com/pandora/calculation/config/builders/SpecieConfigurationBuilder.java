@@ -22,11 +22,15 @@ import lombok.Getter;
 @Getter
 public class SpecieConfigurationBuilder extends ConfigurationBuilder<SpecieConfigurationBuilder> {
 
-
     /**
      * The molar mass of the chemical species.
      */
     private double molarMass;
+
+    /**
+     * The transportability of the chemical species.
+     */
+    private boolean transportable = false;
 
     /**
      * The list of configurations representing the configured reaction sources of the chemical species.
@@ -46,6 +50,17 @@ public class SpecieConfigurationBuilder extends ConfigurationBuilder<SpecieConfi
      */
     public final SpecieConfigurationBuilder molarMass(final double molarMassParam) {
         this.molarMass = molarMassParam;
+        return self();
+    }
+
+    /**
+     * Sets whether the specie is transportable or not.
+     *
+     * @param transportableParam A boolean value indicating whether the specie is transportable.
+     * @return This builder instance for method chaining.
+     */
+    public final SpecieConfigurationBuilder transportable(final boolean transportableParam) {
+        this.transportable = transportableParam;
         return self();
     }
 
