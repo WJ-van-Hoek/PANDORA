@@ -29,6 +29,11 @@ public class SpecieConfiguration extends Configuration {
     private double molarMass;
 
     /**
+     * The transportability of the chemical species.
+     */
+    private boolean transportable;
+
+    /**
      * The configuration of sources of the chemical species.
      */
     private List<SourceReactionConfiguration> sourceReactionConfigurations;
@@ -36,7 +41,7 @@ public class SpecieConfiguration extends Configuration {
     /**
      * The configuration of fates of the chemical species.
      */
-    private List<FateReactionConfiguration> fateReactiononfigurations;
+    private List<FateReactionConfiguration> fateReactionConfigurations;
 
     /**
      * Constructs a new SpecieConfiguration using the provided builder.
@@ -47,8 +52,19 @@ public class SpecieConfiguration extends Configuration {
         super(builder);
         this.name = builder.getName();
         this.molarMass = builder.getMolarMass();
+        this.transportable = builder.isTransportable();
         this.sourceReactionConfigurations = builder.getSourceReactionConfigurations();
-        this.fateReactiononfigurations = builder.getFateReactionConfigurations();
+        this.fateReactionConfigurations = builder.getFateReactionConfigurations();
+    }
+
+    /**
+     * Gets the transportability of the specie as an integer value.
+     *
+     * @return An integer representing the transportability of the specie.
+     *         If the specie is transportable, returns 1, otherwise returns 0.
+     */
+    public final int getTransportability() {
+        return transportable ? 1 : 0;
     }
 
     /**

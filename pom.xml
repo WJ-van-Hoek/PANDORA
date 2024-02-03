@@ -9,7 +9,6 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<modules>
-		<module>pandora-calculation-parsers</module>
 		<module>pandora-calculation-utilities</module>
 		<module>pandora-calculation-services</module>
 		<module>pandora-calculation-rest-api</module>

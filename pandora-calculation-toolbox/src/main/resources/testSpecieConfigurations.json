@@ -4,14 +4,13 @@
 			"name": "DIC",
 			"unit": "mol",
 			"molarMass": 58.44,
+			"transportable": true,
 			"dy": {
 				"sources": [
 					{
-						"sourceType": "import"
-					},		
-					{
 						"sourceType": "terrestrial",
-						"name": "groundwater"
+						"name": "groundwater",
+						"file": "dic_source_groundwater_cell.json"
 					},
 					{
 						"sourceType": "reaction",
@@ -25,10 +24,7 @@
 						"name": "gassing",
 						"rate": 0.1,
 						"to": "external"
-					},
-					{
-						"fateType": "export"
-					}				
+					}
 				]
 			}
 		}
