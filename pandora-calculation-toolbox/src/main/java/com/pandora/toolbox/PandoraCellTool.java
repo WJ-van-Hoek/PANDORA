@@ -9,17 +9,31 @@ import com.pandora.calculation.parsers.CommandLineToolParser;
 import com.pandora.calculation.parsers.Parsable;
 import com.pandora.calculation.services.BootstrapService;
 
-
-//TODO write javdocs
 /**
+ * The PandoraCellTool class serves as the entry point for a tool related to PANDORA cell calculations.
+ * <p>
+ * This tool is responsible for bootstrapping the application by initializing calculation parameters using Spring
+ * framework's application context and parsing command-line arguments.
+ * <p>
+ * To use the tool, execute the main method of this class.
+ * <p>
+ * The tool loads the Spring context from the "com.pandora.calculation" package.
+ * <p>
+ * It then initializes the calculation parameters by parsing the command-line arguments and passing them to the
+ * {@link com.pandora.calculation.services.BootstrapService BootstrapService} for further processing.
+ * <p>
  *
- * @author Wim Joost van Hoek
- * @version 0.0.1
+ * @author Wim Joost van Hoek.
  * @since 0.0.1
+ * @version 0.0.1
  */
 public class PandoraCellTool {
     /**
-     * @param args
+     * The main method serves as the entry point for the PandoraCellTool application.
+     * <p>
+     * It loads the Spring context, initializes calculation parameters, and closes the Spring context afterwards.
+     *
+     * @param args Command-line arguments provided to the application.
      */
     public static void main(final String[] args) {
         // Load the Spring context
@@ -29,19 +43,36 @@ public class PandoraCellTool {
         ((AnnotationConfigApplicationContext) context).close();
     }
 
+    /**
+     * Bootstraps the application by initializing calculation parameters.
+     *
+     * @param args    Command-line arguments provided to the application.
+     * @param context The Spring application context.
+     */
     private static void boot(final String[] args, final ApplicationContext context) {
         boot(context, prepareBoot(args));
     }
 
+    /**
+     * Bootstraps the application by initializing calculation parameters.
+     *
+     * @param context         The Spring application context.
+     * @param bootstrapParams The bootstrap parameters for initialization.
+     */
     private static void boot(final ApplicationContext context, final BootstrapParams bootstrapParams) {
         BootstrapService bootstrapService = context.getBean(BootstrapService.class);
         bootstrapService.initializeCalculationParams(bootstrapParams);
     }
 
+    /**
+     * Prepares the bootstrap parameters based on the provided command-line arguments.
+     *
+     * @param args Command-line arguments provided to the application.
+     * @return The prepared bootstrap parameters.
+     */
     private static BootstrapParams prepareBoot(final String[] args) {
         Parsable<BootstrapParams> params = new BootstrapParams();
         BootstrapParams bootstrapParams = CommandLineToolParser.parseArgs(args, params);
         return bootstrapParams;
     }
-
 }
