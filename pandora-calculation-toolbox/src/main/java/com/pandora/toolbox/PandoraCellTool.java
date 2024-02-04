@@ -29,11 +29,11 @@ public class PandoraCellTool {
         ((AnnotationConfigApplicationContext) context).close();
     }
 
-    private static void boot(final String[] args, ApplicationContext context) {
+    private static void boot(final String[] args, final ApplicationContext context) {
         boot(context, prepareBoot(args));
     }
 
-    private static void boot(ApplicationContext context, BootstrapParams bootstrapParams) {
+    private static void boot(final ApplicationContext context, final BootstrapParams bootstrapParams) {
         BootstrapService bootstrapService = context.getBean(BootstrapService.class);
         bootstrapService.initializeCalculationParams(bootstrapParams);
     }

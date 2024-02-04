@@ -3,6 +3,7 @@ package com.pandora.calculation.data;
 import org.slf4j.Logger;
 
 import com.pandora.calculation.config.Amountable;
+import com.pandora.calculation.config.Changeable;
 import com.pandora.calculation.config.Logged;
 
 import lombok.AllArgsConstructor;
@@ -18,11 +19,16 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 @AllArgsConstructor
-public abstract class VariableData implements Amountable, Logged {
+public abstract class VariableData implements Amountable, Changeable, Logged {
     /**
      * The instantaneous amount of the variable.
      */
     private double amount;
+
+    /**
+     * The instantaneous change of the variable.
+     */
+    private double change;
 
     /**
      * Retrieves the instantaneous amount of the variable.
@@ -31,6 +37,15 @@ public abstract class VariableData implements Amountable, Logged {
      */
     public double getAmount() {
         return amount;
+    }
+
+    /**
+     * Retrieves the instantaneous change of the variable.
+     *
+     * @return The change of the variable in the timestep
+     */
+    public double getChange() {
+        return change;
     }
 
     /**

@@ -3,6 +3,7 @@ package com.pandora.calculation.objects;
 import org.slf4j.Logger;
 
 import com.pandora.calculation.config.Amountable;
+import com.pandora.calculation.config.Changeable;
 import com.pandora.calculation.config.Configuration;
 import com.pandora.calculation.config.Configured;
 import com.pandora.calculation.config.Indexed;
@@ -27,7 +28,7 @@ import lombok.Getter;
  */
 @Getter
 public abstract class Variable<C extends Configuration, D extends VariableData, L extends VariableLogic>
-        implements Amountable, Configured<C>, Indexed, Logged {
+        implements Amountable, Changeable, Configured<C>, Indexed, Logged {
     /**
      * The configuration associated with this variable.
      */
@@ -64,6 +65,11 @@ public abstract class Variable<C extends Configuration, D extends VariableData, 
     @Override
     public final double getAmount() {
         return data.getAmount();
+    }
+
+    @Override
+    public final double getChange() {
+        return data.getChange();
     }
 
     @Override

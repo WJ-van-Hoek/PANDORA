@@ -4,6 +4,7 @@
  * <p>
  * The core interfaces:<br>
  * {@link com.pandora.calculation.config.Amountable Amountable} - Represents entities with an associated amount.<br>
+ * {@link com.pandora.calculation.config.Changeable Changeable} - Represents entities with an associated change.<br>
  * {@link com.pandora.calculation.config.Configured Configured} - Represents objects configured with a specific type of
  * configuration.<br>
  * {@link com.pandora.calculation.config.Indexed Indexed} - Represents indexed objects.<br>
