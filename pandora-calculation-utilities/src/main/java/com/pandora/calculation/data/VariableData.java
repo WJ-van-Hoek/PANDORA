@@ -12,8 +12,9 @@ import lombok.extern.slf4j.Slf4j;
  * The VariableData class represents data associated with a variable. It provides methods to retrieve the instantaneous
  * amount. Additionally, the logger is accessable via the VariableData.
  *
- * @version 0.0.1
  * @author Wim Joost van Hoek
+ * @version 0.0.1
+ * @since 0.0.1
  */
 @Slf4j
 @AllArgsConstructor

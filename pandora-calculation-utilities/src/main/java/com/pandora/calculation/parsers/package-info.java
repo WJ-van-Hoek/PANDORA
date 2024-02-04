@@ -8,7 +8,8 @@
  * The {@link com.pandora.calculation.parsers.SpecieConfigParser SpecieConfigParser} class is responsible for parsing
  * species configurations from command-line arguments.
  *
- * @version 0.0.1
  * @author Wim Joost van Hoek
+ * @version 0.0.1
+ * @since 0.0.1
  */
 package com.pandora.calculation.parsers;

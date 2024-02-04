@@ -6,11 +6,11 @@ import lombok.Getter;
  * The ConfigurationBuilder class serves as a base abstraction for building instances of Configuration or its
  * subclasses.
  *
- * @param <T> the type of ConfigurationBuilder or its subclass, enabling fluent method chaining and ensuring type
- * safety.
+ * @param <T> the type of ConfigurationBuilder or its subclass.
  *
- * @version 0.0.1
  * @author Wim Joost van Hoek
+ * @version 0.0.1
+ * @since 0.0.1
  */
 @Getter
 public abstract class ConfigurationBuilder<T extends ConfigurationBuilder<T>> {

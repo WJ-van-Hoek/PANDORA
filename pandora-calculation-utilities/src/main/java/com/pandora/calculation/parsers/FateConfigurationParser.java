@@ -10,6 +10,10 @@ import com.pandora.calculation.config.builders.SpecieConfigurationBuilder;
 
 /**
  * Utility class for parsing fate configurations from JSON data.
+ *
+ * @author Wim Joost van Hoek
+ * @version 0.0.1
+ * @since 0.0.1
  */
 public class FateConfigurationParser {
     /**
@@ -63,7 +67,7 @@ public class FateConfigurationParser {
                 String fateType = fateNode.get(TYPE_KEY).asText();
                 String name = fateNode.has(NAME_KEY) ? fateNode.get(NAME_KEY).asText() : null;
                 if (fateType.equals(FATE_REACTIONTYPE_KEY)) {
-                    FateReactionConfigurationBuilder<?> reactionBuilder = FateReactionConfiguration.builder();
+                    FateReactionConfigurationBuilder reactionBuilder = FateReactionConfiguration.builder();
                     double rate = fateNode.has(RATE_KEY) ? fateNode.get(RATE_KEY).asDouble() : 0.0;
                     String to = fateNode.has(TO_KEY) ? fateNode.get(TO_KEY).asText() : null;
                     fateReactions.add(reactionBuilder.name(name).rate(rate).to(to).build());

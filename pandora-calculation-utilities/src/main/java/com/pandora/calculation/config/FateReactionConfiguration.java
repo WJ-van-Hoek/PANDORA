@@ -9,8 +9,8 @@ import lombok.Getter;
  * This class extends the {@link Configuration} class.
  *
  * @author Wim Joost van Hoek
- * @version 1.0
- * @since 1.0
+ * @version 0.0.1
+ * @since 0.0.1
  */
 @SuppressWarnings("serial")
 @Getter
@@ -31,7 +31,7 @@ public class FateReactionConfiguration extends Configuration {
      *
      * @param builder The builder used to construct this configuration.
      */
-    public FateReactionConfiguration(final FateReactionConfigurationBuilder<?> builder) {
+    public FateReactionConfiguration(final FateReactionConfigurationBuilder builder) {
         super(builder);
         this.to = builder.getTo();
         this.rate = builder.getRate();
@@ -42,8 +42,8 @@ public class FateReactionConfiguration extends Configuration {
      *
      * @return A new {@link FateReactionConfigurationBuilder} instance.
      */
-    public static FateReactionConfigurationBuilder<?> builder() {
-        return new FateReactionConfigurationBuilder<>();
+    public static FateReactionConfigurationBuilder builder() {
+        return new FateReactionConfigurationBuilder();
     }
 }
 

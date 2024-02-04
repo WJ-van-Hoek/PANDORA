@@ -14,8 +14,9 @@ import lombok.NoArgsConstructor;
  * The Configuration class represents the configuration associated with a calculation component in PANDORA. It provides
  * methods to retrieve information such as the index, unit, and logger of the calculation component.
  *
- * @version 0.0.1
  * @author Wim Joost van Hoek
+ * @version 0.0.1
+ * @since 0.0.1
  */
 @SuppressWarnings("serial")
 @Getter

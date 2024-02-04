@@ -1,5 +1,6 @@
 package com.pandora.calculation.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pandora.calculation.bootstrap.BootstrapParams;
@@ -12,6 +13,7 @@ public class BootstrapServiceImpl implements BootstrapService {
     /**
      * Service for managing specie configurations in memory.
      */
+    @Autowired
     private SpecieConfigurationMemoryService specieConfigurationMemoryService;
 
     /**
@@ -20,7 +22,7 @@ public class BootstrapServiceImpl implements BootstrapService {
      * @param params The {@link BootstrapParams} containing the parameters to initialize the service.
      */
     @Override
-    public final void initializeServiceParams(final BootstrapParams params) {
+    public final void initializeCalculationParams(final BootstrapParams params) {
         saveSpecieConfigurations(params);
     }
 

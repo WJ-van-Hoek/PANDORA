@@ -8,8 +8,9 @@ import org.slf4j.Logger;
  * <p>
  * Implementing classes must provide a method to retrieve the log.
  *
- * @version 0.0.1
  * @author Wim Joost van Hoek
+ * @version 0.0.1
+ * @since 0.0.1
  */
 public interface Logged {
     /**

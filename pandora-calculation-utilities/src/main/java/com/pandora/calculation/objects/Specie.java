@@ -11,8 +11,9 @@ import com.pandora.calculation.logic.VariableLogic;
  * @param <C> the type of SpecieConfiguration associated with this specie
  * @param <L> the type of VariableLogic associated with this specie
  *
- * @version 0.0.1
  * @author Wim Joost van Hoek
+ * @version 0.0.1
+ * @since 0.0.1
  */
 public class Specie<C extends SpecieConfiguration, L extends VariableLogic> extends Variable<C, VariableData, L> {
 

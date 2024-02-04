@@ -4,7 +4,8 @@
  * builder provides methods for setting specific properties of the configuration, such as name, molar mass, and unit of
  * measurement.
  *
- * @version 0.0.1
  * @author Wim Joost van Hoek
+ * @version 0.0.1
+ * @since 0.0.1
  */
 package com.pandora.calculation.config.builders;

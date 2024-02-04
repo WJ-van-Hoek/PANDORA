@@ -9,8 +9,8 @@ import lombok.Getter;
  * This class extends the {@link Configuration} class.
  *
  * @author Wim Joost van Hoek
- * @version 1.0
- * @since 1.0
+ * @version 0.0.1
+ * @since 0.0.1
  */
 @SuppressWarnings("serial")
 @Getter
@@ -26,7 +26,7 @@ public class SourceReactionConfiguration extends Configuration {
      *
      * @param builder The builder used to construct this configuration.
      */
-    public SourceReactionConfiguration(final SourceReactionConfigurationBuilder<?> builder) {
+    public SourceReactionConfiguration(final SourceReactionConfigurationBuilder builder) {
         super(builder);
         this.from = builder.getFrom();
     }
@@ -36,7 +36,7 @@ public class SourceReactionConfiguration extends Configuration {
      *
      * @return A new {@link SourceReactionConfigurationBuilder} instance.
      */
-    public static SourceReactionConfigurationBuilder<?> builder() {
-        return new SourceReactionConfigurationBuilder<>();
+    public static SourceReactionConfigurationBuilder builder() {
+        return new SourceReactionConfigurationBuilder();
     }
 }

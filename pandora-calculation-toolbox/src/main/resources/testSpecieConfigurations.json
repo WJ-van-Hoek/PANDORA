@@ -8,7 +8,7 @@
 			"dy": {
 				"sources": [
 					{
-						"sourceType": "terrestrial",
+						"sourceType": "external",
 						"name": "groundwater",
 						"file": "dic_source_groundwater_cell.json"
 					},

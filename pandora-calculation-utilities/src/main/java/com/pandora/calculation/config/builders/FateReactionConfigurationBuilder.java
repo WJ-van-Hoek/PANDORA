@@ -8,15 +8,12 @@ import lombok.Getter;
  * Builder class for constructing {@link FateReactionConfiguration} instances. This builder extends
  * {@link ConfigurationBuilder} and allows for configuring the destination and rate of a fate reaction configuration.
  *
- * @param <T> The type of the builder itself, allowing for fluent method chaining.
- *
  * @author Wim Joost van Hoek
- * @version 1.0
- * @since 1.0
+ * @version 0.0.1
+ * @since 0.0.1
  */
 @Getter
-public class FateReactionConfigurationBuilder<T extends FateReactionConfigurationBuilder<T>>
-        extends ConfigurationBuilder<FateReactionConfigurationBuilder<T>> {
+public class FateReactionConfigurationBuilder extends ConfigurationBuilder<FateReactionConfigurationBuilder> {
 
     /**
      * The destination of the fate reaction configuration.
@@ -34,7 +31,7 @@ public class FateReactionConfigurationBuilder<T extends FateReactionConfiguratio
      * @param toParam The destination of the fate reaction configuration.
      * @return This builder instance for method chaining.
      */
-    public final FateReactionConfigurationBuilder<?> to(final String toParam) {
+    public final FateReactionConfigurationBuilder to(final String toParam) {
         this.to = toParam;
         return self();
     }
@@ -45,7 +42,7 @@ public class FateReactionConfigurationBuilder<T extends FateReactionConfiguratio
      * @param rateParam The rate of the fate reaction configuration.
      * @return This builder instance for method chaining.
      */
-    public final FateReactionConfigurationBuilder<?> rate(final double rateParam) {
+    public final FateReactionConfigurationBuilder rate(final double rateParam) {
         this.rate = rateParam;
         return self();
     }
@@ -64,7 +61,7 @@ public class FateReactionConfigurationBuilder<T extends FateReactionConfiguratio
      *
      * @return This builder instance.
      */
-    protected final FateReactionConfigurationBuilder<T> self() {
+    protected final FateReactionConfigurationBuilder self() {
         return this;
     }
 

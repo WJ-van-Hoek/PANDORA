@@ -8,8 +8,9 @@ import org.apache.commons.cli.CommandLine;
  *
  * @param <T> The type of object to parse the command-line arguments into.
  *
- * @version 0.0.1
  * @author Wim Joost van Hoek
+ * @version 0.0.1
+ * @since 0.0.1
  */
 public interface Parsable<T> {
     /**

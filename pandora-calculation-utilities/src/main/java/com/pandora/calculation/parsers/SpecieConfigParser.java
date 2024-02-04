@@ -18,6 +18,10 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * Utility class for parsing species configurations from command line arguments.
+ *
+ * @author Wim Joost van Hoek
+ * @version 0.0.1
+ * @since 0.0.1
  */
 @Slf4j
 public class SpecieConfigParser {

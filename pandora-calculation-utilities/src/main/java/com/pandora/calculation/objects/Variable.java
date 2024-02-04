@@ -21,8 +21,9 @@ import lombok.Getter;
  * @param <D> the type of VariableData associated with this variable
  * @param <L> the type of VariableLogic associated with this variable
  *
- * @version 0.0.1
  * @author Wim Joost van Hoek
+ * @version 0.0.1
+ * @since 0.0.1
  */
 @Getter
 public abstract class Variable<C extends Configuration, D extends VariableData, L extends VariableLogic>

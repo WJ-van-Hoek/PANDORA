@@ -8,15 +8,12 @@ import lombok.Getter;
  * Builder class for constructing {@link SourceReactionConfiguration} instances. This builder extends
  * {@link ConfigurationBuilder} and allows for configuring the source from which the reaction configuration originates.
  *
- * @param <T> The type of the builder itself, allowing for fluent method chaining.
- *
  * @author Wim Joost van Hoek
- * @version 1.0
- * @since 1.0
+ * @version 0.0.1
+ * @since 0.0.1
  */
 @Getter
-public class SourceReactionConfigurationBuilder<T extends SourceReactionConfigurationBuilder<T>>
-        extends ConfigurationBuilder<SourceReactionConfigurationBuilder<T>> {
+public class SourceReactionConfigurationBuilder extends ConfigurationBuilder<SourceReactionConfigurationBuilder> {
 
     /**
      * The source from which the reaction configuration originates.
@@ -29,7 +26,7 @@ public class SourceReactionConfigurationBuilder<T extends SourceReactionConfigur
      * @param fromParam The source of the reaction configuration.
      * @return This builder instance for method chaining.
      */
-    public final SourceReactionConfigurationBuilder<?> from(final String fromParam) {
+    public final SourceReactionConfigurationBuilder from(final String fromParam) {
         this.from = fromParam;
         return self();
     }
@@ -49,7 +46,7 @@ public class SourceReactionConfigurationBuilder<T extends SourceReactionConfigur
      * @return This builder instance.
      */
     @Override
-    protected final SourceReactionConfigurationBuilder<T> self() {
+    protected final SourceReactionConfigurationBuilder self() {
         return this;
     }
 

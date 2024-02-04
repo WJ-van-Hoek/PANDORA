@@ -3,6 +3,7 @@ package com.pandora.calculation.config.builders;
 import java.util.List;
 
 import com.pandora.calculation.config.FateReactionConfiguration;
+import com.pandora.calculation.config.SourceExternalConfiguration;
 import com.pandora.calculation.config.SourceReactionConfiguration;
 import com.pandora.calculation.config.SpecieConfiguration;
 
@@ -16,8 +17,9 @@ import lombok.Getter;
  * molar mass, and aqueous state. Additionally, it provides methods for setting taxonomy, phase, and zone configurations
  * for more detailed specifications.
  *
- * @version 0.0.1
  * @author Wim Joost van Hoek
+ * @version 1.0
+ * @since 1.0
  */
 @Getter
 public class SpecieConfigurationBuilder extends ConfigurationBuilder<SpecieConfigurationBuilder> {
@@ -31,6 +33,11 @@ public class SpecieConfigurationBuilder extends ConfigurationBuilder<SpecieConfi
      * The transportability of the chemical species.
      */
     private boolean transportable = false;
+
+    /**
+     * The configuration of external sources of the chemical species.
+     */
+    private List<SourceExternalConfiguration> sourceExternalConfigurations;
 
     /**
      * The list of configurations representing the configured reaction sources of the chemical species.
@@ -61,6 +68,19 @@ public class SpecieConfigurationBuilder extends ConfigurationBuilder<SpecieConfi
      */
     public final SpecieConfigurationBuilder transportable(final boolean transportableParam) {
         this.transportable = transportableParam;
+        return self();
+    }
+
+    /**
+     * Sets the list of {@link SourceExternalConfiguration} objects for this builder.
+     * This method allows configuring a list of external configurations associated with the species.
+     *
+     * @param sourceExternalConfigurationsParam The list of {@link SourceExternalConfiguration} objects to set.
+     * @return This builder instance for method chaining.
+     */
+    public final SpecieConfigurationBuilder sourceExternalConfigurations(
+            final List<SourceExternalConfiguration> sourceExternalConfigurationsParam) {
+        this.sourceExternalConfigurations = sourceExternalConfigurationsParam;
         return self();
     }
 

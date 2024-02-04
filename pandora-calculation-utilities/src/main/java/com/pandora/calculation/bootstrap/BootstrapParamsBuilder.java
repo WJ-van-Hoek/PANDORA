@@ -9,8 +9,9 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Builder class for constructing {@link BootstrapParams} instances.
  *
- * @version 0.0.1
  * @author Wim Joost van Hoek
+ * @version 0.0.1
+ * @since 0.0.1
  */
 @Slf4j
 public class BootstrapParamsBuilder {

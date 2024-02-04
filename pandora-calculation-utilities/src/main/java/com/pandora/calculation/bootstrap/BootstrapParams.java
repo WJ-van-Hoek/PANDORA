@@ -9,6 +9,7 @@ import com.pandora.calculation.parsers.Parsable;
 import com.pandora.calculation.parsers.SpecieConfigParser;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -16,11 +17,13 @@ import lombok.extern.slf4j.Slf4j;
  *
  * This class implements the {@link Parsable} interface to provide parsing functionality.
  *
- * @version 0.0.1
  * @author Wim Joost van Hoek
+ * @version 0.0.1
+ * @since 0.0.1
  */
 @Slf4j
 @Getter
+@NoArgsConstructor
 public class BootstrapParams implements Parsable<BootstrapParams> {
 
     /**

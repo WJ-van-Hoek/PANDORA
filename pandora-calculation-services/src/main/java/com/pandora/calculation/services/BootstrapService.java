@@ -6,8 +6,8 @@ import com.pandora.calculation.bootstrap.BootstrapParams;
  * The {@code BootstrapService} interface defines the contract for services that require initialization parameters
  * during bootstrap.
  * <p>
- * Implementing classes must provide an implementation for the {@link #initializeServiceParams(BootstrapParams)} method,
- * which initializes the service with the provided bootstrap parameters.
+ * Implementing classes must provide an implementation for the {@link #initializeCalculationParams(BootstrapParams)}
+ * method, which initializes the service with the provided bootstrap parameters.
  *
  * @version 0.0.1
  * @since 0.0.1
@@ -20,5 +20,5 @@ public interface BootstrapService {
      *
      * @param params the bootstrap parameters used to initialize the service
      */
-    void initializeServiceParams(BootstrapParams params);
+    void initializeCalculationParams(BootstrapParams params);
 }

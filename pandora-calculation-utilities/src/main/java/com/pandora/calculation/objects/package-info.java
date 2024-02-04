@@ -7,5 +7,9 @@
  *
  * These classes follow object-oriented principles such as encapsulation, inheritance, and polymorphism to provide a
  * flexible and maintainable way to work with entities in the system.
+ *
+ * @author Wim Joost van Hoek
+ * @version 0.0.1
+ * @since 0.0.1
  */
 package com.pandora.calculation.objects;

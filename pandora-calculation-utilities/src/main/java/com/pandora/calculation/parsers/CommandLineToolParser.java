@@ -12,8 +12,9 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * A utility class for parsing command-line arguments.
  *
- * @version 0.0.1
  * @author Wim Joost van Hoek
+ * @version 0.0.1
+ * @since 0.0.1
  */
 @Slf4j
 public class CommandLineToolParser {

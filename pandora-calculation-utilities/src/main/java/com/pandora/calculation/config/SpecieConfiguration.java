@@ -11,8 +11,9 @@ import lombok.NoArgsConstructor;
  * The SpecieConfiguration class represents the configuration associated with a chemical species. It extends the
  * VariableConfiguration class and adds additional properties specific to chemical species.
  *
- * @version 0.0.1
  * @author Wim Joost van Hoek
+ * @version 0.0.1
+ * @since 0.0.1
  */
 @SuppressWarnings("serial")
 @Getter
@@ -34,12 +35,17 @@ public class SpecieConfiguration extends Configuration {
     private boolean transportable;
 
     /**
-     * The configuration of sources of the chemical species.
+     * The configuration of external sources of the chemical species.
+     */
+    private List<SourceExternalConfiguration> sourceExternalConfigurations;
+
+    /**
+     * The configuration of sources by reactions of the chemical species.
      */
     private List<SourceReactionConfiguration> sourceReactionConfigurations;
 
     /**
-     * The configuration of fates of the chemical species.
+     * The configuration of fates by reactions of the chemical species.
      */
     private List<FateReactionConfiguration> fateReactionConfigurations;
 
@@ -54,14 +60,15 @@ public class SpecieConfiguration extends Configuration {
         this.molarMass = builder.getMolarMass();
         this.transportable = builder.isTransportable();
         this.sourceReactionConfigurations = builder.getSourceReactionConfigurations();
+        this.sourceExternalConfigurations = builder.getSourceExternalConfigurations();
         this.fateReactionConfigurations = builder.getFateReactionConfigurations();
     }
 
     /**
      * Gets the transportability of the specie as an integer value.
      *
-     * @return An integer representing the transportability of the specie.
-     *         If the specie is transportable, returns 1, otherwise returns 0.
+     * @return An integer representing the transportability of the specie. If the specie is transportable, returns 1,
+     * otherwise returns 0.
      */
     public final int getTransportability() {
         return transportable ? 1 : 0;
