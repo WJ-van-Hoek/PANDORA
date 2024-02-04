@@ -7,8 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * The main class for starting the PANDORA Calculation Rest API application. This class contains the main method to
  * launch the Spring Boot application.
  *
- * @version 0.0.1
  * @author Wim Joost van Hoek
+ * @version 0.0.1
+ * @since 0.0.1
  */
 @SpringBootApplication
 public class PandoraCalculationRestApi {

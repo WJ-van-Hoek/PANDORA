@@ -11,8 +11,9 @@ import com.pandora.calculation.config.SpecieConfiguration;
  * Implementing classes are expected to provide concrete implementations for these methods to interact with a repository
  * to manage specie configurations.
  *
- * @version 0.0.1
  * @author Wim Joost van Hoek
+ * @version 0.0.1
+ * @since 0.0.1
  */
 public interface SpecieConfigurationMemoryService {
     /**

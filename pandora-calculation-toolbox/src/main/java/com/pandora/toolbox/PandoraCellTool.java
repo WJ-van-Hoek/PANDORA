@@ -13,6 +13,9 @@ import com.pandora.calculation.services.BootstrapService;
 //TODO write javdocs
 /**
  *
+ * @author Wim Joost van Hoek
+ * @version 0.0.1
+ * @since 0.0.1
  */
 public class PandoraCellTool {
     /**

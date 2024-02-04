@@ -7,6 +7,10 @@ import com.pandora.calculation.bootstrap.BootstrapParams;
 
 /**
  * Implementation of the {@link BootstrapService} interface for initializing service parameters.
+ *
+ * @author Wim Joost van Hoek
+ * @version 0.0.1
+ * @since 0.0.1
  */
 @Service
 public class BootstrapServiceImpl implements BootstrapService {

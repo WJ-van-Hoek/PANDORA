@@ -16,10 +16,12 @@ import com.pandora.calculation.config.SpecieConfiguration;
  * This service class uses a {@link ConcurrentHashMap} to store specie configurations, ensuring thread safety and
  * efficient concurrent access.
  *
- * @version 0.0.1
- * @author Wim Joost van Hoek
  * @see SpecieConfigurationMemoryService
  * @see SpecieConfiguration
+ *
+ * @author Wim Joost van Hoek
+ * @version 0.0.1
+ * @since 0.0.1
  */
 @Service
 public class SpecieConfigurationMemoryServiceImpl implements SpecieConfigurationMemoryService {

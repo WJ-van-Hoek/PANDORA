@@ -31,11 +31,12 @@ import com.pandora.calculation.services.SpecieConfigurationMemoryService;
  * <li>If no specie configuration is found for the given name, returns HTTP status 404 (Not Found).</li>
  * </ul>
  *
- * @version 0.0.1
- * @since 0.0.1
- * @author Wim Joost van Hoek
  * @see SpecieConfigurationMemoryService
  * @see SpecieConfiguration
+ *
+ * @author Wim Joost van Hoek
+ * @version 0.0.1
+ * @since 0.0.1
  */
 @RestController
 @RequestMapping("/specie-configurations")

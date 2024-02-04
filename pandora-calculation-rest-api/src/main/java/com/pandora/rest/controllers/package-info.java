@@ -16,8 +16,8 @@
  * <li>If no specie configuration is found for the given name, returns HTTP status 404 (Not Found).</li>
  * </ul>
  *
+ * @author Wim Joost van Hoek
  * @version 0.0.1
  * @since 0.0.1
- * @author Wim Joost van Hoek
  */
 package com.pandora.rest.controllers;

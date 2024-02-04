@@ -9,10 +9,11 @@ import com.pandora.calculation.bootstrap.BootstrapParams;
  * Implementing classes must provide an implementation for the {@link #initializeCalculationParams(BootstrapParams)}
  * method, which initializes the service with the provided bootstrap parameters.
  *
+ * @see BootstrapParams
+ *
+ * @author Wim Joost van Hoek
  * @version 0.0.1
  * @since 0.0.1
- * @author Wim Joost van Hoek
- * @see BootstrapParams
  */
 public interface BootstrapService {
     /**
