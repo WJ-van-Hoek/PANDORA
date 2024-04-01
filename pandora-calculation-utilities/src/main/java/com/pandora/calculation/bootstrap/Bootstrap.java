@@ -21,7 +21,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 @Getter
-public class BootstrapParams implements Parsable<BootstrapParams> {
+public class Bootstrap implements Parsable<Bootstrap> {
 
     /**
      * The list of specie configurations for bootstrapping.
@@ -33,7 +33,7 @@ public class BootstrapParams implements Parsable<BootstrapParams> {
      *
      * @param builder The builder containing the specie configurations.
      */
-    public BootstrapParams(final BootstrapParamsBuilder builder) {
+    public Bootstrap(final BootstrapParamsBuilder builder) {
         this.specieConfigurations = builder.getSpecieConfigurations();
     }
 
@@ -53,11 +53,11 @@ public class BootstrapParams implements Parsable<BootstrapParams> {
      * @return A {@code BootstrapParams} instance parsed from the command line.
      */
     @Override
-    public final BootstrapParams parse(final CommandLine cmd) {
+    public final Bootstrap parse(final CommandLine cmd) {
         log.debug("Parsing command line arguments to construct BootstrapParams...");
-        BootstrapParams params = builder().specieConfigurations(SpecieConfigParser.parseSpecieConfigs(cmd).get())
+        Bootstrap params = builder().specieConfigurations(SpecieConfigParser.parseSpecieConfigs(cmd).get())
                 .build();
-        log.debug("BootstrapParams constructed successfully.");
+        log.info("BootstrapParams constructed successfully.");
         return params;
     }
 }
