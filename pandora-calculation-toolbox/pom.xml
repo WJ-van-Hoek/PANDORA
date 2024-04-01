@@ -17,6 +17,11 @@
 			<artifactId>pandora-calculation-utilities</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>com.pandora</groupId>
+			<artifactId>pandora-calculation-services</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 </project>
