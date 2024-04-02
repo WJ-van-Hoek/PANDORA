@@ -1,8 +1,6 @@
 package com.pandora.calculation.parsers;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -10,7 +8,7 @@ import java.util.Optional;
 import org.apache.commons.cli.CommandLine;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.general.utils.json.mappers.File;
 import com.pandora.calculation.config.SpecieConfiguration;
 import com.pandora.calculation.config.builders.SpecieConfigurationBuilder;
 
@@ -36,31 +34,16 @@ public class SpecieConfigParser {
 
         String specieConfigFilePath = cmd.getOptionValue("specieConfigurations");
         try {
-            JsonNode jsonNode = mapToJson(specieConfigFilePath);
+            JsonNode jsonNode = File.mapToJson(specieConfigFilePath);
             List<SpecieConfiguration> specieConfigurations = new ArrayList<>();
             for (JsonNode speciesNode : jsonNode.get("species")) {
                 parseSpecieNode(specieConfigurations, speciesNode);
             }
             return Optional.of(specieConfigurations);
         } catch (IOException e) {
-            // Handle IOException (e.g., file not found, invalid JSON)
-            e.printStackTrace(); // Replace with proper error handling
+            log.error(e.getMessage());
             return Optional.empty();
         }
-    }
-
-    /**
-     * Maps JSON file to JsonNode.
-     *
-     * @param filePath The path to the JSON file.
-     * @return JsonNode representing the JSON data.
-     * @throws IOException if an I/O error occurs while reading the file or parsing the JSON.
-     */
-    private static JsonNode mapToJson(final String filePath) throws IOException {
-        byte[] jsonData = Files.readAllBytes(Paths.get(filePath));
-        ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.readTree(jsonData);
-//        TODO refactor to json utils
     }
 
     /**
