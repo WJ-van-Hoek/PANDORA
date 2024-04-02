@@ -4,21 +4,14 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>com.general</groupId>
-		<artifactId>spring-parent-pom</artifactId>
-		<version>0.0.4</version>
-	</parent>
-
-	<groupId>com.science.earth.biogeochemistry.freshwaters</groupId>
+	<groupId>com.pandora</groupId>
 	<artifactId>PANDORA</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<modules>
+		<module>pandora-calculation-utilities</module>
 		<module>pandora-calculation-services</module>
 		<module>pandora-calculation-rest-api</module>
-		<module>pandora-data</module>
-		<module>pandora-web</module>
 	</modules>
 
 	<packaging>pom</packaging>
@@ -26,10 +19,17 @@
 	<name>pandora</name>
 	<description>PANDORA - Crack the Box: Understanding Riverine Chemistry</description>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+
 	<repositories>
 		<repository>
-			<id>github-spring-parent-pom</id>
-			<url>https://maven.pkg.github.com/WJ-van-Hoek/spring-parent-pom</url>
+			<id>github-parent-pom</id>
+			<url>https://maven.pkg.github.com/WJ-van-Hoek/parent-pom</url>
 		</repository>
 		<repository>
 			<id>github-utils</id>
@@ -39,19 +39,25 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>com.general</groupId>
+			<artifactId>parent-pom</artifactId>
+			<version>0.1.6</version>
+			<type>pom</type>
+		</dependency>
+		<dependency>
 			<groupId>com.general.utils</groupId>
 			<artifactId>docker-utils</artifactId>
-			<version>0.0.4</version>
+			<version>0.0.6</version>
 		</dependency>
 		<dependency>
 			<groupId>com.general.utils</groupId>
 			<artifactId>object-utils</artifactId>
-			<version>0.0.5</version>
+			<version>0.0.7</version>
 		</dependency>
 		<dependency>
 			<groupId>com.general.utils</groupId>
 			<artifactId>json-utils</artifactId>
-			<version>0.0.2</version>
+			<version>0.0.5</version>
 		</dependency>
 	</dependencies>
 

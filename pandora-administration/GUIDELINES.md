@@ -31,12 +31,14 @@ Welcome to the PANDORA open-source repository! We appreciate your interest and c
 
 **Software Development Kit Manager (SDKMAN):**  
 SDKMAN is a versatile and convenient tool that simplifies the management of various Software Development Kits (SDKs) on your system. With just a couple of commands, you can easily install, switch between, and manage different versions of SDKs. The installation process is straightforward, requiring the following two lines in the terminal:  
+
 `curl -s ¨https://get.sdkman.io" | bash`  
 `source ¨$HOME/.sdkman/bin/sdkman-init.sh`
 
 **Java Development Kit (JDK):**  
 PANDORA is currently developed in JDK 17.0.9.
 To make sure you install and use the correct JDK version:  
+
 `sdk install java 17.0.9-tem`  
 `sdk use java 17.0.9-tem`
 
@@ -44,7 +46,9 @@ To make sure you configured the correct JDK version:
 `java --version`
 
 **Apache Maven:**  
-PANDORA is currently building with Maven 3.9.6.
+Apache Maven is an open-source project management and build automation tool that provides a comprehensive and consistent way to manage and build Java-based projects. Developed by the Apache Software Foundation, Maven simplifies the software development process by automating the project's build infrastructure and managing dependencies.  
+
+PANDORA is currently building with Maven 3.9.6.  
 To make sure you install and use the correction Maven version:  
 `sdk install maven 3.9.6`  
 `sdk use maven 3.9.6`
@@ -65,7 +69,7 @@ To make sure you configured the correct git version:
 `git --version`
 
 **Lombok:**  
-Lombok is a Java library that simplifies boilerplate code in your Java projects. To use Lombok, you need to configure your IDE to recognize Lombok annotations.
+Lombok is a Java library that simplifies boilerplate code in your Java projects. To use Lombok, you need to configure your IDE to recognize Lombok annotations.  
 
 ***- IntelliJ IDEA***  
 1. ****Install the Lombok Plugin:****  
@@ -77,7 +81,7 @@ Lombok is a Java library that simplifies boilerplate code in your Java projects.
    - Go to "File" > "Settings" > "Build, Execution, Deployment" > "Compiler" > "Annotation Processors."
    - Check the "Enable annotation processing" box.
 
-***- Eclipse***
+***- Eclipse***  
 1. ****Download the Lombok JAR:****
    - Go to the [Lombok website](https://projectlombok.org/).
    - Download the Lombok JAR file.
@@ -89,7 +93,6 @@ Lombok is a Java library that simplifies boilerplate code in your Java projects.
      `java -jar lombok.jar`
 
    - The Lombok installer will launch. Follow the instructions to install Lombok into Eclipse.
-
 
 ### Development setup
 1. Navigate to your workspace in your terminal
