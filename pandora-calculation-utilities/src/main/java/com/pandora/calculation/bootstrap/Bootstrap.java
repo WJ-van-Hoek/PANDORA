@@ -33,17 +33,17 @@ public class Bootstrap implements Parsable<Bootstrap> {
      *
      * @param builder The builder containing the specie configurations.
      */
-    public Bootstrap(final BootstrapParamsBuilder builder) {
+    public Bootstrap(final BootstrapBuilder builder) {
         this.specieConfigurations = builder.getSpecieConfigurations();
     }
 
     /**
      * Returns a new builder for {@code BootstrapParams}.
      *
-     * @return A {@link BootstrapParamsBuilder} instance.
+     * @return A {@link BootstrapBuilder} instance.
      */
-    public static BootstrapParamsBuilder builder() {
-        return new BootstrapParamsBuilder();
+    public static BootstrapBuilder builder() {
+        return new BootstrapBuilder();
     }
 
     /**

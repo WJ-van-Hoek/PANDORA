@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
  * @author Wim Joost van Hoek
  */
 @Slf4j
-public class BootstrapParamsBuilder {
+public class BootstrapBuilder {
 
     /**
      * The list of specie configurations to be included in the {@link Bootstrap}.
@@ -26,7 +26,7 @@ public class BootstrapParamsBuilder {
      * @param specieConfigurationsParam The list of specie configurations to be included in the {@link Bootstrap}.
      * @return The {@code BootstrapParamsBuilder} instance with the specified specie configurations.
      */
-    public BootstrapParamsBuilder specieConfigurations(final List<SpecieConfiguration> specieConfigurationsParam) {
+    public BootstrapBuilder specieConfigurations(final List<SpecieConfiguration> specieConfigurationsParam) {
         this.specieConfigurations = specieConfigurationsParam;
         log.debug("Specie configurations set for the builder: {}", specieConfigurationsParam);
         return this;
