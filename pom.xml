@@ -12,9 +12,6 @@
 		<module>pandora-calculation-utilities</module>
 		<module>pandora-calculation-services</module>
 		<module>pandora-calculation-rest-api</module>
-		<module>pandora-data</module>
-		<module>pandora-web</module>
-
 	</modules>
 
 	<packaging>pom</packaging>
