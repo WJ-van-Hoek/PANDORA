@@ -19,14 +19,24 @@
 	<name>pandora</name>
 	<description>PANDORA - Crack the Box: Understanding Riverine Chemistry</description>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-    </properties>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
+		<sonar.organization>wj-van-hoek</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		<sonar.coverage.jacoco.xmlReportPaths>
+			./target/site/jacoco-aggregate/jacoco.xml
+		</sonar.coverage.jacoco.xmlReportPaths>
+	</properties>
 
 	<repositories>
+		<repository>
+			<id>central</id>
+			<name>Central Repository</name>
+			<url>https://repo.maven.apache.org/maven2</url>
+		</repository>
 		<repository>
 			<id>github-parent-pom</id>
 			<url>https://maven.pkg.github.com/WJ-van-Hoek/parent-pom</url>
@@ -41,7 +51,7 @@
 		<dependency>
 			<groupId>com.general</groupId>
 			<artifactId>parent-pom</artifactId>
-			<version>0.1.6</version>
+			<version>0.1.9</version>
 			<type>pom</type>
 		</dependency>
 		<dependency>
@@ -60,6 +70,31 @@
 			<version>0.0.5</version>
 		</dependency>
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>validate</id>
+						<phase>validate</phase>
+						<configuration>
+							<configLocation>./pandora-style/pandora_checks.xml</configLocation>
+							<suppressionsLocation>
+								./pandora-style/suppressions.xml</suppressionsLocation>
+							<failOnViolation>true</failOnViolation>
+							<includeTestSourceDirectory>true</includeTestSourceDirectory>
+						</configuration>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 
 
 </project>

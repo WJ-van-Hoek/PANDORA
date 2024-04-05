@@ -76,5 +76,4 @@ public class SpecieConfigParser {
         boolean transportable = speciesNode.get("transportable").asBoolean();
         builder.transportable(transportable);
     }
-
 }
