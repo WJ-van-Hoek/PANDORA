@@ -17,10 +17,6 @@ jobs:
       - checkout
       - run: mvn -s .circleci/settings.xml -B clean install -Dmaven.javadoc.skip=true -B -V -Dspring.profiles.active=default
       - run: mvn package org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=WJ-van-Hoek_PANDORA
-      - run: bash <(curl -s https://codecov.io/bash)
-
-      - store_test_results:
-          path: target/surefire-reports
 
 workflows:
   build-and-test:
