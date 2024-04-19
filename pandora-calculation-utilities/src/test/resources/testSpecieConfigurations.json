@@ -1,0 +1,32 @@
+{
+	"species": [
+		{
+			"name": "DIC",
+			"unit": "mol",
+			"molarMass": 58.44,
+			"transportable": true,
+			"dy": {
+				"sources": [
+					{
+						"sourceType": "external",
+						"name": "DIC from groundwater",
+						"file": "dic_source_groundwater_cell.json"
+					},
+					{
+						"sourceType": "reaction",
+						"name": "oxidation",
+						"from": "DOC"
+					}
+				],
+				"fates": [
+					{
+						"fateType": "reaction",
+						"name": "gassing",
+						"rate": 0.1,
+						"to": "external"
+					}
+				]
+			}
+		}
+	]
+}

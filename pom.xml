@@ -67,7 +67,7 @@
 		<dependency>
 			<groupId>com.general.utils</groupId>
 			<artifactId>json-utils</artifactId>
-			<version>0.0.5</version>
+			<version>0.0.6</version>
 		</dependency>
 	</dependencies>
 

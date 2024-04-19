@@ -39,12 +39,18 @@ public class CommandLineToolParser {
     private static Options createOptions() {
         Options options = new Options();
         addSpecieConfigurationsOption(options);
+        addBootstrapOption(options);
         return options;
     }
 
     private static void addSpecieConfigurationsOption(final Options options) {
         options.addOption(Option.builder().longOpt("specieConfigurations").desc("Path to the specie configuration file")
                 .hasArg().argName("file").build());
+    }
+
+    private static void addBootstrapOption(final Options options) {
+        options.addOption(Option.builder().longOpt("bootstrapData").desc("Path to the bootstrap data file").hasArg()
+                .argName("file").build());
     }
 
     /**

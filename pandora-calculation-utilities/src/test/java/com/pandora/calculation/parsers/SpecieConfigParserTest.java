@@ -21,7 +21,7 @@ class SpecieConfigParserTest {
         when(cmd.hasOption("specieConfigurations")).thenReturn(false);
 
         // Act
-        Optional<List<SpecieConfiguration>> result = SpecieConfigParser.parseSpecieConfigs(cmd);
+        Optional<List<SpecieConfiguration>> result = SpecieConfigParser.parse(cmd);
 
         // Assert
         assertTrue(result.isEmpty());

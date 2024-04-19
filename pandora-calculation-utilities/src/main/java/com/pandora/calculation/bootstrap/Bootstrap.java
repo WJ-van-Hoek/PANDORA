@@ -5,6 +5,8 @@ import java.util.List;
 import org.apache.commons.cli.CommandLine;
 
 import com.pandora.calculation.config.SpecieConfiguration;
+import com.pandora.calculation.data.BootstrapDataContainer;
+import com.pandora.calculation.parsers.BootstrapDataParser;
 import com.pandora.calculation.parsers.Parsable;
 import com.pandora.calculation.parsers.SpecieConfigParser;
 
@@ -29,12 +31,18 @@ public class Bootstrap implements Parsable<Bootstrap> {
     private List<SpecieConfiguration> specieConfigurations;
 
     /**
+     * The bootstrap data.
+     */
+    private BootstrapDataContainer bootstrapData;
+
+    /**
      * Constructs a new {@code BootstrapParams} instance using the provided builder.
      *
-     * @param builder The builder containing the specie configurations.
+     * @param builder The builder containing the specie configurations and bootstrap data.
      */
     public Bootstrap(final BootstrapBuilder builder) {
         this.specieConfigurations = builder.getSpecieConfigurations();
+        this.bootstrapData = builder.getBootstrapData();
     }
 
     /**
@@ -55,7 +63,9 @@ public class Bootstrap implements Parsable<Bootstrap> {
     @Override
     public final Bootstrap parse(final CommandLine cmd) {
         log.debug("Parsing command line arguments to construct BootstrapParams...");
-        Bootstrap params = builder().specieConfigurations(SpecieConfigParser.parseSpecieConfigs(cmd).get())
+        Bootstrap params = builder()
+                .specieConfigurations(SpecieConfigParser.parse(cmd).get())
+                .bootstrapData(BootstrapDataParser.parse(cmd).get())
                 .build();
         log.info("BootstrapParams constructed successfully.");
         return params;
