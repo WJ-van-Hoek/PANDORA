@@ -1,1 +1,0 @@
-memberSearchIndex = [{"p":"com.pandora","c":"AppConfig","l":"AppConfig()","u":"%3Cinit%3E()"},{"p":"com.pandora","c":"PandoraApplication","l":"main(String[])","u":"main(java.lang.String[])"},{"p":"com.pandora","c":"AppConfig","l":"messageSource()"},{"p":"com.pandora","c":"PandoraApplication","l":"PandoraApplication()","u":"%3Cinit%3E()"}];updateSearchResults();

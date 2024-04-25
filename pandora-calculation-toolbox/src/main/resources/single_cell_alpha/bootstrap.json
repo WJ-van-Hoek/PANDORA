@@ -1,0 +1,5 @@
+{
+	"dischargeDataFilePath": "src/main/resources/single_cell_alpha/discharge_data_cell.json",
+	"volumeDataFilePath": "src/main/resources/single_cell_alpha/volume_data_cell.json",
+	"fixCellDataFilePath": "src/main/resources/single_cell_alpha/fix_data_cell.json"
+}

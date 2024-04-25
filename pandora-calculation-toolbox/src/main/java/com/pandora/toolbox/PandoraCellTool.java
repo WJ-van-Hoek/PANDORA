@@ -3,64 +3,96 @@ package com.pandora.toolbox;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.pandora.calculation.bootstrap.Bootstrap;
+import com.pandora.calculation.bootstrap.BootContent;
 import com.pandora.calculation.parsers.CommandLineToolParser;
 import com.pandora.calculation.parsers.Parsable;
-import com.pandora.calculation.services.BootstrapService;
+import com.pandora.calculation.services.BootService;
+import com.pandora.calculation.services.CalculationService;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
- * The PandoraCellTool class serves as the entry point for a tool related to PANDORA cell calculations.
- * <p>
- * This tool is responsible for bootstrapping the application by initializing calculation parameters using Spring
- * framework's application context and parsing command-line arguments.
- * <p>
- * To use the tool, execute the main method of this class.
- * <p>
- * The tool loads the Spring context from the "com.pandora.calculation" package.
- * <p>
- * It then initializes the calculation parameters by parsing the command-line arguments and passing them to the
- * {@link com.pandora.calculation.services.BootstrapService BootstrapService} for further processing.
- * <p>
- *
  * @author Wim Joost van Hoek.
  * @since 0.0.1
  * @version 0.0.1
  */
+@Slf4j
 public class PandoraCellTool {
     /**
-     * The main method serves as the entry point for the PandoraCellTool application.
+     * The main method serves as the entry point for the PANDORAl Cell Tool application.
      * <p>
-     * It loads the Spring context, initializes calculation parameters, and closes the Spring context afterwards.
+     * The loads the Spring context, preprocesses all configurations, parameters and data, and closes the Spring context
+     * afterwards.
      *
      * @param args Command-line arguments provided to the application.
      */
     public static void main(final String[] args) {
-        // Load the Spring context
-        ApplicationContext context = new AnnotationConfigApplicationContext("com.pandora.calculation");
-        boot(args, context);
-        // Close the Spring context
+        ApplicationContext context = loadContext();
+        preProcess(args, context);
+        calculate(args, context);
+        postProcess(args, context);
+        closeContext(context);
+    }
+
+    private static void closeContext(final ApplicationContext context) {
+        log.info("Closing Application Context.");
         ((AnnotationConfigApplicationContext) context).close();
+        log.info("Sucessfully closed Application Context.");
+    }
+
+    private static ApplicationContext loadContext() {
+        log.info("Loading Application Context.");
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.pandora.calculation");
+        log.info("Sucessfully loaded Application Context.");
+        return context;
     }
 
     /**
-     * Bootstraps the application by initializing calculation parameters.
+     * Postprocessing the results of the calculation.
      *
-     * @param args    Command-line arguments provided to the application.
+     * @param args Command-line arguments provided to the application.
      * @param context The Spring application context.
      */
-    private static void boot(final String[] args, final ApplicationContext context) {
+    private static void postProcess(final String[] args, final ApplicationContext context) {
+        log.info("Postprocessing...");
+     // TODO Auto-generated method stub
+        log.info("Sucessfully finished postprocessing.");
+    }
+
+    /**
+     * The actual calculation.
+     *
+     * @param args Command-line arguments provided to the application.
+     * @param context The Spring application context.
+     */
+    private static void calculate(final String[] args, final ApplicationContext context) {
+        log.info("Calculating...");
+        CalculationService calculationService = context.getBean(CalculationService.class);
+        calculationService.calculate();
+        log.info("Sucessfully finished the calculation.");
+    }
+
+    /**
+     * Preprocess the application by initializing calculation parameters.
+     *
+     * @param args Command-line arguments provided to the application.
+     * @param context The Spring application context.
+     */
+    private static void preProcess(final String[] args, final ApplicationContext context) {
+        log.info("Preprocessing...");
         boot(context, prepareBoot(args));
+        log.info("Sucessfully finished preprocessing.");
     }
 
     /**
      * Bootstraps the application by initializing calculation parameters.
      *
-     * @param context         The Spring application context.
+     * @param context The Spring application context.
      * @param bootstrap The bootstrap parameters for initialization.
      */
-    private static void boot(final ApplicationContext context, final Bootstrap bootstrap) {
-        BootstrapService bootstrapService = context.getBean(BootstrapService.class);
-        bootstrapService.initializeCalculationParams(bootstrap);
+    private static void boot(final ApplicationContext context, final BootContent bootstrap) {
+        BootService bootstrapService = context.getBean(BootService.class);
+        bootstrapService.boot(bootstrap);
     }
 
     /**
@@ -69,9 +101,9 @@ public class PandoraCellTool {
      * @param args Command-line arguments provided to the application.
      * @return The prepared bootstrap parameters.
      */
-    private static Bootstrap prepareBoot(final String[] args) {
-        Parsable<Bootstrap> params = Bootstrap.builder().build();
-        Bootstrap bootstrap = CommandLineToolParser.parseArgs(args, params);
+    private static BootContent prepareBoot(final String[] args) {
+        Parsable<BootContent> params = BootContent.builder().build();
+        BootContent bootstrap = CommandLineToolParser.parseArgs(args, params);
         return bootstrap;
     }
 }

@@ -1,0 +1,8 @@
+{
+	"startDate": "2020-01-01T00:00",
+	"endDate": "2022-01-01T00:00",
+	"timestep": 1,
+	"root": "src/main/resources/single_cell_alpha/",
+	"bootstrap": "bootstrap.json",
+	"species": "../testSpecieConfigurations.json"
+}
