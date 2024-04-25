@@ -1,6 +1,5 @@
 package com.pandora.calculation.parsers;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -12,12 +11,9 @@ import com.general.utils.json.mappers.File;
 import com.pandora.calculation.config.SpecieConfiguration;
 import com.pandora.calculation.config.builders.SpecieConfigurationBuilder;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Utility class for parsing species configurations from command line arguments.
  */
-@Slf4j
 public class SpecieConfigParser {
 
     /**
@@ -27,23 +23,23 @@ public class SpecieConfigParser {
      * @return A list of {@link SpecieConfiguration} objects parsed from the command line, or an empty Optional if no
      * configurations were found.
      */
-    public static Optional<List<SpecieConfiguration>> parseSpecieConfigs(final CommandLine cmd) {
+    public static Optional<List<SpecieConfiguration>> parse(final CommandLine cmd) {
         if (!cmd.hasOption("specieConfigurations")) {
             return Optional.empty();
         }
 
         String specieConfigFilePath = cmd.getOptionValue("specieConfigurations");
-        try {
-            JsonNode jsonNode = File.mapToJson(specieConfigFilePath);
-            List<SpecieConfiguration> specieConfigurations = new ArrayList<>();
-            for (JsonNode speciesNode : jsonNode.get("species")) {
-                parseSpecieNode(specieConfigurations, speciesNode);
-            }
-            return Optional.of(specieConfigurations);
-        } catch (IOException e) {
-            log.error(e.getMessage());
-            return Optional.empty();
+        Optional<JsonNode> jsonNodeOptional = File.mapToJson(specieConfigFilePath);
+
+        return jsonNodeOptional.flatMap(SpecieConfigParser::parseSpecies);
+    }
+
+    private static Optional<List<SpecieConfiguration>> parseSpecies(final JsonNode jsonNode) {
+        List<SpecieConfiguration> specieConfigurations = new ArrayList<>();
+        for (JsonNode speciesNode : jsonNode.get("species")) {
+            parseSpecieNode(specieConfigurations, speciesNode);
         }
+        return Optional.of(specieConfigurations);
     }
 
     /**

@@ -5,7 +5,6 @@ import org.slf4j.Logger;
 import com.pandora.calculation.config.Amountable;
 import com.pandora.calculation.config.Configuration;
 import com.pandora.calculation.config.Configured;
-import com.pandora.calculation.config.Indexed;
 import com.pandora.calculation.config.Logged;
 import com.pandora.calculation.data.VariableData;
 import com.pandora.calculation.logic.VariableLogic;
@@ -26,7 +25,7 @@ import lombok.Getter;
  */
 @Getter
 public abstract class Variable<C extends Configuration, D extends VariableData, L extends VariableLogic>
-        implements Amountable, Configured<C>, Indexed, Logged {
+        implements Amountable, Configured<C>, Logged {
     /**
      * The configuration associated with this variable.
      */
@@ -53,11 +52,6 @@ public abstract class Variable<C extends Configuration, D extends VariableData, 
         this.configuration = variableConfigurationParam;
         this.data = variableDataParam;
         this.logic = variableLogicParam;
-    }
-
-    @Override
-    public final int getIndex() {
-        return configuration.getIndex();
     }
 
     @Override

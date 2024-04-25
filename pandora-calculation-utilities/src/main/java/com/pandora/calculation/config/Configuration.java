@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
 @SuppressWarnings("serial")
 @Getter
 @NoArgsConstructor
-public abstract class Configuration implements Indexed, Logged, Serializable {
+public abstract class Configuration implements Logged, Serializable {
 
     /**
      * The logger used for logging messages and events related to the configuration. This field is marked with
