@@ -56,7 +56,7 @@ public final class SourceConfigurationParser {
      * Parses source configurations from the given JSON node and adds them to the specified builder.
      *
      * @param speciesNode The JSON node containing species data.
-     * @param builder     The builder to which source configurations will be added.
+     * @param builder The builder to which source configurations will be added.
      */
     public static void parseSources(final JsonNode speciesNode, final SpecieConfigurationBuilder builder) {
         JsonNode dyNode = speciesNode.get(DY_NODE_KEY);
@@ -70,12 +70,6 @@ public final class SourceConfigurationParser {
         }
     }
 
-    /**
-     * Parses source reaction configurations from the given JSON node.
-     *
-     * @param sourcesNode The JSON node containing source reaction configurations.
-     * @return A list of parsed source reaction configurations.
-     */
     private static List<SourceReactionConfiguration> parseSourceReactions(final JsonNode sourcesNode) {
         List<SourceReactionConfiguration> sourceReactions = new ArrayList<>();
         for (JsonNode sourceNode : sourcesNode) {
@@ -90,27 +84,12 @@ public final class SourceConfigurationParser {
         return sourceReactions;
     }
 
-    /**
-     * Parses a single source reaction configuration from the given JSON node.
-     *
-     * @param sourceNode The JSON node containing a single source reaction configuration.
-     * @return The parsed source reaction configuration.
-     */
     private static SourceReactionConfiguration parseSourceReaction(final JsonNode sourceNode) {
         String name = sourceNode.has(NAME_KEY) ? sourceNode.get(NAME_KEY).asText() : null;
         String from = sourceNode.has(FROM_KEY) ? sourceNode.get(FROM_KEY).asText() : null;
-        return SourceReactionConfiguration.builder()
-                                          .name(name)
-                                          .from(from)
-                                          .build();
+        return SourceReactionConfiguration.builder().name(name).from(from).build();
     }
 
-    /**
-     * Parses terrestrial sources configurations from the given JSON node.
-     *
-     * @param sourcesNode The JSON node containing terrestrial sources configurations.
-     * @return A list of parsed terrestrial sources configurations.
-     */
     private static List<TemporalCellDataPointVector> parseTerrestrialSources(final JsonNode sourcesNode) {
         List<TemporalCellDataPointVector> terrestrialSources = new ArrayList<>();
         for (JsonNode sourceNode : sourcesNode) {

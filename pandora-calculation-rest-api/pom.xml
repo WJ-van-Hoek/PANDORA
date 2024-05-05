@@ -67,6 +67,8 @@
 				<configuration>
 					<reportOutputDirectory>
 						${project.basedir}/../docs/pandora-calculation-rest-api</reportOutputDirectory>
+					<sourcepath>${project.basedir}/src/main/java</sourcepath>
+					<doclint>none</doclint>
 				</configuration>
 			</plugin>
 		</plugins>
