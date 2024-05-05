@@ -77,8 +77,8 @@
 				<configuration>
 					<reportOutputDirectory>
 						${project.basedir}/../docs/pandora-calculation-services</reportOutputDirectory>
-
 					<sourcepath>${project.basedir}/src/main/java</sourcepath>
+					<doclint>none</doclint>
 				</configuration>
 			</plugin>
 		</plugins>
