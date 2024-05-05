@@ -29,11 +29,10 @@ At this moment, PANDORA is in early stages of without a release deployed and/or 
 At this moment, detailed technical javadoc is only available for the calculation services and for the calculation rest api. Familiarize yourself with the documentation to make the most out of PANDORA.
 | Module |Documentation |
 |-|-|
-
-| pandora-calculation-repositories | [![Documentation](https://img.shields.io/badge/Documentation-HTML-blue.svg?logo=Java&logoColor=white&link=https://wj-van-hoek.github.io/PANDORA/docs/pandora-calculation-repositories/apidocs/index.html)](https://wj-van-hoek.github.io/PANDORA/docs/pandora-calculation-repositories/apidocs/index.html) |
-| pandora-calculation-rest-api | [![Documentation](https://img.shields.io/badge/Documentation-HTML-blue.svg?logo=Java&logoColor=white&link=https://wj-van-hoek.github.io/PANDORA/docs/pandora-calculation-rest-api/apidocs/index.html)](https://wj-van-hoek.github.io/PANDORA/docs/pandora-calculation-rest-api/apidocs/index.html) |
-| pandora-calculation-services | [![Documentation](https://img.shields.io/badge/Documentation-HTML-blue.svg?logo=Java&logoColor=white&link=https://wj-van-hoek.github.io/PANDORA/docs/pandora-calculation-services/apidocs/index.html)](https://wj-van-hoek.github.io/PANDORA/docs/pandora-calculation-services/apidocs/index.html) |
-| pandora-calculation-utilities | [![Documentation](https://img.shields.io/badge/Documentation-HTML-blue.svg?logo=Java&logoColor=white&link=https://wj-van-hoek.github.io/PANDORA/docs/pandora-calculation-utilities/apidocs/index.html)](https://wj-van-hoek.github.io/PANDORA/docs/pandora-calculation-utilities/apidocs/index.html) |
+| pandora-calculation-repositories | [![Documentation](https://img.shields.io/badge/Documentation-HTML-blue.svg?logo=Java&logoColor=white&link=https://wj-van-hoek.github.io/PANDORA/docs/pandora-calculation-repositories/apidocs/index.html)](https://wj-van-hoek.github.io/PANDORA/docs/pandora-calculation-repositories/apidocs/index.html) |  
+| pandora-calculation-rest-api | [![Documentation](https://img.shields.io/badge/Documentation-HTML-blue.svg?logo=Java&logoColor=white&link=https://wj-van-hoek.github.io/PANDORA/docs/pandora-calculation-rest-api/apidocs/index.html)](https://wj-van-hoek.github.io/PANDORA/docs/pandora-calculation-rest-api/apidocs/index.html) |  
+| pandora-calculation-services | [![Documentation](https://img.shields.io/badge/Documentation-HTML-blue.svg?logo=Java&logoColor=white&link=https://wj-van-hoek.github.io/PANDORA/docs/pandora-calculation-services/apidocs/index.html)](https://wj-van-hoek.github.io/PANDORA/docs/pandora-calculation-services/apidocs/index.html) |  
+| pandora-calculation-utilities | [![Documentation](https://img.shields.io/badge/Documentation-HTML-blue.svg?logo=Java&logoColor=white&link=https://wj-van-hoek.github.io/PANDORA/docs/pandora-calculation-utilities/apidocs/index.html)](https://wj-van-hoek.github.io/PANDORA/docs/pandora-calculation-utilities/apidocs/index.html) |  
   
 
 ## License
