@@ -7,17 +7,17 @@ public class CellDataPoint extends DataPoint {
     /**
      * cellId The ID of the cell associated with this data point.
      */
-    private final int cellId;
+    private final long _cellId;
 
     /**
      * Constructs a CellDataPoint object with the specified cell ID and value.
      *
-     * @param cellIdParam The ID of the cell associated with this data point.
+     * @param cellId The ID of the cell associated with this data point.
      * @param value       The value associated with this data point.
      */
-    public CellDataPoint(final int cellIdParam, final double value) {
+    public CellDataPoint(final long cellId, final double value) {
         super(value);
-        this.cellId = cellIdParam;
+        _cellId = cellId;
     }
 
     /**
@@ -25,7 +25,7 @@ public class CellDataPoint extends DataPoint {
      *
      * @return The cell ID.
      */
-    public int getCellId() {
-        return cellId;
+    public long getCellId() {
+        return _cellId;
     }
 }

@@ -1,5 +1,0 @@
-{
-	"dischargeDataFilePath": "src/main/resources/discharge_data_cell.json",
-	"volumeDataFilePath": "src/main/resources/volume_data_cell.json",
-	"fixCellDataFilePath": "src/main/resources/fix_data_cell.json"
-}

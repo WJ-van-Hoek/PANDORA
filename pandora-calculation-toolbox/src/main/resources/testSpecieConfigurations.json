@@ -5,12 +5,13 @@
 			"unit": "mol",
 			"molarMass": 58.44,
 			"transportable": true,
+			"y0": 1e-9,
 			"dy": {
 				"sources": [
 					{
 						"sourceType": "terrestrial",
 						"name": "groundwater",
-						"file": "dic_source_groundwater_cell.json"
+						"file": "src/main/resources/single_cell_alpha/dic_source_groundwater_cell.json"
 					},
 					{
 						"sourceType": "reaction",
@@ -24,6 +25,29 @@
 						"name": "gassing",
 						"rate": 0.1,
 						"to": "external"
+					}
+				]
+			}
+		},
+		{
+			"name": "DOC",
+			"unit": "mol",
+			"molarMass": 200,
+			"transportable": true,
+			"y0": 1e-9,
+			"dy": {
+				"sources": [
+					{
+						"sourceType": "terrestrial",
+						"name": "groundwater",
+						"file": "src/main/resources/single_cell_alpha/doc_source_groundwater_cell.json"
+					}
+				],
+				"fates": [
+					{
+						"fateType": "reaction",
+						"name": "oxidation",
+						"to": "DIC"
 					}
 				]
 			}

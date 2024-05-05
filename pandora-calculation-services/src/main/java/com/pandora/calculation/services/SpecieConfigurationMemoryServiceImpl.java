@@ -1,70 +1,86 @@
 package com.pandora.calculation.services;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pandora.calculation.config.SpecieConfiguration;
+import com.pandora.calculation.repositories.SpecieConfigurationRepository;
 
 /**
- * The {@code SpecieConfigurationMemoryServiceImpl} class implements the {@link SpecieConfigurationMemoryService}
- * interface to provide CRUD (Create, Read, Update, Delete) operations for specie configurations.
- * <p>
- * This service class uses a {@link ConcurrentHashMap} to store specie configurations, ensuring thread safety and
- * efficient concurrent access.
- *
- * @version 0.0.1
- * @author Wim Joost van Hoek
- * @see SpecieConfigurationMemoryService
- * @see SpecieConfiguration
+ * A service implementation for managing specie configurations in memory.
+ * This service interacts with a {@link SpecieConfigurationRepository} to save and retrieve specie configurations.
  */
 @Service
-public class SpecieConfigurationMemoryServiceImpl implements SpecieConfigurationMemoryService {
+public final class SpecieConfigurationMemoryServiceImpl implements SpecieConfigurationMemoryService {
 
     /**
-     * The map to store specie configurations, using the name of the specie as the key.
+     * A repository for storing and retrieving specie configurations.
      */
-    private final Map<String, SpecieConfiguration> specieConfigurations;
+    @Autowired
+    private SpecieConfigurationRepository _specieConfigurationRepository;
 
     /**
-     * Constructs a {@code SpecieConfigurationMemoryServiceImpl} with an empty map of specie configurations.
+     * Saves a specie configuration to the in-memory map of specie configurations.
+     *
+     * @param specieConfiguration The specie configuration to save.
      */
-    public SpecieConfigurationMemoryServiceImpl() {
-        this.specieConfigurations = new ConcurrentHashMap<>();
+    @Override
+    public void saveSpecieConfiguration(final SpecieConfiguration specieConfiguration) {
+        _specieConfigurationRepository.saveSpecieConfiguration(specieConfiguration);
     }
 
     /**
-     * Saves a specie configuration to the in-memory map of specieConfigurations.
+     * Saves a collection of specie configurations.
      *
-     * @param specieConfiguration the specie configuration to save
+     * @param specieConfigurations The collection of specie configurations to save.
      */
     @Override
-    public final void saveSpecieConfiguration(final SpecieConfiguration specieConfiguration) {
-        specieConfigurations.put(specieConfiguration.getName(), specieConfiguration);
+    public void saveSpecieConfigurations(final Collection<SpecieConfiguration> specieConfigurations) {
+        _specieConfigurationRepository.saveSpecieConfigurations(specieConfigurations);
     }
 
     /**
      * Finds a specie configuration by its name.
      *
-     * @param name the name of the specie configuration to find
-     * @return the found specie configuration, or {@code null} if not found
+     * @param name The name of the specie configuration to find.
+     * @return The found specie configuration, or {@code null} if not found.
      */
     @Override
-    public final SpecieConfiguration findSpecieConfiguration(final String name) {
-        return specieConfigurations.getOrDefault(name, null);
+    public SpecieConfiguration findSpecieConfiguration(final String name) {
+        return _specieConfigurationRepository.findSpecieConfiguration(name);
     }
 
     /**
-     * Finds all specie configurations.
+     * Finds a specie configuration by its index.
      *
-     * @return List<SpecieConfiguration>
+     * @param index The index of the specie configuration to find.
+     * @return The found specie configuration.
+     */
+    @Override
+    public SpecieConfiguration findSpecieConfiguration(final int index) {
+        return _specieConfigurationRepository.findSpecieConfiguration(index);
+    }
+
+    /**
+     * Retrieves all specie configurations.
+     *
+     * @return A list of all specie configurations.
      */
     @Override
     public List<SpecieConfiguration> findAllSpecieConfigurations() {
-        return new ArrayList<>(specieConfigurations.values());
+        return _specieConfigurationRepository.findAllSpecieConfigurations();
     }
 
+    /**
+     * Retrieves the number of specie configurations.
+     *
+     * @return The number of specie configurations.
+     */
+    @Override
+    public int getNumberOfSpecies() {
+        return findAllSpecieConfigurations().size();
+    }
 }

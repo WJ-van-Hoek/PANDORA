@@ -45,15 +45,15 @@ public class SpecieConfigurationController {
      * The {@code specieConfigurationService} field represents the service responsible for managing specie
      * configurations.
      */
-    private final SpecieConfigurationMemoryService specieConfigurationService;
+    private final SpecieConfigurationMemoryService _specieConfigurationService;
 
     /**
      * Constructs a {@code SpecieConfigurationController} with the specified {@code SpecieConfigurationMemoryService}.
      *
-     * @param specieConfigurationServiceParam the service responsible for managing specie configurations
+     * @param specieConfigurationService the service responsible for managing specie configurations
      */
-    public SpecieConfigurationController(final SpecieConfigurationMemoryService specieConfigurationServiceParam) {
-        this.specieConfigurationService = specieConfigurationServiceParam;
+    public SpecieConfigurationController(final SpecieConfigurationMemoryService specieConfigurationService) {
+        _specieConfigurationService = specieConfigurationService;
     }
 
     /**
@@ -64,7 +64,7 @@ public class SpecieConfigurationController {
      */
     @PostMapping
     public ResponseEntity<Void> saveSpecieConfiguration(final @RequestBody SpecieConfiguration specieConfiguration) {
-        specieConfigurationService.saveSpecieConfiguration(specieConfiguration);
+        _specieConfigurationService.saveSpecieConfiguration(specieConfiguration);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
@@ -77,7 +77,7 @@ public class SpecieConfigurationController {
      */
     @GetMapping("/{name}")
     public ResponseEntity<SpecieConfiguration> findSpecieConfiguration(final @PathVariable String name) {
-        SpecieConfiguration foundSpecieConfiguration = specieConfigurationService.findSpecieConfiguration(name);
+        SpecieConfiguration foundSpecieConfiguration = _specieConfigurationService.findSpecieConfiguration(name);
         if (foundSpecieConfiguration != null) {
             return new ResponseEntity<>(foundSpecieConfiguration, HttpStatus.OK);
         } else {

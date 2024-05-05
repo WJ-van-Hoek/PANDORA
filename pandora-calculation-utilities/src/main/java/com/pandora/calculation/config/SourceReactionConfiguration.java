@@ -1,42 +1,52 @@
 package com.pandora.calculation.config;
 
-import com.pandora.calculation.config.builders.SourceReactionConfigurationBuilder;
-
+import lombok.Builder;
 import lombok.Getter;
+import lombok.experimental.Accessors;
 
 /**
- * Configuration class for defining source reaction configurations.
- * This class extends the {@link Configuration} class.
+ * Configuration class for defining source reaction configurations. This class extends the {@link IndexedConfiguration}
+ * class.
  *
  * @author Wim Joost van Hoek
- * @version 1.0
- * @since 1.0
+ * @version 0.0.1
+ * @since 0.0.1
  */
-@SuppressWarnings("serial")
 @Getter
-public class SourceReactionConfiguration extends Configuration {
+@Builder
+@Accessors(prefix = "_", chain = true) // Specify prefix and chain options
+public final class SourceReactionConfiguration extends IndexedConfiguration {
+    /**
+     * The name of the source reaction configuration.
+     */
+    private String _name;
 
     /**
      * The source from which the reaction configuration originates.
      */
-    private String from;
+    private String _from;
 
     /**
-     * Constructs a new SourceReactionConfiguration instance.
-     *
-     * @param builder The builder used to construct this configuration.
+     * The unit of associated with the configuration.
      */
-    public SourceReactionConfiguration(final SourceReactionConfigurationBuilder<?> builder) {
-        super(builder);
-        this.from = builder.getFrom();
-    }
+    private String _unit;
 
     /**
-     * Returns a new builder for constructing SourceReactionConfiguration instances.
+     * Constructs a new SourceReactionConfiguration object using the provided builder.
      *
-     * @return A new {@link SourceReactionConfigurationBuilder} instance.
+     * <p>
+     * This constructor initializes a source reaction configuration with the specified name, source from which it
+     * originates, and unit associated with the configuration.
+     *
+     * @param name The name of the source reaction configuration.
+     * @param from The source from which the reaction originates.
+     * @param unit The unit associated with the source reaction configuration.
      */
-    public static SourceReactionConfigurationBuilder<?> builder() {
-        return new SourceReactionConfigurationBuilder<>();
+    @Builder
+    private SourceReactionConfiguration(final String name, final String from, final String unit) {
+        _name = name;
+        _from = from;
+        _unit = unit;
     }
+
 }

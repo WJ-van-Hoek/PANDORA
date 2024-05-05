@@ -16,7 +16,10 @@ import lombok.extern.slf4j.Slf4j;
  * @author Wim Joost van Hoek
  */
 @Slf4j
-public class CommandLineToolParser {
+public final class CommandLineToolParser {
+
+    private CommandLineToolParser() {
+    }
 
     /**
      * Parses the command-line arguments and constructs an object of type T using the provided Parsable instance.
@@ -38,9 +41,15 @@ public class CommandLineToolParser {
      */
     private static Options createOptions() {
         Options options = new Options();
+        addModelRunConfigurationOption(options);
         addSpecieConfigurationsOption(options);
         addBootstrapOption(options);
         return options;
+    }
+
+    private static void addModelRunConfigurationOption(final Options options) {
+        options.addOption(Option.builder().longOpt("modelRunConfiguration").desc("Path to the model configuration file")
+                .hasArg().argName("file").build());
     }
 
     private static void addSpecieConfigurationsOption(final Options options) {

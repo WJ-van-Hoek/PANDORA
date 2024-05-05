@@ -3,7 +3,7 @@ package com.pandora.calculation.data;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class DataPoint implements Valuable {
+public class DataPoint {
     /**
      * The logger used for logging messages and events related to the configuration.
      */
@@ -12,28 +12,25 @@ public class DataPoint implements Valuable {
     /**
      * The value of the datapoint.
      */
-    private double value;
+    private double _value;
 
     /**
      * Constructs a new DataPoint with the specified value.
      *
-     * @param valueParam the value of the data point
+     * @param value the value of the data point
      */
-    public DataPoint(final double valueParam) {
-        this.value = valueParam;
+    public DataPoint(final double value) {
+        _value = value;
     }
 
     /**
      * Retrieves the value of the datapoint.
      *
-     * @see Valuable
-     *
      * @return The value of the datapoint
      */
-    @Override
     public double getValue() {
-        getLog().debug("Retrieved datapoint with value {}", value);
-        return value;
+        getLog().debug("Retrieved datapoint with value {}", _value);
+        return _value;
     }
 
     /**

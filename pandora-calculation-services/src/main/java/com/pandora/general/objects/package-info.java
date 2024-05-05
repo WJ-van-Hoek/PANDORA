@@ -7,13 +7,13 @@
  * <ul>
  * <li>{@link com.pandora.general.objects.AbstractBaseObject}: An abstract base class for common properties of Pandora
  * model objects.</li>
- * <li>{@link com.pandora.general.objects.Cell}: Represents a geographical cell in the Pandora model with attributes
+ * <li>{@link com.pandora.calculation.Cell}: Represents a geographical cell in the Pandora model with attributes
  * such as center coordinates, surface area, and next cell identifier.</li>
  * <li>{@link com.pandora.general.objects.CellTimestep}: Represents a time step associated with a geographical cell,
  * including initial and final states, and timestamps.</li>
  * <li>{@link com.pandora.general.objects.PandoraDifferentialEquations}: Implements the FirstOrderDifferentialEquations
  * interface for solving differential equations in the Pandora model.</li>
- * <li>{@link com.pandora.general.objects.PandoraTimestep}: Represents a time step in the Pandora model with attributes
+ * <li>{@link com.pandora.calculation.PandoraTimestep}: Represents a time step in the Pandora model with attributes
  * such as initial values, time range, and sources.</li>
  * <li>{@link com.pandora.general.objects.River}: Represents a river in the Pandora model with a list of independent
  * cell sets associated with it.</li>

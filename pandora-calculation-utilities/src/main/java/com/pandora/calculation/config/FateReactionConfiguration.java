@@ -1,49 +1,54 @@
 package com.pandora.calculation.config;
 
-import com.pandora.calculation.config.builders.FateReactionConfigurationBuilder;
-
+import lombok.Builder;
 import lombok.Getter;
+import lombok.experimental.Accessors;
 
 /**
- * Configuration class for defining fate reaction configurations.
- * This class extends the {@link Configuration} class.
+ * Configuration class for defining fate reaction configurations. This class extends the {@link IndexedConfiguration}
+ * class.
  *
  * @author Wim Joost van Hoek
- * @version 1.0
- * @since 1.0
+ * @version 0.0.1
+ * @since 0.0.1
  */
-@SuppressWarnings("serial")
 @Getter
-public class FateReactionConfiguration extends Configuration {
+@Builder
+@Accessors(prefix = "_", chain = true) // Specify prefix and chain options
+public final class FateReactionConfiguration extends IndexedConfiguration {
+    /**
+     * The name of the fate reaction configuration.
+     */
+    private String _name;
 
     /**
      * The destination of the fate reaction configuration.
      */
-    private String to;
+    private String _to;
 
     /**
      * The rate of the fate reaction configuration.
      */
-    private double rate;
+    private double _rate;
 
     /**
-     * Constructs a new FateReactionConfiguration instance.
-     *
-     * @param builder The builder used to construct this configuration.
+     * The unit of associated with the configuration.
      */
-    public FateReactionConfiguration(final FateReactionConfigurationBuilder<?> builder) {
-        super(builder);
-        this.to = builder.getTo();
-        this.rate = builder.getRate();
-    }
+    private String _unit;
 
     /**
-     * Returns a new builder for constructing FateReactionConfiguration instances.
+     * Constructs a new FateReactionConfiguration object using the provided builder.
      *
-     * @return A new {@link FateReactionConfigurationBuilder} instance.
+     * @param name The name of the fate reaction configuration.
+     * @param to The destination of the fate reaction configuration.
+     * @param rate The rate of the fate reaction configuration.
+     * @param unit The unit associated with the fate reaction configuration.
      */
-    public static FateReactionConfigurationBuilder<?> builder() {
-        return new FateReactionConfigurationBuilder<>();
+    @Builder
+    private FateReactionConfiguration(final String name, final String to, final double rate, final String unit) {
+        _name = name;
+        _to = to;
+        _rate = rate;
+        _unit = unit;
     }
 }
-

@@ -92,11 +92,6 @@ https://www.oracle.com/java/technologies/javase/codeconventions-contents.html
 
 	<!-- Checks for Headers                                -->
 	<!-- See https://checkstyle.org/checks/header/index.html   -->
-	<!-- <module name="Header"> -->
-	<!--   <property name="headerFile" value="${checkstyle.header.file}"/> -->
-	<!--   <property name="fileExtensions" value="java"/> -->
-	<!-- </module> -->
-
 	<module name="TreeWalker">
 
 		<!-- Checks for Javadoc comments.                     -->
@@ -113,7 +108,9 @@ https://www.oracle.com/java/technologies/javase/codeconventions-contents.html
 		<module name="ConstantName" />
 		<module name="LocalFinalVariableName" />
 		<module name="LocalVariableName" />
-		<module name="MemberName" />
+		<module name="MemberName">
+			<property name="format" value="^_[a-zA-Z0-9]*$" />
+		</module>
 		<module name="MethodName" />
 		<module name="PackageName" />
 		<module name="ParameterName" />
@@ -132,7 +129,9 @@ https://www.oracle.com/java/technologies/javase/codeconventions-contents.html
 		<!-- Checks for Size Violations.                    -->
 		<!-- See https://checkstyle.org/checks/sizes/index.html -->
 		<module name="MethodLength" />
-		<module name="ParameterNumber" />
+		<module	name="ParameterNumber">
+			<property name="max" value="10" />
+		</module>
 
 		<!-- Checks for whitespace                               -->
 		<!-- See https://checkstyle.org/checks/whitespace/index.html -->

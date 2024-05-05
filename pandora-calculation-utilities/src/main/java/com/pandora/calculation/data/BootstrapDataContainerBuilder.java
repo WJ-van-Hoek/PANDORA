@@ -3,7 +3,7 @@ package com.pandora.calculation.data;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Builder class for constructing {@link BootstrapDataContainer} instances.
+ * Builder class for constructing {@link DataContainer} instances.
  *
  * @version 0.0.1
  * @author Wim Joost van Hoek
@@ -13,51 +13,51 @@ public class BootstrapDataContainerBuilder {
     /**
      * The discharge data to be included in the {@link BootstrapDataContainerBuilder}.
      */
-    private TemporalCellDataPointVector dischargeData;
+    private TemporalCellDataPointVector _dischargeData;
 
     /**
      * The volume data to be included in the {@link BootstrapDataContainerBuilder}.
      */
-    private TemporalCellDataPointVector volumeData;
+    private TemporalCellDataPointVector _volumeData;
 
     /**
      * The fixCell data to be included in the {@link BootstrapDataContainerBuilder}.
      */
-    private FixCellDataPointVector fixData;
+    private FixCellDataPointVector _fixData;
 
     /**
      * Sets the discharge data for the builder.
      *
-     * @param dischargeDataParam The discharge data to be included in the {@link BootstrapDataContainerBuilder}.
+     * @param dischargeData The discharge data to be included in the {@link BootstrapDataContainerBuilder}.
      * @return The {@code BootstrapDataContainerBuilder} instance with the specified discharge data.
      */
-    public final BootstrapDataContainerBuilder dischargeData(final TemporalCellDataPointVector dischargeDataParam) {
-        this.dischargeData = dischargeDataParam;
-        log.debug("discharge data set in the bootdata builder: {}", dischargeDataParam);
+    public final BootstrapDataContainerBuilder dischargeData(final TemporalCellDataPointVector dischargeData) {
+        _dischargeData = dischargeData;
+        log.debug("discharge data set in the bootdata builder: {}", dischargeData);
         return this;
     }
 
     /**
      * Sets the volume data for the builder.
      *
-     * @param volumeDataParam The volume data to be included in the {@link BootstrapDataContainerBuilder}.
+     * @param volumeData The volume data to be included in the {@link BootstrapDataContainerBuilder}.
      * @return The {@code BootstrapDataContainerBuilder} instance with the specified volume data.
      */
-    public final BootstrapDataContainerBuilder volumeData(final TemporalCellDataPointVector volumeDataParam) {
-        this.volumeData = volumeDataParam;
-        log.debug("volume data set in the bootdata builder: {}", volumeDataParam);
+    public final BootstrapDataContainerBuilder volumeData(final TemporalCellDataPointVector volumeData) {
+        _volumeData = volumeData;
+        log.debug("volume data set in the bootdata builder: {}", volumeData);
         return this;
     }
 
     /**
      * Sets the fix data for the builder.
      *
-     * @param fixDataParam The fix data to be included in the {@link BootstrapDataContainerBuilder}.
+     * @param fixData The fix data to be included in the {@link BootstrapDataContainerBuilder}.
      * @return The {@code BootstrapDataContainerBuilder} instance with the specified fix data.
      */
-    public final BootstrapDataContainerBuilder fixData(final FixCellDataPointVector fixDataParam) {
-        this.fixData = fixDataParam;
-        log.debug("fix data set in the bootdata builder: {}", fixDataParam);
+    public final BootstrapDataContainerBuilder fixData(final FixCellDataPointVector fixData) {
+        _fixData = fixData;
+        log.debug("fix data set in the bootdata builder: {}", fixData);
         return this;
     }
 
@@ -67,7 +67,7 @@ public class BootstrapDataContainerBuilder {
      * @return The discharge data included in the builder.
      */
     public TemporalCellDataPointVector getDischargeData() {
-        return this.dischargeData;
+        return _dischargeData;
     }
 
     /**
@@ -76,7 +76,7 @@ public class BootstrapDataContainerBuilder {
      * @return The volume data included in the builder.
      */
     public TemporalCellDataPointVector getVolumeData() {
-        return this.volumeData;
+        return _volumeData;
     }
 
     /**
@@ -85,16 +85,16 @@ public class BootstrapDataContainerBuilder {
      * @return The fix data included in the builder.
      */
     public FixCellDataPointVector getFixData() {
-        return this.fixData;
+        return _fixData;
     }
 
     /**
-     * Constructs a new {@link BootstrapDataContainer} instance using the configured parameters and datacontainers.
+     * Constructs a new {@link DataContainer} instance using the configured parameters and datacontainers.
      *
-     * @return A new {@link BootstrapDataContainer} instance constructed with the builder's parameters and
+     * @return A new {@link DataContainer} instance constructed with the builder's parameters and
      * datacontainers.
      */
-    public BootstrapDataContainer build() {
-        return new BootstrapDataContainer(this);
+    public DataContainer build() {
+        return new DataContainer(this);
     }
 }
