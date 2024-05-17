@@ -2,6 +2,11 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
+parameters:
+  update-dependencies:
+    default: false
+    type: boolean
+    
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
@@ -17,10 +22,25 @@ jobs:
       - checkout
       - run: mvn -s .circleci/settings.xml -B clean install -Dmaven.javadoc.skip=true -B -V -Dspring.profiles.active=default
       - run: mvn package org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=WJ-van-Hoek_PANDORA
+      
+  update-dependencies:
+    docker:
+        - image: maven:3.8.4-openjdk-17
+    working_directory: ~/pandora
+    steps:
+        - checkout
+
+        - run:
+            name: update-dependencies
+            command: bash .circleci/bash-update-dependencies.bash      
 
 workflows:
   build-and-test:
     jobs:
       - build
-
+  
+  update-dependencies:
+    when: << pipeline.parameters.update-dependencies >>
+    jobs:
+      - update-dependencies
 
