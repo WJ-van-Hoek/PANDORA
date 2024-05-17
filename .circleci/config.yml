@@ -36,6 +36,8 @@ jobs:
 
 workflows:
   build-and-test:
+    when:
+      not: << pipeline.parameters.update-dependencies >>  
     jobs:
       - build
   
