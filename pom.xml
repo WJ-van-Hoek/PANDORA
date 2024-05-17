@@ -21,10 +21,14 @@
 	<description>PANDORA - Crack the Box: Understanding Riverine Chemistry</description>
 
 	<properties>
+		<docker-utils.version>0.0.6</docker-utils.version>
+		<json-utils.version>0.0.6</json-utils.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
+		<object-utils.version>0.0.7</object-utils.version>
+		<parent-pom.version>0.2.0</parent-pom.version>
 		<sonar.organization>wj-van-hoek</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<sonar.coverage.jacoco.xmlReportPaths>
@@ -52,23 +56,23 @@
 		<dependency>
 			<groupId>com.general</groupId>
 			<artifactId>parent-pom</artifactId>
-			<version>0.2.0</version>
+			<version>${parent-pom.version}</version>
 			<type>pom</type>
 		</dependency>
 		<dependency>
 			<groupId>com.general.utils</groupId>
 			<artifactId>docker-utils</artifactId>
-			<version>0.0.6</version>
+			<version>${docker-utils.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.general.utils</groupId>
 			<artifactId>object-utils</artifactId>
-			<version>0.0.7</version>
+			<version>${object-utils.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.general.utils</groupId>
 			<artifactId>json-utils</artifactId>
-			<version>0.0.6</version>
+			<version>${json-utils.version}</version>
 		</dependency>
 	</dependencies>
 
