@@ -1,7 +1,5 @@
 #!/bin/bash
 
-source ./.circleci/bash-update-release-notes.bash > /dev/null
-
 # Configure git user email and name
 git config --global user.email "${USER_EMAIL}"
 git config --global user.name "${USER_NAME}" 
@@ -29,7 +27,3 @@ else
     echo "No changes found in 'pom.xml' after running 'mvn versions:update-properties'. Exiting..."
     exit 0
 fi
-
-# Clean up: Remove the temporary pom.xml file
-rm pom.xml.before_update
-
