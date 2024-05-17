@@ -33,5 +33,9 @@ workflows:
   build-and-test:
     jobs:
       - build
-
+  
+  update-dependencies:
+    when: << pipeline.parameters.update-dependencies >>
+    jobs:
+      - update-dependencies
 
