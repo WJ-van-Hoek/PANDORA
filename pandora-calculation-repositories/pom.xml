@@ -12,13 +12,14 @@
 	<properties>
 		<mvn-checkstyle-plugin.version>3.1.1</mvn-checkstyle-plugin.version>
 		<spring-boot.repackage.skip>true</spring-boot.repackage.skip>
+		<spring-parent-pom.version>0.0.5</spring-parent-pom.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>com.general</groupId>
 			<artifactId>spring-parent-pom</artifactId>
-			<version>0.0.5</version>
+			<version>${spring-parent-pom.version}</version>
 			<type>pom</type>
 		</dependency>
 		<dependency>

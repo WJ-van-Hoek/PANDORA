@@ -13,6 +13,7 @@
 
 	<properties>
 		<mvn-checkstyle-plugin.version>3.1.1</mvn-checkstyle-plugin.version>
+		<spring-boot-starter-web.version>3.2.2</spring-boot-starter-web.version>
 	</properties>
 
 	<packaging>jar</packaging>
@@ -21,7 +22,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<version>3.2.2</version>
+			<version>${spring-boot-starter-web.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.pandora</groupId>
