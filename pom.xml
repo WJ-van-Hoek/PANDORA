@@ -47,6 +47,10 @@
 			<url>https://maven.pkg.github.com/WJ-van-Hoek/parent-pom</url>
 		</repository>
 		<repository>
+			<id>github-spring-parent-pom</id>
+			<url>https://maven.pkg.github.com/WJ-van-Hoek/spring-parent-pom</url>
+		</repository>		
+		<repository>
 			<id>github-utils</id>
 			<url>https://maven.pkg.github.com/WJ-van-Hoek/utils</url>
 		</repository>
