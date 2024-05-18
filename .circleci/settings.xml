@@ -18,10 +18,5 @@
   		<username>WJ-van-Hoek</username>
   		<password>${_READ_PACKAGE}</password>
 	</server>
-  	<server>
-  		<id>github-utils</id>
-  		<username>WJ-van-Hoek</username>
-  		<password>${_READ_PACKAGE}</password>
-	</server>
   </servers>
 </settings>
