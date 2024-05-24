@@ -11,7 +11,7 @@
 	<name>pandora-calculation-utilities</name>
 
 	<properties>
-		<commons-cli.version>1.7.0</commons-cli.version>
+		<commons-cli.version>1.8.0</commons-cli.version>
 	</properties>
 
 	<dependencies>
