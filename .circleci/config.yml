@@ -44,5 +44,7 @@ workflows:
   update-dependencies:
     when: << pipeline.parameters.update-dependencies >>
     jobs:
-      - update-dependencies
+      - update-dependencies:
+          context:
+              - update-dependencies
 
