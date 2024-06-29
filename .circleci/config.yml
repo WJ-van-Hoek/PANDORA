@@ -39,12 +39,14 @@ workflows:
     when:
       not: << pipeline.parameters.update-dependencies >>  
     jobs:
-      - build
+      - build:
+          context:
+              - build-context
   
   update-dependencies:
     when: << pipeline.parameters.update-dependencies >>
     jobs:
       - update-dependencies:
           context:
-              - update-dependencies
+              - update-dependencies-context
 
