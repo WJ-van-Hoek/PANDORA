@@ -41,7 +41,7 @@ workflows:
     jobs:
       - build:
           context:
-              - build-context
+              - deploy-context
   
   update-dependencies:
     when: << pipeline.parameters.update-dependencies >>
