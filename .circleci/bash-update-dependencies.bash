@@ -7,6 +7,7 @@ git config --global user.name "${USER_NAME}"
 git push -d origin AUTO-UPDATE-DEPENDENCIES
 git checkout -b AUTO-UPDATE-DEPENDENCIES
 git pull origin master
+cd pandora-calculation-services
 
 # Run 'mvn versions:update-properties'
 mvn versions:update-properties
