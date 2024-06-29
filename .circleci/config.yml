@@ -49,4 +49,5 @@ workflows:
       - update-dependencies:
           context:
               - update-dependencies-context
+              - deploy-context              
 
