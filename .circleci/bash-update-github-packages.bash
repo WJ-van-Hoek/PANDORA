@@ -77,8 +77,10 @@ update_github_packages_of_project() {
 
   # Call the function and store the results in a variable
   local pom_directories=$(find_pom_directories "$start_directory")
+  echo "Iterating through Pom directories: $pom_directories"
 
   while IFS= read -r pom_dir; do
+    echo "POM directory: $pom_dir"  
     update_github_packages_in_pom "$user" "$pom_dir"
   done <<< "$pom_directories"
 }
