@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Source the bash-increment-version-function.sh script
+source ./.circleci/bash-update-github-packages.bash > /dev/null
+
 # Configure git user email and name
 git config --global user.email "${USER_EMAIL}"
 git config --global user.name "${USER_NAME}" 
@@ -7,7 +10,6 @@ git config --global user.name "${USER_NAME}"
 git push -d origin AUTO-UPDATE-DEPENDENCIES
 git checkout -b AUTO-UPDATE-DEPENDENCIES
 git pull origin master
-cd pandora-calculation-services
 
 # Run 'mvn versions:update-properties'
 mvn versions:update-properties
