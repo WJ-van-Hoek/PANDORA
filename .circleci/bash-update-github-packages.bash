@@ -34,13 +34,13 @@ update_single_package() {
 
 # Function to process a list of packages
 process_packages() {
-  local packages="$1"
-  local user="$2"
-  local pom_directory="$3"
-  local origin_dir="$4"
+  local user="$1"
+  local pom_directory="$2"
+  local origin_dir="$3"
+  local packages="$4"
   
   pom_file="$pom_directory/pom.xml"
-  
+
   # Iterate through each package
   echo "Iterating through Maven packages of $user:"
   while IFS= read -r package_name; do
@@ -66,8 +66,8 @@ update_github_packages_in_pom() {
   # Fetch packages of a specific type
   local packages=$(get_github_packages_of_user_and_type "$user" "maven")
   origin_dir=$(pwd)
-  
-  process_packages $packages $user $pom_directory $origin_dir
+
+  process_packages $user $pom_directory $origin_dir $packages
 }
 
 # Function to update GitHub packages in found pom directories
