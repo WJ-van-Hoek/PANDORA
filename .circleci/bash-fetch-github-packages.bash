@@ -10,7 +10,7 @@ curl_api_url() {
 
   # Perform curl request with necessary headers and capture response headers
   local response_headers=$(curl -s -D - -o /dev/null -H "Accept: application/vnd.github+json" \
-                          -H "Authorization: Bearer ${_ALL}" \
+                          -H "Authorization: Bearer ${_READ_PACKAGE}" \
                           -H "X-GitHub-Api-Version: 2022-11-28" \
                           "$api_url")
                           
@@ -25,7 +25,7 @@ curl_api_url() {
   # Perform curl request again to fetch raw JSON data
   local raw_json=$(curl -s -L \
     			-H "Accept: application/vnd.github+json" \
-    			-H "Authorization: Bearer ${_ALL}" \
+    			-H "Authorization: Bearer ${_READ_PACKAGE}" \
 			-H "X-GitHub-Api-Version: 2022-11-28" \
                      "$api_url")
 
