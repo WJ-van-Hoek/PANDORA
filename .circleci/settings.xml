@@ -2,26 +2,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
-  <repositories>
-    <repository>
-	<id>central</id>
-	<name>Central Repository</name>
-	<url>https://repo.maven.apache.org/maven2</url>
-    </repository>
-    <repository>
-	<id>github-parent-pom</id>
-	<url>https://maven.pkg.github.com/WJ-van-Hoek/parent-pom</url>
-    </repository>
-    <repository>
-	<id>github-spring-parent-pom</id>
-	<url>https://maven.pkg.github.com/WJ-van-Hoek/spring-parent-pom</url>
-    </repository>		
-    <repository>
-	<id>github-utils</id>
-	<url>https://maven.pkg.github.com/WJ-van-Hoek/utils</url>
-    </repository>
-  </repositories>
-  
+ 
   <servers>
   	<server>
   		<id>github-parent-pom</id>
