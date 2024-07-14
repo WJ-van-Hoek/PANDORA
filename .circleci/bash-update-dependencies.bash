@@ -22,7 +22,7 @@ if [[ -n $(git status --porcelain) ]]; then
     git push origin AUTO-UPDATE-DEPENDENCIES --set-upstream
     sleep 5
 
-    curl -L -X POST -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${_WRITE_PR}" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/repos/WJ-van-Hoek/PANDORA/pulls -d '{"title":"AUTO-PR: update properties","head":"AUTO-UPDATE-DEPENDENCIES","base":"master"}'
+    curl -L -X POST -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${_ALL}" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/repos/WJ-van-Hoek/PANDORA/pulls -d '{"title":"AUTO-PR: update properties","head":"AUTO-UPDATE-DEPENDENCIES","base":"master"}'
     # If files are the same, indicate no changes and exit
     echo "Changes found in 'pom.xml' after running 'mvn versions:update-properties'. PR is waiting!"
     exit 1
