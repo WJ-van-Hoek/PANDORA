@@ -33,3 +33,13 @@ replay_pid*
 mvnw
 mvnw.cmd
 /.checkstyle
+pandora-calculation-repositories/pom.xml.bak
+pandora-calculation-repositories/pom.xml.versionsBackup
+pandora-calculation-rest-api/pom.xml.bak
+pandora-calculation-rest-api/pom.xml.versionsBackup
+pandora-calculation-services/pom.xml.versionsBackup
+pandora-calculation-services/pom.xml.bak
+pandora-calculation-utilities/pom.xml.bak
+pandora-calculation-utilities/pom.xml.versionsBackup
+pom.xml.versionsBackup
+pom.xml.bak
