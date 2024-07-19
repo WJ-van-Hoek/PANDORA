@@ -3,6 +3,7 @@
 # Source the necessary scripts
 source ./.circleci/bash-find-github-packages.bash > /dev/null
 source ./.circleci/bash-fetch-github-packages.bash > /dev/null
+source ./.circleci/bash-update-pom-file.bash > /dev/null
 
 # Function to find all directories that contain a pom.xml file
 find_pom_directories() {
@@ -27,8 +28,7 @@ update_single_package() {
   echo "version: $version_number"
   
   cd "$pom_directory"
-  mvn dependency:get -Dartifact="$groupId:$artifactId:$version_number"
-  mvn versions:use-latest-releases -Dincludes="$groupId:$artifactId"
+  update_pom_file $artifactId".version" $version_number "pom.xml"
   cd "$origin_dir"
 }
 
@@ -41,6 +41,7 @@ process_packages() {
   
   pom_file="$pom_directory/pom.xml"
 
+  echo "Packages: $packages"
   # Iterate through each package
   echo "Iterating through Maven packages of $user:"
   while IFS= read -r package_name; do

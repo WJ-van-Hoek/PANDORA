@@ -55,3 +55,5 @@ get_github_packages_of_user_and_type() {
   get_packages_of_type "$type" "$response"
 }
 
+get_github_packages_of_user_and_type "WJ-van-Hoek" "maven"
+

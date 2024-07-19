@@ -12,7 +12,7 @@ git checkout -b AUTO-UPDATE-DEPENDENCIES
 git pull origin master
 
 # Run 'mvn versions:update-properties'
-mvn versions:update-properties
+mvn versions:update-properties -DgenerateBackupPoms=false
 update_github_packages_of_project 'WJ-van-Hoek' '.'
 
 # Compare the pom.xml files before and after the update
