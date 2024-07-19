@@ -15,7 +15,7 @@
 		<commons-math3.version>3.6.1</commons-math3.version>
 		<mvn-checkstyle-plugin.version>3.1.1</mvn-checkstyle-plugin.version>
 		<spring-boot.repackage.skip>true</spring-boot.repackage.skip>
-		<spring-parent-pom.version>0.0.5</spring-parent-pom.version>
+		<spring-parent-pom.version>0.1.0</spring-parent-pom.version>
 	</properties>
 
 	<dependencies>
