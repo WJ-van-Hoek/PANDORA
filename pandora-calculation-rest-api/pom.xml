@@ -13,7 +13,7 @@
 
 	<properties>
 		<mvn-checkstyle-plugin.version>3.1.1</mvn-checkstyle-plugin.version>
-		<spring-boot-starter-web.version>3.3.1</spring-boot-starter-web.version>
+		<spring-boot-starter-web.version>3.3.2</spring-boot-starter-web.version>
 	</properties>
 
 	<packaging>jar</packaging>
