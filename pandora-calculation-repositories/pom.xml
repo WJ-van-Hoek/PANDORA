@@ -12,7 +12,7 @@
 	<properties>
 		<mvn-checkstyle-plugin.version>3.1.1</mvn-checkstyle-plugin.version>
 		<spring-boot.repackage.skip>true</spring-boot.repackage.skip>
-		<spring-parent-pom.version>0.1.0</spring-parent-pom.version>
+		<spring-parent-pom.version>0.1.7-SNAPSHOT</spring-parent-pom.version>
 	</properties>
 
 	<dependencies>
