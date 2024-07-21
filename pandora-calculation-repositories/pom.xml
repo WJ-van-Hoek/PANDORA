@@ -12,16 +12,14 @@
 	<properties>
 		<mvn-checkstyle-plugin.version>3.1.1</mvn-checkstyle-plugin.version>
 		<spring-boot.repackage.skip>true</spring-boot.repackage.skip>
-		<spring-parent-pom.version>0.1.0</spring-parent-pom.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>com.general</groupId>
 			<artifactId>spring-parent-pom</artifactId>
-			<version>${spring-parent-pom.version}</version>
 			<type>pom</type>
-		</dependency>
+		</dependency>		
 		<dependency>
 			<groupId>com.pandora</groupId>
 			<artifactId>pandora-calculation-utilities</artifactId>
@@ -34,41 +32,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>prepare-agent</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>report</id>
-						<phase>prepare-package</phase>
-						<goals>
-							<goal>report</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<configuration>
-					<reportOutputDirectory>
-						${project.basedir}/../docs/pandora-calculation-repositories</reportOutputDirectory>
-					<sourcepath>${project.basedir}/src/main/java</sourcepath>
-					<doclint>none</doclint>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>

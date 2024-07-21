@@ -13,16 +13,13 @@
 
 	<properties>
 		<mvn-checkstyle-plugin.version>3.1.1</mvn-checkstyle-plugin.version>
-		<spring-boot-starter-web.version>3.3.2</spring-boot-starter-web.version>
 	</properties>
-
-	<packaging>jar</packaging>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-			<version>${spring-boot-starter-web.version}</version>
+			<groupId>com.general</groupId>
+			<artifactId>spring-parent-pom</artifactId>
+			<type>pom</type>
 		</dependency>
 		<dependency>
 			<groupId>com.pandora</groupId>
@@ -43,34 +40,6 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>prepare-agent</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>report</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>report</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<configuration>
-					<reportOutputDirectory>
-						${project.basedir}/../docs/pandora-calculation-rest-api</reportOutputDirectory>
-					<sourcepath>${project.basedir}/src/main/java</sourcepath>
-					<doclint>none</doclint>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
