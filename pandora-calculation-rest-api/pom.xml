@@ -41,20 +41,6 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<configuration>
-					<reportOutputDirectory>
-						${project.basedir}/../docs/pandora-calculation-rest-api</reportOutputDirectory>
-					<sourcepath>${project.basedir}/src/main/java</sourcepath>
-					<doclint>none</doclint>
-				</configuration>
-			</plugin>
 		</plugins>
 	</build>
 </project>

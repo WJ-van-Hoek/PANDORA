@@ -19,7 +19,7 @@
 			<groupId>com.general</groupId>
 			<artifactId>spring-parent-pom</artifactId>
 			<type>pom</type>
-		</dependency>
+		</dependency>		
 		<dependency>
 			<groupId>com.pandora</groupId>
 			<artifactId>pandora-calculation-utilities</artifactId>
@@ -32,21 +32,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>
