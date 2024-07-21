@@ -30,10 +30,10 @@ public final class PandoraIntegratorServiceImpl implements PandoraIntegratorServ
     private static final double RELATIVE_TOLERANCE = 1.0;
 
     /** Minimum step size for the numerical integration. */
-    private static final double MIN_STEP_SIZE = 1.0e-10;
+    private static final double MIN_STEP_SIZE = 1.0e-5;
 
     /** Maximum step size for the numerical integration. */
-    private static final double MAX_STEP_SIZE = 1.0e-10;
+    private static final double MAX_STEP_SIZE = 1.0e-2;
 
     /** Service for obtaining first-order differential equations. */
     @Autowired
