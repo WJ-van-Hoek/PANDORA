@@ -28,7 +28,7 @@ update_single_package() {
   echo "version: $version_number"
   
   cd "$pom_directory"
-  update_pom_file $artifactId".version" $version_number "pom.xml"
+  update_pom_file $groupId $artifactId $version_number "pom.xml"
   cd "$origin_dir"
 }
 

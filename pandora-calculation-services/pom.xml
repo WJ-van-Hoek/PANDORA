@@ -12,18 +12,18 @@
 	<name>pandora-calculation-services</name>
 
 	<properties>
-		<commons-math3.version>3.6.1</commons-math3.version>
-		<mvn-checkstyle-plugin.version>3.1.1</mvn-checkstyle-plugin.version>
 		<spring-boot.repackage.skip>true</spring-boot.repackage.skip>
-		<spring-parent-pom.version>0.1.0</spring-parent-pom.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-math3</artifactId>
-			<version>${commons-math3.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.general.utils</groupId>
+			<artifactId>json-utils</artifactId>
+		</dependency>		
 		<dependency>
 			<groupId>com.pandora</groupId>
 			<artifactId>pandora-calculation-utilities</artifactId>

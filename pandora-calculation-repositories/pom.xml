@@ -10,7 +10,6 @@
 	<artifactId>pandora-calculation-repositories</artifactId>
 
 	<properties>
-		<mvn-checkstyle-plugin.version>3.1.1</mvn-checkstyle-plugin.version>
 		<spring-boot.repackage.skip>true</spring-boot.repackage.skip>
 	</properties>
 

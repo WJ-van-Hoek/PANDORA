@@ -2,6 +2,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.general</groupId>
+		<artifactId>plugin-parent-pom</artifactId>
+		<version>0.0.4</version>
+	</parent>
 
 	<groupId>com.pandora</groupId>
 	<artifactId>PANDORA</artifactId>
@@ -20,8 +25,9 @@
 	<description>PANDORA - Crack the Box: Understanding Riverine Chemistry</description>
 
 	<properties>
+		<commons-cli.version>1.8.0</commons-cli.version>
+		<commons-math3.version>3.6.1</commons-math3.version>
 		<docker-utils.version>0.0.6</docker-utils.version>
-		<jacoco.version>0.8.12</jacoco.version>
 		<java.version>17</java.version>
 		<json-utils.version>0.0.6</json-utils.version>
 		<lombok-maven-plugin.version>1.18.20.0</lombok-maven-plugin.version>
@@ -88,11 +94,6 @@
 			</dependency>
 			<dependency>
 				<groupId>com.general.utils</groupId>
-				<artifactId>docker-utils</artifactId>
-				<version>${docker-utils.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.general.utils</groupId>
 				<artifactId>object-utils</artifactId>
 				<version>${object-utils.version}</version>
 			</dependency>
@@ -101,171 +102,62 @@
 				<artifactId>json-utils</artifactId>
 				<version>${json-utils.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-math3</artifactId>
+				<version>${commons-math3.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-cli</groupId>
+				<artifactId>commons-cli</artifactId>
+				<version>${commons-cli.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
-	<dependencies>
-		<dependency>
-			<groupId>com.general.utils</groupId>
-			<artifactId>docker-utils</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.general.utils</groupId>
-			<artifactId>object-utils</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.general.utils</groupId>
-			<artifactId>json-utils</artifactId>
-		</dependency>
-	</dependencies>
-
 	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-site-plugin</artifactId>
-					<version>${mvn-site-plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-surefire-plugin</artifactId>
-					<version>${surefire.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.jacoco</groupId>
-					<artifactId>jacoco-maven-plugin</artifactId>
-					<version>${jacoco.version}</version>
-					<executions>
-						<execution>
-							<goals>
-								<goal>prepare-agent</goal>
-							</goals>
-						</execution>
-						<execution>
-							<id>report</id>
-							<phase>verify</phase>
-							<goals>
-								<goal>report</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<configuration>
-						<source>${java.version}</source>
-						<target>${java.version}</target>
-						<encoding>${project.build.sourceEncoding}</encoding>
-					</configuration>
-					<version>${mvn-compiler-plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-source-plugin</artifactId>
-					<version>${mvn-source-plugin.version}</version>
-					<executions>
-						<execution>
-							<id>attach-sources</id>
-							<goals>
-								<goal>jar</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-resources-plugin</artifactId>
-					<version>${mvn-resources-plugin.version}</version>
-					<configuration>
-						<encoding>${project.build.sourceEncoding}</encoding>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>versions-maven-plugin</artifactId>
-					<version>${versions-mvn-plugin.version}</version>
-					<configuration>
-						<ruleSet>
-							<ignoreVersions>
-								<ignoreVersion>
-									<type>regex</type>
-									<version>(?i).*-(alpha|beta|m|rc)(-?\d+)?</version>
-								</ignoreVersion>
-							</ignoreVersions>
-						</ruleSet>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.projectlombok</groupId>
-					<artifactId>lombok-maven-plugin</artifactId>
-					<version>${lombok-maven-plugin.version}</version>
-					<executions>
-						<execution>
-							<phase>generate-sources</phase>
-							<goals>
-								<goal>delombok</goal>
-							</goals>
-							<configuration>
-								<addOutputDirectory>false</addOutputDirectory>
-								<sourceDirectory>src/main/java</sourceDirectory>
-								<outputDirectory>
-									${project.build.directory}/delombok
-								</outputDirectory>
-							</configuration>
-						</execution>
-					</executions>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-javadoc-plugin</artifactId>
-					<version>${mvn-javadoc-plugin.version}</version>
-					<configuration>
-						<reportOutputDirectory>${project.javadoc.outputdir}</reportOutputDirectory>
-						<sourcepath>${project.basedir}/src/main/java</sourcepath>
-						<doclint>none</doclint>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-checkstyle-plugin</artifactId>
-					<version>${maven-checkstyle-plugin.version}</version>
-					<configuration>
-						<configLocation>./pandora-style/pandora_checks.xml</configLocation>
-						<suppressionsLocation>./pandora-style/suppressions.xml</suppressionsLocation>
-						<failOnViolation>true</failOnViolation>
-						<includeTestSourceDirectory>true</includeTestSourceDirectory>
-					</configuration>
-					<executions>
-						<execution>
-							<id>validate</id>
-							<phase>validate</phase>
-							<goals>
-								<goal>check</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+			</plugin>
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-checkstyle-plugin</artifactId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 			</plugin>
 			<plugin>
-				<groupId>org.projectlombok</groupId>
-				<artifactId>lombok-maven-plugin</artifactId>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<configuration>
+					<configLocation>./pandora-style/pandora_checks.xml</configLocation>
+					<suppressionsLocation>./pandora-style/suppressions.xml</suppressionsLocation>
+					<failOnViolation>true</failOnViolation>
+					<includeTestSourceDirectory>true</includeTestSourceDirectory>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

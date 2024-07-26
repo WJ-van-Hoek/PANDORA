@@ -11,10 +11,6 @@
 	<artifactId>pandora-calculation-rest</artifactId>
 	<name>pandora-calculation-rest</name>
 
-	<properties>
-		<mvn-checkstyle-plugin.version>3.1.1</mvn-checkstyle-plugin.version>
-	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>com.general</groupId>
