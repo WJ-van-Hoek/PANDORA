@@ -17,6 +17,7 @@
 		<module>pandora-calculation-repositories</module>
 		<module>pandora-calculation-services</module>
 		<module>pandora-calculation-rest-api</module>
+		<module>pandora-calculation-toolbox</module>
 	</modules>
 
 	<packaging>pom</packaging>
