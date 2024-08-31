@@ -43,3 +43,8 @@ pandora-calculation-utilities/pom.xml.bak
 pandora-calculation-utilities/pom.xml.versionsBackup
 pom.xml.versionsBackup
 pom.xml.bak
+
+pandora-calculation-repositories/.settings/
+pandora-calculation-rest-api/.settings/
+pandora-calculation-services/.settings/
+pandora-calculation-utilities/.settings/
