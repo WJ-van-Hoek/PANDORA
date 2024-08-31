@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>com.general</groupId>
 		<artifactId>plugin-parent-pom</artifactId>
-		<version>0.0.10</version>
+		<version>0.0.11</version>
 	</parent>
 
 	<groupId>com.pandora</groupId>
@@ -30,7 +30,6 @@
 		<docker-utils.version>0.0.6</docker-utils.version>
 		<java.version>17</java.version>
 		<json-utils.version>0.0.6</json-utils.version>
-		<lombok-maven-plugin.version>1.18.20.0</lombok-maven-plugin.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven-checkstyle-plugin.version>3.4.0</maven-checkstyle-plugin.version>
@@ -45,7 +44,7 @@
 		<mvn-source-plugin.version>3.3.1</mvn-source-plugin.version>
 		<site-mvn-plugin.version>0.12</site-mvn-plugin.version>
 		<object-utils.version>0.0.7</object-utils.version>
-		<parent-pom.version>0.3.9</parent-pom.version>
+		<parent-pom.version>0.3.10-SNAPSHOT</parent-pom.version>
 		<project.javadoc.outputdir>./docs/</project.javadoc.outputdir>
 		<sonar.organization>wj-van-hoek</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
