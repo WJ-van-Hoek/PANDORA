@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>com.general</groupId>
 		<artifactId>plugin-parent-pom</artifactId>
-		<version>0.0.17</version>
+		<version>0.0.18</version>
 	</parent>
 
 	<groupId>com.pandora</groupId>
@@ -45,7 +45,7 @@
 		<mvn-source-plugin.version>3.3.1</mvn-source-plugin.version>
 		<site-mvn-plugin.version>0.12</site-mvn-plugin.version>
 		<object-utils.version>0.0.7</object-utils.version>
-		<parent-pom.version>0.3.25</parent-pom.version>
+		<parent-pom.version>0.3.27</parent-pom.version>
 		<project.javadoc.outputdir>./docs/</project.javadoc.outputdir>
 		<sonar.organization>wj-van-hoek</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
