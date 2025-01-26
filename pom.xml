@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>com.general</groupId>
 		<artifactId>plugin-parent-pom</artifactId>
-		<version>0.0.21</version>
+		<version>0.0.22</version>
 	</parent>
 
 	<groupId>com.pandora</groupId>
@@ -52,7 +52,7 @@
 		<sonar.coverage.jacoco.xmlReportPaths>
 			./target/site/jacoco-aggregate/jacoco.xml
 		</sonar.coverage.jacoco.xmlReportPaths>
-		<spring-parent-pom.version>0.1.10</spring-parent-pom.version>
+		<spring-parent-pom.version>0.1.11</spring-parent-pom.version>
 		<surefire.version>3.3.1</surefire.version>
 		<versions-mvn-plugin.version>2.17.1</versions-mvn-plugin.version>
 	</properties>
