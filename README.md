@@ -5,7 +5,8 @@ Welcome to the PANDORA open-source repository! Thank you for your interest in th
   
 ## Overview
 
-PANDORA is a Java application designed to facilitate the computation of component transport in river systems. The acronym PANDORA itself encapsulates the key focus areas: **P**hosphorus, **A**lkalinity, **N**itrogen, and **D**issolved **O**xygen in **R**iverine and **A**quatic systems.
+PANDORA is a Java application in development that aims to facilitate the computation of component transport in river systems.
+The acronym PANDORA itself encapsulates the key focus areas: **P**hosphorus, **A**lkalinity, **N**itrogen, and **D**issolved **O**xygen in **R**iverine and **A**quatic systems.
 
   
 ## Status
@@ -13,6 +14,19 @@ At this moment, PANDORA is in early stages of development without a release depl
 | CircleCI | SonarCloud | Version
 | - | - | - |
 | [![CircleCI](https://dl.circleci.com/status-badge/img/gh/WJ-van-Hoek/PANDORA/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/WJ-van-Hoek/PANDORA/tree/master) | [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=WJ-van-Hoek_PANDORA&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=WJ-van-Hoek_PANDORA)|0.0.1-SNAPSHOT|
+
+
+## Development
+To get started developing please adhere to the following instructions:
+>### Recommended prerequisites
+>>**Windows**  
+>>*The following steps must be conducted manually:*  
+>>1. download and install **[Spring Tool Suite](https://spring.io/tools)**
+>>2. download and install **[git](https://git-scm.com/downloads/win)**
+>>3. download and install **[maven](https://maven.apache.org/download.cgi)**
+
+>>**Linux**  
+>>*TBD*  
 
 ## Documentation
 
