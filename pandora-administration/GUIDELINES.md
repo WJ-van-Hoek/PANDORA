@@ -32,8 +32,8 @@ Welcome to the PANDORA open-source repository! We appreciate your interest and c
 **Software Development Kit Manager (SDKMAN):**  
 SDKMAN is a versatile and convenient tool that simplifies the management of various Software Development Kits (SDKs) on your system. With just a couple of commands, you can easily install, switch between, and manage different versions of SDKs. The installation process is straightforward, requiring the following two lines in the terminal:  
 
-`curl -s ¨https://get.sdkman.io" | bash`  
-`source ¨$HOME/.sdkman/bin/sdkman-init.sh`
+`curl -s https://get.sdkman.io | bash`  
+`source $HOME/.sdkman/bin/sdkman-init.sh`
 
 **Java Development Kit (JDK):**  
 PANDORA is currently developed in JDK 17.0.9.
