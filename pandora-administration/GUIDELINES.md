@@ -92,8 +92,20 @@ Lombok is a Java library that simplifies boilerplate code in your Java projects.
 1. Navigate to your workspace in your terminal
 2. Clone the PANDORA repository
 `git clone https://github.com/WJ-van-Hoek/PANDORA.git`
-3. Import the PANDORA maven project in your IDE
-
+3. Import the PANDORA maven project in your IDE.
+4. Request a token to get package read access rights for some dependencies.
+5. Add token to the ~./.m2/settings.xml as follows:
+```xml
+<settings>
+  <servers>
+    <server>
+      <id>PANDORA_DEV_READ_PACKAGE</id>
+      <username>[YOUR_USERNAME]</username>
+      <password>[YOUR_TOKEN]</password>
+    </server>
+  </servers>
+</settings>
+```
 
 ## Contributing
 
