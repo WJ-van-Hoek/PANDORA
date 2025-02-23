@@ -98,14 +98,30 @@ Lombok is a Java library that simplifies boilerplate code in your Java projects.
 ```xml
 <settings>
   <servers>
+    <!-- Server for github-parent-pom -->
     <server>
-      <id>PANDORA_DEV_READ_PACKAGE</id>
-      <username>[YOUR_USERNAME]</username>
-      <password>[YOUR_TOKEN]</password>
+      <id>github-parent-pom</id>
+      <username><YOUR_GITHUB_USERNAME></username>
+      <password><YOUR_RECEIVED_TOKEN></password>
+    </server>
+    <!-- Server for github-spring-parent-pom -->
+    <server>
+      <id>github-spring-parent-pom</id>
+      <username><YOUR_GITHUB_USERNAME></username>
+      <password><YOUR_RECEIVED_TOKEN></password>
+    </server>
+    <!-- Server for github-utils -->
+    <server>
+      <id>github-utils</id>
+      <username><YOUR_GITHUB_USERNAME></username>
+      <password><YOUR_RECEIVED_TOKEN></password>
     </server>
   </servers>
 </settings>
 ```
+6. Navigate to the cloned PANDORA repository in your terminal
+7. Run `mvn clean verify -U`
+8. At this stage you should have a successful build, you can now start developing and contributing!
 
 ## Contributing
 
