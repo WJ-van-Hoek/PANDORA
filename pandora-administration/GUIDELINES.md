@@ -48,51 +48,45 @@ To make sure you configured the correct JDK version:
 **Apache Maven:**  
 Apache Maven is an open-source project management and build automation tool that provides a comprehensive and consistent way to manage and build Java-based projects. Developed by the Apache Software Foundation, Maven simplifies the software development process by automating the project's build infrastructure and managing dependencies.  
 
-PANDORA is currently building with Maven 3.9.6.  
-To make sure you install and use the correction Maven version:  
-`sdk install maven 3.9.6`  
-`sdk use maven 3.9.6`
+PANDORA is currently building with Maven 3.9.9.  
+
+To make sure you install and use the correct Maven version:  
+`sdk install maven 3.9.9`  
+`sdk use maven 3.9.9`
 
 To make sure you configured the correct Maven version:  
 `mvn -v`
 
-**Integrated Development Environment (IDE):**
-
-Choose a Java IDE that supports Maven, such as [Eclipse](https://www.eclipse.org/), [IntelliJ IDEA](https://www.jetbrains.com/idea/), or [Spring Tool Suite](https://spring.io/tools).
-
 **Git:**  
 
-Git is used for version control. Install Git from [git-scm.com](https://git-scm.com/).
+Git is used for version control.
 
-To make sure you configured the correct git version:
+Install the latest git version (on a Debian-based system):  
+`sudo apt -y install git`
 
-`git --version`
+To make sure you installed git correctly:  
+`git -v`
+
+**Integrated Development Environment (IDE):**  
+***- Eclipse/STS***
+1. Download the tarball for a 64-bit version of STS for Linux:  
+`wget https://cdn.spring.io/spring-tools/release/STS4/4.28.1.RELEASE/dist/e4.34/spring-tool-suite-4-4.28.1.RELEASE-e4.34.0-linux.gtk.x86_64.tar.gz`
+2. Extract the tarball:  
+`tar -xvzf spring-tool-suite-4-4.28.1.RELEASE-e4.34.0-linux.gtk.x86_64.tar.gz`
+3. Delete the tarball:  
+`rm spring-tool-suite-4-4.28.1.RELEASE-e4.34.0-linux.gtk.x86_64.tar.gz`
+4. Run Spring Tool Suite:  
+`./sts-4.28.1.RELEASE/SpringToolSuite4`
 
 **Lombok:**  
 Lombok is a Java library that simplifies boilerplate code in your Java projects. To use Lombok, you need to configure your IDE to recognize Lombok annotations.  
 
-***- IntelliJ IDEA***  
-1. ****Install the Lombok Plugin:****  
-   - Go to "File" > "Settings" > "Plugins."
-   - Click on "Marketplace" and search for "Lombok."
-   - Install the Lombok Plugin.
-
-2. ****Enable Annotation Processing:****  
-   - Go to "File" > "Settings" > "Build, Execution, Deployment" > "Compiler" > "Annotation Processors."
-   - Check the "Enable annotation processing" box.
-
-***- Eclipse***  
-1. ****Download the Lombok JAR:****
-   - Go to the [Lombok website](https://projectlombok.org/).
-   - Download the Lombok JAR file.
-
-2. ****Run the Lombok JAR:****
-   - Open a terminal and navigate to the directory containing the downloaded JAR file.
-   - Run the following command:
-
-     `java -jar lombok.jar`
-
-   - The Lombok installer will launch. Follow the instructions to install Lombok into Eclipse.
+***- Eclipse/STS***  
+1. Download the Lombok JAR:
+`wget https://projectlombok.org/downloads/lombok.jar`
+2. Run lombok.jar:
+`java -jar lombok.jar`
+3. Follow lombok installation interface.  
 
 ### Development setup
 1. Navigate to your workspace in your terminal
