@@ -48,3 +48,11 @@ pandora-calculation-repositories/.settings/
 pandora-calculation-rest-api/.settings/
 pandora-calculation-services/.settings/
 pandora-calculation-utilities/.settings/
+
+pandora-calculation-repositories/bin/
+pandora-calculation-rest-api/bin/
+pandora-calculation-services/bin/
+pandora-calculation-toolbox/bin/
+pandora-calculation-utilities/bin/
+
+pandora-calculation-toolbox/.factorypath
