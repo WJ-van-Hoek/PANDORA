@@ -14,6 +14,10 @@ At this moment, PANDORA is in early stages of development without a release depl
 | - | - | - |
 | [![CircleCI](https://dl.circleci.com/status-badge/img/gh/WJ-van-Hoek/PANDORA/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/WJ-van-Hoek/PANDORA/tree/master) | [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=WJ-van-Hoek_PANDORA&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=WJ-van-Hoek_PANDORA)|0.0.1-SNAPSHOT|
 
+## Run pre-alpha tool
+The PandoraCellTool is the first tool that is being developed, meant to explore the model development. No results are logged or printed at this moment.  
+Execute `java -jar PandoraCellTool.jar -modelRunConfiguration src/main/resources/single_cell_alpha/model_run_configuration.json` in the terminal or run the PandoraCellTool in your IDE and provide the same modelRunConfiguration argument.
+
 ## Documentation
 
 At this moment, preliminary technical javadoc is available for the repositories, rest-api, services and utilities. Familiarize yourself with the documentation to make the most out of PANDORA. Furthermore, if you find any unclarities, please let the development team know.
