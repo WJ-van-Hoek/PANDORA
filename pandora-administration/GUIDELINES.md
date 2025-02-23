@@ -131,11 +131,12 @@ Please review our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing.
 
 ### How to Contribute
 
-1. Fork the repository.
+1. Fork the repository. 
 2. Create a new branch from master following the guidelines at [Branching Strategy](#branching-strategy)
 3. Make your changes and commit them with descriptive messages.
 4. Push your branch to your fork: `git push origin PANDORA-XXX`.
-5. Submit a pull request to the `master` branch of the original repository.
+5. Submit a pull request to the `master` branch of the original repository.  
+Contact us if you want to develop directly on the repository, without forking. In that case, you need to generate an SSH key and the key needs to be added to repository administration.
 
 ### Reporting Bugs
 
