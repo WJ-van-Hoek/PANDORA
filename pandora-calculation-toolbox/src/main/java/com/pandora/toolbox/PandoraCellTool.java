@@ -8,6 +8,7 @@ import com.pandora.calculation.parsers.CommandLineToolParser;
 import com.pandora.calculation.parsers.Parsable;
 import com.pandora.calculation.services.BootService;
 import com.pandora.calculation.services.CalculationService;
+import com.pandora.config.LogConfigLoader;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -27,6 +28,7 @@ public class PandoraCellTool {
      * @param args Command-line arguments provided to the application.
      */
     public static void main(final String[] args) {
+        LogConfigLoader.loadConfig();
         ApplicationContext context = loadContext();
         preProcess(args, context);
         calculate(args, context);
