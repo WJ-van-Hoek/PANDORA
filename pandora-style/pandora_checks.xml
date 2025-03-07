@@ -188,10 +188,6 @@ https://www.oracle.com/java/technologies/javase/codeconventions-contents.html
 			<property name="influenceFormat" value="-99999" />
 		</module>
 
-		<!-- https://checkstyle.org/filters/suppressionxpathfilter.html -->
-	    <module name="SuppressionXpathFilter">
-	        <property name="file" value="/home/pandora_dev/dev/workspace/PANDORA/pandora-style/suppressions.xml"/>
-	    </module>
 	</module>
 
 </module>
