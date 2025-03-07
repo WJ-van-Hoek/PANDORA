@@ -13,6 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<modules>
+		<module>pandora-configuration</module>
 		<module>pandora-calculation-utilities</module>
 		<module>pandora-calculation-repositories</module>
 		<module>pandora-calculation-services</module>
