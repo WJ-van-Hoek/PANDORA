@@ -9,8 +9,8 @@ import org.apache.commons.cli.CommandLine;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.general.utils.json.mappers.File;
-import com.pandora.calculation.data.DataContainer;
 import com.pandora.calculation.data.BootstrapDataContainerBuilder;
+import com.pandora.calculation.data.DataContainer;
 import com.pandora.calculation.data.FixCellDataPoint;
 import com.pandora.calculation.data.FixCellDataPointVector;
 import com.pandora.calculation.data.TemporalCellDataPointVector;
@@ -63,19 +63,20 @@ public final class DataContainerParser {
         return Optional.ofNullable(bootstrapData);
     }
 
+    private static TemporalCellDataPointVector parseToTemporalCellDataPointVector(final JsonNode jsonNode,
+            final String key) {
+        String dataFilePath = jsonNode.get(key).asText();
+        TemporalCellDataPointVector data = new TemporalCellDataPointVector();
+        TemporalCellDataPointVectorNodeParser.parseTemporalCellDataPointVectorNode(data, dataFilePath);
+        return data;
+    }
+
     private static TemporalCellDataPointVector parseDischargeData(final JsonNode jsonNode) {
-        String dischargeDataFilePath = jsonNode.get("dischargeDataFilePath").asText();
-        TemporalCellDataPointVector dischargeData = new TemporalCellDataPointVector();
-        TemporalCellDataPointVectorNodeParser.parseTemporalCellDataPointVectorNode(dischargeData,
-                dischargeDataFilePath);
-        return dischargeData;
+        return parseToTemporalCellDataPointVector(jsonNode, "dischargeDataFilePath");
     }
 
     private static TemporalCellDataPointVector parseVolumeData(final JsonNode jsonNode) {
-        String volumeDataFilePath = jsonNode.get("volumeDataFilePath").asText();
-        TemporalCellDataPointVector volumeData = new TemporalCellDataPointVector();
-        TemporalCellDataPointVectorNodeParser.parseTemporalCellDataPointVectorNode(volumeData, volumeDataFilePath);
-        return volumeData;
+        return parseToTemporalCellDataPointVector(jsonNode, "volumeDataFilePath");
     }
 
     private static FixCellDataPointVector parseFixCellData(final JsonNode jsonNode) {

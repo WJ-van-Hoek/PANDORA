@@ -1,0 +1,5 @@
+{
+  "dischargeDataFilePath": "discharge.json",
+  "volumeDataFilePath": "volume.json",
+  "fixCellDataFilePath": "fixCell.json"
+}

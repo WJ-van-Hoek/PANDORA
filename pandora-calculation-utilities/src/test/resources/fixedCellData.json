@@ -1,0 +1,20 @@
+{
+  "cells": [
+    {
+      "cell_id": 1,
+      "data": {
+        "latitude": 40.7128,
+        "longitude": -74.0060,
+        "previous_cells": [2, 3]
+      }
+    },
+    {
+      "cell_id": 2,
+      "data": {
+        "latitude": 34.0522,
+        "longitude": -118.2437,
+        "previous_cells": [1]
+      }
+    }
+  ]
+}
