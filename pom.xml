@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>com.general</groupId>
 		<artifactId>plugin-parent-pom</artifactId>
-		<version>0.0.27</version>
+		<version>0.0.28</version>
 	</parent>
 
 	<groupId>com.pandora</groupId>
@@ -46,14 +46,14 @@
 		<mvn-source-plugin.version>3.3.1</mvn-source-plugin.version>
 		<site-mvn-plugin.version>0.12</site-mvn-plugin.version>
 		<object-utils.version>0.0.7</object-utils.version>
-		<parent-pom.version>0.4.8</parent-pom.version>
+		<parent-pom.version>0.4.9</parent-pom.version>
 		<project.javadoc.outputdir>./docs/</project.javadoc.outputdir>
 		<sonar.organization>wj-van-hoek</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<sonar.coverage.jacoco.xmlReportPaths>
 			./target/site/jacoco-aggregate/jacoco.xml
 		</sonar.coverage.jacoco.xmlReportPaths>
-		<spring-parent-pom.version>0.1.13</spring-parent-pom.version>
+		<spring-parent-pom.version>0.1.14</spring-parent-pom.version>
 		<surefire.version>3.3.1</surefire.version>
 		<versions-mvn-plugin.version>2.17.1</versions-mvn-plugin.version>
 	</properties>
